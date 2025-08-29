@@ -1,0 +1,380 @@
+import React from 'react';
+import { Container, Row, Col, Button, Badge, Card } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import yardiBanner from '../../assets/images/yardi.avif';
+import Testimonials from '../../components/sections/Testimonials';
+import FAQ from '../../components/sections/FAQ';
+import CTA from '../../components/sections/CTA';
+import './YardiConsulting.scss';
+
+const YardiConsulting = () => {
+  const faqs = [
+    {
+      question: "What is included in Yardi consultation?",
+      answer: "Our Yardi consultation includes system setup, module optimization, data migration, reporting, staff training, and ongoing support. We tailor each engagement to the specific needs of your real estate business."
+    },
+    {
+      question: "Can you fix or optimize our current Yardi setup?",
+      answer: "Yes. Many of our clients come to us with a system that is already live but not working as it should. We audit your configuration, identify bottlenecks, and implement fixes that improve usability and performance."
+    },
+    {
+      question: "Are your Yardi services available remotely?",
+      answer: "Yes. Our Yardi services in USA are offered remotely or onsite depending on your preference. We use secure tools and collaborative platforms to deliver fast and effective service no matter where you are based."
+    },
+    {
+      question: "Do you provide support after implementation?",
+      answer: "Absolutely. Our team offers ongoing support packages that include reporting help, new feature training, module updates, and on-demand guidance from expert Yardi consultants."
+    }
+  ];
+
+  return (
+    <div className="yardi-page">
+      {/* Hero Section */}
+      <section className="yardi-hero">
+        <div className="hero-image-wrapper">
+          <img
+            src={yardiBanner}
+            alt="Yardi Consulting Services"
+            className="hero-image"
+            loading="eager"
+          />
+          <div className="hero-overlay">
+            <Container>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="hero-content"
+              >
+                <Badge bg="light" text="dark" className="mb-3">
+                  Yardi Specialist
+                </Badge>
+                <h1 className="hero-title">End-to-End Yardi Consultation Services for Real Estate Success</h1>
+                <p className="hero-text">
+                  Managing real estate with outdated systems or poorly configured software can hold your business back. 
+                  Our expert-led Yardi consultation services help property owners, managers, and real estate firms 
+                  get the most out of their Yardi investment.
+                </p>
+                <div className="hero-cta">
+                  <Button 
+                    variant="primary" 
+                    size="lg" 
+                    href="/contact"
+                    className="me-3"
+                  >
+                    Request Consultation
+                  </Button>
+                  <Button 
+                    variant="outline-light" 
+                    size="lg" 
+                    href="#services"
+                  >
+                    Our Services
+                  </Button>
+                </div>
+              </motion.div>
+            </Container>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="why-choose-section">
+        <Container>
+          <Row className="justify-content-center mb-5">
+            <Col lg={10} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="section-title">Why Choose Global Guru for Yardi Consulting</h2>
+                <p className="section-subtitle">
+                  Most firms offer generic tech help. Global Guru is different. Our team includes expert Yardi consultants 
+                  who understand real estate challenges and how to solve them using Yardi's full capabilities.
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+          <Row className="g-4">
+            {[
+              "Custom solutions aligned with your business goals",
+              "Dedicated Global support for real-time collaboration",
+              "Seamless onboarding with minimal downtime",
+              "Cross-functional expertise in accounting, leasing, operations, and compliance",
+              "Transparent project planning with clear milestones and deliverables"
+            ].map((item, index) => (
+              <Col md={6} lg={4} key={index}>
+                <motion.div
+                  className="benefit-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="benefit-icon">
+                    <i className="bi bi-check-circle-fill"></i>
+                  </div>
+                  <div className="benefit-text">{item}</div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Comprehensive Services Section */}
+      <section id="services" className="services-section">
+        <Container>
+          <Row className="justify-content-center mb-5">
+            <Col lg={10} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="section-title">Comprehensive Yardi Services That Fit Your Workflow</h2>
+                <p className="section-subtitle">
+                  Our Yardi services are built to serve real estate businesses at every stage. Whether you need to launch, 
+                  migrate, improve, or train, we provide strategic consulting that removes complexity and delivers value fast.
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+
+          <Row className="g-4">
+            <Col lg={6}>
+              <motion.div
+                className="service-card"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3>Yardi Implementation Support</h3>
+                <p>
+                  We manage your Yardi launch from start to finish. This includes setup, module configuration, custom field 
+                  development, user permissions, and full go-live readiness. Our team ensures your system is built the right 
+                  way the first time.
+                </p>
+              </motion.div>
+            </Col>
+            <Col lg={6}>
+              <motion.div
+                className="service-card"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3>Data Migration and Integration</h3>
+                <p>
+                  Need to move from another system or combine multiple platforms? We handle secure data transfer and map 
+                  everything accurately. We also help connect Yardi with external platforms such as Investran, Salesforce, 
+                  and AppFolio for unified operations.
+                </p>
+              </motion.div>
+            </Col>
+            <Col lg={6}>
+              <motion.div
+                className="service-card"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3>Reporting and Analytics</h3>
+                <p>
+                  Yardi offers powerful reporting. We help you use it to its full potential. Our Yardi consulting experts 
+                  build custom dashboards, automate reports, and visualize your data in a way that supports real-time 
+                  decision-making.
+                </p>
+              </motion.div>
+            </Col>
+            <Col lg={6}>
+              <motion.div
+                className="service-card"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <h3>System Audits and Optimization</h3>
+                <p>
+                  If your current Yardi system feels clunky or inefficient, our team can perform a complete system audit. 
+                  We check for underused features, misconfigurations, and outdated processes. Then we recommend improvements 
+                  that align with your objectives. In general, we have observed 45% plus features of Yardi underutilized by businesses in general.
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Supported Modules Section */}
+      <section className="modules-section">
+        <Container>
+          <Row className="justify-content-center mb-5">
+            <Col lg={10} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="section-title">Supported Yardi Modules</h2>
+                <p className="section-subtitle">
+                  Our Yardi consultation covers the full Yardi product suite, each configured specifically to your property 
+                  type, business model, and growth plans.
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+          <Row className="g-4">
+            {[
+              "Voyager Residential, Commercial, and Mixed-Use",
+              "Yardi Investment Suite",
+              "Yardi RentCafe and CRM",
+              "Yardi PAYscan and Bill Pay",
+              "Yardi Maintenance",
+              "Yardi Budgeting and Forecasting",
+              "Construction and Job Cost Modules"
+            ].map((module, index) => (
+              <Col md={6} lg={4} key={index}>
+                <motion.div
+                  className="module-card"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="module-name">{module}</div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Who We Help Section */}
+      <section className="clients-section">
+        <Container>
+          <Row className="justify-content-center mb-5">
+            <Col lg={10} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="section-title">Who We Help</h2>
+                <p className="section-subtitle">
+                  Our Yardi consulting in USA supports clients across a wide range of real estate verticals. Whether you 
+                  operate a small local portfolio or a nationwide property group, we have the experience to support your goals.
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+          <Row className="g-4">
+            {[
+              "Multifamily and single-family operators",
+              "Commercial real estate developers and managers",
+              "Affordable housing providers",
+              "Senior living and healthcare communities",
+              "Mixed-use developers",
+              "REITs and private equity firms"
+            ].map((client, index) => (
+              <Col sm={6} md={4} key={index}>
+                <motion.div
+                  className="client-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="client-type">{client}</div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="benefits-section">
+        <Container>
+          <Row className="justify-content-center mb-5">
+            <Col lg={10} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="section-title">Benefits of Choosing Global Guru's Yardi Services</h2>
+                <p className="section-subtitle">
+                  When you choose Global Guru, you gain more than a technical consultant. You gain a business partner 
+                  focused on tangible improvements.
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+          <Row className="g-4">
+            {[
+              "Streamlined leasing and tenant workflows",
+              "Faster month-end close and financial reporting",
+              "Reduced reliance on manual spreadsheets",
+              "Lower compliance risks and stronger audit trails",
+              "Better team alignment through customized user roles",
+              "Improved data accuracy and system-wide consistency"
+            ].map((benefit, index) => (
+              <Col md={6} lg={4} key={index}>
+                <motion.div
+                  className="benefit-item"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="benefit-number">{index + 1}</div>
+                  <div className="benefit-text">{benefit}</div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <section className="faq-section">
+        <Container>
+          <FAQ 
+            faqs={faqs} 
+            title="FAQs About Our Yardi Consultation Services"
+            subtitle="Find answers to common questions about our Yardi consulting services"
+            themeColor="#0066cc"
+          />
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="cta-section">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={8}>
+              <h2>Ready to transform your Yardi experience?</h2>
+              <p>
+                Our certified consultants are ready to help you get the most out of 
+                your Yardi investment with a free initial assessment.
+              </p>
+            </Col>
+            <Col md={4} className="text-md-end mt-4 mt-md-0">
+              <Button 
+                variant="primary" 
+                size="lg" 
+                href="/contact"
+                className="fw-bold"
+              >
+                Get Started
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </div>
+  );
+};
+
+export default YardiConsulting;

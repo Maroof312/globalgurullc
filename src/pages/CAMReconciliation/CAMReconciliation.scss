@@ -1,0 +1,592 @@
+// CAMReconciliation.scss
+.cam-reconciliation-page {
+  /* Hero Banner Styles */
+  .hero-banner {
+    position: relative;
+    padding: 100px 0;
+    color: #011e41;
+    overflow: hidden;
+    
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      
+      .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .hero-content {
+      .subtitle {
+        font-size: 1.5rem;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 30px;
+        line-height: 1.3;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      }
+
+      .benefits-list {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 15px;
+          font-size: 1.1rem;
+          line-height: 1.6;
+          color: #fff;
+
+          &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Why Sections Styles */
+  .why-section, .why-choose-us {
+    padding: 80px 0;
+    position: relative;
+    z-index: 1;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      position: relative;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #3498db;
+        margin-top: 15px;
+      }
+    }
+
+    .section-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 25px;
+    }
+  }
+
+  .why-choose-us {
+    background-color: #f8f9fa;
+  }
+
+  /* New CAM Services Section */
+  .cam-services-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      text-align: center;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #3498db;
+        margin: 15px auto 0;
+      }
+    }
+
+    .section-intro {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .service-card {
+      height: 100%;
+      padding: 30px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-color: #3498db;
+      }
+
+      h3 {
+        color: #1e293b;
+        font-weight: 600;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 40px;
+          height: 3px;
+          background: #3498db;
+        }
+      }
+
+      .service-features {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 12px;
+          color: #475569;
+          line-height: 1.6;
+
+          &::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .highlight-box {
+        background: rgba(52, 152, 219, 0.05);
+        border-left: 3px solid #3498db;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+
+        p {
+          margin-bottom: 0;
+          color: #1e293b;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  /* New CAM Audit Section */
+  .cam-audit-section {
+    padding: 80px 0;
+    background-color: white;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .audit-features {
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 15px;
+      }
+
+      .feature-list {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 12px;
+          color: #475569;
+          line-height: 1.6;
+
+          &::before {
+            content: "✓";
+            position: absolute;
+            left: 5px;
+            color: #3498db;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .audit-conclusion {
+      background: #f8f9fa;
+      border-left: 3px solid #3498db;
+      font-style: italic;
+      color: #475569;
+    }
+  }
+
+  /* New Why Us Section */
+  .why-us-section {
+    padding: 80px 0;
+    background-color: white;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .section-intro {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .why-us-card {
+      padding: 25px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      height: 100%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-color: #3498db;
+      }
+
+      .icon-box {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+        border-radius: 50%;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      p {
+        color: #475569;
+        margin-bottom: 0;
+        line-height: 1.6;
+      }
+    }
+
+    .highlight-box {
+      max-width: 800px;
+      margin: 40px auto 0;
+      padding: 20px;
+      background: #f8f9fa;
+      border-left: 3px solid #3498db;
+      border-radius: 5px;
+
+      p {
+        margin-bottom: 0;
+        color: #1e293b;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* New Nationwide Section */
+  .nationwide-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0056b3 0%, #003366 100%);
+    color: white;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .client-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+
+      li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 12px;
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 10px;
+          color: white;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .cam-map-container {
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+    }
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 80px 0;
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .service-item {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e2e8f0;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      }
+
+      .service-icon {
+        margin-bottom: 15px;
+        color: #0d6efd;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 20px;
+    }
+  }
+
+  /* Difference Section */
+  .difference-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+
+    .difference-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .difference-item {
+      flex: 0 0 calc(14.28% - 13px);
+      min-width: 150px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      border: 1px solid #e2e8f0;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .difference-icon {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+
+        img {
+          max-height: 50px;
+          width: auto;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1199.98px) {
+    .difference-item {
+      flex: 0 0 calc(25% - 15px);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .hero-banner {
+      padding: 80px 0;
+    }
+
+    .why-section, 
+    .why-choose-us,
+    .cam-services-section,
+    .cam-audit-section,
+    .why-us-section,
+    .nationwide-section,
+    .faq-section,
+    .services-section, 
+    .difference-section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .hero-banner {
+      padding: 60px 0;
+      text-align: center;
+
+      .hero-content {
+        .title {
+          font-size: 1.8rem;
+        }
+
+        .benefits-list {
+          text-align: left;
+        }
+      }
+    }
+
+    .cam-services-section,
+    .cam-audit-section,
+    .why-us-section,
+    .nationwide-section {
+      .section-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    .nationwide-section {
+      .client-list li {
+        padding-left: 25px;
+      }
+      
+      .cam-map-container {
+        margin-top: 30px;
+        
+        img {
+          max-height: 250px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .hero-banner {
+      padding: 50px 0;
+
+      .hero-content {
+        .title {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .why-us-card {
+      margin-bottom: 20px;
+    }
+  }
+}

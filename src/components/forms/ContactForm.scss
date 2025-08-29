@@ -1,0 +1,32 @@
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  .form-label {
+    font-weight: 600;
+    color: $secondary;
+  }
+
+  .form-control {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+    }
+  }
+
+  .submit-btn {
+    padding: 12px 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

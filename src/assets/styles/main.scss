@@ -1,0 +1,34 @@
+// Import order matters!
+@import 'variables';
+@import 'globals';
+
+.fixed-call-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0066cc;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  
+  &:hover {
+    background: darken(#0066cc, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-call-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    bottom: 15px;
+    right: 15px;
+  }
+}

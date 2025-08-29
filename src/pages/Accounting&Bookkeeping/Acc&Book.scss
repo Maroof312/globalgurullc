@@ -1,0 +1,366 @@
+// Acc&Book.scss
+.acc-book-page {
+  font-family: 'Inter', 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+
+  /* --- HERO (FIXED) --- */
+  .hero-section {
+    position: relative;
+    /* use padding + min-height so content controls height */
+    padding: 120px 0;
+    min-height: 480px;
+    overflow: hidden;
+    margin-bottom: 80px;
+
+    .hero-image-container {
+      /* put the image behind as a true background layer */
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(0.7);
+      }
+    }
+
+    /* content now participates in layout; gradient via ::before */
+    .hero-overlay {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 15px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+        z-index: -1;
+      }
+
+      .hero-title {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        line-height: 1.4;
+      }
+    }
+  }
+
+  /* --- Section Typography (unchanged) --- */
+  .section-title {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #3498db;
+      border-radius: 2px;
+    }
+  }
+
+  .section-subtitle { color: #7f8c8d; font-size: 1.2rem; margin-bottom: 30px; }
+  .section-text { font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px; color: #555; }
+
+  /* Intro Section (unchanged) */
+  .intro-section {
+    padding: 100px 0;
+    background-color: #fff;
+    margin-bottom: 80px;
+
+    .benefits-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 30px;
+
+      li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: #333;
+
+        &::before {
+          content: '✓';
+          color: #3498db;
+          position: absolute;
+          left: 0;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover { transform: translateY(-5px); }
+    }
+  }
+
+  /* Services Section (unchanged) */
+  .services-section {
+    padding: 100px 0;
+    background-color: #f8fafc;
+    height: 100%;
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 35px 30px;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid #eaeff5;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 5px;
+        background: linear-gradient(to right, #3498db, #2ecc71);
+      }
+
+      .service-icon-wrapper {
+        width: 80px; height: 80px;
+        background: rgba(52, 152, 219, 0.1);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 25px;
+        color: #3498db;
+      }
+
+      .service-title { color: #2c3e50; font-size: 1.4rem; margin-bottom: 15px; font-weight: 600; }
+      .service-description { color: #555; line-height: 1.7; margin-bottom: 20px; font-size: 1rem; }
+
+      .service-features {
+        list-style: none; padding-left: 0; margin-top: 20px;
+
+        li {
+          position: relative; padding-left: 25px; margin-bottom: 10px; font-size: 0.95rem; color: #555;
+          &::before { content: '•'; color: #3498db; position: absolute; left: 0; font-weight: bold; font-size: 1.2rem; }
+        }
+      }
+    }
+  }
+
+  /* Process Section (unchanged) */
+  .process-section {
+    padding: 100px 0;
+    background-color: #fff;
+
+    .process-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 0;
+
+      &::before {
+        content: '';
+        position: absolute; top: 0; left: 60px;
+        height: 100%; width: 3px;
+        background: linear-gradient(to bottom, #3498db, #2ecc71);
+      }
+
+      .process-step {
+        position: relative; margin-bottom: 40px; padding-left: 100px;
+
+        &:last-child { margin-bottom: 0; }
+
+        .step-number {
+          position: absolute; left: 0; top: 0;
+          width: 60px; height: 60px; border-radius: 50%; background: #3498db; color: white;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 1.5rem; font-weight: 700;
+          box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .step-content {
+          background: #f8fafc; padding: 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+          .step-title { color: #2c3e50; font-size: 1.3rem; margin-bottom: 10px; font-weight: 600; }
+          .step-description { color: 555; margin-bottom: 0; font-size: 1rem; }
+        }
+      }
+    }
+  }
+
+  /* Value Section (unchanged) */
+  .value-section {
+    padding: 100px 0;
+    background-color: #f8fafc;
+
+    .value-list {
+      list-style: none; padding-left: 0; margin-top: 30px;
+
+      li {
+        display: flex; align-items: flex-start; margin-bottom: 20px; padding: 15px; background: white; border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03); transition: transform 0.3s ease;
+        &:hover { transform: translateX(5px); }
+        .value-icon { margin-right: 15px; color: #3498db; flex-shrink: 0; }
+        span { color: #333; font-size: 1.05rem; }
+      }
+    }
+
+    .value-image-wrapper {
+      position: relative; padding: 20px;
+
+      .value-card {
+        background: white; border-radius: 12px; padding: 30px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        position: relative; overflow: hidden; z-index: 1;
+
+        &::before {
+          content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+          background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(46, 204, 113, 0.05));
+          z-index: -1;
+        }
+
+        h4 {
+          color: #2c3e50; font-size: 1.4rem; margin-bottom: 20px; font-weight: 600; position: relative; padding-bottom: 10px;
+          &::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: #3498db; border-radius: 3px; }
+        }
+
+        ul {
+          list-style: none; padding-left: 0;
+
+          li {
+            position: relative; padding-left: 30px; margin-bottom: 15px; color: #555;
+            &::before { content: '✓'; color: #2ecc71; position: absolute; left: 0; font-weight: bold; }
+          }
+        }
+      }
+    }
+  }
+
+  /* --- Responsive Adjustments (hero uses padding/min-height) --- */
+  @media (max-width: 1199.98px) {
+    .hero-section {
+      padding: 100px 0;
+      min-height: 440px;
+
+      .hero-title { font-size: 2.8rem; }
+      .hero-subtitle { font-size: 1.3rem; }
+    }
+
+    .intro-section, .services-section, .process-section, .value-section {
+      padding: 80px 0; margin-bottom: 60px;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .hero-section {
+      padding: 90px 0;
+      min-height: 420px;
+
+      .hero-title { font-size: 2.4rem; }
+    }
+
+    .intro-section, .services-section, .process-section, .value-section {
+      padding: 70px 0; margin-bottom: 50px;
+    }
+
+    .process-timeline {
+      &::before { left: 45px; }
+      .process-step {
+        padding-left: 80px;
+        .step-number { width: 50px; height: 50px; font-size: 1.3rem; }
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .hero-section {
+      padding: 80px 0;
+      min-height: 380px;
+
+      .hero-title { font-size: 2rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+    }
+
+    .section-title { font-size: 1.8rem; &::after { bottom: -8px; height: 3px; } }
+
+    .intro-section, .services-section, .process-section, .value-section {
+      padding: 60px 0; margin-bottom: 40px;
+    }
+
+    .process-timeline {
+      &::before { left: 30px; }
+      .process-step {
+        padding-left: 60px; margin-bottom: 30px;
+        .step-number { width: 40px; height: 40px; font-size: 1.1rem; }
+        .step-content { padding: 20px; }
+      }
+    }
+
+    .value-list li { padding: 12px; span { font-size: 1rem; } }
+  }
+
+  @media (max-width: 575.98px) {
+    .hero-section {
+      padding: 70px 0;
+      min-height: 340px;
+
+      .hero-title { font-size: 1.8rem; }
+    }
+
+    .intro-section, .services-section, .process-section, .value-section {
+      padding: 50px 0; margin-bottom: 30px;
+    }
+
+    .process-timeline {
+      &::before { display: none; }
+      .process-step {
+        padding-left: 0; text-align: center;
+        .step-number { position: relative; margin: 0 auto 15px; }
+        .step-content { background: transparent; box-shadow: none; padding: 0; }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero-section {
+      padding: 60px 0;
+      min-height: 320px;
+
+      .hero-title { font-size: 1.6rem; }
+      .hero-subtitle { font-size: 1rem; }
+    }
+  }
+}

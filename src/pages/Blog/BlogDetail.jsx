@@ -1,0 +1,110 @@
+// BlogDetail.jsx
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import FAQ from '../../components/sections/FAQ';
+import CTA from '../../components/sections/CTA';
+import './BlogDetail.scss';
+
+const BlogDetail = () => {
+  const location = useLocation();
+  const { blog } = location.state || {};
+
+  if (!blog) {
+    return <div>Blog post not found</div>;
+  }
+
+  // Function to render content based on type
+  const renderContent = (item, index) => {
+    switch (item.type) {
+      case 'h2':
+        return <h2 key={index} className="blog-content-h2">{item.text}</h2>;
+      case 'h3':
+        return <h3 key={index} className="blog-content-h3">{item.text}</h3>;
+      case 'p':
+        return <p key={index} className="blog-content-p">{item.text}</p>;
+      case 'list':
+        return (
+          <ul key={index} className="blog-content-list">
+            {item.items.map((listItem, i) => (
+              <li key={i}>{listItem}</li>
+            ))}
+          </ul>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="blog-detail">
+      <Container>
+        <Row className="justify-content-center">
+          <Col lg={8}>
+            <motion.article
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Blog Header */}
+              <div className="blog-header">
+                <div className="blog-meta">
+                  <span className="blog-date">{blog.date}</span>
+                  <span className="blog-read-time">{blog.readTime}</span>
+                  <span className="blog-category">{blog.category}</span>
+                </div>
+                <h1 className="blog-title">{blog.title}</h1>
+                <div className="blog-tags">
+                  {blog.tags.map((tag, index) => (
+                    <span key={index} className="blog-tag">#{tag}</span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Featured Image */}
+              {blog.featuredImage && (
+                <div className="blog-featured-image">
+                  <img src={blog.featuredImage} alt={blog.title} />
+                </div>
+              )}
+
+              {/* Blog Content */}
+              <div className="blog-content">
+                {blog.content.map((item, index) => renderContent(item, index))}
+              </div>
+
+              {/* FAQ Section */}
+              {blog.faqs && blog.faqs.length > 0 && (
+                <div className="blog-faq-section">
+                  <FAQ 
+                    faqs={blog.faqs} 
+                    title="Frequently Asked Questions"
+                    themeColor="#4361ee"
+                  />
+                </div>
+              )}
+              
+              {/* CTA Section */}
+              {blog.cta && (
+                <div className="blog-cta-section">
+                  <CTA
+                    title={blog.cta.title}
+                    description={blog.cta.description}
+                    buttonText={blog.cta.buttonText}
+                    buttonLink={blog.cta.buttonLink}
+                    backgroundColor="primary"
+                    textColor="white"
+                    buttonVariant="light"
+                  />
+                </div>
+              )}
+            </motion.article>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+};
+
+export default BlogDetail;
