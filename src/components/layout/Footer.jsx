@@ -29,7 +29,7 @@ export default function Footer() {
             >
               <h5 className="mb-3">Quick Links</h5>
               <ul className="list-unstyled">
-                <li className="mb-2"><a href="/about" className="text-white">About Us</a></li>
+                <li className="mb-2"><a href="/who-we-are" className="text-white">About Us</a></li>
                 <li className="mb-2"><a href="/services" className="text-white">Services</a></li>
                 <li className="mb-2"><a href="/yardi-consulting" className="text-white">Yardi Consulting</a></li>
                 <li className="mb-2"><a href="/contact" className="text-white">Contact</a></li>
