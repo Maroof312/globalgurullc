@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"  # Change to 20 for Vite compatibility
   NODE_OPTIONS = "--max_old_space_size=4096"
+  SECRETS_SCAN_ENABLED = "false"
 
 [[redirects]]
   from = "/*"
