@@ -28,35 +28,6 @@ export default function Experts() {
                 </p>
               </motion.div>
             </Col>
-            <Col lg={6}>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="hero-visual"
-              >
-                <div className="floating-cards">
-                  <div className="card-item card-1">
-                    <div className="card-content">
-                      <div className="card-icon">💼</div>
-                      <h4>Experience</h4>
-                    </div>
-                  </div>
-                  <div className="card-item card-2">
-                    <div className="card-content">
-                      <div className="card-icon">🚀</div>
-                      <h4>Innovation</h4>
-                    </div>
-                  </div>
-                  <div className="card-item card-3">
-                    <div className="card-content">
-                      <div className="card-icon">🌍</div>
-                      <h4>Global Reach</h4>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </Col>
           </Row>
         </Container>
       </section>
@@ -64,23 +35,6 @@ export default function Experts() {
       {/* Team Section */}
       <section className="team-display">
         <Container>
-          {/* <Row className="justify-content-center">
-            <Col lg={8} className="text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true }}
-                className="section-intro"
-              >
-                <h2 className="section-title">Our Leadership Team</h2>
-                <p className="section-description">
-                  Get to know the experts who are transforming industries with their 
-                  knowledge and innovative approach to problem-solving.
-                </p>
-              </motion.div>
-            </Col>
-          </Row> */}
           <TeamMembers variant="team" />
         </Container>
       </section>

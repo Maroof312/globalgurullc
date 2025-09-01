@@ -369,6 +369,20 @@
     }
   }
 
+  @media (max-width: 650px) {
+    /* Ensure all p tags are left-aligned on screens below 650px */
+    h1 {
+      text-align: left !important;
+    }
+    p {
+      text-align: left !important;
+    }
+    
+    .section-description {
+      text-align: left !important;
+    }
+  }
+
   @media (max-width: 575.98px) {
     .hero-section {
       padding: 70px 0;
