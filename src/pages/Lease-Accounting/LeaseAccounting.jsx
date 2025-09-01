@@ -159,7 +159,11 @@ const LeaseAccounting = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
                 <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Lease Administration Services</h4>
-                <h1 className="title display-5 fw-bold mb-4">ASC 842 & IFRS 16 compliant solutions for accurate lease portfolio management</h1>
+                <h1 className="title display-5 fw-bold mb-4">Turn Your Leases Into Assets, Not Headaches</h1>
+                <p className='section-text'>
+                  Behind every property portfolio lies a stack of leases. Some are simple, others read like novels — full of deadlines, escalations, and hidden clauses. Managing them is not just about filing paperwork. It is about protecting your investment, keeping tenants happy, and making sure no dollar is left on the table.
+At Global Guru Solution, our lease administration services are built to do just that. We help property owners and managers transform their leases from static documents into living assets that create value every single day.
+                </p>
                 <ul className="benefits-list ps-0">
                   <li>Preparation and delivery of comprehensive lease reports</li>
                   <li>Thorough review of lease agreements and supporting documents</li>

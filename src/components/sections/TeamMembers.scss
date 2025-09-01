@@ -225,7 +225,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1000;
+      z-index: 1050;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -254,8 +254,8 @@
         
         .close-btn {
           position: absolute;
-          top: 20px;
-          right: 20px;
+          top: 15px;
+          right: 15px;
           width: 40px;
           height: 40px;
           border-radius: 50%;
@@ -265,7 +265,7 @@
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          z-index: 10;
+          z-index: 1060;
           transition: all 0.3s ease;
           
           &:hover {
@@ -287,10 +287,12 @@
           .detail-avatar {
             flex-shrink: 0;
             margin-bottom: 30px;
+            text-align: center;
             
             @media (min-width: 992px) {
               margin-right: 40px;
               margin-bottom: 0;
+              text-align: left;
             }
             
             img {
@@ -306,6 +308,17 @@
                 width: 150px;
                 height: 150px;
               }
+              
+              @media (max-width: 576px) {
+                width: 120px;
+                height: 120px;
+              }
+              
+              @media (max-width: 400px) {
+                width: 100px;
+                height: 100px;
+                border-width: 3px;
+              }
             }
           }
           
@@ -317,9 +330,23 @@
               margin-bottom: 5px;
               color: #212529;
               font-weight: 700;
+              text-align: center;
               
-              @media (max-width: 767px) {
+              @media (min-width: 992px) {
+                text-align: left;
+              }
+              
+              @media (max-width: 991px) {
                 font-size: 1.6rem;
+                text-align: center;
+              }
+              
+              @media (max-width: 576px) {
+                font-size: 1.4rem;
+              }
+              
+              @media (max-width: 400px) {
+                font-size: 1.3rem;
               }
             }
             
@@ -328,9 +355,23 @@
               font-weight: 600;
               font-size: 1.2rem;
               margin-bottom: 25px;
+              text-align: center;
               
-              @media (max-width: 767px) {
+              @media (min-width: 992px) {
+                text-align: left;
+              }
+              
+              @media (max-width: 991px) {
                 font-size: 1.1rem;
+                text-align: center;
+              }
+              
+              @media (max-width: 576px) {
+                font-size: 1rem;
+              }
+              
+              @media (max-width: 400px) {
+                font-size: 0.95rem;
               }
             }
             
@@ -342,21 +383,39 @@
                 margin-bottom: 12px;
                 color: #495057;
                 font-weight: 600;
+                
+                @media (max-width: 576px) {
+                  font-size: 1rem;
+                }
+                
+                @media (max-width: 400px) {
+                  font-size: 0.95rem;
+                }
               }
               
               .specialty-tags {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 10px;
+                gap: 8px;
                 
                 .specialty-tag {
                   background: #f8f9fa;
-                  padding: 6px 14px;
+                  padding: 6px 12px;
                   border-radius: 20px;
                   font-size: 0.85rem;
                   font-weight: 500;
                   color: #495057;
                   border: 1px solid #e9ecef;
+                  
+                  @media (max-width: 576px) {
+                    font-size: 0.8rem;
+                    padding: 5px 10px;
+                  }
+                  
+                  @media (max-width: 400px) {
+                    font-size: 0.75rem;
+                    padding: 4px 8px;
+                  }
                 }
               }
             }
@@ -367,12 +426,29 @@
                 margin-bottom: 12px;
                 color: #495057;
                 font-weight: 600;
+                
+                @media (max-width: 576px) {
+                  font-size: 1rem;
+                }
+                
+                @media (max-width: 400px) {
+                  font-size: 0.95rem;
+                }
               }
               
               .detail-bio {
                 color: #6c757d;
                 line-height: 1.7;
                 font-size: 1rem;
+                
+                @media (max-width: 576px) {
+                  font-size: 0.95rem;
+                  line-height: 1.6;
+                }
+                
+                @media (max-width: 400px) {
+                  font-size: 0.9rem;
+                }
               }
             }
           }
@@ -382,7 +458,44 @@
   }
 }
 
-// Responsive adjustments
+// Responsive adjustments for overlay
+@media (max-width: 991px) {
+  .team-section.team-team {
+    .team-detail-overlay {
+      padding: 15px;
+      
+      .detail-container {
+        max-height: 85vh;
+        margin-top: 60px; // Add space for mobile header
+        
+        .detail-content {
+          padding: 30px 25px;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          
+          .detail-avatar {
+            margin-right: 0;
+            margin-bottom: 25px;
+          }
+          
+          .detail-info {
+            text-align: center;
+            
+            h2, .detail-role {
+              text-align: center;
+            }
+            
+            .specialty-tags {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .team-section {
     &.team-about {
@@ -393,16 +506,14 @@
       }
     }
   }
-}
-
-@media (max-width: 576px) {
+  
   .team-section.team-team {
     .team-detail-overlay {
       padding: 10px;
       
       .detail-container {
         .detail-content {
-          padding: 30px 20px;
+          padding: 25px 20px;
           
           .detail-info {
             h2 {
@@ -411,6 +522,193 @@
             
             .detail-role {
               font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .team-section.team-team {
+    .team-detail-overlay {
+      padding: 8px;
+      
+      .detail-container {
+        border-radius: 16px;
+        max-height: 82vh;
+        margin-top: 50px;
+        
+        .close-btn {
+          top: 10px;
+          right: 10px;
+          width: 35px;
+          height: 35px;
+        }
+        
+        .detail-content {
+          padding: 20px 15px;
+          
+          .detail-avatar {
+            margin-bottom: 20px;
+          }
+          
+          .detail-info {
+            h2 {
+              font-size: 1.3rem;
+            }
+            
+            .detail-role {
+              font-size: 0.95rem;
+              margin-bottom: 20px;
+            }
+            
+            .specialties {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .team-section.team-team {
+    .team-detail-overlay {
+      padding: 5px;
+      
+      .detail-container {
+        border-radius: 14px;
+        max-height: 80vh;
+        margin-top: 45px;
+        
+        .close-btn {
+          top: 8px;
+          right: 8px;
+          width: 30px;
+          height: 30px;
+          
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+        
+        .detail-content {
+          padding: 18px 12px;
+          
+          .detail-avatar {
+            margin-bottom: 15px;
+          }
+          
+          .detail-info {
+            h2 {
+              font-size: 1.2rem;
+            }
+            
+            .detail-role {
+              font-size: 0.9rem;
+              margin-bottom: 15px;
+            }
+            
+            .specialties {
+              margin-bottom: 15px;
+              
+              h4 {
+                margin-bottom: 10px;
+              }
+            }
+            
+            .bio-section {
+              h4 {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .team-section.team-team {
+    .team-detail-overlay {
+      .detail-container {
+        margin-top: 40px;
+        max-height: 78vh;
+        
+        .detail-content {
+          padding: 15px 10px;
+          
+          .detail-info {
+            h2 {
+              font-size: 1.1rem;
+            }
+            
+            .detail-role {
+              font-size: 0.85rem;
+            }
+            
+            .specialty-tags {
+              gap: 6px;
+              
+              .specialty-tag {
+                font-size: 0.7rem;
+                padding: 3px 6px;
+              }
+            }
+            
+            .detail-bio {
+              font-size: 0.85rem;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .team-section.team-team {
+    .team-detail-overlay {
+      .detail-container {
+        margin-top: 35px;
+        max-height: 75vh;
+        
+        .detail-content {
+          padding: 12px 8px;
+          
+          .detail-avatar {
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          
+          .detail-info {
+            h2 {
+              font-size: 1rem;
+            }
+            
+            .detail-role {
+              font-size: 0.8rem;
+            }
+            
+            .specialty-tags {
+              justify-content: center;
+              
+              .specialty-tag {
+                font-size: 0.65rem;
+                padding: 2px 5px;
+              }
+            }
+            
+            .detail-bio {
+              font-size: 0.8rem;
             }
           }
         }
