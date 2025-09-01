@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button, Badge, Card } from 'react-bootstrap';
+import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import yardiBanner from '../../assets/images/yardi.avif';
 import Testimonials from '../../components/sections/Testimonials';
@@ -10,20 +10,16 @@ import './YardiConsulting.scss';
 const YardiConsulting = () => {
   const faqs = [
     {
-      question: "What is included in Yardi consultation?",
-      answer: "Our Yardi consultation includes system setup, module optimization, data migration, reporting, staff training, and ongoing support. We tailor each engagement to the specific needs of your real estate business."
+      question: "Do you provide Yardi implementation services?",
+      answer: "Yes. Our team has extensive hands on experience implementing Yardi for real estate companies. We configure modules, set up workflows, and design reporting dashboards that optimize daily operations."
     },
     {
-      question: "Can you fix or optimize our current Yardi setup?",
-      answer: "Yes. Many of our clients come to us with a system that is already live but not working as it should. We audit your configuration, identify bottlenecks, and implement fixes that improve usability and performance."
+      question: "Can you train my staff on Yardi property accounting?",
+      answer: "Absolutely. We provide customized Yardi training for property managers, accountants, and finance staff. Our goal is to help your team use Yardi to its full potential."
     },
     {
-      question: "Are your Yardi services available remotely?",
-      answer: "Yes. Our Yardi services in USA are offered remotely or onsite depending on your preference. We use secure tools and collaborative platforms to deliver fast and effective service no matter where you are based."
-    },
-    {
-      question: "Do you provide support after implementation?",
-      answer: "Absolutely. Our team offers ongoing support packages that include reporting help, new feature training, module updates, and on-demand guidance from expert Yardi consultants."
+      question: "What makes your Yardi expertise stand out?",
+      answer: "Our Yardi experts go beyond system setup. We help clients unlock advanced features, build customized reports, and optimize usage to improve productivity, compliance, and financial decision making."
     }
   ];
 
@@ -46,7 +42,7 @@ const YardiConsulting = () => {
                 transition={{ duration: 0.6 }}
                 className="hero-content"
               >
-                <Badge bg="light" text="dark" className="mb-3">
+                <Badge bg="light" text="dark" className="mb-1">
                   Yardi Specialist
                 </Badge>
                 <h1 className="hero-title">End-to-End Yardi Consultation Services for Real Estate Success</h1>
@@ -60,7 +56,7 @@ const YardiConsulting = () => {
                     variant="primary" 
                     size="lg" 
                     href="/contact"
-                    className="me-3"
+                    className="me-3 mb-2 mb-md-0"
                   >
                     Request Consultation
                   </Button>
@@ -79,7 +75,7 @@ const YardiConsulting = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="why-choose-section">
+      <section className="why-choose-section py-5">
         <Container>
           <Row className="justify-content-center mb-5">
             <Col lg={10} className="text-center">
@@ -123,7 +119,7 @@ const YardiConsulting = () => {
       </section>
 
       {/* Comprehensive Services Section */}
-      <section id="services" className="services-section">
+      <section id="services" className="services-section py-5">
         <Container>
           <Row className="justify-content-center mb-5">
             <Col lg={10} className="text-center">
@@ -142,11 +138,11 @@ const YardiConsulting = () => {
           </Row>
 
           <Row className="g-4">
-            <Col lg={6}>
+            <Col md={6} lg={6}>
               <motion.div
                 className="service-card"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
                 <h3>Yardi Implementation Support</h3>
@@ -157,12 +153,12 @@ const YardiConsulting = () => {
                 </p>
               </motion.div>
             </Col>
-            <Col lg={6}>
+            <Col md={6} lg={6}>
               <motion.div
                 className="service-card"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
               >
                 <h3>Data Migration and Integration</h3>
                 <p>
@@ -172,12 +168,12 @@ const YardiConsulting = () => {
                 </p>
               </motion.div>
             </Col>
-            <Col lg={6}>
+            <Col md={6} lg={6}>
               <motion.div
                 className="service-card"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <h3>Reporting and Analytics</h3>
                 <p>
@@ -187,12 +183,12 @@ const YardiConsulting = () => {
                 </p>
               </motion.div>
             </Col>
-            <Col lg={6}>
+            <Col md={6} lg={6}>
               <motion.div
                 className="service-card"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <h3>System Audits and Optimization</h3>
                 <p>
@@ -207,7 +203,7 @@ const YardiConsulting = () => {
       </section>
 
       {/* Supported Modules Section */}
-      <section className="modules-section">
+      <section className="modules-section py-5">
         <Container>
           <Row className="justify-content-center mb-5">
             <Col lg={10} className="text-center">
@@ -234,7 +230,7 @@ const YardiConsulting = () => {
               "Yardi Budgeting and Forecasting",
               "Construction and Job Cost Modules"
             ].map((module, index) => (
-              <Col md={6} lg={4} key={index}>
+              <Col xs={12} sm={6} md={6} lg={4} key={index}>
                 <motion.div
                   className="module-card"
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -250,7 +246,7 @@ const YardiConsulting = () => {
       </section>
 
       {/* Who We Help Section */}
-      <section className="clients-section">
+      <section className="clients-section py-5">
         <Container>
           <Row className="justify-content-center mb-5">
             <Col lg={10} className="text-center">
@@ -276,7 +272,7 @@ const YardiConsulting = () => {
               "Mixed-use developers",
               "REITs and private equity firms"
             ].map((client, index) => (
-              <Col sm={6} md={4} key={index}>
+              <Col xs={12} sm={6} md={6} lg={4} key={index}>
                 <motion.div
                   className="client-card"
                   initial={{ opacity: 0, y: 30 }}
@@ -292,7 +288,7 @@ const YardiConsulting = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="benefits-section">
+      <section className="benefits-section py-5">
         <Container>
           <Row className="justify-content-center mb-5">
             <Col lg={10} className="text-center">
@@ -318,7 +314,7 @@ const YardiConsulting = () => {
               "Better team alignment through customized user roles",
               "Improved data accuracy and system-wide consistency"
             ].map((benefit, index) => (
-              <Col md={6} lg={4} key={index}>
+              <Col xs={12} sm={6} md={6} lg={4} key={index}>
                 <motion.div
                   className="benefit-item"
                   initial={{ opacity: 0, y: 30 }}
@@ -338,7 +334,7 @@ const YardiConsulting = () => {
       <Testimonials />
 
       {/* FAQ Section */}
-      <section className="faq-section">
+      <section className="faq-section py-5">
         <Container>
           <FAQ 
             faqs={faqs} 
@@ -350,17 +346,17 @@ const YardiConsulting = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
+      <section className="cta-section py-5">
         <Container>
           <Row className="align-items-center">
-            <Col md={8}>
+            <Col md={8} className="text-center text-md-start mb-4 mb-md-0">
               <h2>Ready to transform your Yardi experience?</h2>
               <p>
                 Our certified consultants are ready to help you get the most out of 
                 your Yardi investment with a free initial assessment.
               </p>
             </Col>
-            <Col md={4} className="text-md-end mt-4 mt-md-0">
+            <Col md={4} className="text-center text-md-end">
               <Button 
                 variant="primary" 
                 size="lg" 

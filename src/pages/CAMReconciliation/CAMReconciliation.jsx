@@ -7,14 +7,8 @@ import './CAMReconciliation.scss';
 import ContactForm from '../../components/forms/ContactForm';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
-// Import all difference icons
-import techSupport from '../../assets/images/technical-support.webp';
-import saveMoney from '../../assets/images/save-money.webp';
-import priceUp from '../../assets/images/price-up.webp';
-import profits from '../../assets/images/profits.webp';
-import diagram from '../../assets/images/diagram.webp';
-import tablet from '../../assets/images/tablet.webp';
-import switchIcon from '../../assets/images/switch.webp';
+import DifferenceSection from '../../components/sections/DifferenceSection';
+
 // Other images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import appVector from '../../assets/images/app-form-vector.webp';
@@ -46,32 +40,18 @@ const CAMReconciliation = () => {
     }
   ];
 
-  const differenceItems = [
-    { icon: techSupport, text: 'Reduce Employee Turnover Rate' },
-    { icon: saveMoney, text: '50% Average Payroll Savings' },
-    { icon: priceUp, text: 'Greater ROI' },
-    { icon: profits, text: 'Higher Accuracy' },
-    { icon: diagram, text: 'Increased Capacity' },
-    { icon: tablet, text: '100% Shared Vision' },
-    { icon: switchIcon, text: 'Real Time Shift Patterns' }
-  ];
-
   const camFAQs = [
     {
-      question: "What is CAM reconciliation, and who needs it?",
-      answer: "CAM reconciliation is the process of reviewing Common Area Maintenance charges billed by landlords to tenants. It's essential for both tenants (to avoid overpaying) and landlords (to ensure compliance and transparency)."
+      question: "How many CAM reconciliations has your team completed?",
+      answer: "Our team has completed more than 10,000 CAM reconciliations across the United States, establishing our reputation as trusted CAM reconciliation experts."
     },
     {
-      question: "What's the difference between CAM reconciliation and a CAM audit?",
-      answer: "A reconciliation reviews charges for a specific period against lease terms. A CAM audit is deeper, often looking back multiple years to identify patterns, errors, and systemic overcharges."
+      question: "What are the benefits of outsourcing CAM reconciliations?",
+      answer: "Outsourcing CAM reconciliations ensures accurate expense allocation, reduces tenant disputes, improves financial transparency, and saves time for internal teams. Our clients benefit from error-free reconciliations that strengthen tenant relationships."
     },
     {
-      question: "Do you offer CAM reconciliation for retail, office, and industrial leases?",
-      answer: "Yes. Our team has experience across all commercial real estate types. We tailor every CAM reconciliation service to the specific lease structure and property type involved."
-    },
-    {
-      question: "What if your audit uncovers major discrepancies?",
-      answer: "We provide complete documentation and, if needed, support your communications with landlords or legal teams to seek a resolution. Our goal is to protect your interests."
+      question: "How do you handle tenant disputes related to CAM reconciliations?",
+      answer: "We prepare tenant-ready reconciliations with clear supporting documentation. This reduces disputes, prevents misunderstandings, and ensures compliance with lease terms. "
     }
   ];
 
@@ -511,54 +491,8 @@ const CAMReconciliation = () => {
       </section>
 
       {/* Difference Section */}
-      <section className="difference-section py-5 bg-light">
-        <Container>
-          <h2 className="section-title text-center display-6 fw-bold mb-5">To Make A Difference</h2>
-          
-          <div className="d-none d-lg-flex justify-content-center">
-            <div className="difference-container">
-              {differenceItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="difference-item bg-white rounded shadow-sm text-center"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <div className="difference-icon mb-3">
-                    <img src={item.icon} alt={item.text} loading="lazy" className="img-fluid" style={{ height: '50px' }} />
-                  </div>
-                  <p className="mb-0 fw-medium">{item.text}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+      <DifferenceSection/>
 
-          <div className="d-lg-none">
-            <Swiper
-              modules={[Autoplay]}
-              slidesPerView={2}
-              spaceBetween={20}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
-              breakpoints={{
-                576: { slidesPerView: 2 }
-              }}
-            >
-              {differenceItems.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div className="difference-item h-100 p-3 bg-white rounded shadow-sm text-center">
-                    <div className="difference-icon mb-3">
-                      <img src={item.icon} alt={item.text} loading="lazy" className="img-fluid" style={{ height: '50px' }} />
-                    </div>
-                    <p className="mb-0 fw-medium">{item.text}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </Container>
-      </section>
       {/* CTA Section */}
       <CTA
         title="Start Your CAM Reconciliation Today with Confidence"

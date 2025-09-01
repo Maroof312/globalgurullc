@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import team1 from '../../assets/images/Shishupal.avif'
 import team2 from '../../assets/images/person.webp'
 import team3 from '../../assets/images/Yug.webp'
-import team4 from '../../assets/images/Lija-1.avif'
+import team4 from '../../assets/images/lija.webp'
 import './TeamMembers.scss'
 
 const team = [

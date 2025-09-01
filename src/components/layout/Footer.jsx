@@ -48,7 +48,7 @@ export default function Footer() {
               <h5 className="mb-3">Contact Info</h5>
               <address>
                 <p className="mb-2"><i className="bi bi-geo-alt me-2"></i> 18530, Holden Drive, Spring Hill, Florida 34610 </p>
-                <p className="mb-2"><i className="bi bi-phone me-2"></i> 845-497-6474</p>
+                <p className="mb-2"><i className="bi bi-phone me-2"></i> +1 845-497-6474</p>
                 <p className="mb-2"><i className="bi bi-envelope me-2"></i> info@globalgurullc.com </p>
               </address>
             </motion.div>

@@ -1,30 +1,33 @@
-import { Container, Row, Col, Carousel } from 'react-bootstrap'
-import { motion } from 'framer-motion'
-// import testimonial1 from '../../assets/images/testimonials-1.webp'
-// import testimonial2 from '../../assets/images/testimonials-2.webp'
-// import testimonial3 from '../../assets/images/testimonials-3.webp'
-import './Testimonials.scss'
+import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { motion } from "framer-motion";
+import "./Testimonials.scss";
 
 const testimonials = [
   {
+    name: "Director of Property Management",
+    role: "NYC Real Estate Firm",
+    content:
+      "Partnering with Global Guru Solution has been a game-changer for our portfolio. Their team has handled thousands of CAM reconciliations with precision and accuracy, saving us both time and unnecessary disputes. We've seen a noticeable boost in efficiency and peace of mind knowing deadlines are never missed",
+  },
+  {
     name: "CFO",
-    role: "Property operations",
-    content: "Global Guru transformed our business operations completely. Their strategic insights helped us increase revenue by 40% in just six months.",
-    // avatar: testimonial1
+    role: "National Commercial Real Estate Company",
+    content:
+      "We were struggling with backlogs in our lease accounting and CAM reconciliations. Global Guru's team stepped in seamlessly, managing over 10,000 CAM recs for us while reducing payroll costs significantly. Their professionalism and responsiveness make them an invaluable extension of our team.",
   },
   {
-    name: "Property Manager",
-    role: "",
-    content: "The team's expertise in financial consulting is unmatched. They identified cost-saving opportunities we never would have found on our own.",
-    // avatar: testimonial2
+    name: "Managing Partner",
+    role: "Commercial Property Investment Group",
+    content:
+      "Global Guru Solution has transformed how we manage our real estate finances. With their expertise, our accounting department is leaner, more productive, and completely reliable. The cost savings and accuracy we've gained with their services far exceed our expectations.",
   },
   {
-    name: "CEO",
-    role: "Property Services",
-    content: "Our marketing strategy was completely revamped by Global Guru. The results have been phenomenal with a 300% increase in lead generation.",
-    // avatar: testimonial3
-  }
-]
+    name: "Controller",
+    role: "California Real Estate Firm",
+    content:
+      "Working with Global Guru Solution has completely optimized our accounting operations. Their expertise in AR/AP, bank reconciliations, and full end-to-end property accounting has given us accuracy and peace of mind. What impressed us most was their proficiency with Yardi – they not only managed our system seamlessly but also helped us maximize its reporting capabilities. The result: streamlined processes, cost savings, and faster decision-making across our portfolio.",
+  },
+];
 
 export default function Testimonials() {
   return (
@@ -57,19 +60,15 @@ export default function Testimonials() {
                     className="testimonial-item"
                   >
                     <div className="testimonial-content">
-                      <p className="testimonial-text">"{testimonial.content}"</p>
+                      <p className="testimonial-text">
+                        "{testimonial.content}"
+                      </p>
                       <div className="testimonial-author">
-                        {/* <img 
-                          src={testimonial.avatar} 
-                          alt={testimonial.name}
-                          width={60}
-                          height={60}
-                          loading=  "lazy"
-                          className="rounded-circle"
-                        /> */}
                         <div>
                           <h5 className="mb-0">{testimonial.name}</h5>
-                          <small className="text-muted">{testimonial.role}</small>
+                          <small className="text-muted">
+                            {testimonial.role}
+                          </small>
                         </div>
                       </div>
                     </div>
@@ -81,5 +80,5 @@ export default function Testimonials() {
         </Row>
       </Container>
     </section>
-  )
+  );
 }

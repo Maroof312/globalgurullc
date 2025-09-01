@@ -1,20 +1,20 @@
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import missionSection from '../../assets/images/accounting-new.webp';
-import './Mission.scss';
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import missionSection from "../../assets/images/accounting-new.webp";
+import "./Mission.scss";
 
 export default function MissionSection() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
 
@@ -23,8 +23,8 @@ export default function MissionSection() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: [0.16, 0.77, 0.47, 0.97] }
-    }
+      transition: { duration: 0.8, ease: [0.16, 0.77, 0.47, 0.97] },
+    },
   };
 
   return (
@@ -32,7 +32,7 @@ export default function MissionSection() {
       <Container fluid className="px-0">
         <Row className="g-0 align-items-stretch">
           <Col lg={6} className="order-lg-2">
-            <motion.div 
+            <motion.div
               className="mission-image-wrapper"
               initial="hidden"
               animate={controls}
@@ -61,26 +61,29 @@ export default function MissionSection() {
             >
               <div className="section-label">Our Purpose</div>
               <h2>
-                <span className="text-gradient">Redefining</span> Commercial Real 
-                <br />Estate Accounting
+                <span className="text-gradient">Redefining</span> Commercial
+                Real
+                <br />
+                Estate Accounting
               </h2>
-              
+
               <div className="mission-divider"></div>
-              
+
               <div className="mission-text">
                 <p className="lead">
-                  At Global Guru LLC, we transform commercial real estate accounting
-                  through specialized outsourcing solutions that enhance accuracy
-                  and operational efficiency.
+                  At Global Guru LLC, we transform commercial real estate
+                  accounting through specialized outsourcing solutions that
+                  enhance accuracy and operational efficiency.
                 </p>
                 <p>
-                  Our team delivers comprehensive financial management services
-                  tailored to the unique needs of property owners and investors.
+                  Our team delivers comprehensive accounting services tailored
+                  to the unique needs of property owners and investors.
                 </p>
                 <div className="highlight-box">
-                  We combine industry-specific expertise with robust technology
-                  to provide real-time financial insights while ensuring
-                  uncompromised data security.
+                  We specialize in accounting outsourcing for commercial real
+                  estate companies, combining deep industry expertise with
+                  advanced technology to deliver accurate, real-time financial
+                  insights and ensure the highest standards of data security.
                 </div>
                 <p>
                   Partner with us to streamline your back-office operations,

@@ -38,6 +38,41 @@ const LeaseAccounting = () => {
     }
   ];
 
+  // New "What We Bring To The Table" services
+  const whatWeOffer = [
+  {
+    icon: 'bi-file-earmark-text', // icon suggestion for abstraction
+    title: 'Lease Abstraction',
+    description: 'Extract key lease terms—like dates, rent schedules, and renewal clauses—into clear, actionable summaries that save time, support strategic decisions, and enhance efficiency.'
+  },
+  {
+    icon: 'bi-search', // appropriate for due diligence
+    title: 'Due Diligence',
+    description: 'Ensure every lease document is complete and accurate—minimizing legal risks, preventing surprises, and fostering trustworthy lease portfolios through meticulous verification.'
+  },
+  {
+    icon: 'bi-cloud-arrow-up', // data migration
+    title: 'Lease Data Migration',
+    description: 'Seamlessly migrate lease information between systems—preserving data integrity and reducing transition downtime, so your team can stay focused on operations.'
+  },
+  {
+    icon: 'bi-calculator', // CAM reconciliation
+    title: 'CAM Reconciliation',
+    description: 'Review and reconcile Common Area Maintenance charges—detecting discrepancies and ensuring accuracy to prevent overpayments and improve cash flow control.'
+  },
+  {
+    icon: 'bi-eyeglasses', // audit services
+    title: 'Lease Audit Services',
+    description: 'Identify financial or operational inconsistencies across your lease portfolio—helping uncover savings, enforce compliance, and optimize asset value.'
+  },
+  {
+    icon: 'bi-globe', // multilingual leases
+    title: 'Multilingual Leases',
+    description: 'Handle leases in multiple languages with precision—bridging linguistic barriers accurately so global lease operations remain consistent and secure.'
+  }
+];
+
+
   const differenceItems = [
     { icon: 'bi-check-circle', text: 'ASC 842 & IFRS 16 Compliance' },
     { icon: 'bi-currency-dollar', text: 'Reduced Implementation Costs' },
@@ -83,20 +118,16 @@ const LeaseAccounting = () => {
 
   const faqs = [
     {
-      question: "What is lease admin/accounting and why is it important?",
-      answer: "Lease admin/accounting includes managing lease agreements, payment schedules, compliance requirements, and financial reporting. Accurate administration prevents disputes, reduces costs, and supports compliance with accounting regulations like ASC 842."
+      question: "What does your lease administration service cover?",
+      answer: "Our lease administration services include lease abstraction, tracking, and monitoring of critical lease terms, renewals, rent escalations, and compliance deadlines. We help reduce risk, avoid missed deadlines, and ensure landlords and tenants are always aligned."
     },
     {
-      question: "What types of leases can you manage?",
-      answer: "We support all lease types including commercial real estate, equipment, office spaces, retail locations, and industrial warehouses. Our services are scalable for companies with small or large portfolios."
+      question: "How do you handle multilingual lease administration?",
+      answer: "Our team provides multilingual lease abstraction and review, making sure important lease obligations are clear and accurate in every language. This ensures global investors and tenants can operate with full transparency."
     },
     {
-      question: "Do you offer support for lease accounting compliance?",
-      answer: "Yes. We help clients meet the requirements of ASC 842, IFRS 16, and GASB 87 by preparing calculations and disclosures needed for audit-ready financial reporting."
-    },
-    {
-      question: "Can you manage leases in different languages?",
-      answer: "Absolutely. Our lease admin and multi-lingual abstraction services include support for major global languages to ensure consistency across international lease portfolios."
+      question: "Do you support lease due diligence during acquisitions?",
+      answer: "Yes. We provide complete lease audits and due diligence services during acquisitions or mergers. Our lease administration experts validate lease data, identify risks, and ensure a smooth transition of assets."
     }
   ];
 
@@ -127,7 +158,7 @@ const LeaseAccounting = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
-                <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Lease Accounting Services</h4>
+                <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Lease Administration Services</h4>
                 <h1 className="title display-5 fw-bold mb-4">ASC 842 & IFRS 16 compliant solutions for accurate lease portfolio management</h1>
                 <ul className="benefits-list ps-0">
                   <li>Preparation and delivery of comprehensive lease reports</li>
@@ -204,37 +235,40 @@ const LeaseAccounting = () => {
         </Container>
       </section>
 
-      {/* Services Section */}
-      <section className="services-section py-5">
+      {/* What We Bring To The Table Section */}
+      <section className="what-we-offer-section py-5 bg-light">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="text-center mb-5"
           >
-            <h2 className="section-title text-center display-6 fw-bold mb-5">Our Lease Accounting Services</h2>
-            <p className="section-subtitle text-center mb-5 mx-auto">
-              Comprehensive solutions tailored to your unique lease portfolio requirements
+            <h2 className="section-title display-6 fw-bold mb-4">What We Bring To The Table</h2>
+            <p className="section-subtitle mx-auto mb-5" style={{maxWidth: '800px', fontSize: '1.1rem', color: '#64748b'}}>
+              A streamlined lease management process that keeps your team organized and your data clear, ensuring full compliance with lease obligations and delivering better outcomes through data-driven insights.
             </p>
           </motion.div>
           
+          {/* Desktop Grid View */}
           <Row className="d-none d-md-flex g-4">
-            {services.map((service, index) => (
-              <Col lg={3} key={index}>
+            {whatWeOffer.map((service, index) => (
+              <Col lg={4} md={6} key={index}>
                 <motion.div
-                  className="service-item bg-white h-100 p-4 rounded-3 shadow-sm text-center"
+                  className="what-we-offer-item bg-white h-100 p-4 rounded-3 shadow-sm"
                   initial={{ y: 50, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
-                  <div className="service-icon mb-4">
-                    <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
+                  <div className="d-flex align-items-start mb-3">
+                    <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 flex-shrink-0 me-3">
                       <i className={`bi ${service.icon} fs-2 text-primary`}></i>
                     </div>
+                    <h3 className="h5 fw-bold mb-0">{service.title}</h3>
                   </div>
-                  <h3 className="h5 fw-bold mb-3">{service.title}</h3>
                   <p className="mb-0 text-muted">{service.description}</p>
                 </motion.div>
               </Col>
@@ -252,15 +286,15 @@ const LeaseAccounting = () => {
                 576: { slidesPerView: 2 }
               }}
             >
-              {services.map((service, index) => (
+              {whatWeOffer.map((service, index) => (
                 <SwiperSlide key={index}>
-                  <div className="service-item h-100 p-4 bg-white rounded-3 shadow-sm text-center">
-                    <div className="service-icon mb-4">
-                      <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
+                  <div className="what-we-offer-item h-100 p-4 bg-white rounded-3 shadow-sm">
+                    <div className="d-flex align-items-start mb-3">
+                      <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 flex-shrink-0 me-3">
                         <i className={`bi ${service.icon} fs-2 text-primary`}></i>
                       </div>
+                      <h3 className="h5 fw-bold mb-0">{service.title}</h3>
                     </div>
-                    <h3 className="h5 fw-bold mb-3">{service.title}</h3>
                     <p className="mb-0 text-muted">{service.description}</p>
                   </div>
                 </SwiperSlide>
@@ -271,7 +305,7 @@ const LeaseAccounting = () => {
       </section>
 
       {/* Difference Section */}
-      <section className="difference-section py-5 bg-light">
+      <section className="difference-section py-5">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -333,7 +367,7 @@ const LeaseAccounting = () => {
       </section>
 
       {/* Compliance Section */}
-      <section className="compliance-section py-6">
+      <section className="compliance-section py-6 bg-light">
         <Container>
           <Row className="align-items-center g-4">
             <Col lg={5}>
@@ -376,7 +410,7 @@ const LeaseAccounting = () => {
       </section>
 
       {/* Lease Administration Services Section */}
-      <section className="lease-admin-section py-5 bg-light">
+      <section className="lease-admin-section py-5">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -397,7 +431,7 @@ const LeaseAccounting = () => {
       </section>
 
       {/* Comprehensive Lease Accounting Section */}
-      <section className="comprehensive-accounting-section py-5">
+      <section className="comprehensive-accounting-section py-5 bg-light">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -418,7 +452,7 @@ const LeaseAccounting = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="faq-section py-5 bg-light">
+      <section className="faq-section py-5">
         <Container>
           <FAQ 
             faqs={faqs}

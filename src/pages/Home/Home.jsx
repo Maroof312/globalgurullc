@@ -8,7 +8,7 @@ import DataExpertise from '../../components/sections/DataExpertise';
 import Testimonials from '../../components/sections/Testimonials';
 import CTA from '../../components/sections/CTA';
 import StatsCount from '../../components/sections/StatsCounter';
-// import QuantumSolutions from '../../components/sections/QuantumSolutions';
+import TMDifference from '../../components/sections/DifferenceSection'
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
 
 
@@ -60,6 +60,7 @@ export default function Home() {
       {/* <ServicesOverview /> */}
       {/* <QuantumSolutions/> */}
       <DataFlowVisualization />
+      <TMDifference/>
       <StatsCount/>
       <Testimonials />
       <CTA />

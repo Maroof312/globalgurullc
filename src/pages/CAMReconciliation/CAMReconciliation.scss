@@ -453,53 +453,6 @@
     }
   }
 
-  /* Difference Section */
-  .difference-section {
-    padding: 80px 0;
-    background-color: #f8f9fa;
-
-    .difference-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .difference-item {
-      flex: 0 0 calc(14.28% - 13px);
-      min-width: 150px;
-      padding: 15px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      border: 1px solid #e2e8f0;
-
-      &:hover {
-        transform: translateY(-5px);
-      }
-
-      .difference-icon {
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 15px;
-
-        img {
-          max-height: 50px;
-          width: auto;
-        }
-      }
-
-      p {
-        font-size: 0.9rem;
-        font-weight: 500;
-        margin-bottom: 0;
-      }
-    }
-  }
-
   /* Responsive Adjustments */
   @media (max-width: 1199.98px) {
     .difference-item {
@@ -519,8 +472,7 @@
     .why-us-section,
     .nationwide-section,
     .faq-section,
-    .services-section, 
-    .difference-section {
+    .services-section {
       padding: 60px 0;
     }
 

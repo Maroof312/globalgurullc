@@ -78,20 +78,16 @@ const RealEstateAccounting = () => {
 
   const faqs = [
     {
-      question: "What is real estate accounting and why is it important?",
-      answer: "Real estate accounting is the practice of managing financial transactions, reporting, and compliance for real estate assets. It is crucial for maintaining investor trust, meeting tax obligations, and evaluating asset performance."
+      question: "What do your outsourced property accounting services include?",
+      answer: "Our outsourced property accounting services cover the full cycle of real estate financial management. This includes accounts receivable, accounts payable, complex bank reconciliations, monthly financial reporting, budgeting, and compliance tracking. By outsourcing property accounting, clients gain accurate reports, cost savings, and streamlined financial operations. "
     },
     {
-      question: "Can you handle both property accounting and fund-level reporting?",
-      answer: "Yes. We provide full-service solutions that include both property accounting for individual assets and real estate fund accounting for pooled investment vehicles."
+      question: " How do you ensure accuracy in property accounting reports?",
+      answer: "We use standardized workflows, multi-level review processes, and advanced property management platforms such as Yardi and MRI. This ensures complete accuracy, transparency, and consistency in every financial report we deliver."
     },
     {
-      question: "What makes Global Guru different from traditional accounting firms?",
-      answer: "Unlike generalist firms, we specialize in the real estate industry. This allows us to offer faster solutions, industry-specific insights, and tools that align with your portfolio structure and goals."
-    },
-    {
-      question: "Do you offer tax support through real estate tax accountants?",
-      answer: "Absolutely. Our real estate tax accountant team provides federal, state, and local tax planning, filing, and advisory support to ensure compliance and maximize deductions."
+      question: "Can you integrate outsourced property accounting with my existing software?",
+      answer: "Yes. Our team has expertise in Yardi, MRI, RealPage, and QuickBooks. We integrate seamlessly into your preferred accounting system to maintain efficiency while reducing errors and manual work."
     }
   ];
 
@@ -125,7 +121,7 @@ const RealEstateAccounting = () => {
                 <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Real Estate Accounting</h4>
                 <h1 className="title display-5 fw-bold mb-4">Specialized financial solutions for property owners and investors</h1>
                 <ul className="benefits-list ps-0">
-                  <li>30% reduction in accounting costs</li>
+                  <li>50% reduction in accounting costs</li>
                   <li>99.9% accuracy guarantee</li>
                   <li>Real-time financial visibility</li>
                   <li>Dedicated accounting team</li>

@@ -1,180 +1,360 @@
-.ultra-modern-stats {
-  padding: 6rem 0;
-  background-color: #f8fafc;
+.real-estate-stats {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
   position: relative;
+  overflow: hidden;
   
-  .stats-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    z-index: 0;
+    border-radius: 0 0 50% 50% / 0 0 30% 30%;
   }
   
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+  .container {
+    position: relative;
+    z-index: 2;
   }
   
-  .stat-card {
+  .stats-header {
+    .achievement-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 15px rgba(37, 99, 235, 0.2);
+      
+      .badge-text {
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      
+      .badge-label {
+        font-size: 1rem;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+  
+  .stats-features {
+    .feature-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+      border-left: 4px solid #10b981;
+      margin-bottom: 1rem;
+      
+      .feature-check {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        background: #10b981;
+        color: white;
+        border-radius: 50%;
+        margin-right: 12px;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+      
+      span {
+        font-weight: 500;
+        color: #334155;
+      }
+    }
+  }
+  
+  .real-estate-stat-card {
     background: white;
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 2rem 1.5rem;
     box-shadow: 
-      0 1px 3px rgba(0,0,0,0.04),
-      0 20px 25px -5px rgba(0,0,0,0.03),
-      0 10px 10px -5px rgba(0,0,0,0.02);
+      0 10px 25px rgba(0, 0, 0, 0.05),
+      0 5px 10px rgba(0, 0, 0, 0.03);
     transition: all 0.3s ease;
+    height: 100%;
     position: relative;
     overflow: hidden;
     
     &:hover {
       transform: translateY(-5px);
       box-shadow: 
-        0 1px 3px rgba(0,0,0,0.08),
-        0 25px 50px -12px rgba(0,0,0,0.1);
-      
-      .stat-bar {
-        height: 80%;
-      }
-      
-      .stat-dot {
-        transform: translateY(-5px);
-        opacity: 1;
-      }
+        0 15px 30px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.05);
     }
     
-    .stat-graphic {
-      position: absolute;
-      top: 0;
-      right: 2.5rem;
-      height: 100%;
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .stat-visualization {
+      height: 120px;
       display: flex;
+      justify-content: center;
       align-items: flex-end;
-      gap: 8px;
-      
-      .stat-bar {
-        width: 4px;
-        height: 40%;
-        background: var(--stat-color);
-        border-radius: 4px;
-        transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        opacity: 0.2;
-      }
-      
-      .stat-dots {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        padding: 1rem 0;
-        
-        .stat-dot {
-          width: 6px;
-          height: 6px;
-          background: var(--stat-color);
-          border-radius: 50%;
-          opacity: 0.3;
-          transition: all 0.4s ease;
-          transition-delay: calc(var(--i) * 0.05s);
-          
-          &:nth-child(1) { --i: 1; }
-          &:nth-child(2) { --i: 2; }
-          &:nth-child(3) { --i: 3; }
-          &:nth-child(4) { --i: 4; }
-          &:nth-child(5) { --i: 5; }
-        }
-      }
+      margin-bottom: 1.5rem;
     }
     
     .stat-content {
-      position: relative;
-      z-index: 2;
-      
-      .stat-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 1rem;
-      }
+      text-align: center;
       
       .stat-value {
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-size: 2.2rem;
+        font-weight: 800;
         color: #1e293b;
         line-height: 1;
+        margin-bottom: 0.5rem;
         font-feature-settings: "tnum";
         font-variant-numeric: tabular-nums;
       }
       
-      .trend-indicator {
-        width: 28px;
-        height: 28px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        &.up {
-          background: rgba(74, 222, 128, 0.1);
-          color: #10b981;
-        }
-        
-        &.steady {
-          background: rgba(234, 179, 8, 0.1);
-          color: #d97706;
-        }
-        
-        &.down {
-          background: rgba(248, 113, 113, 0.1);
-          color: #ef4444;
-        }
-      }
-      
       .stat-label {
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: #64748b;
         font-weight: 500;
-        margin-bottom: 1.5rem;
+        line-height: 1.4;
       }
+    }
+    
+    .stat-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      opacity: 0.03;
       
-      .stat-line {
-        width: 40px;
-        height: 2px;
-        background: var(--stat-color);
-        border-radius: 2px;
-        opacity: 0.5;
+      .blueprint-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.3) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.3) 1px, transparent 1px);
+        background-size: 20px 20px;
       }
     }
   }
   
-  @media (max-width: 1024px) {
-    .stats-grid {
+  .building-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    
+    .building-container {
+      position: relative;
+      width: 60px;
+      height: 120px;
+      background: #f1f5f9;
+      border-radius: 6px 6px 0 0;
+      overflow: hidden;
+    }
+    
+    .building-fill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      border-radius: 6px 6px 0 0;
+      transition: background-color 0.3s ease;
+    }
+    
+    .building-windows {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      right: 0;
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 8px;
+      padding: 0 8px;
+      z-index: 2;
+      
+      .building-window {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 2px;
+        height: 12px;
+      }
+    }
+  }
+  
+  // Responsive styles
+  @media (max-width: 1200px) {
+    .stats-header {
+      h2 {
+        font-size: 2.2rem;
+      }
+    }
+  }
+  
+  @media (max-width: 992px) {
+    padding: 4rem 0;
+    
+    .stats-header {
+      .achievement-badge {
+        padding: 1.25rem 1.75rem;
+        
+        .badge-text {
+          font-size: 2rem;
+        }
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .subtitle {
+        font-size: 1.1rem;
+      }
+    }
+    
+    .real-estate-stat-card {
+      padding: 1.75rem 1.25rem;
+      
+      .stat-content {
+        .stat-value {
+          font-size: 2rem;
+        }
+      }
+    }
+    
+    .building-visual {
+      .building-container {
+        width: 50px;
+        height: 100px;
+      }
     }
   }
   
   @media (max-width: 768px) {
-    padding: 4rem 0;
+    padding: 3rem 0;
     
-    .stat-card {
-      padding: 2rem;
+    .stats-header {
+      .achievement-badge {
+        padding: 1rem 1.5rem;
+        
+        .badge-text {
+          font-size: 1.75rem;
+        }
+        
+        .badge-label {
+          font-size: 0.9rem;
+        }
+      }
       
-      .stat-value {
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+    }
+    
+    .stats-features {
+      .feature-item {
+        margin-bottom: 1rem;
+        padding: 0.75rem 1rem;
+        
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+    
+    .real-estate-stat-card {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem 1rem;
+      
+      .stat-content {
+        .stat-value {
+          font-size: 1.8rem;
+        }
+        
+        .stat-label {
+          font-size: 0.9rem;
+        }
+      }
+      
+      .stat-icon {
         font-size: 2rem;
+      }
+    }
+    
+    .building-visual {
+      .building-container {
+        width: 45px;
+        height: 90px;
       }
     }
   }
   
-  @media (max-width: 480px) {
-    .stats-grid {
-      grid-template-columns: 1fr;
+  @media (max-width: 576px) {
+    .stats-header {
+      h2 {
+        font-size: 1.5rem;
+      }
     }
     
-    .stat-card {
-      padding: 1.75rem;
+    .real-estate-stat-card {
+      .stat-content {
+        .stat-value {
+          font-size: 1.6rem;
+        }
+      }
+    }
+    
+    .building-visual {
+      .building-container {
+        width: 40px;
+        height: 80px;
+      }
       
-      .stat-graphic {
-        right: 1.75rem;
+      .building-windows {
+        gap: 6px;
+        padding: 0 6px;
+        
+        .building-window {
+          height: 10px;
+        }
       }
     }
   }

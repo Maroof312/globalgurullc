@@ -14,6 +14,7 @@ export default function About() {
             src={aboutHeroImage}
             alt="About Global Guru"
             className="hero-image"
+            fluid
           />
           <div className="hero-overlay">
             <Container>
@@ -36,15 +37,15 @@ export default function About() {
       {/* Our Story */}
       <section className="py-5">
         <Container>
-          <Row className="justify-content-center mb-5">
+          <Row className="justify-content-center mb-4 mb-md-5">
             <Col lg={8} className="text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="section-title mb-3">Our Story</h2>
-                <p className="lead">
+                <h2 className="section-title mb-2 mb-md-3">Our Story</h2>
+                <p className="lead mb-0">
                   From humble beginnings to industry leaders
                 </p>
               </motion.div>
@@ -59,17 +60,17 @@ export default function About() {
                 className="story-content"
               >
                 <p>
-                  Global Guru LLC began as a consulting firm
-                  with a vision to transform how businesses operate. Today, we're serving clients across 4 countries.
+                  At Global Guru Solution, we began with a clear mission: to make real estate accounting and lease management easier for commercial property companies. 
+                  We take care of the heavy work including <b>property accounting, lease administration, CAM reconciliations, complex bank reconciliations, and Yardi implementations</b>, so our clients can focus on growth. 
+                  Over the years, we have completed more than <b>10,000 CAM reconciliations</b>, proving our expertise and reliability
                 </p>
                 <p>
-                  Our journey has been marked by innovation, dedication, and a
-                  relentless focus on delivering measurable results for our clients.
+                  Clients trust us to lower payroll costs, increase productivity, and deliver results on time, every time. 
+                  Our team works directly in platforms such as <b>Yardi, MRI, and RealPage</b>, making sure every process is accurate and transparent.
                 </p>
                 <p>
-                  What sets us apart is our holistic approach, combining strategic
-                  consulting with cutting-edge technology solutions tailored to each
-                  client's unique needs.
+                  We also place the highest importance on <b>data confidentiality and integrity</b>, safeguarding sensitive financial information at every step. 
+                  With Global Guru Solution, you gain a partner dedicated to accuracy, compliance, and long term success.
                 </p>
               </motion.div>
             </Col>
@@ -80,10 +81,10 @@ export default function About() {
       {/* Values Section */}
       <section className="py-5 bg-light">
         <Container>
-          <Row className="justify-content-center mb-5">
+          <Row className="justify-content-center mb-4 mb-md-5">
             <Col lg={8} className="text-center">
-              <h2 className="section-title mb-3">Our Core Values</h2>
-              <p className="lead">
+              <h2 className="section-title mb-2 mb-md-3">Our Core Values</h2>
+              <p className="lead mb-0">
                 The principles that guide everything we do
               </p>
             </Col>
@@ -116,13 +117,13 @@ export default function About() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="value-card"
+                  className="value-card text-center"
                 >
-                  <div className="value-icon">
+                  <div className="value-icon mb-3">
                     <i className={`bi ${value.icon}`}></i>
                   </div>
-                  <h3>{value.title}</h3>
-                  <p>{value.description}</p>
+                  <h3 className="h5">{value.title}</h3>
+                  <p className="mb-0">{value.description}</p>
                 </motion.div>
               </Col>
             ))}

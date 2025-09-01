@@ -1,5 +1,9 @@
-// About.scss (updated hero section)
-// About.scss - Hero Section
+// About.scss
+.about-page {
+  overflow-x: hidden;
+}
+
+// Hero Section
 .about-hero {
   position: relative;
   width: 100%;
@@ -17,7 +21,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 20% 80%
+      object-position: 20% 80%;
     }
     
     .hero-overlay {
@@ -33,7 +37,7 @@
       .hero-content {
         color: white;
         max-width: 600px;
-        padding: 0 2rem;
+        padding: 0 1rem;
         
         .hero-title {
           font-size: 2.5rem;
@@ -50,18 +54,120 @@
       }
     }
   }
+}
 
+// Our Story Section
+.story-content {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+}
 
-  // Mobile responsiveness
-  @media (max-width: 768px) {
+// Values Section
+.value-card {
+  padding: 2rem 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .value-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+    color: white;
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  p {
+    color: #718096;
+    line-height: 1.6;
+  }
+}
+
+// Section Titles
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+    border-radius: 2px;
+  }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+  .about-hero {
+    height: 65vh;
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-hero {
     height: 60vh;
     min-height: 400px;
     
     .hero-overlay .hero-content {
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .hero-text {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .story-content p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 55vh;
+    min-height: 350px;
+    
+    .hero-overlay .hero-content {
+      text-align: center;
       padding: 0 1.5rem;
       
       .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
+        margin-bottom: 0.8rem;
       }
       
       .hero-text {
@@ -69,19 +175,111 @@
       }
     }
   }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .value-card {
+    padding: 1.5rem 1rem;
+    
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .story-content p {
+    font-size: 1rem;
+  }
+}
 
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .about-hero {
     height: 50vh;
-    min-height: 350px;
+    min-height: 300px;
+    
+    .hero-overlay .hero-content {
+      padding: 0 1rem;
+      
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      
+      .hero-text {
+        font-size: 0.95rem;
+      }
+    }
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .value-card {
+    padding: 1.2rem 0.8rem;
+    margin-bottom: 1rem;
+    
+    .value-icon {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .story-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-hero {
+    height: 45vh;
+    min-height: 280px;
     
     .hero-overlay .hero-content {
       .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
       
       .hero-text {
         font-size: 0.9rem;
       }
+    }
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .value-card {
+    .value-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.1rem;
+    }
+    
+    h3 {
+      font-size: 1.1rem;
+    }
+    
+    p {
+      font-size: 0.85rem;
     }
   }
 }
