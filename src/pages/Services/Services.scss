@@ -65,7 +65,7 @@ $secondary: #6c63ff;
           transition: all 0.3s ease;
 
           &:hover {
-            background: darken($primary, 8%);
+            background: scale-color($primary, $lightness: -20%);
             transform: translateY(-2px);
           }
         }
@@ -324,7 +324,7 @@ $secondary: #6c63ff;
       padding: 0.75rem 1.5rem;
 
       &:hover {
-        background: darken($primary, 8%);
+        background: scale-color($primary, $lightness: -20%);
       }
     }
   }
