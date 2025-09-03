@@ -8,6 +8,7 @@ import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
 import FAQ from '../../components/sections/FAQ';
 import PortfolioList from '../../components/sections/Portfolio';
+import { Helmet } from 'react-helmet-async';
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import leaseAccountingImg from '../../assets/images/8th.avif';
@@ -133,6 +134,13 @@ const LeaseAccounting = () => {
 
   return (
     <div className="lease-accounting-page">
+      <Helmet>
+        <title>Lease Administration & Accounting Services | Global Guru</title>
+        <meta
+          name="description"
+          content="Global Guru offers end-to-end lease admin & accounting support, including compliance, abstraction, reporting & automation for real estate businesses. Book a Consultation Today!"
+        />
+      </Helmet>
       {/* Hero Banner Section */}
       <motion.section 
         className="hero-banner position-relative py-5 py-lg-5"

@@ -8,6 +8,7 @@ import ContactForm from '../../components/forms/ContactForm';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import DifferenceSection from '../../components/sections/DifferenceSection';
+import { Helmet } from 'react-helmet-async';
 
 // Other images
 import landingBanner from '../../assets/images/landing-banner.webp';
@@ -57,6 +58,14 @@ const CAMReconciliation = () => {
 
   return (
     <div className="cam-reconciliation-page">
+      {/* Added Meta Tags with React Helmet */}
+      <Helmet>
+        <title>CAM Reconciliation Services for Property Owners | Global Guru</title>
+        <meta 
+          name="description" 
+          content="Ensure accurate lease audits & CAM reconciliation with expert accounting services. Minimize disputes & improve property financial transparency with Global Guru" 
+        />
+      </Helmet>
       {/* Hero Banner Section */}
       <motion.section 
         className="hero-banner position-relative py-5 py-lg-5"

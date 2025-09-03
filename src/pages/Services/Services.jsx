@@ -21,14 +21,14 @@ const services = [
     title: "CAM Reconciliation",
     description: "Accurate Common Area Maintenance reconciliation to ensure proper expense allocation between landlords and tenants with detailed reporting.",
     icon: "bi-calculator",
-    link: "/CAM-Reconciliation-Services",
+    link: "/cam-reconciliation-services",
     features: ["Expense Allocation", "Detailed Reporting", "Dispute Resolution", "Tenant Billing"]
   },
   {
     title: "Lease Administration",
     description: "End-to-end lease administration services including abstraction, critical date monitoring, rent roll preparation, and lease compliance tracking.",
     icon: "bi-file-earmark-text",
-    link: "/lease-accounting-services",
+    link: "/lease-admin-accounting-services",
     features: ["Lease Abstraction", "Critical Date Monitoring", "Rent Roll Preparation", "Compliance Tracking"]
   },
   {
@@ -42,7 +42,7 @@ const services = [
     title: "AR & AP Services",
     description: "Professional accounts receivable and payable management including invoice processing, payment application, and vendor management services.",
     icon: "bi-credit-card",
-    link: "/ar&ap",
+    link: "/ar-ap-services",
     features: ["Invoice Processing", "Payment Application", "Vendor Management", "Cash Flow Optimization"]
   }
 ];

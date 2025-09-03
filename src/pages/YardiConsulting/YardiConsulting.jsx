@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import yardiBanner from '../../assets/images/yardi.avif';
 import Testimonials from '../../components/sections/Testimonials';
+import { Helmet } from 'react-helmet-async';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import './YardiConsulting.scss';
@@ -25,6 +26,13 @@ const YardiConsulting = () => {
 
   return (
     <div className="yardi-page">
+      <Helmet>
+        <title>Yardi Consultation Services | Yardi Implementation & Optimization </title>
+        <meta
+          name="description"
+          content="Get expert Yardi consulting, implementation & training to simplify property management. Global Guru ensures seamless Yardi integration & reporting solutions."
+        />
+      </Helmet>
       {/* Hero Section */}
       <section className="yardi-hero">
         <div className="hero-image-wrapper">
@@ -346,29 +354,17 @@ const YardiConsulting = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section py-5">
-        <Container>
-          <Row className="align-items-center">
-            <Col md={8} className="text-center text-md-start mb-4 mb-md-0">
-              <h2>Ready to transform your Yardi experience?</h2>
-              <p>
-                Our certified consultants are ready to help you get the most out of 
-                your Yardi investment with a free initial assessment.
-              </p>
-            </Col>
-            <Col md={4} className="text-center text-md-end">
-              <Button 
-                variant="primary" 
-                size="lg" 
-                href="/contact"
-                className="fw-bold"
-              >
-                Get Started
-              </Button>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <CTA 
+        title="Let’s Optimize Yardi for Your Business Today"
+        description={
+          <>
+            <p>Yardi is powerful, but only when it’s tailored to your goals. Let Global Guru show you how our personalized Yardi consultation can unlock its full value.</p>
+            <p className="mb-0">Contact us now to book your free consultation. Start building a better, smarter real estate operation with trusted Yardi consulting from Global Guru.</p>
+          </>
+        }
+        buttonText="Schedule a Consultation"
+        buttonLink="/contact"
+      />
     </div>
   );
 };

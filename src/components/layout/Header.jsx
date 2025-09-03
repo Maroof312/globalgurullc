@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
@@ -8,15 +8,30 @@ import './Header.scss';
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [navbarExpanded, setNavbarExpanded] = useState(false);
   const location = useLocation();
+  const navbarRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    
+    const handleClickOutside = (event) => {
+      // Close navbar if clicked outside of it and it's expanded (mobile view)
+      if (navbarExpanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setNavbarExpanded(false);
+      }
+    };
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [navbarExpanded]);
 
   const handleDropdownHover = (menu) => {
     if (window.innerWidth > 991) {
@@ -28,27 +43,41 @@ export default function Header() {
     setActiveDropdown(null);
   };
 
+  const handleNavLinkClick = () => {
+    // Close navbar when a link is clicked (for mobile view)
+    if (window.innerWidth < 992) {
+      setNavbarExpanded(false);
+    }
+  };
+
+  const handleNavbarToggle = () => {
+    setNavbarExpanded(!navbarExpanded);
+  };
+
   const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/');
 
   const aboutSubmenu = [
     { title: "Who We Are", path: "/who-we-are" },
     { title: "Our Experts", path: "/our-experts" },
-    // { title: "Mission & Values", path: "/about/mission-values" },
-    // { title: "Testimonials", path: "/about/testimonials" },
-    // { title: "Careers", path: "/about/careers" }
   ];
 
   const servicesSubmenu = [
     { title: "Our Services", path: "/services" },
     { title: "Property Accounting", path: "/real-estate-accounting-services" },
-    { title: "CAM Reconciliation", path: "/CAM-Reconciliation-Services" },
-    { title: "Lease Administration", path: "/lease-accounting-services" },
+    { title: "CAM Reconciliation", path: "/cam-reconciliation-services" },
+    { title: "Lease Administration", path: "/lease-admin-accounting-services" },
     { title: "Accounting and Bookkeeping", path: "/accounting-and-bookkeeping" },
-    { title: "AR & AP Services", path: "/ar&ap" }
+    { title: "AR & AP Services", path: "/ar-ap-services" }
   ];
 
   return (
-    <Navbar expand="lg" fixed="top" className={scrolled ? 'scrolled' : ''}>
+    <Navbar 
+      expand="lg" 
+      fixed="top" 
+      className={scrolled ? 'scrolled' : ''}
+      expanded={navbarExpanded}
+      ref={navbarRef}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0 }}
@@ -66,11 +95,20 @@ export default function Header() {
           </Navbar.Brand>
         </motion.div>
         
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav" 
+          onClick={handleNavbarToggle}
+        />
         
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="/" className={isActive('/') ? 'active' : ''}>Home</Nav.Link>
+            <Nav.Link 
+              href="/" 
+              className={isActive('/') ? 'active' : ''}
+              onClick={handleNavLinkClick}
+            >
+              Home
+            </Nav.Link>
             
             {/* About Dropdown */}
             <div 
@@ -80,6 +118,7 @@ export default function Header() {
             >
               <Nav.Link 
                 className={`${isActive('/about') ? 'active' : ''}`}
+                onClick={handleNavLinkClick}
               >
                 About
               </Nav.Link>
@@ -89,6 +128,7 @@ export default function Header() {
                     key={item.path}
                     href={item.path}
                     className={`dropdown-item ${isActive(item.path) ? 'active' : ''}`}
+                    onClick={handleNavLinkClick}
                   >
                     {item.title}
                   </Nav.Link>
@@ -104,6 +144,7 @@ export default function Header() {
             >
               <Nav.Link 
                 className={`${isActive('/services') ? 'active' : ''}`}
+                onClick={handleNavLinkClick}
               >
                 Services
               </Nav.Link>
@@ -113,6 +154,7 @@ export default function Header() {
                     key={item.path}
                     href={item.path}
                     className={`dropdown-item ${isActive(item.path) ? 'active' : ''}`}
+                    onClick={handleNavLinkClick}
                   >
                     {item.title}
                   </Nav.Link>
@@ -120,13 +162,25 @@ export default function Header() {
               </div>
             </div>
             
-            <Nav.Link href="/yardi-consulting" className={isActive('/yardi-consulting') ? 'active' : ''}>
+            <Nav.Link 
+              href="/yardi-consulation-services" 
+              className={isActive('/yardi-consulation-services') ? 'active' : ''}
+              onClick={handleNavLinkClick}
+            >
               Yardi Consulting
             </Nav.Link>
-            <Nav.Link href="/contact" className={isActive('/contact') ? 'active' : ''}>
+            <Nav.Link 
+              href="/contact" 
+              className={isActive('/contact') ? 'active' : ''}
+              onClick={handleNavLinkClick}
+            >
               Contact
             </Nav.Link>
-            <Nav.Link href="/blog" className={isActive('/contact') ? 'active' : ''}>
+            <Nav.Link 
+              href="/blog" 
+              className={isActive('/blog') ? 'active' : ''}
+              onClick={handleNavLinkClick}
+            >
               Blog
             </Nav.Link>
           </Nav>

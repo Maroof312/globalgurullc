@@ -27,15 +27,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/who-we-are" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/yardi-consulting" element={<YardiConsulting />} />
+        <Route path="/yardi-consulation-services" element={<YardiConsulting />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/our-experts" element={<OurExperts />} />
-        <Route path="/CAM-Reconciliation-Services" element={<CAMReconciliation />} />
-        <Route path="/lease-accounting-services" element={<LeaseAccount />} />
+        <Route path="/cam-reconciliation-services" element={<CAMReconciliation />} />
+        <Route path="/lease-admin-accounting-services" element={<LeaseAccount />} />
         <Route path="/real-estate-accounting-services" element={<RealEstate />} />
-        <Route path="/ar&ap" element={<AR_AP />} />
+        <Route path="/ar-ap-services" element={<AR_AP />} />
         <Route path="/accounting-and-bookkeeping" element={<AccBook />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/thank-you" element={<ThankYou />} />

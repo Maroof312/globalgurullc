@@ -9,6 +9,7 @@ import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
 import PortfolioList from '../../components/sections/Portfolio';
 import FAQ from '../../components/sections/FAQ';
+import { Helmet } from 'react-helmet-async'; // Added Helmet import
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import realEstateImg from '../../assets/images/1st.avif';
@@ -93,6 +94,15 @@ const RealEstateAccounting = () => {
 
   return (
     <div className="real-estate-accounting-page">
+      {/* Added Meta Tags with React Helmet */}
+      <Helmet>
+        <title>Real Estate Accounting Services | Outsourced Finance - Global Guru</title>
+        <meta 
+          name="description" 
+          content="Get Expert real estate accounting, fund accounting, lease & CAM reconciliation, tax compliance and investor reporting service. Book a free consultation with Global Guru" 
+        />
+      </Helmet>
+
       {/* Hero Banner Section */}
       <motion.section 
         className="hero-banner position-relative py-5 py-lg-5"
@@ -265,6 +275,7 @@ const RealEstateAccounting = () => {
             </p>
           </motion.div>
           
+          {/* Desktop Layout */}
           <div className="d-none d-lg-flex justify-content-center">
             <div className="difference-container">
               {differenceItems.map((item, index) => (
@@ -287,23 +298,23 @@ const RealEstateAccounting = () => {
             </div>
           </div>
 
-          {/* Mobile Carousel */}
+          {/* Mobile Carousel - Fixed with equal height */}
           <div className="d-lg-none">
             <Swiper
               modules={[Autoplay]}
               slidesPerView={2}
-              spaceBetween={20}
+              spaceBetween={15}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
             >
               {differenceItems.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div className="difference-item h-100 p-4 bg-white rounded-3 shadow-sm text-center">
-                    <div className="difference-icon mb-3">
-                      <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
-                        <i className={`bi ${item.icon} fs-3 text-primary`}></i>
+                <SwiperSlide key={index} style={{ height: 'auto' }}>
+                  <div className="difference-item h-100 p-3 bg-white rounded-3 shadow-sm text-center d-flex flex-column justify-content-center" style={{ minHeight: '180px' }}>
+                    <div className="difference-icon mb-2 mx-auto">
+                      <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-2 d-inline-flex">
+                        <i className={`bi ${item.icon} fs-4 text-primary`}></i>
                       </div>
                     </div>
-                    <p className="mb-0 fw-medium">{item.text}</p>
+                    <p className="mb-0 fw-medium fs-6">{item.text}</p>
                   </div>
                 </SwiperSlide>
               ))}

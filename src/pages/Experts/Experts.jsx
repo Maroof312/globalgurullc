@@ -1,11 +1,20 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import TeamMembers from "../../components/sections/TeamMembers";
+import { Helmet } from 'react-helmet-async';
 import './Experts.scss';
 
 export default function Experts() {
   return (
     <div className="experts-page">
+      {/* Added Meta Tags with React Helmet */}
+      <Helmet>
+        <title>Professional Accounting & Financial Services | Global Solutions</title>
+        <meta 
+          name="description" 
+          content="Get expert accounting, tax, and financial management services. Specializing in real estate, fund accounting, compliance, and reporting for businesses." 
+        />
+      </Helmet>
       {/* Creative Hero Section */}
       <section className="creative-hero">
         <Container>

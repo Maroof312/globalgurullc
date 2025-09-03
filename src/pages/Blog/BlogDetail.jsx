@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
+import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
 
 const BlogDetail = () => {
@@ -14,6 +15,36 @@ const BlogDetail = () => {
   if (!blog) {
     return <div>Blog post not found</div>;
   }
+
+  // Set META title and description based on blog title
+  const getMetaTags = () => {
+    // Default fallback values
+    let title = "Global Guru Insights Blog";
+    let description = "Expert knowledge and industry insights for property management professionals";
+    
+    // Custom titles and descriptions for specific blog posts
+    if (blog.title.includes("CAM Audit")) {
+      title = "How to Prepare for a CAM Audit & Avoid Errors | Global Guru";
+      description = "Ensure CAM accuracy & transparency. Learn audit steps, common errors, and how Global Guru helps with CAM reconciliation & reporting.";
+    } else if (blog.title.includes("CAM Reconciliation")) {
+      title = "How to Do CAM Reconciliation Right: Best Practices";
+      description = "Learn CAM reconciliation meaning, process, and strategies to minimize disputes. Get expert insights from Global Guru for accurate lease management.";
+    } else if (blog.title.includes("Outsourcing Bookkeeping") || blog.title.includes("Bookkeeping")) {
+      title = "10 Benefits of Outsourcing Bookkeeping for Property Management Firms";
+      description = "Discover why property management firms outsource bookkeeping. Learn 10 key benefits including cost savings, accuracy, compliance & scalability with experts.";
+    } else {
+      // Fallback to blog's own title and first paragraph if available
+      title = `${blog.title} | Global Guru`;
+      const firstParagraph = blog.content.find(item => item.type === 'p');
+      if (firstParagraph && firstParagraph.text) {
+        description = firstParagraph.text.substring(0, 160) + '...';
+      }
+    }
+    
+    return { title, description };
+  };
+
+  const { title, description } = getMetaTags();
 
   // Function to render content based on type
   const renderContent = (item, index) => {
@@ -39,6 +70,11 @@ const BlogDetail = () => {
 
   return (
     <div className="blog-detail">
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      
       <Container>
         <Row className="justify-content-center">
           <Col lg={8}>

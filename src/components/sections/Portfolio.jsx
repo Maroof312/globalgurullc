@@ -73,34 +73,36 @@ const Portfolio = ({ title, items }) => {
 
             <div className="pp-service-details">
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={`desktop-details-${activeIndex}`}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="pp-details-card"
-                >
-                  <div className="pp-details-content">
-                    <h3>{items[activeIndex].title}</h3>
-                    <p>{items[activeIndex].description}</p>
-                    {items[activeIndex].features && (
-                      <ul className="pp-features-list">
-                        {items[activeIndex].features.map((feature, i) => (
-                          <motion.li 
-                            key={i}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.1 * i }}
-                          >
-                            <div className="pp-feature-marker"></div>
-                            <span>{feature}</span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </motion.div>
+                {activeIndex !== null && items[activeIndex] && (
+                  <motion.div
+                    key={`desktop-details-${activeIndex}`}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="pp-details-card"
+                  >
+                    <div className="pp-details-content">
+                      <h3>{items[activeIndex].title}</h3>
+                      <p>{items[activeIndex].description}</p>
+                      {items[activeIndex].features && (
+                        <ul className="pp-features-list">
+                          {items[activeIndex].features.map((feature, i) => (
+                            <motion.li 
+                              key={i}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.1 * i }}
+                            >
+                              <div className="pp-feature-marker"></div>
+                              <span>{feature}</span>
+                            </motion.li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
               </AnimatePresence>
             </div>
           </div>
