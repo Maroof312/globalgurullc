@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 import logo from '../../assets/images/Black-logo.webp';
 import './Header.scss';
 
@@ -18,7 +19,7 @@ export default function Header() {
     };
     
     const handleClickOutside = (event) => {
-      // Close navbar if clicked outside of it and it's expanded (mobile view)
+      // Close navbar if clicked outside of it and it's expanded
       if (navbarExpanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
         setNavbarExpanded(false);
       }
@@ -40,18 +41,28 @@ export default function Header() {
   };
 
   const handleDropdownLeave = () => {
-    setActiveDropdown(null);
+    if (window.innerWidth > 991) {
+      setActiveDropdown(null);
+    }
   };
 
   const handleNavLinkClick = () => {
-    // Close navbar when a link is clicked (for mobile view)
+    // Collapse only in mobile after link navigation
     if (window.innerWidth < 992) {
       setNavbarExpanded(false);
+      setActiveDropdown(null);
     }
   };
 
   const handleNavbarToggle = () => {
     setNavbarExpanded(!navbarExpanded);
+  };
+
+  const toggleMobileDropdown = (menu) => {
+    // Only for mobile view: toggle dropdown without collapsing navbar
+    if (window.innerWidth < 992) {
+      setActiveDropdown(activeDropdown === menu ? null : menu);
+    }
   };
 
   const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/');
@@ -89,7 +100,7 @@ export default function Header() {
               src={logo} 
               alt="Global Guru LLC" 
               width="140"
-              height="30"
+              height="70"
               loading="lazy"
             />
           </Navbar.Brand>
@@ -116,12 +127,21 @@ export default function Header() {
               onMouseEnter={() => handleDropdownHover('about')}
               onMouseLeave={handleDropdownLeave}
             >
-              <Nav.Link 
-                className={`${isActive('/about') ? 'active' : ''}`}
-                onClick={handleNavLinkClick}
-              >
-                About
-              </Nav.Link>
+              <div className="d-flex align-items-center">
+                <Nav.Link 
+                  href="/who-we-are"
+                  className={`${isActive('/about') ? 'active' : ''}`}
+                  onClick={handleNavLinkClick}
+                >
+                  About
+                </Nav.Link>
+                <span 
+                  className="dropdown-toggle-icon"
+                  onClick={() => toggleMobileDropdown('about')}
+                >
+                  <ChevronDown size={18} />
+                </span>
+              </div>
               <div className={`dropdown-menu ${activeDropdown === 'about' ? 'show' : ''}`}>
                 {aboutSubmenu.map((item) => (
                   <Nav.Link 
@@ -142,12 +162,21 @@ export default function Header() {
               onMouseEnter={() => handleDropdownHover('services')}
               onMouseLeave={handleDropdownLeave}
             >
-              <Nav.Link 
-                className={`${isActive('/services') ? 'active' : ''}`}
-                onClick={handleNavLinkClick}
-              >
-                Services
-              </Nav.Link>
+              <div className="d-flex align-items-center">
+                <Nav.Link 
+                  href="/services"
+                  className={`${isActive('/services') ? 'active' : ''}`}
+                  onClick={handleNavLinkClick}
+                >
+                  Services
+                </Nav.Link>
+                <span 
+                  className="dropdown-toggle-icon"
+                  onClick={() => toggleMobileDropdown('services')}
+                >
+                  <ChevronDown size={18} />
+                </span>
+              </div>
               <div className={`dropdown-menu ${activeDropdown === 'services' ? 'show' : ''}`}>
                 {servicesSubmenu.map((item) => (
                   <Nav.Link 
