@@ -47,7 +47,7 @@ export const blogData = [
       { type: "h3", text: "Work with Professionals" },
       { type: "p", text: "Engaging experts who specialize in cam reconciliation ensures accuracy and compliance. Professionals understand the nuances of lease agreements and can deliver audit-ready reports that save time and money." },
       { type: "h2", text: "Why Work with Experts Like Global Guru" },
-      { type: "p", text: "Even with best practices, the cam reconciliation process can be complex. At Global Guru, we specialize in delivering precise and transparent CAM reconciliation services across the USA. Our team reviews lease agreements, validates charges, and prepares documentation that stands up to scrutiny." },
+      { type: "p", text: "Even with best practices, the cam reconciliation process can be complex. At Global Guru, we specialize in delivering precise and transparent CAM reconciliation services across the globe. Our team reviews lease agreements, validates charges, and prepares documentation that stands up to scrutiny." },
       { type: "p", text: "By partnering with us, you not only reduce errors but also build stronger tenant relationships. Explore our CAM Reconciliation Services to learn how we bring clarity and compliance to every lease." },
     ],
     faqs: [
@@ -128,7 +128,7 @@ export const blogData = [
       ]},
       { type: "h2", text: "Why Partner with Professionals Like Global Guru" },
       { type: "p", text: "Preparing for a cam audit doesn't need to be overwhelming. At Global Guru, our team specializes in CAM reconciliation and audit services that are accurate, transparent, and tailored to your leases. We review every clause, verify every expense, and provide audit-ready documentation that protects your bottom line." },
-      { type: "p", text: "Whether you're a tenant trying to avoid overcharges or a landlord aiming for compliance and trust, our experts bring clarity where it matters most. You can explore our CAM Reconciliation Services to see how we help businesses across the USA stay ahead of disputes and ensure accurate reporting." },
+      { type: "p", text: "Whether you're a tenant trying to avoid overcharges or a landlord aiming for compliance and trust, our experts bring clarity where it matters most. You can explore our CAM Reconciliation Services to see how we help businesses across the globe stay ahead of disputes and ensure accurate reporting." },
     ],
     faqs: [
       {
@@ -188,7 +188,7 @@ export const blogData = [
       { type: "p", text: "Perhaps the most underrated advantage of outsourcing is peace of mind. Knowing that experts are handling your finances reduces stress, lowers risk, and provides the confidence to make better business decisions." },
       { type: "h2", text: "Why Global Guru is the Right Outsourcing Partner" },
       { type: "p", text: "At Global Guru, we understand the complexities of property accounting. From monthly bookkeeping to fund-level reporting, our services are designed to maximize efficiency and accuracy. Unlike generalist firms, we specialize in real estate, which means we know the challenges property management firms face every day." },
-      { type: "p", text: "By working with us, you don't just gain outsourced accounting support, you gain a strategic partner who helps reduce risk, improve reporting, and streamline operations. Learn more about our Real Estate Accounting Services and how we help firms across the USA grow with confidence." },
+      { type: "p", text: "By working with us, you don't just gain outsourced accounting support, you gain a strategic partner who helps reduce risk, improve reporting, and streamline operations. Learn more about our Real Estate Accounting Services and how we help firms across the globe grow with confidence." },
       { type: "h2", text: "FAQs on Outsourced Bookkeeping for Property Management" },
     ],
     faqs: [

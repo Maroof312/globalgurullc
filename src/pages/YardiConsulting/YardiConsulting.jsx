@@ -265,7 +265,7 @@ const YardiConsulting = () => {
               >
                 <h2 className="section-title">Who We Help</h2>
                 <p className="section-subtitle">
-                  Our Yardi consulting in USA supports clients across a wide range of real estate verticals. Whether you 
+                  Our Yardi consulting supports clients across a wide range of real estate verticals. Whether you 
                   operate a small local portfolio or a nationwide property group, we have the experience to support your goals.
                 </p>
               </motion.div>

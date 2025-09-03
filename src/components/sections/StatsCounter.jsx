@@ -29,32 +29,44 @@ const stats = [
   }
 ];
 
-const BuildingVisual = ({ percentage, isInView, index }) => {
-  // Calculate building color based on percentage
-  const getBuildingColor = () => {
+const BarGraphVisual = ({ percentage, isInView, index }) => {
+  // Calculate bar color based on percentage
+  const getBarColor = () => {
     if (percentage >= 90) return "#10b981"; // Green for high percentages
     if (percentage >= 70) return "#3b82f6"; // Blue for medium-high
     if (percentage >= 50) return "#f59e0b"; // Yellow for medium
     return "#ef4444"; // Red for low percentages
   };
 
-  const buildingColor = getBuildingColor();
+  const barColor = getBarColor();
 
   return (
-    <div className="building-visual">
-      <div className="building-container">
-        <motion.div 
-          className="building-fill"
-          initial={{ height: "0%" }}
-          animate={isInView ? { height: `${percentage}%` } : { height: "0%" }}
-          transition={{ duration: 1.5, delay: index * 0.2, ease: "easeOut" }}
-          style={{ backgroundColor: buildingColor }}
-        />
-      </div>
-      <div className="building-windows">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className="building-window" />
-        ))}
+    <div className="bar-graph-visual">
+      <div className="graph-container">
+        <div className="graph-y-axis">
+          <span>100%</span>
+          <span>75%</span>
+          <span>50%</span>
+          <span>25%</span>
+          <span>0%</span>
+        </div>
+        <div className="graph-content">
+          <div className="graph-grid">
+            <div className="grid-line"></div>
+            <div className="grid-line"></div>
+            <div className="grid-line"></div>
+            <div className="grid-line"></div>
+          </div>
+          <motion.div 
+            className="graph-bar"
+            initial={{ height: "0%" }}
+            animate={isInView ? { height: `${percentage}%` } : { height: "0%" }}
+            transition={{ duration: 1.5, delay: index * 0.2, ease: "easeOut" }}
+            style={{ backgroundColor: barColor }}
+          >
+            <div className="bar-value">{percentage}%</div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
@@ -81,7 +93,7 @@ const StatCard = ({ stat, controls, delay, isInView, index }) => {
         </div>
         
         <div className="stat-visualization">
-          <BuildingVisual 
+          <BarGraphVisual 
             percentage={stat.percentage} 
             isInView={isInView}
             index={index}
@@ -133,10 +145,6 @@ export default function StatsCounter() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              {/* <div className="achievement-badge">
-                <span className="badge-text">10,000+</span>
-                <span className="badge-label">Reconciliations Completed</span>
-              </div> */}
               <h2>Excellence in Commercial Real Estate Accounting</h2>
               <p className="subtitle">Trusted by leading commercial real estate firms nationwide, we streamline financial operations and maximize ROI. With over 10,000 CAM reconciliations successfully completed</p>
             </motion.div>

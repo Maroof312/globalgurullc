@@ -480,7 +480,7 @@ At Global Guru Solution, our lease administration services are built to do just 
       {/* CTA Section */}
       <CTA
         title="Take Control of Your Leases Today"
-        description="Let Global Guru take the stress out of lease admin/accounting with smart, scalable solutions that grow with your business. From abstraction to compliance, our team has the tools and experience to deliver results. Contact us today for a free consultation and find out why we are the trusted choice for lease administration services and lease accounting in the USA."
+        description="Let Global Guru take the stress out of lease admin/accounting with smart, scalable solutions that grow with your business. From abstraction to compliance, our team has the tools and experience to deliver results. Contact us today for a free consultation and find out why we are the trusted choice for lease administration services and lease accounting in the world."
         buttonText="Get Started Now"
         buttonLink="/contact"
       />

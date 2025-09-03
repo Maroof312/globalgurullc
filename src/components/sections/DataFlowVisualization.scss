@@ -1,4 +1,4 @@
-// DataFlowVisualization.scss - Professional Version
+// DataFlowVisualization.scss - Professional Version with Fixed Text Colors
 .modern-services-section {
   padding: 8rem 0;
   position: relative;
@@ -17,7 +17,7 @@
     z-index: 0;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
-    opacity: 0.9; // Reduced intensity for professionalism
+    opacity: 0.1; // Much more subtle for light background
     
     &::before {
       content: '';
@@ -58,7 +58,7 @@
     
     h2 {
       font-size: 3.5rem;
-      font-weight: 700; // Slightly less bold for professionalism
+      font-weight: 700;
       margin-bottom: 1.5rem;
       line-height: 1.2;
       color: #1e293b; // Dark blue-gray for better readability
@@ -76,7 +76,7 @@
           bottom: 5px;
           left: 0;
           width: 100%;
-          height: 8px; // Reduced height for subtlety
+          height: 8px;
           background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, transparent 80%);
           z-index: -1;
           border-radius: 20px;
@@ -119,7 +119,7 @@
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-        border-radius: 12px; // Slightly less rounded for professionalism
+        border-radius: 12px;
         
         &.flipped {
           transform: rotateY(180deg);
@@ -133,7 +133,7 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1); // Softer shadow
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       }
       
       .flip-card-back {
@@ -238,7 +238,7 @@
     }
     
     .service-card {
-      background: rgba(255, 255, 255, 0.95); // White cards with slight transparency
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       border-radius: 12px;
       padding: 1.5rem;
@@ -248,7 +248,7 @@
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
-      border: 1px solid #e2e8f0; // Subtle border for professionalism
+      border: 1px solid #e2e8f0;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       
       &.active {
@@ -290,7 +290,7 @@
       h4 {
         font-size: 1.1rem;
         margin-bottom: 0;
-        color: #1e293b; // Dark text for better readability
+        color: #1e293b;
         transition: color 0.3s ease;
         text-align: center;
         font-weight: 600;

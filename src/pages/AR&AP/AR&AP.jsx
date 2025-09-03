@@ -118,10 +118,10 @@ const ARAP = () => {
                 <motion.div variants={itemVariants}>
                   <h1 className="section-title">Streamlined AR/AP Services That Power Your Financial Efficiency</h1>
                   <p className="section-description">
-                    Managing receivables and payables shouldn't hinder your progress. At Global Guru, our expert-led AR/AP services are designed to help businesses across the USA maintain financial clarity, improve cash flow, and stay ahead of the curve. From invoice processing to payment reconciliation, we provide the accuracy, scalability, and speed your business demands.
+                    Managing receivables and payables shouldn't hinder your progress. At Global Guru, our expert-led AR/AP services are designed to help businesses across the globe maintain financial clarity, improve cash flow, and stay ahead of the curve. From invoice processing to payment reconciliation, we provide the accuracy, scalability, and speed your business demands.
                   </p>
                   <p className="section-description">
-                    Whether you need help optimizing your accounts receivable services, restructuring accounts payable services, or managing the full spectrum of AR/AP services in the USA, Global Guru is your go-to partner.
+                    Whether you need help optimizing your accounts receivable services, restructuring accounts payable services, or managing the full spectrum of AR/AP services, Global Guru is your go-to partner.
                   </p>
                 </motion.div>
               </Col>

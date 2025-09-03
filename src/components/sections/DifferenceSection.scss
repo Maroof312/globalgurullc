@@ -1,7 +1,7 @@
-// DifferenceSection.scss
 .difference-section {
   padding: 80px 0;
   background-color: #f8f9fa;
+  overflow: hidden;
 
   .section-title {
     font-size: 2.2rem;
@@ -11,67 +11,64 @@
     text-align: center;
   }
 
-  .difference-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+  .difference-desktop-container,
+  .difference-mobile-container,
+  .difference-mobile-scroll {
+    overflow: hidden;
+    position: relative;
 
-  .difference-item {
-    flex: 0 0 calc(14.28% - 13px);
-    min-width: 150px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-    border: 1px solid #e2e8f0;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
-    .difference-icon {
-      height: 60px;
+    .difference-scroll-track {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 15px;
+      width: max-content;
+      animation: scroll-horizontal 30s linear infinite;
 
-      img {
-        max-height: 50px;
-        width: auto;
+      &:hover {
+        animation-play-state: paused;
+      }
+
+      .difference-item {
+        flex: 0 0 auto;
+        width: 160px;
+        padding: 15px;
+        margin: 0 8px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        text-align: center;
+        border: 1px solid #e2e8f0;
+
+        .difference-icon {
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+
+          img {
+            max-height: 40px;
+            object-fit: contain;
+          }
+        }
+
+        p {
+          font-size: 0.75rem;
+          line-height: 1.3;
+          margin-bottom: 0;
+        }
       }
     }
-
-    p {
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0;
-    }
   }
 
-  /* Responsive Adjustments */
-  @media (max-width: 1199.98px) {
-    .difference-item {
-      flex: 0 0 calc(25% - 15px);
-    }
+  @keyframes scroll-horizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
-  @media (max-width: 991.98px) {
-    padding: 60px 0;
-  }
-
-  @media (max-width: 767.98px) {
-    .section-title {
-      font-size: 1.8rem;
-    }
-  }
-
-  @media (max-width: 575.98px) {
-    .section-title {
-      font-size: 1.5rem;
-    }
-  }
+  @media (max-width: 1199px) { .difference-desktop-container { display: none; } }
+  @media (max-width: 991px) { padding: 60px 0; .section-title { font-size: 1.9rem; } }
+  @media (max-width: 767px) { .section-title { font-size: 1.7rem; margin-bottom: 40px; } }
+  @media (max-width: 575px) { padding: 50px 0; .section-title { font-size: 1.5rem; margin-bottom: 30px; } }
+  @media (max-width: 500px) { padding: 50px 0; }
+  @media (max-width: 400px) { .section-title { font-size: 1.4rem; } }
+  @media (max-width: 300px) { padding: 40px 0; .section-title { font-size: 1.3rem; margin-bottom: 25px; } }
 }
