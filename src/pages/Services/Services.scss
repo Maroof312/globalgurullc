@@ -117,6 +117,11 @@ $secondary: #6c63ff;
   .section-subtitle {
     color: $gray-600;
   }
+  @media (max-width: 576px) {
+    .section-subtitle {
+      text-align: left !important;
+    }
+  }
 
   .service-card {
     background: rgba(255, 255, 255, 0.85);
@@ -207,6 +212,17 @@ $secondary: #6c63ff;
       position: relative;
       flex-grow: 1;
     }
+    @media (max-width: 1300px) {
+    .service-description {
+      text-align: left !important;
+    }
+    @media (max-width: 600px) {
+    .service-description {
+      text-align: justify !important;
+    }
+  }
+  }
+
 
     .service-features {
       margin-bottom: 1.5rem;

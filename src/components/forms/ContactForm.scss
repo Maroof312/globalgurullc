@@ -29,4 +29,70 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+
+  /* reCAPTCHA Mobile Responsiveness */
+  .g-recaptcha {
+    display: flex;
+    justify-content: center;
+    transform: scale(0.95);
+    transform-origin: center;
+
+    & > div {
+      margin: 0 auto;
+    }
+  }
+
+  /* Text alignment fixes */
+  .text-danger.small {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.8rem;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 576px) {
+    padding: 15px;
+    margin: 0 10px;
+    
+    .g-recaptcha {
+      transform: scale(0.85);
+      overflow: hidden;
+      width: 100%;
+      
+      & > div {
+        margin: 0 auto;
+        width: 100% !important;
+        
+        iframe {
+          width: 100% !important;
+        }
+      }
+    }
+
+    .form-control {
+      padding: 10px;
+    }
+
+    .submit-btn {
+      padding: 14px 12px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .g-recaptcha {
+      transform: scale(0.78);
+    }
+  }
+
+  @media (max-width: 350px) {
+    .g-recaptcha {
+      transform: scale(0.72);
+    }
+    
+    .submit-btn {
+      font-size: 0.85rem;
+      padding: 12px 10px;
+    }
+  }
 }

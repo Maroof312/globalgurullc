@@ -109,18 +109,6 @@
   font-weight: 700;
   color: #2d3748;
   position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
-    border-radius: 2px;
-  }
 }
 
 // Responsive Design
@@ -168,10 +156,12 @@
       .hero-title {
         font-size: 1.9rem;
         margin-bottom: 0.8rem;
+        text-align: left;
       }
       
       .hero-text {
         font-size: 1rem;
+        text-align: left;
       }
     }
   }
@@ -191,6 +181,9 @@
     
     h3 {
       font-size: 1.3rem;
+    }
+    p {
+      font-size: 0.8rem !important;
     }
   }
   
@@ -219,6 +212,10 @@
   
   .section-title {
     font-size: 1.6rem;
+    text-align: left;
+  }
+  .lead {
+    text-align: left;
   }
   
   .value-card {

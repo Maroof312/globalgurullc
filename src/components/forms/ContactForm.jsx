@@ -1,20 +1,21 @@
 import { useState, useRef } from 'react'
 import { Form, Button, Alert, Spinner } from 'react-bootstrap'
-import ReCAPTCHA from 'react-google-recaptcha';
-import { config } from '../../config';
+import ReCAPTCHA from 'react-google-recaptcha'
+import { config } from '../../config'
 import emailjs from '@emailjs/browser'
 import './ContactForm.scss'
 
 const ContactForm = ({ 
   recaptchaSiteKey = config.recaptchaSiteKey, 
-  showPrivacyPolicy = true 
+  showPrivacyPolicy = true,
+  formTitle = "Contact Form Submission"
 }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: '',
-    subject: 'Contact Form Submission',
+    subject: formTitle,
     company: 'Not provided',
     page: window.location.href
   });
@@ -45,7 +46,7 @@ const ContactForm = ({
       return;
     }
 
-    // Check reCAPTCHA
+    // Check reCAPTCHA - only if site key is provided
     if (recaptchaSiteKey && !recaptchaValue) {
       setStatus({ loading: false, success: false, error: 'Please complete the CAPTCHA verification' });
       setRecaptchaError(true);
@@ -75,7 +76,7 @@ const ContactForm = ({
         email: '', 
         phone: '', 
         message: '',
-        subject: 'Contact Form Submission',
+        subject: formTitle,
         company: 'Not provided',
         page: window.location.href
       });
@@ -113,7 +114,13 @@ const ContactForm = ({
       validated={validated}
       onSubmit={handleSubmit}
       className="contact-form">
-      {status.error && <Alert variant="danger">{status.error}</Alert>}
+      
+      {status.error && (
+        <Alert variant="danger" dismissible onClose={() => setStatus({...status, error: ''})}>
+          {status.error}
+        </Alert>
+      )}
+      
       {status.success && (
         <Alert variant="success">
           Thank you! Your message has been sent successfully.
@@ -121,7 +128,7 @@ const ContactForm = ({
       )}
 
       <Form.Group className="mb-3" controlId="name">
-        <Form.Label>Full Name</Form.Label>
+        <Form.Label>Full Name *</Form.Label>
         <Form.Control
           type="text"
           name="name"
@@ -129,6 +136,7 @@ const ContactForm = ({
           onChange={handleChange}
           required
           isInvalid={validated && !formData.name}
+          placeholder="Enter your full name"
         />
         <Form.Control.Feedback type="invalid">
           Please provide your name.
@@ -136,7 +144,7 @@ const ContactForm = ({
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="email">
-        <Form.Label>Email Address</Form.Label>
+        <Form.Label>Email Address *</Form.Label>
         <Form.Control
           type="email"
           name="email"
@@ -144,6 +152,7 @@ const ContactForm = ({
           onChange={handleChange}
           required
           isInvalid={validated && !formData.email}
+          placeholder="Enter your email address"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a valid email address.
@@ -157,11 +166,12 @@ const ContactForm = ({
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          placeholder="Enter your phone number (optional)"
         />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="message">
-        <Form.Label>Message</Form.Label>
+        <Form.Label>Message *</Form.Label>
         <Form.Control
           as="textarea"
           rows={4}
@@ -170,6 +180,7 @@ const ContactForm = ({
           onChange={handleChange}
           required
           isInvalid={validated && !formData.message}
+          placeholder="How can we help you?"
         />
         <Form.Control.Feedback type="invalid">
           Please provide a message.
@@ -217,7 +228,8 @@ const ContactForm = ({
         variant="primary"
         type="submit"
         disabled={status.loading}
-        className="submit-btn w-20"
+        className="submit-btn w-100"
+        size="lg"
       >
         {status.loading ? (
           <>

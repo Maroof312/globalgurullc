@@ -5,6 +5,7 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import './CAMReconciliation.scss';
 import ContactForm from '../../components/forms/ContactForm';
+import { config } from '../../config'
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import DifferenceSection from '../../components/sections/DifferenceSection';
@@ -116,7 +117,7 @@ const CAMReconciliation = () => {
                 <ContactForm 
                   formTitle="Get Expert Advice"
                   showPrivacyPolicy={true}
-                  recaptchaSiteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                  recaptchaSiteKey={config.recaptchaSiteKey}
                 />
               </motion.div>
             </Col>
@@ -166,10 +167,10 @@ const CAMReconciliation = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title text-center display-6 fw-bold mb-5">
+            <h2 className="section-title display-6 fw-bold mb-5">
               CAM Reconciliation Services Tailored to Your Needs
             </h2>
-            <p className="section-intro text-center mb-5 mx-auto">
+            <p className="section-intro mb-5 mx-auto">
               At Global Guru, we don't believe in one-size-fits-all. Our CAM reconciliation services are fully customized 
               based on lease specifics, tenant categories, property types, and market standards.
             </p>

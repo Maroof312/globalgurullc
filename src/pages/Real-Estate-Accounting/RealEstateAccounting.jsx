@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import ContactForm from '../../components/forms/ContactForm';
+import { config } from '../../config'
 import FinancialServices from '../../components/sections/FinancialServices';
 import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
@@ -149,7 +150,7 @@ const RealEstateAccounting = () => {
                 <ContactForm 
                   formTitle="Real Estate Accounting Consultation"
                   showPrivacyPolicy={true}
-                  recaptchaSiteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                  recaptchaSiteKey={config.recaptchaSiteKey}
                 />
               </motion.div>
             </Col>
@@ -203,8 +204,8 @@ const RealEstateAccounting = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title text-center display-6 fw-bold mb-4">Our Real Estate Accounting Services</h2>
-            <p className="section-subtitle text-center mb-5 mx-auto">
+            <h2 className="section-title display-6 fw-bold mb-4">Our Real Estate Accounting Services</h2>
+            <p className="section-subtitle mb-5 mx-auto">
               Comprehensive financial solutions tailored to your property portfolio needs
             </p>
           </motion.div>
@@ -269,7 +270,7 @@ const RealEstateAccounting = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title text-center display-6 fw-bold mb-4">Our Competitive Edge</h2>
+            <h2 className="section-title display-6 fw-bold mb-4">Our Competitive Edge</h2>
             <p className="section-subtitle text-center mb-5 mx-auto">
               What sets us apart in real estate accounting and financial management
             </p>
@@ -374,7 +375,7 @@ const RealEstateAccounting = () => {
             <h2 className="section-title text-center display-6 fw-bold mb-4">
               Comprehensive Property Accounting Services
             </h2>
-            <p className="text-center mb-5 mx-auto" style={{ maxWidth: '800px' }}>
+            <p className="mb-5 mx-auto" style={{ maxWidth: '800px' }}>
               We provide full-service real estate accounting for property companies of all sizes. From monthly bookkeeping to fund-level analysis, our services are designed to keep your financial operations clean, transparent, and optimized.
             </p>
           </motion.div>

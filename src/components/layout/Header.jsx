@@ -12,7 +12,7 @@ export default function Header() {
   const [navbarExpanded, setNavbarExpanded] = useState(false);
   const location = useLocation();
   const navbarRef = useRef(null);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);

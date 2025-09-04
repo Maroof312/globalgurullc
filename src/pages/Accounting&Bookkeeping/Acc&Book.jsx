@@ -274,7 +274,7 @@ const AccBook = () => {
       {/* Process Section */}
       <section className="process-section">
         <Container>
-          <motion.div className="text-center mb-5" variants={containerVariants}>
+          <motion.div className="mb-5" variants={containerVariants}>
             <motion.h2 className="section-title" variants={itemVariants}>
               Our Proven Process
             </motion.h2>

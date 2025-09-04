@@ -94,7 +94,7 @@ const ARAP = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                   >
-                    Accounts Payable & Accounts Receivable Billing Services
+                    Accounts Payable & <br/>Accounts Receivable Billing Services
                   </motion.h1>
                   <motion.p
                     className="lead"
@@ -370,7 +370,7 @@ const ARAP = () => {
         <section className="industries-section">
           <Container>
             <Row className="justify-content-center">
-              <Col lg={10} className="text-center">
+              <Col lg={10}>
                 <motion.div variants={itemVariants}>
                   <h2 className="section-title">Industries We Serve</h2>
                   <p className="section-description">

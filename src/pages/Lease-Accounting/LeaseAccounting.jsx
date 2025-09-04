@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import ContactForm from '../../components/forms/ContactForm';
+import { config } from '../../config';
 import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
 import FAQ from '../../components/sections/FAQ';
@@ -191,7 +192,7 @@ At Global Guru Solution, our lease administration services are built to do just 
                 <ContactForm 
                   formTitle="Lease Accounting Consultation"
                   showPrivacyPolicy={true}
-                  recaptchaSiteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                  recaptchaSiteKey={config.recaptchaSiteKey}
                 />
               </motion.div>
             </Col>
@@ -433,7 +434,7 @@ At Global Guru Solution, our lease administration services are built to do just 
             <h2 className="section-title text-center display-6 fw-bold mb-4">
               Complete Lease Administration Services That Fit Your Business
             </h2>
-            <p className="section-subtitle text-center mb-5 mx-auto">
+            <p className="section-subtitle mb-5 mx-auto">
               Our lease administration services cover every detail, from document abstraction to real-time monitoring and reporting.
             </p>
           </motion.div>
