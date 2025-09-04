@@ -228,7 +228,7 @@ const ContactForm = ({
         variant="primary"
         type="submit"
         disabled={status.loading}
-        className="submit-btn w-100"
+        className="submit-btn w-80"
         size="lg"
       >
         {status.loading ? (

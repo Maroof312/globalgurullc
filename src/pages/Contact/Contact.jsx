@@ -41,7 +41,7 @@ export default function Contact() {
                 className="contact-form-wrapper"
               >
                 <div className="text-center text-lg-start mb-4">
-                  <h2 className="fw-bold mb-3">Send a Message</h2>
+                  <h2 className=" mb-3">Send a Message</h2>
                 </div>
                 <ContactForm />
               </motion.div>
