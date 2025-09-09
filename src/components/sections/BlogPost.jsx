@@ -74,6 +74,8 @@ const BlogPost = ({ blog, isFeatured = false, layout = 'vertical' }) => {
               alt={blog.title}
               onError={handleImageError}
               onLoad={handleImageLoad}
+              loading="lazy"
+              decoding="async"
               style={{ 
                 width: '100%', 
                 height: '200px', 

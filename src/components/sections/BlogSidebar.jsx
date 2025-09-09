@@ -56,7 +56,7 @@ const BlogSidebar = ({ categories, tags, onCategorySelect, onSearch }) => {
           {popularPosts.map((post, index) => (
             <div key={post.id} className="popular-post">
               <div className="post-image">
-                <img src={post.image} alt={post.title} />
+                <img src={post.image} alt={post.title} loading="lazy" decoding="async"/>
               </div>
               <div className="post-info">
                 <h5 className="post-title">{post.title}</h5>

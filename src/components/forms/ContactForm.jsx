@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Form, Button, Alert, Spinner } from 'react-bootstrap'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { config } from '../../config'
@@ -34,6 +34,7 @@ const ContactForm = ({
     setRecaptchaValue(value);
     setRecaptchaError(false);
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
