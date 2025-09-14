@@ -9,6 +9,7 @@ import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
 import FAQ from '../../components/sections/FAQ';
 import PortfolioList from '../../components/sections/Portfolio';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
@@ -135,6 +136,8 @@ const LeaseAccounting = () => {
 
   return (
     <div className="lease-accounting-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       <Helmet>
         <title>Lease Administration & Accounting Services | Global Guru</title>
         <meta

@@ -10,6 +10,7 @@ import CTA from '../../components/sections/CTA';
 import StatsCount from '../../components/sections/StatsCounter';
 import TMDifference from '../../components/sections/DifferenceSection'
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 
 
 export default function Home() {
@@ -34,18 +35,6 @@ export default function Home() {
           itemprop="description" 
           content="Commercial real estate data solutions and consulting services." 
         />
-
-        {/* GA4 Tracking */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.VITE_GA4_MEASUREMENT_ID}`}></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${import.meta.env.VITE_GA4_MEASUREMENT_ID}');
-          `}
-        </script>
-
         {/* Google Search Console Verification */}
         <meta 
           name="google-site-verification" 
@@ -53,12 +42,12 @@ export default function Home() {
         />
       </Helmet>
 
-      {/* Page Sections (Keep existing structure) */}
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
+
       <HeroSection />
       <MissionSection />
       <DataExpertise />
-      {/* <ServicesOverview /> */}
-      {/* <QuantumSolutions/> */}
       <DataFlowVisualization />
       <TMDifference/>
       <StatsCount/>

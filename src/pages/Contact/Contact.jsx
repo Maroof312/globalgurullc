@@ -1,12 +1,14 @@
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import { motion } from 'framer-motion'
 import ContactForm from '../../components/forms/ContactForm'
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import './Contact.scss'
 
 export default function Contact() {
   return (
     <div className="contact-page">
-
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Hero Section */}
       <section className="contact-hero py-5">
         <Container>

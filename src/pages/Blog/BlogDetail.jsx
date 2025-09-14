@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
 
@@ -70,6 +71,8 @@ const BlogDetail = () => {
 
   return (
     <div className="blog-detail">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />

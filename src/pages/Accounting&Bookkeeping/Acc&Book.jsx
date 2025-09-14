@@ -15,6 +15,7 @@ import { GiCash, GiPayMoney, GiReceiveMoney } from "react-icons/gi";
 import CTA from "../../components/sections/CTA";
 import heroImage from "../../assets/images/accounting-new.webp";
 import accountingImage from "../../assets/images/10.avif";
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import "./Acc&Book.scss";
 
 const services = [
@@ -152,6 +153,8 @@ const AccBook = () => {
       animate="visible"
       variants={containerVariants}
     >
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-image-container">

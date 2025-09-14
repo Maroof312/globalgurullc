@@ -6,6 +6,7 @@ import Testimonials from '../../components/sections/Testimonials';
 import { Helmet } from 'react-helmet-async';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import './YardiConsulting.scss';
 
 const YardiConsulting = () => {
@@ -26,6 +27,8 @@ const YardiConsulting = () => {
 
   return (
     <div className="yardi-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       <Helmet>
         <title>Yardi Consultation Services | Yardi Implementation & Optimization </title>
         <meta

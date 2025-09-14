@@ -2,11 +2,14 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import TeamMembers from "../../components/sections/TeamMembers";
 import { Helmet } from 'react-helmet-async';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import './Experts.scss';
 
 export default function Experts() {
   return (
     <div className="experts-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Added Meta Tags with React Helmet */}
       <Helmet>
         <title>Professional Accounting & Financial Services | Global Solutions</title>

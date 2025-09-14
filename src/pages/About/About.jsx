@@ -1,5 +1,6 @@
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import { motion } from 'framer-motion'
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import TeamMembers from '../../components/sections/TeamMembers'
 import aboutHeroImage from '../../assets/images/about.avif'
 import './About.scss'
@@ -7,6 +8,8 @@ import './About.scss'
 export default function About() {
   return (
     <div className="about-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Hero Section */}
       <section className="about-hero">
         <div className="hero-image-wrapper">

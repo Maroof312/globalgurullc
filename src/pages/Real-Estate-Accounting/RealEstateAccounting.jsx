@@ -10,6 +10,7 @@ import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
 import PortfolioList from '../../components/sections/Portfolio';
 import FAQ from '../../components/sections/FAQ';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async'; // Added Helmet import
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
@@ -95,6 +96,8 @@ const RealEstateAccounting = () => {
 
   return (
     <div className="real-estate-accounting-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Added Meta Tags with React Helmet */}
       <Helmet>
         <title>Real Estate Accounting Services | Outsourced Finance - Global Guru</title>

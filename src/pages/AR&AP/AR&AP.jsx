@@ -8,6 +8,7 @@ import arImage3 from '../../assets/images/13.1th - Accounts Payable Services Tha
 import FinancialServices from '../../components/sections/FinancialServices';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './AR&AP.scss';
 
@@ -56,6 +57,8 @@ const ARAP = () => {
 
   return (
     <>
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       <Helmet>
         <title>Accounts Receivable & Payable Services | Global Guru</title>
         <meta

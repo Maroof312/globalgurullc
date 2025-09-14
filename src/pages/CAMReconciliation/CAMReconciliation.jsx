@@ -9,6 +9,7 @@ import { config } from '../../config'
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import DifferenceSection from '../../components/sections/DifferenceSection';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 
 // Other images
@@ -59,6 +60,8 @@ const CAMReconciliation = () => {
 
   return (
     <div className="cam-reconciliation-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Added Meta Tags with React Helmet */}
       <Helmet>
         <title>CAM Reconciliation Services for Property Owners | Global Guru</title>

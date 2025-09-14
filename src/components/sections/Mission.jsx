@@ -2,7 +2,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import missionSection from "../../assets/images/accounting-new.webp";
+import missionSection from "../../assets/images/15 - Website 1st Illustration.avif";
 import "./Mission.scss";
 
 export default function MissionSection() {

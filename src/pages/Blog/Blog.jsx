@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import BlogSidebar from '../../components/sections/BlogSidebar';
 import BlogPost from '../../components/sections/BlogPost';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { blogData } from '../../data/BlogData';
 import './Blog.scss';
 
@@ -34,6 +35,8 @@ const Blog = () => {
 
   return (
     <div className="modern-blog">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Hero Header */}
       <section className="blog-hero">
         <div className="hero-background">

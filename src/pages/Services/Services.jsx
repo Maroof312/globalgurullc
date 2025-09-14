@@ -1,10 +1,12 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import servicesHeroImage from '../../assets/images/15 - Website 1st Illustration.avif';
+import servicesHeroImage from '../../assets/images/services-hero-1.avif';
 import IntroImage from '../../assets/images/USA_CITY.webp';
 import CTA from '../../components/sections/CTA';
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
+
 
 import './Services.scss';
 
@@ -80,6 +82,8 @@ const AnimatedSection = ({ children, className = "" }) => {
 export default function Services() {
   return (
     <div className="services-page">
+      {/* LinkedIn Insight Tag */}
+      <LinkedInInsightTag />
       {/* Hero Section */}
       <section className="services-hero">
         <div className="hero-image-wrapper">
