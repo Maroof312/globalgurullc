@@ -45,7 +45,7 @@ const FAQ = ({
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="faq-question-text">{faq.question}</span>
+                <h2 className="faq-question-text">{faq.question}</h2>
                 <motion.span 
                   className="faq-icon"
                   animate={{ rotate: activeIndex === index ? 45 : 0 }}
