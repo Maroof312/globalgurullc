@@ -1,7 +1,7 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import servicesHeroImage from '../../assets/images/services-hero.avif';
+import servicesHeroImage from '../../assets/images/15 - Website 1st Illustration.avif';
 import IntroImage from '../../assets/images/USA_CITY.webp';
 import CTA from '../../components/sections/CTA';
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';

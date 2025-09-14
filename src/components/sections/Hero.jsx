@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { Container, Button } from "react-bootstrap";
 import ParticleCanvas from "./ParticleCanvas";
 import "./Hero.scss";
-import heroBanner from "../../assets/images/home_banner-transformed_logo.webp";
+import heroBanner from "../../assets/images/16 - Website 2nd Illustration.avif";
 
 export default function HeroSection() {
   const controls = useAnimation();
