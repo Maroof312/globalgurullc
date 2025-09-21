@@ -2,7 +2,8 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import missionSection from "../../assets/images/15 - Website 1st Illustration.avif";
+import missionSectionSrc from "../../assets/images/15 - Website 1st Illustration.avif?w=600;900;1200&format=avif;webp&as=srcset";
+import missionSectionFallback from "../../assets/images/15 - Website 1st Illustration.avif?w=900";
 import "./Mission.scss";
 
 export default function MissionSection() {
@@ -41,15 +42,13 @@ export default function MissionSection() {
             >
               <div className="image-overlay"></div>
               <img
-                src={missionSection}
+                srcSet={missionSectionSrc}
+                src={missionSectionFallback}
                 alt="Commercial real estate accounting team"
                 loading="lazy"
                 className="mission-image"
+                sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 600px"
               />
-              <div className="floating-shapes">
-                <div className="shape-1"></div>
-                <div className="shape-2"></div>
-              </div>
             </motion.div>
           </Col>
           <Col lg={6} className="order-lg-1">
@@ -63,7 +62,7 @@ export default function MissionSection() {
               <h2>
                 <span className="text-gradient">Redefining</span> Commercial
                 Real
-                <br />
+                <br className="d-none d-md-block" />
                 Estate Accounting
               </h2>
 
@@ -71,7 +70,7 @@ export default function MissionSection() {
 
               <div className="mission-text">
                 <p className="lead">
-                  At Global Guru LLC, we transform commercial real estate
+                  At Global Guru, we transform commercial real estate
                   accounting through specialized outsourcing solutions that
                   enhance accuracy and operational efficiency.
                 </p>

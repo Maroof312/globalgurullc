@@ -1,5 +1,4 @@
-// BlogDetail.jsx
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
@@ -9,21 +8,16 @@ import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
 
-const BlogDetail = () => {
+const BlogDetail = React.memo(() => {
   const location = useLocation();
   const { blog } = location.state || {};
 
-  if (!blog) {
-    return <div>Blog post not found</div>;
-  }
-
-  // Set META title and description based on blog title
-  const getMetaTags = () => {
-    // Default fallback values
+  const metaTags = useMemo(() => {
+    if (!blog) return { title: "Global Guru Insights Blog", description: "Expert knowledge and industry insights for property management professionals" };
+    
     let title = "Global Guru Insights Blog";
     let description = "Expert knowledge and industry insights for property management professionals";
     
-    // Custom titles and descriptions for specific blog posts
     if (blog.title.includes("CAM Audit")) {
       title = "How to Prepare for a CAM Audit & Avoid Errors | Global Guru";
       description = "Ensure CAM accuracy & transparency. Learn audit steps, common errors, and how Global Guru helps with CAM reconciliation & reporting.";
@@ -34,7 +28,6 @@ const BlogDetail = () => {
       title = "10 Benefits of Outsourcing Bookkeeping for Property Management Firms";
       description = "Discover why property management firms outsource bookkeeping. Learn 10 key benefits including cost savings, accuracy, compliance & scalability with experts.";
     } else {
-      // Fallback to blog's own title and first paragraph if available
       title = `${blog.title} | Global Guru`;
       const firstParagraph = blog.content.find(item => item.type === 'p');
       if (firstParagraph && firstParagraph.text) {
@@ -43,39 +36,41 @@ const BlogDetail = () => {
     }
     
     return { title, description };
-  };
+  }, [blog]);
 
-  const { title, description } = getMetaTags();
+  const renderContent = useMemo(() => {
+    return (item, index) => {
+      switch (item.type) {
+        case 'h2':
+          return <h2 key={index} className="blog-content-h2">{item.text}</h2>;
+        case 'h3':
+          return <h3 key={index} className="blog-content-h3">{item.text}</h3>;
+        case 'p':
+          return <p key={index} className="blog-content-p">{item.text}</p>;
+        case 'list':
+          return (
+            <ul key={index} className="blog-content-list">
+              {item.items.map((listItem, i) => (
+                <li key={i}>{listItem}</li>
+              ))}
+            </ul>
+          );
+        default:
+          return null;
+      }
+    };
+  }, []);
 
-  // Function to render content based on type
-  const renderContent = (item, index) => {
-    switch (item.type) {
-      case 'h2':
-        return <h2 key={index} className="blog-content-h2">{item.text}</h2>;
-      case 'h3':
-        return <h3 key={index} className="blog-content-h3">{item.text}</h3>;
-      case 'p':
-        return <p key={index} className="blog-content-p">{item.text}</p>;
-      case 'list':
-        return (
-          <ul key={index} className="blog-content-list">
-            {item.items.map((listItem, i) => (
-              <li key={i}>{listItem}</li>
-            ))}
-          </ul>
-        );
-      default:
-        return null;
-    }
-  };
+  if (!blog) {
+    return <div>Blog post not found</div>;
+  }
 
   return (
     <div className="blog-detail">
-      {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
       <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{metaTags.title}</title>
+        <meta name="description" content={metaTags.description} />
       </Helmet>
       
       <Container>
@@ -104,7 +99,14 @@ const BlogDetail = () => {
               {/* Featured Image */}
               {blog.featuredImage && (
                 <div className="blog-featured-image">
-                  <img src={blog.featuredImage} alt={blog.title} />
+                  <img 
+                    src={blog.featuredImage} 
+                    alt={blog.title} 
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="400"
+                  />
                 </div>
               )}
 
@@ -144,6 +146,6 @@ const BlogDetail = () => {
       </Container>
     </div>
   );
-};
+});
 
 export default BlogDetail;

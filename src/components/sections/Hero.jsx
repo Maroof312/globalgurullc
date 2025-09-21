@@ -3,7 +3,8 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { Container, Button } from "react-bootstrap";
 import ParticleCanvas from "./ParticleCanvas";
 import "./Hero.scss";
-import heroBanner from "../../assets/images/16 - Website 2nd Illustration.avif";
+import heroBannerSrc from "../../assets/images/16 - Website 2nd Illustration.avif?w=800;1200;1600&format=avif;webp&as=srcset";
+import heroBannerFallback from "../../assets/images/16 - Website 2nd Illustration.avif?w=800";
 
 export default function HeroSection() {
   const controls = useAnimation();
@@ -12,11 +13,13 @@ export default function HeroSection() {
 
   return (
     <section className="hero-section" ref={ref}>
-      {/* Original Image with Lazy Loading */}
+      {/* Optimized Image with Responsive srcset */}
       <img
-        src={heroBanner}
+        srcSet={heroBannerSrc}
+        src={heroBannerFallback}
         alt="Commercial Real Estate Accounting"
         className="hero-background-image"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
         loading="lazy"
       />
 
@@ -35,8 +38,6 @@ export default function HeroSection() {
         >
           <h1>
             Outsourced Accounting Services for Commercial Real Estate Companies
-            Streamline Your Property Finances with Accurate Transparent and
-            Scalable Solutions
           </h1>
 
           <motion.p
@@ -45,7 +46,7 @@ export default function HeroSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-           We help commercial real estate businesses grow by providing expert outsourced accounting services tailored to the unique needs of multifamily, office, and industrial property owners and managers. From individual assets to large-scale portfolios, we deliver precise financial reporting, cash flow management, and regulatory compliance – so you can focus on maximizing returns and scaling your operations. 
+            Streamline Your Property Finances with Accurate,  Transparent and Scalable Solutions.
           </motion.p>
 
           <motion.div

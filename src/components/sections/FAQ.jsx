@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import PropTypes from 'prop-types';
 import './FAQ.scss';
 
 const FAQ = ({ 
@@ -11,12 +12,35 @@ const FAQ = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleFAQ = (index) => {
+  const memoizedFaqs = useMemo(() => faqs, [faqs]);
+
+  const toggleFAQ = useCallback((index) => {
     setActiveIndex(activeIndex === index ? null : index);
-  };
+  }, [activeIndex]);
+
+  const handleKeyPress = useCallback((event, index) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleFAQ(index);
+    }
+  }, [toggleFAQ]);
+
+  const renderAnswer = useCallback((answer) => {
+    if (typeof answer === 'string') {
+      return <p>{answer}</p>;
+    }
+    return answer;
+  }, []);
 
   return (
-    <section className="faq-section" style={{ '--theme-color': themeColor, maxWidth }}>
+    <section 
+      className="faq-section" 
+      style={{ 
+        '--theme-color': themeColor, 
+        '--max-width': maxWidth 
+      }}
+      aria-label="Frequently Asked Questions"
+    >
       <div className="faq-container">
         <motion.div 
           className="faq-header"
@@ -30,7 +54,7 @@ const FAQ = ({
         </motion.div>
 
         <div className="faq-items">
-          {faqs.map((faq, index) => (
+          {memoizedFaqs.map((faq, index) => (
             <motion.div 
               key={index}
               className={`faq-item ${activeIndex === index ? 'active' : ''}`}
@@ -42,16 +66,19 @@ const FAQ = ({
               <button 
                 className="faq-question"
                 onClick={() => toggleFAQ(index)}
+                onKeyDown={(e) => handleKeyPress(e, index)}
                 aria-expanded={activeIndex === index}
                 aria-controls={`faq-answer-${index}`}
+                aria-label={`${faq.question} ${activeIndex === index ? 'Collapse' : 'Expand'}`}
               >
-                <h2 className="faq-question-text">{faq.question}</h2>
+                <span className="faq-question-text">{faq.question}</span>
                 <motion.span 
                   className="faq-icon"
                   animate={{ rotate: activeIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.3 }}
+                  aria-hidden="true"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" loading="lazy">
                     <path d="M12 4V20M4 12H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 </motion.span>
@@ -63,16 +90,23 @@ const FAQ = ({
                     id={`faq-answer-${index}`}
                     className="faq-answer"
                     initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    animate={{ 
+                      opacity: 1, 
+                      height: 'auto' 
+                    }}
+                    exit={{ 
+                      opacity: 0, 
+                      height: 0 
+                    }}
+                    transition={{ 
+                      duration: 0.3, 
+                      ease: [0.22, 1, 0.36, 1] 
+                    }}
+                    role="region"
+                    aria-labelledby={`faq-question-${index}`}
                   >
                     <div className="faq-answer-content">
-                      {typeof faq.answer === 'string' ? (
-                        <p>{faq.answer}</p>
-                      ) : (
-                        faq.answer
-                      )}
+                      {renderAnswer(faq.answer)}
                     </div>
                   </motion.div>
                 )}
@@ -85,4 +119,17 @@ const FAQ = ({
   );
 };
 
-export default FAQ;
+FAQ.propTypes = {
+  faqs: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string.isRequired,
+      answer: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired
+    })
+  ).isRequired,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  themeColor: PropTypes.string,
+  maxWidth: PropTypes.string
+};
+
+export default React.memo(FAQ);

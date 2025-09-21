@@ -3,7 +3,8 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
-import logo from '../../assets/images/Black-logo.webp';
+import logo from '../../assets/images/Black-logo.webp?w=140;280&format=webp&as=srcset';
+import logoFallback from '../../assets/images/Black-logo.webp?w=140';
 import './Header.scss';
 
 export default function Header() {
@@ -19,7 +20,6 @@ export default function Header() {
     };
     
     const handleClickOutside = (event) => {
-      // Close navbar if clicked outside of it and it's expanded
       if (navbarExpanded && navbarRef.current && !navbarRef.current.contains(event.target)) {
         setNavbarExpanded(false);
       }
@@ -47,7 +47,6 @@ export default function Header() {
   };
 
   const handleNavLinkClick = () => {
-    // Collapse only in mobile after link navigation
     if (window.innerWidth < 992) {
       setNavbarExpanded(false);
       setActiveDropdown(null);
@@ -59,7 +58,6 @@ export default function Header() {
   };
 
   const toggleMobileDropdown = (menu) => {
-    // Only for mobile view: toggle dropdown without collapsing navbar
     if (window.innerWidth < 992) {
       setActiveDropdown(activeDropdown === menu ? null : menu);
     }
@@ -73,7 +71,6 @@ export default function Header() {
   ];
 
   const servicesSubmenu = [
-    { title: "Our Services", path: "/services" },
     { title: "Property Accounting", path: "/real-estate-accounting-services" },
     { title: "CAM Reconciliation", path: "/cam-reconciliation-services" },
     { title: "Lease Administration", path: "/lease-admin-accounting-services" },
@@ -97,7 +94,8 @@ export default function Header() {
         >
           <Navbar.Brand href="/">
             <img 
-              src={logo} 
+              srcSet={logo}
+              src={logoFallback}
               alt="Global Guru LLC" 
               width="140"
               height="70"
@@ -136,12 +134,13 @@ export default function Header() {
                 >
                   About
                 </Nav.Link>
-                <span 
+                <button 
                   className="dropdown-toggle-icon"
                   onClick={() => toggleMobileDropdown('about')}
+                  aria-label="Toggle about dropdown"
                 >
                   <ChevronDown size={18} />
-                </span>
+                </button>
               </div>
               <div className={`dropdown-menu ${activeDropdown === 'about' ? 'show' : ''}`}>
                 {aboutSubmenu.map((item) => (
@@ -171,12 +170,13 @@ export default function Header() {
                 >
                   Services
                 </Nav.Link>
-                <span 
+                <button 
                   className="dropdown-toggle-icon"
                   onClick={() => toggleMobileDropdown('services')}
+                  aria-label="Toggle services dropdown"
                 >
                   <ChevronDown size={18} />
-                </span>
+                </button>
               </div>
               <div className={`dropdown-menu ${activeDropdown === 'services' ? 'show' : ''}`}>
                 {servicesSubmenu.map((item) => (

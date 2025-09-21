@@ -8,6 +8,9 @@ import './About.scss'
 export default function About() {
   return (
     <div className="about-page">
+      <Helmet>
+        <link rel="canonical" href="https://globalgurullc.com/who-we-are" />
+      </Helmet>
       {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
       {/* Hero Section */}

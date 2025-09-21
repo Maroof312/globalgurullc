@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -44,7 +44,7 @@ const BarChartRow = ({ stat, index, isInView }) => {
           transition={{ duration: 1.5, delay: index * 0.3, ease: "easeOut" }}
         >
           <span className="bar-value">
-            <CountUp end={stat.value} suffix={stat.suffix} duration={2} />
+            {isInView && <CountUp end={stat.value} suffix={stat.suffix} duration={2} />}
           </span>
         </motion.div>
       </div>
@@ -53,18 +53,11 @@ const BarChartRow = ({ stat, index, isInView }) => {
 };
 
 export default function StatsCounter() {
-  const controls = useAnimation();
   const [ref, inView] = useInView({ 
     triggerOnce: true, 
     threshold: 0.1,
     rootMargin: '-50px 0px'
   });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   return (
     <section className="real-estate-stats" ref={ref}>
@@ -80,7 +73,7 @@ export default function StatsCounter() {
               <h2>Excellence in Commercial Real Estate Accounting</h2>
               <p className="subtitle">
                 Trusted by leading commercial real estate firms nationwide, we streamline financial operations and maximize ROI. 
-                With over 10,000 CAM reconciliations successfully completed
+                With over 50K CAM reconciliations successfully completed
               </p>
             </motion.div>
           </Col>

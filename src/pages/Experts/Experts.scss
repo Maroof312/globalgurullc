@@ -1,894 +1,899 @@
-// Variables
-$primary: #4361ee;
-$primary-dark: #3a0ca3;
-$secondary: #f72585;
-$accent: #4cc9f0;
-$dark: #0f172a;
-$light: #f8f9fa;
-$text-primary: #212529;
-$text-secondary: #6c757d;
+  // Variables
+  $primary: #4361ee;
+  $primary-dark: #3a0ca3;
+  $secondary: #f72585;
+  $accent: #4cc9f0;
+  $dark: #0f172a;
+  $light: #f8f9fa;
+  $text-primary: #212529;
+  $text-secondary: #6c757d;
 
-.experts-page {
-  // Creative Hero Section
-  .creative-hero {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    position: relative;
-    overflow: hidden;
-    
-    &::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($accent, 0.05) 100%);
-      border-radius: 50%;
-      z-index: 0;
-    }
-    
-    .hero-content {
+  .experts-page {
+    // Creative Hero Section
+    .creative-hero {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
       position: relative;
-      z-index: 2;
+      overflow: hidden;
       
-      .pre-title {
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: $primary;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($accent, 0.05) 100%);
+        border-radius: 50%;
+        z-index: 0;
       }
       
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        color: $text-primary;
-        
-        @media (max-width: 1200px) {
-          font-size: 3rem;
-        }
-        
-        @media (max-width: 992px) {
-          font-size: 2.5rem;
-        }
-        
-        @media (max-width: 768px) {
-          font-size: 2.2rem;
-        }
-        
-        @media (max-width: 576px) {
-          font-size: 1.9rem;
-        }
-        
-        .text-gradient {
-          background: linear-gradient(135deg, $primary 0%, $secondary 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-      }
-      
-      .hero-description {
-        font-size: 1.2rem;
-        color: $text-secondary;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        
-        @media (max-width: 992px) {
-          font-size: 1.15rem;
-        }
-        
-        @media (max-width: 768px) {
-          font-size: 1.1rem;
-        }
-        
-        @media (max-width: 576px) {
-          font-size: 1rem;
-        }
-      }
-    }
-    
-    .hero-visual {
-      position: relative;
-      height: 400px;
-      
-      @media (max-width: 1200px) {
-        height: 350px;
-      }
-      
-      @media (max-width: 992px) {
-        height: 300px;
-      }
-      
-      @media (max-width: 768px) {
-        height: 250px;
-        margin-top: 40px;
-      }
-      
-      @media (max-width: 576px) {
-        height: 200px;
-      }
-      
-      .floating-cards {
+      .hero-content {
         position: relative;
-        width: 100%;
-        height: 100%;
+        z-index: 2;
         
-        .card-item {
-          position: absolute;
-          background: white;
-          border-radius: 16px;
-          padding: 15px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.4s ease;
+        .pre-title {
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          color: $primary;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+        }
+        
+        .hero-title {
+          font-size: 3.5rem;
+          font-weight: 800;
+          line-height: 1.2;
+          margin-bottom: 1.5rem;
+          color: $text-primary;
           
           @media (max-width: 1200px) {
-            padding: 12px;
+            font-size: 3rem;
           }
-          
-          @media (max-width: 992px) {
-            padding: 10px;
-          }
-          
-          @media (max-width: 768px) {
-            padding: 8px;
-          }
-          
-          @media (max-width: 576px) {
-            padding: 6px;
-          }
-        }
-      }
-    }
-  }
-  
-  // Team Display Section
-  .team-display {
-    padding: 100px 0;
-    background: white;
-    
-    @media (max-width: 992px) {
-      padding: 80px 0;
-    }
-    
-    @media (max-width: 768px) {
-      padding: 60px 0;
-    }
-    
-    .section-intro {
-      margin-bottom: 60px;
-      
-      @media (max-width: 768px) {
-        margin-bottom: 40px;
-      }
-      
-      .section-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: $text-primary;
-        
-        @media (max-width: 1200px) {
-          font-size: 2.5rem;
-        }
-        
-        @media (max-width: 992px) {
-          font-size: 2.2rem;
-        }
-        
-        @media (max-width: 768px) {
-          font-size: 2rem;
-        }
-        
-        @media (max-width: 576px) {
-          font-size: 1.8rem;
-        }
-      }
-      
-      .section-description {
-        font-size: 1.1rem;
-        color: $text-secondary;
-        max-width: 600px;
-        margin: 0 auto;
-        
-        @media (max-width: 768px) {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-  
-  // Values Section
-  .values-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    
-    @media (max-width: 992px) {
-      padding: 80px 0;
-    }
-    
-    @media (max-width: 768px) {
-      padding: 60px 0;
-    }
-    
-    .values-content {
-      text-align: center;
-      
-      .values-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 60px;
-        color: $text-primary;
-        
-        @media (max-width: 1200px) {
-          font-size: 2.2rem;
-        }
-        
-        @media (max-width: 992px) {
-          font-size: 2rem;
-          margin-bottom: 50px;
-        }
-        
-        @media (max-width: 768px) {
-          font-size: 1.8rem;
-          margin-bottom: 40px;
-        }
-        
-        @media (max-width: 576px) {
-          font-size: 1.6rem;
-          margin-bottom: 30px;
-        }
-      }
-      
-      .value-item {
-        padding: 30px 20px;
-        
-        @media (max-width: 768px) {
-          padding: 20px 15px;
-          margin-bottom: 20px;
-        }
-        
-        .value-icon {
-          font-size: 3rem;
-          margin-bottom: 20px;
           
           @media (max-width: 992px) {
             font-size: 2.5rem;
-            margin-bottom: 15px;
           }
           
-          @media (max-width: 576px) {
+          @media (max-width: 768px) {
             font-size: 2.2rem;
-            margin-bottom: 12px;
-          }
-        }
-        
-        h4 {
-          font-size: 1.3rem;
-          font-weight: 600;
-          margin-bottom: 15px;
-          color: $text-primary;
-          
-          @media (max-width: 992px) {
-            font-size: 1.2rem;
           }
           
           @media (max-width: 576px) {
-            font-size: 1.1rem;
+            font-size: 1.9rem;
+          }
+          
+          .text-gradient {
+            background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
           }
         }
         
-        p {
+        .hero-description {
+          font-size: 1.2rem;
           color: $text-secondary;
           line-height: 1.6;
+          margin-bottom: 2rem;
           
           @media (max-width: 992px) {
-            font-size: 0.95rem;
+            font-size: 1.15rem;
+          }
+          
+          @media (max-width: 768px) {
+            font-size: 1.1rem;
           }
           
           @media (max-width: 576px) {
-            font-size: 0.9rem;
+            font-size: 1rem;
+          }
+        }
+      }
+      
+      .hero-visual {
+        position: relative;
+        height: 400px;
+        
+        @media (max-width: 1200px) {
+          height: 350px;
+        }
+        
+        @media (max-width: 992px) {
+          height: 300px;
+        }
+        
+        @media (max-width: 768px) {
+          height: 250px;
+          margin-top: 40px;
+        }
+        
+        @media (max-width: 576px) {
+          height: 200px;
+        }
+        
+        .floating-cards {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          
+          .card-item {
+            position: absolute;
+            background: white;
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            
+            @media (max-width: 1200px) {
+              padding: 12px;
+            }
+            
+            @media (max-width: 992px) {
+              padding: 10px;
+            }
+            
+            @media (max-width: 768px) {
+              padding: 8px;
+            }
+            
+            @media (max-width: 576px) {
+              padding: 6px;
+            }
+          }
+        }
+      }
+    }
+    
+    // Team Display Section
+    .team-display {
+      padding: 100px 0;
+      background: white;
+      
+      @media (max-width: 992px) {
+        padding: 80px 0;
+      }
+      
+      @media (max-width: 768px) {
+        padding: 60px 0;
+      }
+      
+      .section-intro {
+        margin-bottom: 60px;
+        
+        @media (max-width: 768px) {
+          margin-bottom: 40px;
+        }
+        
+        .section-title {
+          font-size: 2.8rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: $text-primary;
+          
+          @media (max-width: 1200px) {
+            font-size: 2.5rem;
+          }
+          
+          @media (max-width: 992px) {
+            font-size: 2.2rem;
+          }
+          
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+          
+          @media (max-width: 576px) {
+            font-size: 1.8rem;
+          }
+        }
+        
+        .section-description {
+          font-size: 1.1rem;
+          color: $text-secondary;
+          max-width: 600px;
+          margin: 0 auto;
+          
+          @media (max-width: 768px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    
+    // Values Section
+    .values-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      
+      @media (max-width: 992px) {
+        padding: 80px 0;
+      }
+      
+      @media (max-width: 768px) {
+        padding: 60px 0;
+      }
+      
+      .values-content {
+        text-align: center;
+        
+        .values-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 60px;
+          color: $text-primary;
+          
+          @media (max-width: 1200px) {
+            font-size: 2.2rem;
+          }
+          
+          @media (max-width: 992px) {
+            font-size: 2rem;
+            margin-bottom: 50px;
+          }
+          
+          @media (max-width: 768px) {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+          }
+          
+          @media (max-width: 576px) {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+          }
+        }
+        
+        .value-item {
+          padding: 30px 20px;
+          
+          p {
+            text-align: left;
+            padding-left: 15px;
+          }
+          
+          @media (max-width: 768px) {
+            padding: 20px 15px;
+            margin-bottom: 20px;
+          }
+          
+          .value-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            
+            @media (max-width: 992px) {
+              font-size: 2.5rem;
+              margin-bottom: 15px;
+            }
+            
+            @media (max-width: 576px) {
+              font-size: 2.2rem;
+              margin-bottom: 12px;
+            }
+          }
+          
+          h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: $text-primary;
+            
+            @media (max-width: 992px) {
+              font-size: 1.2rem;
+            }
+            
+            @media (max-width: 576px) {
+              font-size: 1.1rem;
+            }
+          }
+          
+          p {
+            color: $text-secondary;
+            line-height: 1.6;
+            
+            @media (max-width: 992px) {
+              font-size: 0.95rem;
+            }
+            
+            @media (max-width: 576px) {
+              font-size: 0.9rem;
+            }
           }
         }
       }
     }
   }
-}
 
-// Enhanced Team Members Styles
-.team-team {
-  .team-card.team-page-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 100%;
-    cursor: pointer;
-    position: relative;
-    
-    @media (max-width: 768px) {
-      margin-bottom: 30px;
-    }
-    
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      
-      .team-avatar {
-        img {
-          transform: scale(1.1);
-        }
-        
-        &::after {
-          opacity: 1;
-        }
-      }
-      
-      .view-details-btn {
-        background: $primary;
-        color: white;
-        
-        svg {
-          transform: translateX(4px);
-        }
-      }
-    }
-
-    .card-inner {
-      padding: 35px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      height: 100%;
-      
-      @media (max-width: 992px) {
-        padding: 25px 20px;
-      }
-      
-      @media (max-width: 576px) {
-        padding: 20px 15px;
-      }
-    }
-
-    .team-avatar {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
+  // Enhanced Team Members Styles
+  .team-team {
+    .team-card.team-page-card {
+      background: white;
+      border-radius: 16px;
       overflow: hidden;
-      margin-bottom: 25px;
-      border: 4px solid white;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      height: 100%;
+      cursor: pointer;
       position: relative;
       
-      @media (max-width: 992px) {
-        width: 110px;
-        height: 110px;
-        margin-bottom: 20px;
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
       }
       
-      @media (max-width: 576px) {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 15px;
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        
+        .team-avatar {
+          img {
+            transform: scale(1.1);
+          }
+          
+          &::after {
+            opacity: 1;
+          }
+        }
+        
+        .view-details-btn {
+          background: $primary;
+          color: white;
+          
+          svg {
+            transform: translateX(4px);
+          }
+        }
       }
-      
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-        transition: transform 0.5s ease;
-      }
-      
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($primary-dark, 0.05) 100%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        border-radius: 50%;
-      }
-    }
 
-    .team-info {
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-        color: $text-primary;
-        font-weight: 700;
+      .card-inner {
+        padding: 35px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: 100%;
         
         @media (max-width: 992px) {
-          font-size: 1.3rem;
+          padding: 25px 20px;
         }
         
         @media (max-width: 576px) {
-          font-size: 1.2rem;
+          padding: 20px 15px;
         }
       }
-      
-      .role {
-        color: $primary;
-        font-weight: 600;
-        margin-bottom: 20px;
-        font-size: 1rem;
+
+      .team-avatar {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 25px;
+        border: 4px solid white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         position: relative;
-        display: inline-block;
         
         @media (max-width: 992px) {
-          font-size: 0.95rem;
+          width: 110px;
+          height: 110px;
+          margin-bottom: 20px;
+        }
+        
+        @media (max-width: 576px) {
+          width: 90px;
+          height: 90px;
           margin-bottom: 15px;
         }
         
-        @media (max-width: 576px) {
-          font-size: 0.9rem;
-          margin-bottom: 12px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+          transition: transform 0.5s ease;
         }
         
         &::after {
           content: '';
           position: absolute;
-          bottom: -8px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 30px;
-          height: 2px;
-          background: $primary;
-          border-radius: 1px;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba($primary, 0.1) 0%, rgba($primary-dark, 0.05) 100%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          border-radius: 50%;
         }
       }
-      
-      .view-details-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 10px 22px;
-        border: 2px solid $primary;
-        color: $primary;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-        margin-top: auto;
-        background: transparent;
-        
-        @media (max-width: 992px) {
-          padding: 8px 18px;
-          font-size: 0.85rem;
-        }
-        
-        @media (max-width: 576px) {
-          padding: 6px 16px;
-          font-size: 0.8rem;
-        }
-        
-        svg {
-          margin-left: 8px;
-          transition: transform 0.3s ease;
-          
-          @media (max-width: 576px) {
-            margin-left: 6px;
-            width: 14px;
-          }
-        }
-      }
-    }
-  }
-  
-  // Enhanced Detail Overlay
-  .team-detail-overlay {
-    .overlay-backdrop {
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(8px);
-    }
-    
-    .detail-container {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-      max-width: 900px;
-      
-      @media (max-width: 992px) {
-        max-width: 700px;
-      }
-      
-      @media (max-width: 768px) {
-        max-width: 90%;
-        border-radius: 16px;
-      }
-      
-      .close-btn {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background: white;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        
-        @media (max-width: 768px) {
-          top: 15px;
-          right: 15px;
-          width: 35px;
-          height: 35px;
-        }
-        
-        &:hover {
-          background: $light;
-          transform: rotate(90deg);
-        }
-        
-        svg {
-          width: 20px;
-          height: 20px;
-          
-          @media (max-width: 768px) {
-            width: 16px;
-            height: 16px;
-          }
-        }
-      }
-      
-      .detail-content {
-        display: flex;
-        padding: 50px;
-        
-        @media (max-width: 992px) {
-          padding: 40px;
-        }
-        
-        @media (max-width: 768px) {
-          flex-direction: column;
-          padding: 30px 20px;
-        }
-        
-        .detail-avatar {
-          flex-shrink: 0;
-          margin-right: 40px;
-          margin-bottom: 0;
+
+      .team-info {
+        h3 {
+          font-size: 1.4rem;
+          margin-bottom: 8px;
+          color: $text-primary;
+          font-weight: 700;
           
           @media (max-width: 992px) {
-            margin-right: 30px;
+            font-size: 1.3rem;
           }
           
-          @media (max-width: 768px) {
-            margin-right: 0;
-            margin-bottom: 25px;
-            text-align: center;
+          @media (max-width: 576px) {
+            font-size: 1.2rem;
+          }
+        }
+        
+        .role {
+          color: $primary;
+          font-weight: 600;
+          margin-bottom: 20px;
+          font-size: 1rem;
+          position: relative;
+          display: inline-block;
+          
+          @media (max-width: 992px) {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
           }
           
-          img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top center;
-            border: 5px solid $light;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            
-            @media (max-width: 992px) {
-              width: 160px;
-              height: 160px;
-            }
-            
-            @media (max-width: 768px) {
-              width: 140px;
-              height: 140px;
-            }
+          @media (max-width: 576px) {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+          }
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background: $primary;
+            border-radius: 1px;
+          }
+        }
+        
+        .view-details-btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 22px;
+          border: 2px solid $primary;
+          color: $primary;
+          border-radius: 50px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          font-size: 0.9rem;
+          margin-top: auto;
+          background: transparent;
+          
+          @media (max-width: 992px) {
+            padding: 8px 18px;
+            font-size: 0.85rem;
+          }
+          
+          @media (max-width: 576px) {
+            padding: 6px 16px;
+            font-size: 0.8rem;
+          }
+          
+          svg {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
             
             @media (max-width: 576px) {
-              width: 120px;
-              height: 120px;
+              margin-left: 6px;
+              width: 14px;
+            }
+          }
+        }
+      }
+    }
+    
+    // Enhanced Detail Overlay
+    .team-detail-overlay {
+      .overlay-backdrop {
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(8px);
+      }
+      
+      .detail-container {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        max-width: 900px;
+        
+        @media (max-width: 992px) {
+          max-width: 700px;
+        }
+        
+        @media (max-width: 768px) {
+          max-width: 90%;
+          border-radius: 16px;
+        }
+        
+        .close-btn {
+          position: absolute;
+          top: 25px;
+          right: 25px;
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background: white;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 10;
+          transition: all 0.3s ease;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          
+          @media (max-width: 768px) {
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+          }
+          
+          &:hover {
+            background: $light;
+            transform: rotate(90deg);
+          }
+          
+          svg {
+            width: 20px;
+            height: 20px;
+            
+            @media (max-width: 768px) {
+              width: 16px;
+              height: 16px;
             }
           }
         }
         
-        .detail-info {
-          flex-grow: 1;
+        .detail-content {
+          display: flex;
+          padding: 50px;
           
-          h2 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            color: $text-primary;
-            font-weight: 700;
+          @media (max-width: 992px) {
+            padding: 40px;
+          }
+          
+          @media (max-width: 768px) {
+            flex-direction: column;
+            padding: 30px 20px;
+          }
+          
+          .detail-avatar {
+            flex-shrink: 0;
+            margin-right: 40px;
+            margin-bottom: 0;
             
             @media (max-width: 992px) {
-              font-size: 2rem;
+              margin-right: 30px;
             }
             
             @media (max-width: 768px) {
-              font-size: 1.8rem;
+              margin-right: 0;
+              margin-bottom: 25px;
               text-align: center;
             }
             
-            @media (max-width: 576px) {
-              font-size: 1.6rem;
-            }
-          }
-          
-          .detail-role {
-            color: $primary;
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            
-            @media (max-width: 992px) {
-              font-size: 1.1rem;
-              margin-bottom: 20px;
-            }
-            
-            @media (max-width: 768px) {
-              text-align: center;
-              font-size: 1rem;
-            }
-          }
-          
-          .specialties {
-            margin-bottom: 25px;
-            
-            @media (max-width: 768px) {
-              margin-bottom: 20px;
-            }
-            
-            h4 {
-              font-size: 1.1rem;
-              margin-bottom: 12px;
-              color: $text-primary;
-              font-weight: 600;
+            img {
+              width: 180px;
+              height: 180px;
+              border-radius: 50%;
+              object-fit: cover;
+              object-position: top center;
+              border: 5px solid $light;
+              box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+              
+              @media (max-width: 992px) {
+                width: 160px;
+                height: 160px;
+              }
               
               @media (max-width: 768px) {
+                width: 140px;
+                height: 140px;
+              }
+              
+              @media (max-width: 576px) {
+                width: 120px;
+                height: 120px;
+              }
+            }
+          }
+          
+          .detail-info {
+            flex-grow: 1;
+            
+            h2 {
+              font-size: 2.2rem;
+              margin-bottom: 5px;
+              color: $text-primary;
+              font-weight: 700;
+              
+              @media (max-width: 992px) {
+                font-size: 2rem;
+              }
+              
+              @media (max-width: 768px) {
+                font-size: 1.8rem;
+                text-align: center;
+              }
+              
+              @media (max-width: 576px) {
+                font-size: 1.6rem;
+              }
+            }
+            
+            .detail-role {
+              color: $primary;
+              font-weight: 600;
+              font-size: 1.2rem;
+              margin-bottom: 25px;
+              
+              @media (max-width: 992px) {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+              }
+              
+              @media (max-width: 768px) {
+                text-align: center;
                 font-size: 1rem;
               }
             }
             
-            .specialty-tags {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 10px;
+            .specialties {
+              margin-bottom: 25px;
               
-              @media (max-width: 576px) {
-                gap: 8px;
-                justify-content: center;
+              @media (max-width: 768px) {
+                margin-bottom: 20px;
               }
               
-              .specialty-tag {
-                background: $light;
-                padding: 6px 14px;
-                border-radius: 20px;
-                font-size: 0.85rem;
-                font-weight: 500;
+              h4 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
                 color: $text-primary;
-                border: 1px solid rgba(0, 0, 0, 0.08);
+                font-weight: 600;
                 
                 @media (max-width: 768px) {
-                  font-size: 0.8rem;
-                  padding: 5px 12px;
+                  font-size: 1rem;
+                }
+              }
+              
+              .specialty-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                
+                @media (max-width: 576px) {
+                  gap: 8px;
+                  justify-content: center;
+                }
+                
+                .specialty-tag {
+                  background: $light;
+                  padding: 6px 14px;
+                  border-radius: 20px;
+                  font-size: 0.85rem;
+                  font-weight: 500;
+                  color: $text-primary;
+                  border: 1px solid rgba(0, 0, 0, 0.08);
+                  
+                  @media (max-width: 768px) {
+                    font-size: 0.8rem;
+                    padding: 5px 12px;
+                  }
+                }
+              }
+            }
+            
+            .bio-section {
+              h4 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+                color: $text-primary;
+                font-weight: 600;
+                
+                @media (max-width: 768px) {
+                  font-size: 1rem;
+                }
+              }
+              
+              .detail-bio {
+                color: $text-secondary;
+                line-height: 1.7;
+                font-size: 1rem;
+                
+                @media (max-width: 768px) {
+                  font-size: 0.95rem;
                 }
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 1200px) {
+    .experts-page {
+      .creative-hero {
+        .hero-content {
+          .hero-title {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .experts-page {
+      .creative-hero {
+        padding: 80px 0;
+        
+        .hero-content {
+          .hero-title {
+            font-size: 2.5rem;
+          }
+        }
+      }
+      
+      .team-display {
+        .section-intro {
+          .section-title {
+            font-size: 2.2rem;
+          }
+        }
+      }
+      
+      .values-section {
+        .values-content {
+          .values-title {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .experts-page {
+      .creative-hero {
+        padding: 60px 0;
+        
+        .hero-content {
+          text-align: left;
+          margin-bottom: 30px;
           
-          .bio-section {
-            h4 {
-              font-size: 1.1rem;
-              margin-bottom: 12px;
-              color: $text-primary;
-              font-weight: 600;
-              
-              @media (max-width: 768px) {
-                font-size: 1rem;
-              }
-            }
-            
-            .detail-bio {
-              color: $text-secondary;
-              line-height: 1.7;
-              font-size: 1rem;
-              
-              @media (max-width: 768px) {
-                font-size: 0.95rem;
-              }
-            }
+          .hero-title {
+            font-size: 2.2rem;
+          }
+        }
+        
+        .hero-visual {
+          height: 200px;
+        }
+      }
+      
+      .team-display {
+        padding: 60px 0;
+        
+        .section-intro {
+          .section-title {
+            font-size: 2rem;
+          }
+        }
+      }
+      
+      .values-section {
+        padding: 60px 0;
+        
+        .values-content {
+          .values-title {
+            font-size: 1.8rem;
           }
         }
       }
     }
   }
-}
 
-// Responsive adjustments
-@media (max-width: 1200px) {
-  .experts-page {
-    .creative-hero {
-      .hero-content {
-        .hero-title {
-          font-size: 3rem;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 992px) {
-  .experts-page {
-    .creative-hero {
-      padding: 80px 0;
-      
-      .hero-content {
-        .hero-title {
-          font-size: 2.5rem;
-        }
-      }
-    }
-    
-    .team-display {
-      .section-intro {
-        .section-title {
-          font-size: 2.2rem;
-        }
-      }
-    }
-    
-    .values-section {
-      .values-content {
-        .values-title {
-          font-size: 2rem;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .experts-page {
-    .creative-hero {
-      padding: 60px 0;
-      
-      .hero-content {
-        text-align: center;
-        margin-bottom: 30px;
+  @media (max-width: 576px) {
+    .experts-page {
+      .creative-hero {
+        padding: 50px 0;
         
-        .hero-title {
-          font-size: 2.2rem;
-        }
-      }
-      
-      .hero-visual {
-        height: 200px;
-      }
-    }
-    
-    .team-display {
-      padding: 60px 0;
-      
-      .section-intro {
-        .section-title {
-          font-size: 2rem;
-        }
-      }
-    }
-    
-    .values-section {
-      padding: 60px 0;
-      
-      .values-content {
-        .values-title {
-          font-size: 1.8rem;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .experts-page {
-    .creative-hero {
-      padding: 50px 0;
-      
-      .hero-content {
-        .pre-title {
-          font-size: 0.8rem;
+        .hero-content {
+          .pre-title {
+            font-size: 0.8rem;
+          }
+          
+          .hero-title {
+            font-size: 1.9rem;
+          }
+          
+          .hero-description {
+            font-size: 1rem;
+          }
         }
         
-        .hero-title {
-          font-size: 1.9rem;
-        }
-        
-        .hero-description {
-          font-size: 1rem;
-        }
-      }
-      
-      .hero-visual {
-        height: 180px;
-        
-        .floating-cards {
-          .card-item {
-            // Further adjustments for very small screens
-            @media (max-width: 400px) {
-              &.card-1 {
-                top: 2%;
-                left: 1%;
-                width: 55px;
-                height: 55px;
-              }
-              
-              &.card-2 {
-                top: 15%;
-                right: 1%;
-                width: 50px;
-                height: 50px;
-              }
-              
-              &.card-3 {
-                bottom: 10%;
-                left: 5%;
-                width: 55px;
-                height: 55px;
-              }
-              
-              &.card-4 {
-                top: 35%;
-                left: 2%;
-                width: 50px;
-                height: 50px;
-              }
-              
-              &.card-5 {
-                bottom: 20%;
-                right: 1%;
-                width: 50px;
-                height: 50px;
+        .hero-visual {
+          height: 180px;
+          
+          .floating-cards {
+            .card-item {
+              // Further adjustments for very small screens
+              @media (max-width: 400px) {
+                &.card-1 {
+                  top: 2%;
+                  left: 1%;
+                  width: 55px;
+                  height: 55px;
+                }
+                
+                &.card-2 {
+                  top: 15%;
+                  right: 1%;
+                  width: 50px;
+                  height: 50px;
+                }
+                
+                &.card-3 {
+                  bottom: 10%;
+                  left: 5%;
+                  width: 55px;
+                  height: 55px;
+                }
+                
+                &.card-4 {
+                  top: 35%;
+                  left: 2%;
+                  width: 50px;
+                  height: 50px;
+                }
+                
+                &.card-5 {
+                  bottom: 20%;
+                  right: 1%;
+                  width: 50px;
+                  height: 50px;
+                }
               }
             }
           }
         }
       }
-    }
-    
-    .team-display {
-      padding: 50px 0;
       
-      .section-intro {
-        .section-title {
-          font-size: 1.8rem;
-        }
+      .team-display {
+        padding: 50px 0;
         
-        .section-description {
-          font-size: 0.95rem;
+        .section-intro {
+          .section-title {
+            font-size: 1.8rem;
+          }
+          
+          .section-description {
+            font-size: 0.95rem;
+          }
         }
       }
-    }
-    
-    .values-section {
-      padding: 50px 0;
       
-      .values-content {
-        .values-title {
-          font-size: 1.6rem;
+      .values-section {
+        padding: 50px 0;
+        
+        .values-content {
+          .values-title {
+            font-size: 1.6rem;
+          }
         }
       }
     }
   }
-}

@@ -1,4 +1,24 @@
 .lease-accounting-page {
+  overflow-x: hidden;
+  width: 100%;
+  
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+    
+    > * {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
   /* Hero Banner Styles */
   .hero-banner {
     position: relative;
@@ -141,8 +161,11 @@
       color: #64748b;
       max-width: 700px;
       margin: 0 auto 40px;
-      text-align: left;
       line-height: 1.6;
+      
+      @media (max-width: 991.98px) {
+        text-align: left !important;
+      }
     }
 
     .what-we-offer-item {
@@ -210,70 +233,6 @@
     }
   }
 
-  /* Services Section */
-  .services-section {
-    padding: 80px 0;
-    background-color: #f8fafc;
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #2c3e50;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    .section-subtitle {
-      font-size: 1.1rem;
-      color: #64748b;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    .service-item {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
-      height: 100%;
-      transition: all 0.3s ease;
-      border: 1px solid #e2e8f0;
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,86,179,0.1);
-        border-color: #b3d1ff;
-      }
-
-      .icon-wrapper {
-        transition: all 0.3s ease;
-      }
-
-      &:hover .icon-wrapper {
-        background-color: #0056b3 !important;
-        
-        i {
-          color: white !important;
-        }
-      }
-
-      h3 {
-        font-size: 1.25rem;
-        margin-bottom: 15px;
-        color: #1e293b;
-      }
-
-      p {
-        color: #64748b;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-    }
-  }
-
   /* Difference Section */
   .difference-section {
     padding: 80px 0;
@@ -292,8 +251,11 @@
       color: #64748b;
       max-width: 700px;
       margin: 0 auto 40px;
-      text-align: center;
       line-height: 1.6;
+      
+      @media (max-width: 991.98px) {
+        text-align: left !important;
+      }
     }
 
     .difference-container {
@@ -412,14 +374,17 @@
       color: #64748b;
       max-width: 700px;
       margin: 0 auto 40px;
-      text-align: center;
       line-height: 1.6;
+      
+      @media (max-width: 991.98px) {
+        text-align: left !important;
+      }
     }
   }
 
   /* Comprehensive Accounting Section */
   .comprehensive-accounting-section {
-    padding: 80px 0;
+    // padding: 80px 0;
     background-color: white;
 
     .section-title {
@@ -436,12 +401,16 @@
       max-width: 700px;
       margin: 0 auto 40px;
       line-height: 1.6;
+      
+      @media (max-width: 991.98px) {
+        text-align: left !important;
+      }
     }
   }
 
   /* FAQ Section */
   .faq-section {
-    padding: 80px 0;
+    // padding: 80px 0;
     background-color: white !important;
   }
 
@@ -463,23 +432,21 @@
       }
     }
 
-    .why-section,
-    .what-we-offer-section,
-    .services-section,
-    .difference-section,
-    .compliance-section,
-    .lease-admin-section,
-    .comprehensive-accounting-section,
-    .faq-section {
-      padding: 60px 0;
-    }
+    // .why-section,
+    // .what-we-offer-section,
+    // .difference-section,
+    // .compliance-section,
+    // .lease-admin-section,
+    // .comprehensive-accounting-section,
+    // .faq-section {
+    //   padding: 60px 0;
+    // }
 
     .section-title {
       font-size: 1.8rem;
     }
     
-    .what-we-offer-item,
-    .service-item {
+    .what-we-offer-item {
       padding: 25px;
     }
   }
@@ -497,18 +464,13 @@
 
     .section-title {
       font-size: 1.7rem;
-      text-align: left !important;
-    }
-    .section-subtitle {
-      text-align: left !important;
     }
 
     .difference-item {
       flex: 0 0 calc(33.33% - 20px);
     }
     
-    .what-we-offer-item,
-    .service-item {
+    .what-we-offer-item {
       padding: 20px;
       
       h3 {
@@ -540,14 +502,45 @@
       flex: 0 0 calc(50% - 15px);
     }
 
-    .what-we-offer-section,
-    .services-section,
-    .difference-section,
-    .compliance-section,
-    .lease-admin-section,
-    .comprehensive-accounting-section,
-    .faq-section {
-      padding: 50px 0;
+    // .what-we-offer-section,
+    // .difference-section,
+    // .compliance-section,
+    // .lease-admin-section,
+    // .comprehensive-accounting-section,
+    // .faq-section {
+    //   padding: 50px 0;
+    // }
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .lease-accounting-page {
+    .what-we-offer-item,
+    .difference-item {
+      transition: none !important;
+    }
+    
+    .what-we-offer-item:hover,
+    .difference-item:hover {
+      transform: none !important;
+    }
+    
+    .motion-div {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* Text alignment for mobile */
+@media (max-width: 991.98px) {
+  .lease-accounting-page {
+    .section-title,
+    .section-subtitle,
+    .section-text,
+    .benefits-list {
+      text-align: left !important;
     }
   }
 }

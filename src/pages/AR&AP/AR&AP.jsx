@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import heroImage from '../../assets/images/about-us.avif';
-import arImage1 from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.webp';
-import arImage2 from '../../assets/images/12th- The Smart Way to Manage AR & AP Services.webp';
-import arImage3 from '../../assets/images/13.1th - Accounts Payable Services That Put You in Control.webp';
+import heroImage from '../../assets/images/about-us.avif?w=800;1200;1600&format=avif&as=srcset';
+import heroImageFallback from '../../assets/images/about-us.avif?w=1200';
+import arImage1 from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.webp?w=600;800;1000&format=webp&as=srcset';
+import arImage1Fallback from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.webp?w=800';
+import arImage2 from '../../assets/images/12th- The Smart Way to Manage AR & AP Services.webp?w=600;800;1000&format=webp&as=srcset';
+import arImage2Fallback from '../../assets/images/12th- The Smart Way to Manage AR & AP Services.webp?w=800';
+import arImage3 from '../../assets/images/13.1th - Accounts Payable Services That Put You in Control.webp?w=600;800;1000&format=webp&as=srcset';
+import arImage3Fallback from '../../assets/images/13.1th - Accounts Payable Services That Put You in Control.webp?w=800';
 import FinancialServices from '../../components/sections/FinancialServices';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
@@ -12,7 +16,7 @@ import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './AR&AP.scss';
 
-const ARAP = () => {
+const ARAP = React.memo(() => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,7 +40,7 @@ const ARAP = () => {
     }
   };
 
-  const faqs = [
+  const faqs = useMemo(() => [
     {
       question: "What are AR/AP services, and why are they important?",
       answer: "AR/AP services refer to the processes that manage incoming revenue (accounts receivable) and outgoing payments (accounts payable). Effective AR/AP management ensures cash flow stability, reduces financial risk, and improves operational efficiency."
@@ -53,14 +57,18 @@ const ARAP = () => {
       question: "Why should we outsource our AR/AP to Global Guru?",
       answer: "Outsourcing to Global Guru brings you specialized knowledge, cost efficiency, reduced errors, and scalability, all without the overhead of hiring and training an in-house team."
     }
-  ];
+  ], []);
+
+  const industries = useMemo(() => 
+    ['E-commerce and retail', 'Healthcare and medical practices', 'Professional services', 'Real estate and construction', 'Manufacturing and logistics', 'SaaS and tech startups']
+  , []);
 
   return (
     <>
-      {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
       <Helmet>
         <title>Accounts Receivable & Payable Services | Global Guru</title>
+        <link rel="canonical" href="https://globalgurullc.com/ar-ap-services" />
         <meta
           name="description"
           content="Take AR/AP services from Global Guru to streamline receivables & payables. Ensure accuracy, compliance, and improved cash flow for your business."
@@ -74,20 +82,20 @@ const ARAP = () => {
       >
         {/* Hero Section */}
         <section className="hero-section">
-          {/* background image (full-cover) */}
           <div className="hero-image-container">
             <img
-              src={heroImage}
+              srcSet={heroImage}
+              src={heroImageFallback}
               alt="Financial Services"
               className="hero-image"
-              loading="lazy"
+              loading="eager"
+              width="1200"
+              height="600"
             />
           </div>
 
-          {/* dark / mirror-like overlay */}
           <div className="overlay"></div>
 
-          {/* content above overlay */}
           <div className="hero-overlay">
             <Container>
               <Row>
@@ -117,9 +125,9 @@ const ARAP = () => {
         <section className="streamlined-section">
           <Container>
             <Row className="justify-content-center">
-              <Col lg={10} className="text-center">
+              <Col lg={10}>
                 <motion.div variants={itemVariants}>
-                  <h1 className="section-title">Streamlined AR/AP Services That Power Your Financial Efficiency</h1>
+                  <h1 className="section-title text-center">Streamlined AR/AP Services That Power Your Financial Efficiency</h1>
                   <p className="section-description">
                     Managing receivables and payables shouldn't hinder your progress. At Global Guru, our expert-led AR/AP services are designed to help businesses across the globe maintain financial clarity, improve cash flow, and stay ahead of the curve. From invoice processing to payment reconciliation, we provide the accuracy, scalability, and speed your business demands.
                   </p>
@@ -175,10 +183,13 @@ const ARAP = () => {
               </Col>
               <Col lg={6}>
                 <motion.img
-                  src={arImage1}
+                  srcSet={arImage1}
+                  src={arImage1Fallback}
                   alt="Smart AR/AP Management"
                   className="img-fluid rounded shadow"
                   loading="lazy"
+                  width="600"
+                  height="400"
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.6 }}
@@ -195,10 +206,13 @@ const ARAP = () => {
             <Row className="align-items-center">
               <Col lg={6}>
                 <motion.img
-                  src={arImage2}
+                  srcSet={arImage2}
+                  src={arImage2Fallback}
                   alt="Accounts Receivable Services"
                   className="img-fluid rounded shadow"
                   loading="lazy"
+                  width="600"
+                  height="400"
                   initial={{ x: -20, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.6 }}
@@ -281,10 +295,13 @@ const ARAP = () => {
               </Col>
               <Col lg={6} className="order-lg-2">
                 <motion.img
-                  src={arImage3}
+                  srcSet={arImage3}
+                  src={arImage3Fallback}
                   alt="Accounts Payable Services"
                   className="img-fluid rounded shadow"
                   loading="lazy"
+                  width="600"
+                  height="400"
                   initial={{ x: 20, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.6 }}
@@ -299,10 +316,10 @@ const ARAP = () => {
         <section className="why-choose-section">
           <Container>
             <Row className="justify-content-center">
-              <Col lg={10} className="text-center">
+              <Col lg={10}>
                 <motion.div variants={itemVariants}>
-                  <h2 className="section-title">Why Choose Global Guru for AR/AP Services</h2>
-                  <p className="section-description">
+                  <h2 className="section-title text-center">Why Choose Global Guru for AR/AP Services</h2>
+                  <p className="section-description text-center">
                     You don't need another vendor. You need a financial partner who understands your business, your industry, and your challenges. At Global Guru, we tailor every solution to your goals, backed by technology, compliance, and expert human support.
                   </p>
                 </motion.div>
@@ -375,15 +392,15 @@ const ARAP = () => {
             <Row className="justify-content-center">
               <Col lg={10}>
                 <motion.div variants={itemVariants}>
-                  <h2 className="section-title">Industries We Serve</h2>
-                  <p className="section-description">
+                  <h2 className="section-title text-center">Industries We Serve</h2>
+                  <p className="section-description text-center">
                     Whether you're a startup or a growing enterprise, our scalable AR/AP services can be tailored to your sector's unique needs:
                   </p>
                 </motion.div>
               </Col>
             </Row>
             <Row className="mt-4">
-              {['E-commerce and retail', 'Healthcare and medical practices', 'Professional services', 'Real estate and construction', 'Manufacturing and logistics', 'SaaS and tech startups'].map((industry, index) => (
+              {industries.map((industry, index) => (
                 <Col sm={6} md={4} key={index}>
                   <motion.div
                     className="industry-card"
@@ -411,9 +428,8 @@ const ARAP = () => {
             />
           </Container>
         </section>
-        {/* Financial Services Component */}
+        
         <FinancialServices />
-        {/* CTA Section */}
         <CTA
           title="Take Control of Your Finance Operations with Global Guru"
           description="Say goodbye to delayed payments, disorganized invoices, and mounting inefficiencies. Choose Global Guru and transform your AR/AP process into a streamlined, scalable solution that powers your business growth. Contact us today to schedule a free consultation and discover how our expert AR/AP services can save you time, money, and stress."
@@ -423,6 +439,6 @@ const ARAP = () => {
       </motion.div>
     </>
   );
-};
+});
 
 export default ARAP;

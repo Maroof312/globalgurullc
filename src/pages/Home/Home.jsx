@@ -40,6 +40,8 @@ export default function Home() {
           name="google-site-verification" 
           content={import.meta.env.VITE_GSC_VERIFICATION_CODE} 
         />
+        {/* Canonical Tag */}
+        <link rel="canonical" href="https://globalgurullc.com/" />
       </Helmet>
 
       {/* LinkedIn Insight Tag */}

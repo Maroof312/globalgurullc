@@ -1,5 +1,6 @@
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async';
 import ContactForm from '../../components/forms/ContactForm'
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import './Contact.scss'
@@ -7,12 +8,16 @@ import './Contact.scss'
 export default function Contact() {
   return (
     <div className="contact-page">
+      <Helmet>
+        <link rel="canonical" href="https://globalgurullc.com/contact" />
+      </Helmet>
       {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
+      
       {/* Hero Section */}
       <section className="contact-hero py-5">
         <Container>
-          <Row className="justify-content-center text-center">
+          <Row className="justify-content-center">
             <Col lg={8}>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -21,7 +26,7 @@ export default function Contact() {
               >
                 <h1 className="display-4 fw-bold mb-3">Get in Touch</h1>
                 <p className="lead mb-0">
-                  Questions, collaborations, or feedback? We’re here to help. Reach out to our team today!
+                  Questions, collaborations, or feedback? We're here to help. Reach out to our team today!
                 </p>
               </motion.div>
             </Col>
@@ -32,7 +37,7 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="py-5 contact-main">
         <Container>
-          <Row className="g-5 align-items-start">
+          <Row className="g-4 g-md-5 align-items-start"> {/* Changed g-5 to g-4 g-md-5 */}
 
             {/* Contact Form */}
             <Col lg={6} xs={12}>
@@ -40,10 +45,11 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "0px" }} // Added viewport config
                 className="contact-form-wrapper"
               >
                 <div className="text-center text-lg-start mb-4">
-                  <h2 className=" mb-3">Send a Message</h2>
+                  <h2 className="mb-3">Send Message</h2> {/* Fixed extra space */}
                 </div>
                 <ContactForm />
               </motion.div>
@@ -55,16 +61,17 @@ export default function Contact() {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "0px" }} // Added viewport config
                 className="contact-info"
               >
-                <h2 className="fw-bold mb-4">Contact Information</h2>
+                <h2 className="fw-bold mb-4 text-center text-lg-start">Contact Information</h2> {/* Added responsive text alignment */}
 
                 <Card className="mb-3 shadow-sm info-card">
                   <Card.Body className="d-flex align-items-center">
                     <i className="bi-geo-alt-fill fs-3 me-3 text-primary"></i>
                     <div>
                       <h6 className="fw-bold mb-1">Address</h6>
-                      <p className="mb-0">18530 Holden Drive, Spring Hill, Florida, FL 34610</p>
+                      <p className="mb-0">18530 Holden Drive, Spring Hill, FL 34610</p>
                     </div>
                   </Card.Body>
                 </Card>

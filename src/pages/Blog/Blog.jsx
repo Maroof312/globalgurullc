@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import BlogSidebar from '../../components/sections/BlogSidebar';
@@ -12,31 +12,47 @@ const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [visiblePosts, setVisiblePosts] = useState(6);
 
-  const filteredPosts = blogData.filter(post => {
-    const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
-    
-    // Safe search implementation
-    const searchLower = searchQuery.toLowerCase();
-    const matchesSearch = searchQuery === '' || 
-      post.title.toLowerCase().includes(searchLower) ||
-      post.content.some(item => 
-        item.text && typeof item.text === 'string' && item.text.toLowerCase().includes(searchLower)
-      );
-    
-    return matchesCategory && matchesSearch;
-  });
+  const filteredPosts = useMemo(() => {
+    return blogData.filter(post => {
+      const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
+      
+      const searchLower = searchQuery.toLowerCase();
+      const matchesSearch = searchQuery === '' || 
+        post.title.toLowerCase().includes(searchLower) ||
+        post.content.some(item => 
+          item.text && typeof item.text === 'string' && item.text.toLowerCase().includes(searchLower)
+        );
+      
+      return matchesCategory && matchesSearch;
+    });
+  }, [blogData, activeCategory, searchQuery]);
 
-  const categories = ['all', ...new Set(blogData.map(post => post.category))];
-  const allTags = [...new Set(blogData.flatMap(post => post.tags))];
+  const categories = useMemo(() => 
+    ['all', ...new Set(blogData.map(post => post.category))], 
+    [blogData]
+  );
 
-  const loadMore = () => {
+  const allTags = useMemo(() => 
+    [...new Set(blogData.flatMap(post => post.tags))], 
+    [blogData]
+  );
+
+  const loadMore = useCallback(() => {
     setVisiblePosts(prev => prev + 3);
-  };
+  }, []);
+
+  const handleCategorySelect = useCallback((category) => {
+    setActiveCategory(category);
+  }, []);
+
+  const handleSearch = useCallback((query) => {
+    setSearchQuery(query);
+  }, []);
 
   return (
     <div className="modern-blog">
-      {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
+      
       {/* Hero Header */}
       <section className="blog-hero">
         <div className="hero-background">
@@ -174,8 +190,8 @@ const Blog = () => {
               <BlogSidebar 
                 categories={categories.filter(cat => cat !== 'all')} 
                 tags={allTags}
-                onCategorySelect={setActiveCategory}
-                onSearch={setSearchQuery}
+                onCategorySelect={handleCategorySelect}
+                onSearch={handleSearch}
               />
             </Col>
           </Row>
@@ -218,4 +234,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default React.memo(Blog);

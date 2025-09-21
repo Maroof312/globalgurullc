@@ -1,57 +1,62 @@
 import { Container, Row, Col } from 'react-bootstrap';
+import { memo, useMemo, lazy, Suspense, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import ContactForm from '../../components/forms/ContactForm';
 import { config } from '../../config'
-import FinancialServices from '../../components/sections/FinancialServices';
-import DataExpertise from '../../components/sections/DataExpertise';
-import CTA from '../../components/sections/CTA';
-import PortfolioList from '../../components/sections/Portfolio';
-import FAQ from '../../components/sections/FAQ';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
-import { Helmet } from 'react-helmet-async'; // Added Helmet import
+import { Helmet } from 'react-helmet-async';
+// Lazy load heavy components
+const FinancialServices = lazy(() => import('../../components/sections/FinancialServices'));
+const DataExpertise = lazy(() => import('../../components/sections/DataExpertise'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
+const PortfolioList = lazy(() => import('../../components/sections/Portfolio'));
+const FAQ = lazy(() => import('../../components/sections/FAQ'));
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import realEstateImg from '../../assets/images/1st.avif';
 import reportingImg from '../../assets/images/2nd.avif';
 import './RealEstateAccounting.scss';
 
-const RealEstateAccounting = () => {
-  const services = [
-    {
-      icon: 'bi-building',
-      title: 'Property Accounting',
-      description: 'Comprehensive accounting for all property types and portfolios'
-    },
-    {
-      icon: 'bi-pie-chart',
-      title: 'Financial Reporting',
-      description: 'Customized reports for investors and stakeholders'
-    },
-    {
-      icon: 'bi-cash-stack',
-      title: 'Accounts Payable',
-      description: 'Vendor payment processing and expense management'
-    },
-    {
-      icon: 'bi-receipt',
-      title: 'Accounts Receivable',
-      description: 'Tenant billing and collections management'
-    }
-  ];
+// Simple loader component
+const Loader = () => <div className="d-flex justify-content-center py-4"><div className="spinner-border text-primary" role="status"></div></div>;
 
-  const differenceItems = [
-    { icon: 'bi-graph-up-arrow', text: '30% Cost Reduction' },
-    { icon: 'bi-check-all', text: '99.9% Accuracy' },
-    { icon: 'bi-people', text: 'Dedicated Team' },
-    { icon: 'bi-arrow-up', text: 'Scalable Solutions' },
-    { icon: 'bi-shield-check', text: 'Audit Ready' },
-    { icon: 'bi-lightning', text: 'Quick Implementation' }
-  ];
+// Static data - memoized outside component
+const services = [
+  {
+    icon: 'bi-building',
+    title: 'Property Accounting',
+    description: 'Comprehensive accounting for all property types and portfolios'
+  },
+  {
+    icon: 'bi-pie-chart',
+    title: 'Financial Reporting',
+    description: 'Customized reports for investors and stakeholders'
+  },
+  {
+    icon: 'bi-cash-stack',
+    title: 'Accounts Payable',
+    description: 'Vendor payment processing and expense management'
+  },
+  {
+    icon: 'bi-receipt',
+    title: 'Accounts Receivable',
+    description: 'Tenant billing and collections management'
+  }
+];
 
-  const portfolioItems = [
+const differenceItems = [
+  { icon: 'bi-graph-up-arrow', text: '30% Cost Reduction' },
+  { icon: 'bi-check-all', text: '99.9% Accuracy' },
+  { icon: 'bi-people', text: 'Dedicated Team' },
+  { icon: 'bi-arrow-up', text: 'Scalable Solutions' },
+  { icon: 'bi-shield-check', text: 'Audit Ready' },
+  { icon: 'bi-lightning', text: 'Quick Implementation' }
+];
+
+const portfolioItems = [
   {
     title: 'Property-Level Accounting',
     description: 'We track and report income and expenses for each property, handle reconciliations, manage vendor payments, and generate rent rolls and P&L statements. Our team ensures that every asset\'s performance is measured accurately.'
@@ -78,33 +83,93 @@ const RealEstateAccounting = () => {
   }
 ];
 
+const faqs = [
+  {
+    question: "What do your outsourced property accounting services include?",
+    answer: "Our outsourced property accounting services cover the full cycle of real estate financial management. This includes accounts receivable, accounts payable, complex bank reconciliations, monthly financial reporting, budgeting, and compliance tracking. By outsourcing property accounting, clients gain accurate reports, cost savings, and streamlined financial operations. "
+  },
+  {
+    question: " How do you ensure accuracy in property accounting reports?",
+    answer: "We use standardized workflows, multi-level review processes, and advanced property management platforms such as Yardi and MRI. This ensures complete accuracy, transparency, and consistency in every financial report we deliver."
+  },
+  {
+    question: "Can you integrate outsourced property accounting with my existing software?",
+    answer: "Yes. Our team has expertise in Yardi, MRI, RealPage, and QuickBooks. We integrate seamlessly into your preferred accounting system to maintain efficiency while reducing errors and manual work."
+  }
+];
 
-  const faqs = [
-    {
-      question: "What do your outsourced property accounting services include?",
-      answer: "Our outsourced property accounting services cover the full cycle of real estate financial management. This includes accounts receivable, accounts payable, complex bank reconciliations, monthly financial reporting, budgeting, and compliance tracking. By outsourcing property accounting, clients gain accurate reports, cost savings, and streamlined financial operations. "
-    },
-    {
-      question: " How do you ensure accuracy in property accounting reports?",
-      answer: "We use standardized workflows, multi-level review processes, and advanced property management platforms such as Yardi and MRI. This ensures complete accuracy, transparency, and consistency in every financial report we deliver."
-    },
-    {
-      question: "Can you integrate outsourced property accounting with my existing software?",
-      answer: "Yes. Our team has expertise in Yardi, MRI, RealPage, and QuickBooks. We integrate seamlessly into your preferred accounting system to maintain efficiency while reducing errors and manual work."
-    }
-  ];
+const RealEstateAccounting = memo(() => {
+  // Memoize service items
+  const serviceItems = useMemo(() => 
+    services.map((service, index) => (
+      <Col lg={3} key={index}>
+        <motion.div
+          className="service-item bg-white h-100 p-4 rounded-3 shadow-sm text-center"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+        >
+          <div className="service-icon mb-4">
+            <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
+              <i className={`bi ${service.icon} fs-2 text-primary`}></i>
+            </div>
+          </div>
+          <h3 className="h5 fw-bold mb-3">{service.title}</h3>
+          <p className="mb-0 text-muted">{service.description}</p>
+        </motion.div>
+      </Col>
+    )), []);
+
+  // Memoize difference items for desktop
+  const desktopDifferenceItems = useMemo(() => 
+    differenceItems.map((item, index) => (
+      <motion.div
+        key={index}
+        className="difference-item bg-white rounded-3 shadow-sm text-center p-4"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.1, duration: 0.5 }}
+      >
+        <div className="difference-icon mb-3">
+          <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
+            <i className={`bi ${item.icon} fs-3 text-primary`}></i>
+          </div>
+        </div>
+        <p className="mb-0 fw-medium">{item.text}</p>
+      </motion.div>
+    )), []);
+
+  // Memoize difference items for mobile
+  const mobileDifferenceItems = useMemo(() => 
+    differenceItems.map((item, index) => (
+      <SwiperSlide key={index} style={{ height: 'auto' }}>
+        <div className="difference-item h-100 p-3 bg-white rounded-3 shadow-sm text-center d-flex flex-column justify-content-center" style={{ minHeight: '180px' }}>
+          <div className="difference-icon mb-2 mx-auto">
+            <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-2 d-inline-flex">
+              <i className={`bi ${item.icon} fs-4 text-primary`}></i>
+            </div>
+          </div>
+          <p className="mb-0 fw-medium fs-6">{item.text}</p>
+        </div>
+      </SwiperSlide>
+    )), []);
 
   return (
     <div className="real-estate-accounting-page">
-      {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
-      {/* Added Meta Tags with React Helmet */}
       <Helmet>
         <title>Real Estate Accounting Services | Outsourced Finance - Global Guru</title>
+        <link rel="canonical" href="https://globalgurullc.com/real-estate-accounting-services" />
         <meta 
           name="description" 
           content="Get Expert real estate accounting, fund accounting, lease & CAM reconciliation, tax compliance and investor reporting service. Book a free consultation with Global Guru" 
         />
+        {/* Preload critical fonts to prevent layout shift */}
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Helmet>
 
       {/* Hero Banner Section */}
@@ -118,8 +183,10 @@ const RealEstateAccounting = () => {
           <img 
             src={landingBanner}
             alt="Background" 
-            loading="lazy"
+            loading="eager"
             className="background-image w-100 h-100 object-fit-cover"
+            width={1920}
+            height={1080}
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100"></div>
         </div>
@@ -133,7 +200,7 @@ const RealEstateAccounting = () => {
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
                 <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Real Estate Accounting</h4>
-                <h1 className="title display-5 fw-bold mb-4">Specialized financial solutions for property owners and investors</h1>
+                <h1 className="hero-title display-5 fw-bold mb-4">Specialized financial solutions for property owners and investors</h1>
                 <ul className="benefits-list ps-0">
                   <li>50% reduction in accounting costs</li>
                   <li>99.9% accuracy guarantee</li>
@@ -192,6 +259,8 @@ const RealEstateAccounting = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                width={500}
+                height={400}
               />
             </Col>
           </Row>
@@ -214,25 +283,7 @@ const RealEstateAccounting = () => {
           </motion.div>
           
           <Row className="d-none d-md-flex g-4">
-            {services.map((service, index) => (
-              <Col lg={3} key={index}>
-                <motion.div
-                  className="service-item bg-white h-100 p-4 rounded-3 shadow-sm text-center"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <div className="service-icon mb-4">
-                    <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
-                      <i className={`bi ${service.icon} fs-2 text-primary`}></i>
-                    </div>
-                  </div>
-                  <h3 className="h5 fw-bold mb-3">{service.title}</h3>
-                  <p className="mb-0 text-muted">{service.description}</p>
-                </motion.div>
-              </Col>
-            ))}
+            {serviceItems}
           </Row>
 
           {/* Mobile Carousel */}
@@ -282,23 +333,7 @@ const RealEstateAccounting = () => {
           {/* Desktop Layout */}
           <div className="d-none d-lg-flex justify-content-center">
             <div className="difference-container">
-              {differenceItems.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="difference-item bg-white rounded-3 shadow-sm text-center p-4"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <div className="difference-icon mb-3">
-                    <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
-                      <i className={`bi ${item.icon} fs-3 text-primary`}></i>
-                    </div>
-                  </div>
-                  <p className="mb-0 fw-medium">{item.text}</p>
-                </motion.div>
-              ))}
+              {desktopDifferenceItems}
             </div>
           </div>
 
@@ -310,18 +345,7 @@ const RealEstateAccounting = () => {
               spaceBetween={15}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
             >
-              {differenceItems.map((item, index) => (
-                <SwiperSlide key={index} style={{ height: 'auto' }}>
-                  <div className="difference-item h-100 p-3 bg-white rounded-3 shadow-sm text-center d-flex flex-column justify-content-center" style={{ minHeight: '180px' }}>
-                    <div className="difference-icon mb-2 mx-auto">
-                      <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-2 d-inline-flex">
-                        <i className={`bi ${item.icon} fs-4 text-primary`}></i>
-                      </div>
-                    </div>
-                    <p className="mb-0 fw-medium fs-6">{item.text}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
+              {mobileDifferenceItems}
             </Swiper>
           </div>
         </Container>
@@ -341,6 +365,8 @@ const RealEstateAccounting = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                width={500}
+                height={400}
               />
             </Col>
             <Col lg={7}>
@@ -383,37 +409,50 @@ const RealEstateAccounting = () => {
             </p>
           </motion.div>
           
-          <PortfolioList items={portfolioItems} />
+          <Suspense fallback={<Loader />}>
+            <PortfolioList items={portfolioItems} />
+          </Suspense>
         </Container>
       </section>
 
       {/* FAQ Section */}
       <section className="faq-section py-5 bg-light">
         <Container>
-          <FAQ 
-            faqs={faqs}
-            title="FAQs About Real Estate Accounting"
-            subtitle="Get answers to common questions about our property accounting services"
-            themeColor="#0056b3"
-          />
+          <Suspense fallback={<Loader />}>
+            <FAQ 
+              faqs={faqs}
+              title="FAQs About Real Estate Accounting"
+              subtitle="Get answers to common questions about our property accounting services"
+              themeColor="#0056b3"
+            />
+          </Suspense>
         </Container>
       </section>
 
-      <FinancialServices />
-      <DataExpertise />
-      <CTA 
-        title="Ready to Simplify Your Real Estate Accounting?"
-        description={
-          <>
-            <p>At Global Guru, we bring structure, accuracy, and insight to your financial operations.</p>
-            <p className="mb-0">Contact us today for a free consultation and discover why clients across the country trust Global Guru for their property accounting services and financial reporting needs.</p>
-          </>
-        }
-        buttonText="Schedule a Consultation"
-        buttonLink="/contact"
-      />
+      <Suspense fallback={<Loader />}>
+        <FinancialServices />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
+        <DataExpertise />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
+        <CTA 
+          title="Ready to Simplify Your Real Estate Accounting?"
+          description={
+            <>
+              <p>At Global Guru, we bring structure, accuracy, and insight to your financial operations.</p>
+              <p className="mb-0">Contact us today for a free consultation and discover why clients across the country trust Global Guru for their property accounting services and financial reporting needs.</p>
+            </>
+          }
+          buttonText="Schedule a Consultation"
+          buttonLink="/contact"
+        />
+      </Suspense>
     </div>
   );
-};
+});
 
+RealEstateAccounting.displayName = 'RealEstateAccounting';
 export default RealEstateAccounting;

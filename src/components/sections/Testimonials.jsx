@@ -31,7 +31,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="testimonials-section py-5 bg-light">
+    <section className="testimonials-section py-5 bg-light" aria-label="Client testimonials">
       <Container>
         <Row className="justify-content-center mb-5">
           <Col lg={8} className="text-center">
@@ -39,6 +39,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
             >
               <h2 className="display-5 fw-bold mb-3">Client Testimonials</h2>
               <p className="lead">
@@ -50,19 +51,28 @@ export default function Testimonials() {
 
         <Row>
           <Col>
-            <Carousel indicators={false} interval={5000} pause="hover">
+            <Carousel 
+              indicators={false} 
+              interval={5000} 
+              pause="hover"
+              prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />}
+              nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" />}
+              prevLabel="Previous testimonial"
+              nextLabel="Next testimonial"
+            >
               {testimonials.map((testimonial, index) => (
                 <Carousel.Item key={index}>
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
                     className="testimonial-item"
                   >
                     <div className="testimonial-content">
-                      <p className="testimonial-text">
-                        "{testimonial.content}"
-                      </p>
+                      <blockquote className="testimonial-text">
+                        {testimonial.content}
+                      </blockquote>
                       <div className="testimonial-author">
                         <div>
                           <h5 className="mb-0">{testimonial.name}</h5>

@@ -1,16 +1,21 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import { memo, useMemo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import servicesHeroImage from '../../assets/images/services-hero-1.avif';
+import { Helmet } from 'react-helmet-async'; // Added Helmet import
+import servicesHeroImage from '../../assets/images/services-hero.avif';
 import IntroImage from '../../assets/images/USA_CITY.webp';
-import CTA from '../../components/sections/CTA';
-import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
-import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
-
-
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import './Services.scss';
 
-// Services data
+// Lazy load heavy components
+const DataFlowVisualization = lazy(() => import('../../components/sections/DataFlowVisualization'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
+
+// Simple loader component
+const Loader = () => <div className="d-flex justify-content-center py-4"><div className="spinner-border text-primary" role="status"></div></div>;
+
+// Services data - memoized outside component
 const services = [
   {
     title: "Property Accounting",
@@ -49,7 +54,31 @@ const services = [
   }
 ];
 
-// Animation variants
+// Benefits data
+const benefits = [
+  {
+    icon: "bi-award",
+    title: "Industry Expertise",
+    description: "Our team specializes exclusively in real estate accounting, with deep knowledge of industry-specific challenges and requirements."
+  },
+  {
+    icon: "bi-shield-check",
+    title: "Accuracy",
+    description: "We ensure complete compliance with accounting standards and regulations while maintaining precise financial records for your properties."
+  },
+  {
+    icon: "bi-graph-up-arrow",
+    title: "Strategic Insights",
+    description: "Beyond basic accounting, we provide valuable financial insights to help you make informed decisions about your real estate investments."
+  },
+  {
+    icon: "bi-clock-history",
+    title: "Time Efficiency",
+    description: "Free up your valuable time by outsourcing complex accounting tasks to our dedicated team of real estate accounting experts."
+  }
+];
+
+// Animation variants - memoized
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -59,8 +88,8 @@ const staggerChildren = {
   visible: { transition: { staggerChildren: 0.15 } }
 };
 
-// Animated component
-const AnimatedSection = ({ children, className = "" }) => {
+// Optimized Animated component
+const AnimatedSection = memo(({ children, className = "" }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -77,13 +106,72 @@ const AnimatedSection = ({ children, className = "" }) => {
       {children}
     </motion.div>
   );
-};
+});
 
-export default function Services() {
+AnimatedSection.displayName = 'AnimatedSection';
+
+function Services() {
+  // Memoize service cards to prevent re-renders
+  const serviceCards = useMemo(() => 
+    services.map((service, index) => (
+      <Col lg={4} md={6} key={index}>
+        <motion.div
+          variants={fadeIn}
+          className="service-card"
+          whileHover={{ y: -5 }}
+        >
+          <div className="service-icon-wrapper">
+            <div className="service-icon">
+              <i className={service.icon}></i>
+            </div>
+          </div>
+          <h3 className="service-title">{service.title}</h3>
+          <p className="service-description">{service.description}</p>
+          <div className="service-features">
+            {service.features.map((feature, i) => (
+              <span key={i} className="feature-chip">
+                {feature}
+              </span>
+            ))}
+          </div>
+          <div className="card-footer">
+            <a href={service.link} className="service-link">
+              Learn More <i className="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </motion.div>
+      </Col>
+    )), []);
+
+  // Memoize benefit cards
+  const benefitCards = useMemo(() => 
+    benefits.map((benefit, index) => (
+      <Col md={6} lg={3} className="mb-4" key={index}>
+        <motion.div 
+          className="benefit-card"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 * (index + 1) }}
+          viewport={{ once: true }}
+        >
+          <div className="benefit-icon">
+            <i className={benefit.icon}></i>
+          </div>
+          <h4>{benefit.title}</h4>
+          <p className="benefit-text">{benefit.description}</p>
+        </motion.div>
+      </Col>
+    )), []);
+
   return (
     <div className="services-page">
-      {/* LinkedIn Insight Tag */}
+      {/* ADDED CANONICAL TAG */}
+      <Helmet>
+        <link rel="canonical" href="https://globalgurullc.com/real-estate-accounting-services" />
+      </Helmet>
+      
       <LinkedInInsightTag />
+      
       {/* Hero Section */}
       <section className="services-hero">
         <div className="hero-image-wrapper">
@@ -92,6 +180,8 @@ export default function Services() {
             alt="Real Estate Accounting Services"
             className="hero-image"
             loading="eager"
+            width={1920}
+            height={1080}
           />
           <div className="hero-overlay">
             <Container>
@@ -174,6 +264,8 @@ export default function Services() {
                     alt="Real Estate Financial Management"
                     className="main-visual"
                     loading="lazy"
+                    width={600}
+                    height={400}
                   />
                 </div>
               </motion.div>
@@ -210,35 +302,7 @@ export default function Services() {
           
           <AnimatedSection>
             <Row className="g-4">
-              {services.map((service, index) => (
-                <Col lg={4} md={6} key={index}>
-                  <motion.div
-                    variants={fadeIn}
-                    className="service-card"
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="service-icon-wrapper">
-                      <div className="service-icon">
-                        <i className={service.icon}></i>
-                      </div>
-                    </div>
-                    <h3 className="service-title">{service.title}</h3>
-                    <p className="service-description">{service.description}</p>
-                    <div className="service-features">
-                      {service.features.map((feature, i) => (
-                        <span key={i} className="feature-chip">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="card-footer">
-                      <a href={service.link} className="service-link">
-                        Learn More <i className="bi bi-arrow-right"></i>
-                      </a>
-                    </div>
-                  </motion.div>
-                </Col>
-              ))}
+              {serviceCards}
             </Row>
           </AnimatedSection>
         </Container>
@@ -262,86 +326,28 @@ export default function Services() {
           </Row>
           
           <Row>
-            <Col md={6} lg={3} className="mb-4">
-              <motion.div 
-                className="benefit-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="benefit-icon">
-                  <i className="bi bi-award"></i>
-                </div>
-                <h4>Industry Expertise</h4>
-                <p className="benefit-text">Our team specializes exclusively in real estate accounting, with deep knowledge of industry-specific challenges and requirements.</p>
-              </motion.div>
-            </Col>
-            
-            <Col md={6} lg={3} className="mb-4">
-              <motion.div 
-                className="benefit-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="benefit-icon">
-                  <i className="bi bi-shield-check"></i>
-                </div>
-                <h4>Accuracy</h4>
-                <p className="benefit-text">We ensure complete compliance with accounting standards and regulations while maintaining precise financial records for your properties.</p>
-              </motion.div>
-            </Col>
-            
-            <Col md={6} lg={3} className="mb-4">
-              <motion.div 
-                className="benefit-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <div className="benefit-icon">
-                  <i className="bi bi-graph-up-arrow"></i>
-                </div>
-                <h4>Strategic Insights</h4>
-                <p className="benefit-text">Beyond basic accounting, we provide valuable financial insights to help you make informed decisions about your real estate investments.</p>
-              </motion.div>
-            </Col>
-            
-            <Col md={6} lg={3} className="mb-4">
-              <motion.div 
-                className="benefit-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="benefit-icon">
-                  <i className="bi bi-clock-history"></i>
-                </div>
-                <h4>Time Efficiency</h4>
-                <p className="benefit-text">Free up your valuable time by outsourcing complex accounting tasks to our dedicated team of real estate accounting experts.</p>
-              </motion.div>
-            </Col>
+            {benefitCards}
           </Row>
         </Container>
       </section>
 
-      <DataFlowVisualization/>
+      {/* Lazy loaded components with Suspense */}
+      <Suspense fallback={<Loader />}>
+        <DataFlowVisualization />
+      </Suspense>
 
-      {/* CTA Section */}
-      <CTA
-        title="Streamline Your Real Estate Accounting Today"
-        description="Partner with our team of specialized real estate accountants to optimize your financial operations, ensure compliance, and maximize the return on your property investments."
-        buttonText="Get Started"
-        buttonLink="/contact"
-        // backgroundColor="dark"
-        textColor="white"
-        // buttonVariant="primary"
-        animationDirection="horizontal"
-      />
+      <Suspense fallback={<Loader />}>
+        <CTA
+          title="Streamline Your Real Estate Accounting Today"
+          description="Partner with our team of specialized real estate accountants to optimize your financial operations, ensure compliance, and maximize the return on your property investments."
+          buttonText="Get Started"
+          buttonLink="/contact"
+          textColor="white"
+          animationDirection="horizontal"
+        />
+      </Suspense>
     </div>
   );
 }
+
+export default memo(Services);

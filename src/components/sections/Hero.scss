@@ -47,26 +47,25 @@
     max-width: 900px;
 
     h1 {
-      font-size: 2.3rem;
+      font-size: 3.5rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
-      text-align: left;
-      // text-justify: inter-word;
+      margin-bottom: 0px;
+      text-align: start;
       word-spacing: -0.5px;
-      line-height: 1.3;
+      line-height: -10px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
       hyphens: auto;
     }
 
     .hero-subtext {
-      font-size: 1.2rem;
-      text-align: justify;
-      text-justify: inter-word;
+      font-size: 1.7rem;
+      text-align: start;
+      padding-bottom: -150px;
       margin-bottom: 2.5rem;
       opacity: 0.9;
-      line-height: 1.6;
+      line-height: 1.5;
       word-spacing: -0.5px;
-      hyphens: auto;
+      hyphens: none;
     }
   }
 
@@ -166,7 +165,6 @@
 
     .hero-content {
       max-width: 100%;
-      text-align: center;
       
       h1 {
         font-size: 1.7rem;
@@ -174,16 +172,16 @@
         line-height: 1.4;
         margin-bottom: 1.2rem;
         word-spacing: normal;
-        hyphens: none;
+        hyphens: none; // Removed for mobile
       }
       
       .hero-subtext {
         font-size: 1rem;
-        text-align: justify;
+        text-align: left;
         line-height: 1.6;
         margin-bottom: 2rem;
         word-spacing: normal;
-        hyphens: none;
+        hyphens: none; // Removed for mobile
       }
     }
 
@@ -226,7 +224,43 @@
       .btn-glass {
         max-width: 100%;
         font-size: 0.9rem;
+        padding: 10px 16px;
       }
+    }
+  }
+
+  // Extra small devices (300px and down)
+  @media (max-width: 300px) {
+    min-height: 100vh;
+    padding: 60px 0 40px;
+
+    .hero-content {
+      h1 {
+        font-size: 1.3rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-subtext {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    .hero-buttons {
+      gap: 10px;
+      
+      .btn-holographic,
+      .btn-glass {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+      }
+    }
+    
+    .scroll-indicator {
+      bottom: 15px;
+      font-size: 1rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-// styles/Blog.scss
+// Blog.scss - Main blog page styles only
 $primary: #4361ee;
 $primary-dark: #3a0ca3;
 $secondary: #f72585;
@@ -305,432 +305,6 @@ $light-gray: #e2e8f0;
     }
   }
 
-  // Blog Post Styles
-  .blog-post {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: 768px) {
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    &.featured-horizontal {
-      .post-content {
-        display: block;
-
-        @media (min-width: 992px) {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 30px;
-        }
-      }
-    }
-
-    .post-image {
-      position: relative;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-
-        @media (min-width: 768px) {
-          height: 200px;
-        }
-      }
-
-      .category-badge {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: $primary;
-        color: white;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-size: 0.7rem;
-        font-weight: 600;
-
-        @media (min-width: 768px) {
-          top: 15px;
-          left: 15px;
-          padding: 5px 12px;
-          border-radius: 15px;
-          font-size: 0.8rem;
-        }
-      }
-    }
-
-    .post-content {
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-
-      @media (min-width: 768px) {
-        padding: 25px;
-      }
-
-      .post-meta {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 10px;
-        flex-wrap: wrap;
-
-        @media (min-width: 768px) {
-          gap: 15px;
-          margin-bottom: 12px;
-        }
-
-        span {
-          font-size: 0.8rem;
-          color: $gray;
-
-          @media (min-width: 768px) {
-            font-size: 0.85rem;
-          }
-        }
-      }
-
-      .post-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: $dark;
-        margin-bottom: 10px;
-        line-height: 1.4;
-
-        @media (min-width: 768px) {
-          font-size: 1.3rem;
-          margin-bottom: 12px;
-        }
-      }
-
-      .post-excerpt {
-        color: $gray;
-        line-height: 1.6;
-        margin-bottom: 15px;
-        flex: 1;
-        font-size: 0.9rem;
-
-        @media (min-width: 768px) {
-          margin-bottom: 20px;
-          font-size: 1rem;
-        }
-      }
-
-      .post-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: auto;
-        flex-direction: column;
-        gap: 15px;
-
-        @media (min-width: 576px) {
-          flex-direction: row;
-          gap: 0;
-        }
-      }
-
-      .post-tags {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-
-        @media (min-width: 768px) {
-          gap: 8px;
-        }
-
-        .post-tag {
-          font-size: 0.7rem;
-          color: $primary;
-          background: rgba($primary, 0.1);
-          padding: 3px 6px;
-          border-radius: 8px;
-
-          @media (min-width: 768px) {
-            font-size: 0.75rem;
-            padding: 4px 8px;
-            border-radius: 10px;
-          }
-        }
-      }
-
-      .read-more-btn {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: none;
-        border: none;
-        color: $primary;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-
-        @media (min-width: 768px) {
-          gap: 8px;
-          font-size: 1rem;
-        }
-
-        &:hover {
-          gap: 10px;
-        }
-      }
-    }
-
-    &:hover {
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-      transform: translateY(-3px);
-
-      @media (min-width: 768px) {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        transform: translateY(-5px);
-      }
-
-      .post-image img {
-        transform: scale(1.05);
-      }
-    }
-  }
-
-  // Sidebar Styles
-  .blog-sidebar {
-    padding: 0 15px;
-
-    @media (min-width: 992px) {
-      position: sticky;
-      top: 100px;
-      padding: 0;
-    }
-
-    .sidebar-widget {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-
-      @media (min-width: 768px) {
-        border-radius: 16px;
-        padding: 25px;
-        margin-bottom: 30px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-      }
-
-      .widget-title {
-        font-size: 1rem;
-        font-weight: 600;
-        color: $dark;
-        margin-bottom: 15px;
-        padding-bottom: 12px;
-        border-bottom: 2px solid $light-gray;
-
-        @media (min-width: 768px) {
-          font-size: 1.1rem;
-          margin-bottom: 20px;
-          padding-bottom: 15px;
-        }
-      }
-
-      .widget-content {
-        .category-item {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          padding: 8px 0;
-          border: none;
-          background: none;
-          color: $gray;
-          cursor: pointer;
-          transition: color 0.3s ease;
-          font-size: 0.9rem;
-
-          @media (min-width: 768px) {
-            padding: 10px 0;
-            font-size: 1rem;
-          }
-
-          &:hover {
-            color: $primary;
-          }
-
-          .category-name {
-            text-transform: capitalize;
-          }
-        }
-
-        .popular-post {
-          display: flex;
-          gap: 12px;
-          padding: 12px 0;
-          border-bottom: 1px solid $light-gray;
-
-          @media (min-width: 768px) {
-            gap: 15px;
-            padding: 15px 0;
-          }
-
-          &:last-child {
-            border-bottom: none;
-          }
-
-          .post-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 6px;
-            overflow: hidden;
-
-            @media (min-width: 768px) {
-              width: 60px;
-              height: 60px;
-              border-radius: 8px;
-            }
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-
-          .post-info {
-            flex: 1;
-
-            .post-title {
-              font-size: 0.85rem;
-              font-weight: 600;
-              color: $dark;
-              margin-bottom: 4px;
-              line-height: 1.4;
-
-              @media (min-width: 768px) {
-                font-size: 0.9rem;
-                margin-bottom: 5px;
-              }
-            }
-
-            .post-date {
-              font-size: 0.75rem;
-              color: $gray;
-
-              @media (min-width: 768px) {
-                font-size: 0.8rem;
-              }
-            }
-          }
-        }
-
-        .tags-cloud {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 6px;
-
-          @media (min-width: 768px) {
-            gap: 8px;
-          }
-
-          .tag-btn {
-            padding: 5px 10px;
-            background: $light;
-            border: none;
-            border-radius: 12px;
-            color: $gray;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            @media (min-width: 768px) {
-              padding: 6px 12px;
-              border-radius: 15px;
-              font-size: 0.85rem;
-            }
-
-            &:hover {
-              background: $primary;
-              color: white;
-            }
-          }
-        }
-
-        .newsletter-form {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-
-          @media (min-width: 576px) {
-            flex-direction: row;
-          }
-
-          input {
-            flex: 1;
-            padding: 10px 12px;
-            border: 1px solid $light-gray;
-            border-radius: 6px;
-            outline: none;
-            font-size: 0.9rem;
-
-            @media (min-width: 768px) {
-              padding: 10px 15px;
-              border-radius: 8px;
-              font-size: 1rem;
-            }
-
-            &:focus {
-              border-color: $primary;
-            }
-          }
-
-          .subscribe-btn {
-            padding: 10px 15px;
-            background: $primary;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-
-            @media (min-width: 768px) {
-              border-radius: 8px;
-              font-size: 1rem;
-            }
-          }
-        }
-      }
-
-      &.newsletter-widget {
-        background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
-        color: white;
-
-        .widget-title {
-          color: white;
-          border-bottom-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .newsletter-form {
-          input {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            color: white;
-
-            &::placeholder {
-              color: rgba(255, 255, 255, 0.7);
-            }
-          }
-        }
-      }
-    }
-  }
-
   // Newsletter Section
   .blog-newsletter {
     padding: 60px 0;
@@ -825,7 +399,7 @@ $light-gray: #e2e8f0;
           @media (min-width: 768px) {
             padding: 15px 30px;
             font-size: 16px;
-          }
+            }
         }
       }
 
@@ -902,6 +476,33 @@ $light-gray: #e2e8f0;
         p {
           font-size: 0.9rem;
         }
+      }
+    }
+  }
+}
+
+// Performance optimizations
+@media (prefers-reduced-motion: reduce) {
+  .modern-blog {
+    .blog-hero,
+    .blog-main,
+    .blog-newsletter {
+      .motion-div {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+    
+    .load-more-btn,
+    .filter-btn {
+      transition: none !important;
+      
+      &:hover {
+        transform: none !important;
+      }
+      
+      svg {
+        transition: none !important;
       }
     }
   }

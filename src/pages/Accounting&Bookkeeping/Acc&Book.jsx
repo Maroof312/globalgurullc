@@ -1,13 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
+import { Helmet } from 'react-helmet-async';
+
 import {
   FaCalculator,
-  FaBook,
   FaChartLine,
   FaFileInvoiceDollar,
-  FaBalanceScale,
-  FaHandHoldingUsd,
   FaShieldAlt,
   FaCloud,
 } from "react-icons/fa";
@@ -18,103 +17,70 @@ import accountingImage from "../../assets/images/10.avif";
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import "./Acc&Book.scss";
 
+// Static data defined outside component (no hooks needed)
 const services = [
   {
     icon: <FaCalculator size={40} />,
     title: "Full-Cycle Bookkeeping",
-    description:
-      "Comprehensive transaction recording, bank reconciliations, and financial statement preparation to keep your records accurate and up-to-date.",
-    features: [
-      "Daily transaction recording",
-      "Bank/credit card reconciliations",
-      "Financial statement preparation",
-    ],
+    description: "Comprehensive transaction recording, bank reconciliations, and financial statement preparation to keep your records accurate and up-to-date.",
+    features: ["Daily transaction recording", "Bank/credit card reconciliations", "Financial statement preparation"],
   },
   {
     icon: <FaChartLine size={40} />,
     title: "Financial Reporting",
-    description:
-      "Customized reports that provide actionable insights into your business performance and financial health.",
-    features: [
-      "Profit & Loss statements",
-      "Balance sheets",
-      "Cash flow analysis",
-      "KPI dashboards",
-    ],
+    description: "Customized reports that provide actionable insights into your business performance and financial health.",
+    features: ["Profit & Loss statements", "Balance sheets", "Cash flow analysis", "KPI dashboards"],
   },
   {
     icon: <FaFileInvoiceDollar size={40} />,
     title: "Accounts Management",
-    description:
-      "End-to-end management of your payables and receivables to optimize cash flow and vendor relationships.",
-    features: [
-      "Invoice processing",
-      "Payment scheduling",
-      "Collections management",
-      "Vendor management",
-    ],
+    description: "End-to-end management of your payables and receivables to optimize cash flow and vendor relationships.",
+    features: ["Invoice processing", "Payment scheduling", "Collections management", "Vendor management"],
   },
   {
     icon: <GiCash size={40} />,
     title: "Cash Flow Management",
-    description:
-      "Strategic oversight of your cash position with forecasting to ensure operational stability and growth capacity.",
-    features: [
-      "Cash flow projections",
-      "Working capital analysis",
-      "Liquidity management",
-    ],
+    description: "Strategic oversight of your cash position with forecasting to ensure operational stability and growth capacity.",
+    features: ["Cash flow projections", "Working capital analysis", "Liquidity management"],
   },
   {
     icon: <FaShieldAlt size={40} />,
     title: "Compliance & Tax Prep",
-    description:
-      "Accurate record-keeping and documentation to meet regulatory requirements and simplify tax filing.",
-    features: [
-      "US GAAP-compliant reporting",
-      "Tax-ready financials",
-      "Audit support",
-    ],
+    description: "Accurate record-keeping and documentation to meet regulatory requirements and simplify tax filing.",
+    features: ["US GAAP-compliant reporting", "Tax-ready financials", "Audit support"],
   },
   {
     icon: <FaCloud size={40} />,
     title: "Cloud Accounting",
-    description:
-      "Modern accounting solutions using leading platforms for real-time financial visibility from anywhere.",
-    features: [
-      "QuickBooks Online setup",
-      "Xero integration",
-      "Automated data sync",
-    ],
+    description: "Modern accounting solutions using leading platforms for real-time financial visibility from anywhere.",
+    features: ["QuickBooks Online setup", "Xero integration", "Automated data sync"],
   },
 ];
 
 const processSteps = [
   {
     title: "Discovery & Setup",
-    description:
-      "We learn about your business and configure our systems to match your workflows",
+    description: "We learn about your business and configure our systems to match your workflows"
   },
   {
     title: "Data Collection",
-    description:
-      "Secure transfer of your financial documents and access to necessary systems",
+    description: "Secure transfer of your financial documents and access to necessary systems"
   },
   {
     title: "Processing & Review",
-    description: "Our team processes transactions and performs quality checks",
+    description: "Our team processes transactions and performs quality checks"
   },
   {
     title: "Reporting & Analysis",
-    description: "Delivery of financial reports with expert insights",
+    description: "Delivery of financial reports with expert insights"
   },
   {
     title: "Ongoing Optimization",
-    description: "Continuous improvement of your financial processes",
+    description: "Continuous improvement of your financial processes"
   },
 ];
 
-const AccBook = () => {
+const AccBook = memo(() => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -141,8 +107,8 @@ const AccBook = () => {
   const fadeIn = {
     hidden: { opacity: 0 },
     visible: {
-      opacity: 1,
-      transition: { duration: 0.8 },
+    opacity: 1,
+    transition: { duration: 0.8 },
     },
   };
 
@@ -153,8 +119,11 @@ const AccBook = () => {
       animate="visible"
       variants={containerVariants}
     >
-      {/* LinkedIn Insight Tag */}
+      <Helmet>
+        <link rel="canonical" href="https://globalgurullc.com/accounting-and-bookkeeping" />
+      </Helmet>
       <LinkedInInsightTag />
+      
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-image-container">
@@ -162,7 +131,9 @@ const AccBook = () => {
             src={heroImage}
             alt="Professional Accounting Services"
             className="hero-image"
-            loading="lazy"
+            loading="eager"
+            width={1200}
+            height={630}
           />
         </div>
 
@@ -229,6 +200,8 @@ const AccBook = () => {
                   alt="Accounting Process"
                   className="img-fluid rounded-lg shadow-lg"
                   loading="lazy"
+                  width={600}
+                  height={400}
                 />
               </motion.div>
             </Col>
@@ -294,7 +267,7 @@ const AccBook = () => {
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true }}
               >
                 <div className="step-number">{index + 1}</div>
                 <div className="step-content">
@@ -328,21 +301,15 @@ const AccBook = () => {
                 <motion.ul className="value-list" variants={containerVariants}>
                   <motion.li variants={itemVariants}>
                     <GiPayMoney size={24} className="value-icon" />
-                    <span>
-                      Optimize cash flow and reduce unnecessary expenses
-                    </span>
+                    <span>Optimize cash flow and reduce unnecessary expenses</span>
                   </motion.li>
                   <motion.li variants={itemVariants}>
                     <GiReceiveMoney size={24} className="value-icon" />
-                    <span>
-                      Identify profitable opportunities and growth potential
-                    </span>
+                    <span>Identify profitable opportunities and growth potential</span>
                   </motion.li>
                   <motion.li variants={itemVariants}>
                     <FaShieldAlt size={20} className="value-icon" />
-                    <span>
-                      Maintain compliance with tax laws and regulations
-                    </span>
+                    <span>Maintain compliance with tax laws and regulations</span>
                   </motion.li>
                   <motion.li variants={itemVariants}>
                     <FaChartLine size={20} className="value-icon" />
@@ -375,7 +342,6 @@ const AccBook = () => {
         </Container>
       </section>
 
-      {/* CTA Section */}
       <CTA
         title="Ready to Streamline Your Accounting?"
         description="Let our expert team handle your financial management so you can focus on growing your business. Get accurate, timely financial insights tailored to your specific needs."
@@ -384,6 +350,7 @@ const AccBook = () => {
       />
     </motion.div>
   );
-};
+});
 
+AccBook.displayName = 'AccBook';
 export default AccBook;

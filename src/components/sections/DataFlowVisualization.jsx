@@ -3,19 +3,28 @@ import { Container } from 'react-bootstrap';
 import { motion, useAnimation } from 'framer-motion';
 import './DataFlowVisualization.scss';
 
-// Import images (update paths as needed)
-import assetManagementImage from '../../assets/images/asset-management.webp';
-import arApServicesImage from '../../assets/images/ar-ap-services.webp';
-import budgetingImage from '../../assets/images/budgeting.webp';
-import businessProcessAutomationImage from '../../assets/images/business-process-automation.webp';
-import camReconciliationsImage from '../../assets/images/cam-reconcillations.webp';
-import marcoExpertsImage from '../../assets/images/marco-experts.webp';
-import multiLingualProcessImage from '../../assets/images/multi-lingual-process.webp';
-import underWritingImage from '../../assets/images/under-writing.webp';
+// Import images with responsive srcset
+import assetManagementSrc from '../../assets/images/asset-management.webp?w=300;500&format=webp&as=srcset';
+import assetManagementFallback from '../../assets/images/asset-management.webp?w=500';
+import arApServicesSrc from '../../assets/images/ar-ap-services.webp?w=300;500&format=webp&as=srcset';
+import arApServicesFallback from '../../assets/images/ar-ap-services.webp?w=500';
+import budgetingSrc from '../../assets/images/budgeting.webp?w=300;500&format=webp&as=srcset';
+import budgetingFallback from '../../assets/images/budgeting.webp?w=500';
+import businessProcessAutomationSrc from '../../assets/images/business-process-automation.webp?w=300;500&format=webp&as=srcset';
+import businessProcessAutomationFallback from '../../assets/images/business-process-automation.webp?w=500';
+import camReconciliationsSrc from '../../assets/images/cam-reconcillations.webp?w=300;500&format=webp&as=srcset';
+import camReconciliationsFallback from '../../assets/images/cam-reconcillations.webp?w=500';
+import marcoExpertsSrc from '../../assets/images/marco-experts.webp?w=300;500&format=webp&as=srcset';
+import marcoExpertsFallback from '../../assets/images/marco-experts.webp?w=500';
+import multiLingualProcessSrc from '../../assets/images/multi-lingual-process.webp?w=300;500&format=webp&as=srcset';
+import multiLingualProcessFallback from '../../assets/images/multi-lingual-process.webp?w=500';
+import underWritingSrc from '../../assets/images/under-writing.webp?w=300;500&format=webp&as=srcset';
+import underWritingFallback from '../../assets/images/under-writing.webp?w=500';
 
 const services = [
   {
-    image: businessProcessAutomationImage,
+    imageSrc: businessProcessAutomationSrc,
+    imageFallback: businessProcessAutomationFallback,
     title: 'Property & Fund Accounting',
     description: 'Streamline operations with smart automation',
     bulletPoints: [
@@ -29,7 +38,8 @@ const services = [
     particles: '#f72585'
   },
   {
-    image: camReconciliationsImage,
+    imageSrc: camReconciliationsSrc,
+    imageFallback: camReconciliationsFallback,
     title: 'CAM Reconciliations',
     description: 'Precise Common Area Maintenance audits',
     bulletPoints: [
@@ -43,7 +53,8 @@ const services = [
     particles: '#4895ef'
   },
   {
-    image: multiLingualProcessImage,
+    imageSrc: multiLingualProcessSrc,
+    imageFallback: multiLingualProcessFallback,
     title: 'Lease Admin',
     description: 'Global lease documentation expertise',
     bulletPoints: [
@@ -57,7 +68,8 @@ const services = [
     particles: '#7209b7'
   },
   {
-    image: arApServicesImage,
+    imageSrc: arApServicesSrc,
+    imageFallback: arApServicesFallback,
     title: 'AR & AP Services',
     description: 'Streamlined receivables and payables management for real estate operations',
     bulletPoints: [
@@ -71,7 +83,8 @@ const services = [
     particles: '#560bad'
   },
   {
-    image: underWritingImage,
+    imageSrc: underWritingSrc,
+    imageFallback: underWritingFallback,
     title: 'Underwriting & Valuations',
     description: 'Detailed property financial analysis',
     bulletPoints: [
@@ -85,7 +98,8 @@ const services = [
     particles: '#f72585'
   },
   {
-    image: budgetingImage,
+    imageSrc: budgetingSrc,
+    imageFallback: budgetingFallback,
     title: 'Budgeting & Forecasting',
     description: 'Accurate financial planning for your portfolio',
     bulletPoints: [
@@ -99,7 +113,8 @@ const services = [
     particles: '#b5179e'
   },
   {
-    image: assetManagementImage,
+    imageSrc: assetManagementSrc,
+    imageFallback: assetManagementFallback,
     title: 'Asset Management',
     description: 'Comprehensive tracking and performance analysis for your property portfolio',
     bulletPoints: [
@@ -113,7 +128,8 @@ const services = [
     particles: '#4895ef'
   },
   {
-    image: marcoExpertsImage,
+    imageSrc: marcoExpertsSrc,
+    imageFallback: marcoExpertsFallback,
     title: 'Power BI & VBA',
     description: 'Advanced data visualization and automation',
     bulletPoints: [
@@ -165,7 +181,13 @@ const ServiceCard = ({ service, isActive, onClick, onHover }) => {
             style={{ '--service-color': service.color }}
           >
             <div className="card-image">
-              <img src={service.image} alt={service.title} />
+              <img
+                srcSet={service.imageSrc}
+                src={service.imageFallback}
+                alt={service.title}
+                loading="lazy"
+                sizes="(max-width: 768px) 150px, 200px"
+              />
               <div className="image-overlay" style={{ background: service.gradient }} />
             </div>
             <h4>{service.title}</h4>
@@ -216,7 +238,7 @@ const ServiceCard = ({ service, isActive, onClick, onHover }) => {
 const FloatingParticles = ({ color }) => {
   return (
     <div className="floating-particles">
-      {[...Array(15)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
           className="particle"
@@ -224,17 +246,17 @@ const FloatingParticles = ({ color }) => {
             backgroundColor: color,
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 10 + 4}px`,
-            height: `${Math.random() * 10 + 4}px`,
-            opacity: Math.random() * 0.6 + 0.2,
+            width: `${Math.random() * 8 + 4}px`,
+            height: `${Math.random() * 8 + 4}px`,
+            opacity: Math.random() * 0.4 + 0.1,
           }}
           animate={{
-            y: [0, Math.random() * 40 - 20],
-            x: [0, Math.random() * 30 - 15],
-            scale: [1, 1.2, 1],
+            y: [0, Math.random() * 30 - 15],
+            x: [0, Math.random() * 20 - 10],
+            scale: [1, 1.1, 1],
           }}
           transition={{
-            duration: Math.random() * 4 + 3,
+            duration: Math.random() * 6 + 4,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut"
@@ -317,7 +339,13 @@ export default function ModernServicesSection() {
                 >
                   <div className="card-header">
                     <div className="card-image">
-                      <img src={service.image} alt={service.title} />
+                      <img
+                        srcSet={service.imageSrc}
+                        src={service.imageFallback}
+                        alt={service.title}
+                        loading="lazy"
+                        sizes="80px"
+                      />
                       <div className="image-overlay" style={{ background: service.gradient }} />
                     </div>
                     <h4>{service.title}</h4>

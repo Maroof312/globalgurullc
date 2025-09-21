@@ -1,7 +1,42 @@
 // YardiConsulting.scss
-// NOTE: Scoped to `.yardi-page` to avoid affecting the rest of the site.
-
 .yardi-page {
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+  // width: 100%; 
+
+  /* Container fixes to prevent horizontal scroll */
+  .container {
+    // max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    
+    @media (min-width: 576px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  
+  .row {
+    margin-left: -12px;
+    margin-right: -12px;
+    
+    @media (min-width: 576px) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    
+    > * {
+      padding-left: 12px;
+      padding-right: 12px;
+      
+      @media (min-width: 576px) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+
   /* =========================
      HERO
   ==========================*/
@@ -45,7 +80,6 @@
           }
 
           .hero-title {
-            /* Use clamp so it scales on every device */
             font-size: clamp(1.6rem, 6vw, 2.5rem);
             font-weight: 800;
             margin-bottom: 1rem;
@@ -77,6 +111,7 @@
     color: #2c3e50;
     position: relative;
     display: inline-block;
+    text-align: left;
   }
 
   .section-subtitle {
@@ -102,13 +137,7 @@
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       height: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 15px;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
 
       .benefit-icon {
         color: #0066cc;
@@ -138,13 +167,7 @@
       padding: 22px;
       height: 100%;
       border-left: 4px solid #0066cc;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 20px;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-      }
 
       h3 {
         color: #0066cc;
@@ -174,25 +197,13 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       height: 100%;
       margin-bottom: 15px;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        background: #0066cc;
-
-        .module-name {
-          color: #fff;
-        }
-      }
 
       .module-name {
         font-weight: 600;
         color: #2c3e50;
         margin: 0;
-        transition: color 0.3s ease;
         font-size: 0.98rem;
         line-height: 1.4;
         word-break: break-word;
@@ -212,25 +223,13 @@
       padding: 20px;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       height: 100%;
       margin-bottom: 15px;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        background: #0066cc;
-
-        .client-type {
-          color: #fff;
-        }
-      }
 
       .client-type {
         font-weight: 600;
         color: #2c3e50;
         margin: 0;
-        transition: color 0.3s ease;
         font-size: 0.98rem;
         line-height: 1.4;
         word-break: break-word;
@@ -251,14 +250,8 @@
       padding: 18px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       height: 100%;
       margin-bottom: 15px;
-
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
 
       .benefit-number {
         width: 36px;
@@ -291,13 +284,9 @@
     background-color: #fff;
   }
 
-
   /* =========================
      RESPONSIVE OVERRIDES
-     (tighter control for small phones)
   ==========================*/
-
-  /* <= 575px (xs) */
   @media (max-width: 575.98px) {
     .yardi-hero {
       height: auto;
@@ -335,21 +324,18 @@
     }
   }
 
-  /* Very small devices (iPhone SE / 360–399px) */
-  @media (max-width: 420px ) {
+  @media (max-width: 420px) {
     .yardi-hero {
-      height: auto;
       min-height: 500px;
+      
       .yardi-hero .hero-image-wrapper .hero-overlay .hero-content {
         .hero-title {
           font-size: clamp(1.35rem, 7vw, 1.8rem);
-
         }
       }
     }
   }
 
-  /* Ultra small (<= 340px) */
   @media (max-width: 339.98px) {
     .yardi-hero .hero-image-wrapper .hero-overlay .hero-content {
       .hero-title {
@@ -361,7 +347,6 @@
     }
   }
 
-  /* >= 576px (sm) */
   @media (min-width: 576px) {
     .yardi-hero .hero-image-wrapper .hero-overlay .hero-content {
       text-align: left;
@@ -376,7 +361,6 @@
     }
   }
 
-  /* >= 768px (md) */
   @media (min-width: 768px) {
     .yardi-hero {
       height: 60vh;
@@ -401,7 +385,6 @@
     }
   }
 
-  /* >= 992px (lg) */
   @media (min-width: 992px) {
     .yardi-hero {
       height: 70vh;
@@ -417,10 +400,31 @@
     }
   }
 
-  /* >= 1200px (xl) */
   @media (min-width: 1200px) {
     .yardi-hero .hero-image-wrapper .hero-overlay .hero-content .hero-title {
       font-size: 3.5rem;
+    }
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .yardi-page {
+    .benefit-card,
+    .service-card,
+    .module-card,
+    .client-card,
+    .benefit-item {
+      transition: none !important;
+      
+      &:hover {
+        transform: none !important;
+      }
+    }
+    
+    .motion-div {
+      animation: none !important;
+      transition: none !important;
     }
   }
 }

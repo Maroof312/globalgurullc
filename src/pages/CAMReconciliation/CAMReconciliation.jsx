@@ -1,4 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
+import { memo, useMemo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -6,70 +7,127 @@ import 'swiper/css';
 import './CAMReconciliation.scss';
 import ContactForm from '../../components/forms/ContactForm';
 import { config } from '../../config'
-import FAQ from '../../components/sections/FAQ';
-import CTA from '../../components/sections/CTA';
-import DifferenceSection from '../../components/sections/DifferenceSection';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 
-// Other images
+// Lazy load heavy components
+const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const CTA = lazy(() => import('../../components/sections/CTA'));
+const DifferenceSection = lazy(() => import('../../components/sections/DifferenceSection'));
+
+// Images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import appVector from '../../assets/images/app-form-vector.webp';
 import CamAudit from '../../assets/images/4th.avif';
 import CamAcc from '../../assets/images/3rd.avif';
 import CamMap from '../../assets/images/6th.avif';
 
-const CAMReconciliation = () => {
-  const services = [
-    {
-      icon: 'bi-briefcase',
-      title: 'A Solid Knowledge Base',
-      description: 'Performing jobs routinely over the years results in overall higher productivity easy.'
-    },
-    {
-      icon: 'bi-card-checklist',
-      title: 'Cost-Effective Human Resources',
-      description: 'Losing employees and finding new ones is expensive. Our services eliminates all these costly expenses.'
-    },
-    {
-      icon: 'bi-bar-chart',
-      title: 'Invaluable Support System',
-      description: 'The need for new hires arises when a company is growing. We serve as a built-in support system.'
-    },
-    {
-      icon: 'bi-binoculars',
-      title: 'A Reputation of Stability',
-      description: 'Long-term employees help ensure a stable work environment.'
-    }
-  ];
+// Simple loader component
+const Loader = () => <div className="d-flex justify-content-center py-4"><div className="spinner-border text-primary" role="status"></div></div>;
 
-  const camFAQs = [
-    {
-      question: "How many CAM reconciliations has your team completed?",
-      answer: "Our team has completed more than 10,000 CAM reconciliations across the United States, establishing our reputation as trusted CAM reconciliation experts."
-    },
-    {
-      question: "What are the benefits of outsourcing CAM reconciliations?",
-      answer: "Outsourcing CAM reconciliations ensures accurate expense allocation, reduces tenant disputes, improves financial transparency, and saves time for internal teams. Our clients benefit from error-free reconciliations that strengthen tenant relationships."
-    },
-    {
-      question: "How do you handle tenant disputes related to CAM reconciliations?",
-      answer: "We prepare tenant-ready reconciliations with clear supporting documentation. This reduces disputes, prevents misunderstandings, and ensures compliance with lease terms. "
-    }
-  ];
+// Static data - memoized outside component
+const services = [
+  {
+    icon: 'bi-briefcase',
+    title: 'A Solid Knowledge Base',
+    description: 'Performing jobs routinely over the years results in overall higher productivity easy.'
+  },
+  {
+    icon: 'bi-card-checklist',
+    title: 'Cost-Effective Human Resources',
+    description: 'Losing employees and finding new ones is expensive. Our services eliminates all these costly expenses.'
+  },
+  {
+    icon: 'bi-bar-chart',
+    title: 'Invaluable Support System',
+    description: 'The need for new hires arises when a company is growing. We serve as a built-in support system.'
+  },
+  {
+    icon: 'bi-binoculars',
+    title: 'A Reputation of Stability',
+    description: 'Long-term employees help ensure a stable work environment.'
+  }
+];
+
+const camFAQs = [
+  {
+    question: "How many CAM reconciliations has your team completed?",
+    answer: "Our team has completed more than 10,000 CAM reconciliations across the United States, establishing our reputation as trusted CAM reconciliation experts."
+  },
+  {
+    question: "What are the benefits of outsourcing CAM reconciliations?",
+    answer: "Outsourcing CAM reconciliations ensures accurate expense allocation, reduces tenant disputes, improves financial transparency, and saves time for internal teams. Our clients benefit from error-free reconciliations that strengthen tenant relationships."
+  },
+  {
+    question: "How do you handle tenant disputes related to CAM reconciliations?",
+    answer: "We prepare tenant-ready reconciliations with clear supporting documentation. This reduces disputes, prevents misunderstandings, and ensures compliance with lease terms. "
+  }
+];
+
+const CAMReconciliation = memo(() => {
+  // Memoize service items
+  const serviceItems = useMemo(() => 
+    services.map((service, index) => (
+      <Col lg={3} key={index}>
+        <motion.div
+          className="service-item bg-white h-100 p-3 rounded shadow-sm text-center"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+        >
+          <div className="service-icon mb-3">
+            <i className={`bi ${service.icon} fs-1 text-primary`}></i>
+          </div>
+          <h3 className="h5 fw-bold">{service.title}</h3>
+          <p className="mb-0 text-muted">{service.description}</p>
+        </motion.div>
+      </Col>
+    )), []);
+
+  // Memoize why us items
+  const whyUsItems = useMemo(() => 
+    [
+      "Specialized focus on retail, industrial, and office lease reconciliations",
+      "Dedicated team of financial and real estate professionals",
+      "Technology-enabled accuracy with audit-traceable results",
+      "Transparent communication and support every step of the way",
+      "Proven track record across multiple global markets"
+    ].map((item, index) => (
+      <Col md={6} lg={4} key={index}>
+        <motion.div
+          className="why-us-card bg-white p-4 rounded-3 shadow-sm h-100"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+        >
+          <div className="d-flex align-items-start">
+            <div className="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
+              <i className="bi bi-check2-circle fs-4"></i>
+            </div>
+            <p className="mb-0 fw-medium">{item}</p>
+          </div>
+        </motion.div>
+      </Col>
+    )), []);
 
   return (
     <div className="cam-reconciliation-page">
-      {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
-      {/* Added Meta Tags with React Helmet */}
       <Helmet>
         <title>CAM Reconciliation Services for Property Owners | Global Guru</title>
+        <link rel="canonical" href="https://globalgurullc.com/cam-reconciliation-services" />
         <meta 
           name="description" 
           content="Ensure accurate lease audits & CAM reconciliation with expert accounting services. Minimize disputes & improve property financial transparency with Global Guru" 
         />
+        {/* Preload critical fonts to prevent layout shift */}
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Helmet>
+
       {/* Hero Banner Section */}
       <motion.section 
         className="hero-banner position-relative py-5 py-lg-5"
@@ -81,8 +139,10 @@ const CAMReconciliation = () => {
           <img 
             src={landingBanner}
             alt="Background" 
-            loading="lazy"
+            loading="eager"
             className="background-image w-100 h-100 object-fit-cover"
+            width={1920}
+            height={1080}
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100 opacity-50"></div>
         </div>
@@ -155,6 +215,8 @@ const CAMReconciliation = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                width={500}
+                height={400}
               />
             </Col>
           </Row>
@@ -279,6 +341,8 @@ const CAMReconciliation = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                width={500}
+                height={400}
               />
             </Col>
           </Row>
@@ -299,6 +363,8 @@ const CAMReconciliation = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
+                width={500}
+                height={400}
               />
             </Col>
             <Col lg={7}>
@@ -345,30 +411,7 @@ const CAMReconciliation = () => {
           </motion.div>
 
           <Row className="g-4 justify-content-center">
-            {[
-              "Specialized focus on retail, industrial, and office lease reconciliations",
-              "Dedicated team of financial and real estate professionals",
-              "Technology-enabled accuracy with audit-traceable results",
-              "Transparent communication and support every step of the way",
-              "Proven track record across multiple global markets"
-            ].map((item, index) => (
-              <Col md={6} lg={4} key={index}>
-                <motion.div
-                  className="why-us-card bg-white p-4 rounded-3 shadow-sm h-100"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <div className="d-flex align-items-start">
-                    <div className="icon-box bg-primary bg-opacity-10 text-primary rounded-circle p-2 me-3">
-                      <i className="bi bi-check2-circle fs-4"></i>
-                    </div>
-                    <p className="mb-0 fw-medium">{item}</p>
-                  </div>
-                </motion.div>
-              </Col>
-            ))}
+            {whyUsItems}
           </Row>
 
           <motion.div
@@ -384,7 +427,7 @@ const CAMReconciliation = () => {
                 combining data, legal precision, and a consultative approach that delivers value beyond a spreadsheet.
               </p>
             </div>
-          </motion.div>
+            </motion.div>
         </Container>
       </section>
 
@@ -434,6 +477,8 @@ const CAMReconciliation = () => {
                   alt="Map Services" 
                   loading="lazy"
                   className="img-fluid rounded-3 shadow"
+                  width={500}
+                  height={400}
                 />
               </motion.div>
             </Col>
@@ -444,11 +489,13 @@ const CAMReconciliation = () => {
       {/* FAQ Section */}
       <section className="faq-section py-5 bg-light">
         <Container>
-          <FAQ 
-            faqs={camFAQs}
-            title="FAQs About CAM Reconciliation and Audit Services"
-            themeColor="#0056b3"
-          />
+          <Suspense fallback={<Loader />}>
+            <FAQ 
+              faqs={camFAQs}
+              title="FAQs About CAM Reconciliation and Audit Services"
+              themeColor="#0056b3"
+            />
+          </Suspense>
         </Container>
       </section>
 
@@ -458,23 +505,7 @@ const CAMReconciliation = () => {
           <h2 className="section-title text-center display-6 fw-bold mb-5">Why Us</h2>
           
           <Row className="d-none d-md-flex g-4">
-            {services.map((service, index) => (
-              <Col lg={3} key={index}>
-                <motion.div
-                  className="service-item bg-white h-100 p-3 rounded shadow-sm text-center"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <div className="service-icon mb-3">
-                    <i className={`bi ${service.icon} fs-1 text-primary`}></i>
-                  </div>
-                  <h3 className="h5 fw-bold">{service.title}</h3>
-                  <p className="mb-0 text-muted">{service.description}</p>
-                </motion.div>
-              </Col>
-            ))}
+            {serviceItems}
           </Row>
 
           <div className="d-md-none">
@@ -504,17 +535,22 @@ const CAMReconciliation = () => {
       </section>
 
       {/* Difference Section */}
-      <DifferenceSection/>
+      <Suspense fallback={<Loader />}>
+        <DifferenceSection/>
+      </Suspense>
 
       {/* CTA Section */}
-      <CTA
-        title="Start Your CAM Reconciliation Today with Confidence"
-        description="Don't let hidden fees, vague lease terms, or unchecked landlord billing impact your bottom line. Get accurate, timely, and professional CAM reconciliation from a team that knows what to look for. Contact Global Guru now to schedule your consultation and take the guesswork out of CAM charges for good."
-        buttonText="Get Started"
-        buttonLink="/contact"
-      />
+      <Suspense fallback={<Loader />}>
+        <CTA
+          title="Start Your CAM Reconciliation Today with Confidence"
+          description="Don't let hidden fees, vague lease terms, or unchecked landlord billing impact your bottom line. Get accurate, timely, and professional CAM reconciliation from a team that knows what to look for. Contact Global Guru now to schedule your consultation and take the guesswork out of CAM charges for good."
+          buttonText="Get Started"
+          buttonLink="/contact"
+        />
+      </Suspense>
     </div>
   );
-};
+});
 
+CAMReconciliation.displayName = 'CAMReconciliation';
 export default CAMReconciliation;

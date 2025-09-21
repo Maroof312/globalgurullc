@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import yardiBanner from '../../assets/images/yardi.avif';
+import yardiBanner from '../../assets/images/yardi.avif?w=800;1200;1600&format=avif&as=srcset';
+import yardiBannerFallback from '../../assets/images/yardi.avif?w=1200';
 import Testimonials from '../../components/sections/Testimonials';
 import { Helmet } from 'react-helmet-async';
 import FAQ from '../../components/sections/FAQ';
@@ -9,41 +10,83 @@ import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import './YardiConsulting.scss';
 
-const YardiConsulting = () => {
-  const faqs = [
-    {
-      question: "Do you provide Yardi implementation services?",
-      answer: "Yes. Our team has extensive hands on experience implementing Yardi for real estate companies. We configure modules, set up workflows, and design reporting dashboards that optimize daily operations."
-    },
-    {
-      question: "Can you train my staff on Yardi property accounting?",
-      answer: "Absolutely. We provide customized Yardi training for property managers, accountants, and finance staff. Our goal is to help your team use Yardi to its full potential."
-    },
-    {
-      question: "What makes your Yardi expertise stand out?",
-      answer: "Our Yardi experts go beyond system setup. We help clients unlock advanced features, build customized reports, and optimize usage to improve productivity, compliance, and financial decision making."
-    }
-  ];
+// Static data defined outside component (no hooks needed)
+const faqs = [
+  {
+    question: "Do you provide Yardi implementation services?",
+    answer: "Yes. Our team has extensive hands on experience implementing Yardi for real estate companies. We configure modules, set up workflows, and design reporting dashboards that optimize daily operations."
+  },
+  {
+    question: "Can you train my staff on Yardi property accounting?",
+    answer: "Absolutely. We provide customized Yardi training for property managers, accountants, and finance staff. Our goal is to help your team use Yardi to its full potential."
+  },
+  {
+    question: "What makes your Yardi expertise stand out?",
+    answer: "Our Yardi experts go beyond system setup. We help clients unlock advanced features, build customized reports, and optimize usage to improve productivity, compliance, and financial decision making."
+  }
+];
+
+const YardiConsulting = memo(() => {
+  // Memoize arrays that are used in mappings
+  const benefitItems = useMemo(() => [
+    "Custom solutions aligned with your business goals",
+    "Dedicated Global support for real-time collaboration",
+    "Seamless onboarding with minimal downtime",
+    "Cross-functional expertise in accounting, leasing, operations, and compliance",
+    "Transparent project planning with clear milestones and deliverables"
+  ], []);
+
+  const modules = useMemo(() => [
+    "Voyager Residential, Commercial, and Mixed-Use",
+    "Yardi Investment Suite",
+    "Yardi RentCafe and CRM",
+    "Yardi PAYscan and Bill Pay",
+    "Yardi Maintenance",
+    "Yardi Budgeting and Forecasting",
+    "Construction and Job Cost Modules"
+  ], []);
+
+  const clientTypes = useMemo(() => [
+    "Multifamily and single-family operators",
+    "Commercial real estate developers and managers",
+    "Affordable housing providers",
+    "Senior living and healthcare communities",
+    "Mixed-use developers",
+    "REITs and private equity firms"
+  ], []);
+
+  const benefits = useMemo(() => [
+    "Streamlined leasing and tenant workflows",
+    "Faster month-end close and financial reporting",
+    "Reduced reliance on manual spreadsheets",
+    "Lower compliance risks and stronger audit trails",
+    "Better team alignment through customized user roles",
+    "Improved data accuracy and system-wide consistency"
+  ], []);
 
   return (
     <div className="yardi-page">
-      {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />
       <Helmet>
         <title>Yardi Consultation Services | Yardi Implementation & Optimization </title>
+        <link rel="canonical" href="https://globalgurullc.com/yardi-consulation-services" />
         <meta
           name="description"
           content="Get expert Yardi consulting, implementation & training to simplify property management. Global Guru ensures seamless Yardi integration & reporting solutions."
         />
       </Helmet>
+      
       {/* Hero Section */}
       <section className="yardi-hero">
         <div className="hero-image-wrapper">
           <img
-            src={yardiBanner}
+            srcSet={yardiBanner}
+            src={yardiBannerFallback}
             alt="Yardi Consulting Services"
             className="hero-image"
             loading="eager"
+            width={1920}
+            height={1080}
           />
           <div className="hero-overlay">
             <Container>
@@ -94,6 +137,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h2 className="section-title">Why Choose Global Guru for Yardi Consulting</h2>
                 <p className="section-subtitle">
@@ -104,19 +148,14 @@ const YardiConsulting = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            {[
-              "Custom solutions aligned with your business goals",
-              "Dedicated Global support for real-time collaboration",
-              "Seamless onboarding with minimal downtime",
-              "Cross-functional expertise in accounting, leasing, operations, and compliance",
-              "Transparent project planning with clear milestones and deliverables"
-            ].map((item, index) => (
+            {benefitItems.map((item, index) => (
               <Col md={6} lg={4} key={index}>
                 <motion.div
                   className="benefit-card"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "0px" }}
                 >
                   <div className="benefit-icon">
                     <i className="bi bi-check-circle-fill"></i>
@@ -138,6 +177,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h2 className="section-title">Comprehensive Yardi Services That Fit Your Workflow</h2>
                 <p className="section-subtitle">
@@ -155,6 +195,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h3>Yardi Implementation Support</h3>
                 <p>
@@ -170,6 +211,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h3>Data Migration and Integration</h3>
                 <p>
@@ -185,6 +227,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h3>Reporting and Analytics</h3>
                 <p>
@@ -200,6 +243,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h3>System Audits and Optimization</h3>
                 <p>
@@ -222,6 +266,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h2 className="section-title">Supported Yardi Modules</h2>
                 <p className="section-subtitle">
@@ -232,21 +277,14 @@ const YardiConsulting = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            {[
-              "Voyager Residential, Commercial, and Mixed-Use",
-              "Yardi Investment Suite",
-              "Yardi RentCafe and CRM",
-              "Yardi PAYscan and Bill Pay",
-              "Yardi Maintenance",
-              "Yardi Budgeting and Forecasting",
-              "Construction and Job Cost Modules"
-            ].map((module, index) => (
+            {modules.map((module, index) => (
               <Col xs={12} sm={6} md={6} lg={4} key={index}>
                 <motion.div
                   className="module-card"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "0px" }}
                 >
                   <div className="module-name">{module}</div>
                 </motion.div>
@@ -265,6 +303,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h2 className="section-title">Who We Help</h2>
                 <p className="section-subtitle">
@@ -275,20 +314,14 @@ const YardiConsulting = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            {[
-              "Multifamily and single-family operators",
-              "Commercial real estate developers and managers",
-              "Affordable housing providers",
-              "Senior living and healthcare communities",
-              "Mixed-use developers",
-              "REITs and private equity firms"
-            ].map((client, index) => (
+            {clientTypes.map((client, index) => (
               <Col xs={12} sm={6} md={6} lg={4} key={index}>
                 <motion.div
                   className="client-card"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "0px" }}
                 >
                   <div className="client-type">{client}</div>
                 </motion.div>
@@ -307,6 +340,7 @@ const YardiConsulting = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                viewport={{ once: true, margin: "0px" }}
               >
                 <h2 className="section-title">Benefits of Choosing Global Guru's Yardi Services</h2>
                 <p className="section-subtitle">
@@ -317,20 +351,14 @@ const YardiConsulting = () => {
             </Col>
           </Row>
           <Row className="g-4">
-            {[
-              "Streamlined leasing and tenant workflows",
-              "Faster month-end close and financial reporting",
-              "Reduced reliance on manual spreadsheets",
-              "Lower compliance risks and stronger audit trails",
-              "Better team alignment through customized user roles",
-              "Improved data accuracy and system-wide consistency"
-            ].map((benefit, index) => (
+            {benefits.map((benefit, index) => (
               <Col xs={12} sm={6} md={6} lg={4} key={index}>
                 <motion.div
                   className="benefit-item"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "0px" }}
                 >
                   <div className="benefit-number">{index + 1}</div>
                   <div className="benefit-text">{benefit}</div>
@@ -358,10 +386,10 @@ const YardiConsulting = () => {
 
       {/* CTA Section */}
       <CTA 
-        title="Let’s Optimize Yardi for Your Business Today"
+        title="Let's Optimize Yardi for Your Business Today"
         description={
           <>
-            <p>Yardi is powerful, but only when it’s tailored to your goals. Let Global Guru show you how our personalized Yardi consultation can unlock its full value.</p>
+            <p>Yardi is powerful, but only when it's tailored to your goals. Let Global Guru show you how our personalized Yardi consultation can unlock its full value.</p>
             <p className="mb-0">Contact us now to book your free consultation. Start building a better, smarter real estate operation with trusted Yardi consulting from Global Guru.</p>
           </>
         }
@@ -370,6 +398,7 @@ const YardiConsulting = () => {
       />
     </div>
   );
-};
+});
 
+YardiConsulting.displayName = 'YardiConsulting';
 export default YardiConsulting;
