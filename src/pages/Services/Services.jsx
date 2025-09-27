@@ -167,7 +167,7 @@ function Services() {
     <div className="services-page">
       {/* ADDED CANONICAL TAG */}
       <Helmet>
-        <link rel="canonical" href="https://globalgurullc.com/real-estate-accounting-services" />
+        <link rel="canonical" href="https://globalgurullc.com/services" />
       </Helmet>
       
       <LinkedInInsightTag />
