@@ -11,3 +11,17 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Specific 301 redirect for the misspelled URL
+[[redirects]]
+  from = "/yardi-consulation-services"
+  to = "/yardi-consultation-services"
+  status = 301
+  force = true
+
+# Optional: Redirect with and without trailing slashes
+[[redirects]]
+  from = "/yardi-consulation-services/"
+  to = "/yardi-consultation-services"
+  status = 301
+  force = true
