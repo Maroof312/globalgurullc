@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'; // <-- IMPORT LAZY AND SUSPENSE
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Breadcrumb from './components/Breadcrumb/Breadcrumb'
+import GoogleAnalytics from './components/analytics/GoogleAnalytics'
 import Home from './pages/Home/Home'
 // LAZY LOAD ALL OTHER PAGES
 const About = lazy(() => import('./pages/About/About'));
@@ -35,6 +36,7 @@ const PageLoading = () => (
 function App() {
   return (
     <Router>
+      <GoogleAnalytics />
       <Header />
       <Breadcrumb />
       {/* Wrap Routes in Suspense for lazy loading */}

@@ -3,6 +3,7 @@ import { Form, Button, Alert, Spinner } from 'react-bootstrap'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { config } from '../../config'
 import emailjs from '@emailjs/browser'
+import { trackFormSubmission, trackButtonClick, trackServiceInquiry } from '../analytics/GoogleAnalytics'
 import './ContactForm.scss'
 
 const ContactForm = memo(({ 
@@ -84,6 +85,10 @@ const ContactForm = memo(({
       
       await emailjs.send(serviceId, templateId, formDataWithCaptcha, publicKey);
       
+      // Track successful form submission
+      trackFormSubmission('contact_form', true);
+      trackServiceInquiry('general_inquiry', 'form');
+      
       setStatus({ loading: false, success: true, error: '' });
       resetForm();
       
@@ -98,6 +103,9 @@ const ContactForm = memo(({
         }
         setRecaptchaValue(null);
       }
+      
+      // Track failed form submission
+      trackFormSubmission('contact_form', false);
       
       setStatus({ 
         loading: false, 
@@ -249,6 +257,7 @@ const ContactForm = memo(({
           disabled={status.loading}
           className="submit-btn w-50"
           size="lg"
+          onClick={() => trackButtonClick('contact_form_submit', 'contact_page')}
         >
           {status.loading ? (
             <>

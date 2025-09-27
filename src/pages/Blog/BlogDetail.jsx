@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';

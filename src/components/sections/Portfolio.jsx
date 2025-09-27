@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import PropTypes from 'prop-types'; // Added prop validation
+import PropTypes from 'prop-types';
 import './Portfolio.scss';
 
-const Portfolio = ({ title, items = [] }) => { // Added default empty array
+const Portfolio = ({ title = "Our Portfolio Services", items = [] }) => { // Added default title
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -52,7 +52,7 @@ const Portfolio = ({ title, items = [] }) => { // Added default empty array
                           backgroundColor: activeIndex === index ? '#0056b3' : '#e0e6ed',
                           scale: activeIndex === index ? 1.2 : 1
                         }}
-                        transition={{ duration: 0.2 }} // Faster transition
+                        transition={{ duration: 0.2 }}
                       />
                     </div>
                     <h3>{item.title}</h3>
@@ -180,9 +180,8 @@ const Portfolio = ({ title, items = [] }) => { // Added default empty array
   );
 };
 
-// Added prop validation
 Portfolio.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

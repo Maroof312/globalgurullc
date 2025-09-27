@@ -410,7 +410,10 @@ const RealEstateAccounting = memo(() => {
           </motion.div>
           
           <Suspense fallback={<Loader />}>
-            <PortfolioList items={portfolioItems} />
+            <PortfolioList 
+              title="Comprehensive Property Accounting Services"
+              items={portfolioItems} 
+            />
           </Suspense>
         </Container>
       </section>
@@ -441,10 +444,10 @@ const RealEstateAccounting = memo(() => {
         <CTA 
           title="Ready to Simplify Your Real Estate Accounting?"
           description={
-            <>
+            <div>
               <p>At Global Guru, we bring structure, accuracy, and insight to your financial operations.</p>
               <p className="mb-0">Contact us today for a free consultation and discover why clients across the country trust Global Guru for their property accounting services and financial reporting needs.</p>
-            </>
+            </div>
           }
           buttonText="Schedule a Consultation"
           buttonLink="/contact"

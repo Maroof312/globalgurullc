@@ -1,5 +1,6 @@
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import TeamMembers from '../../components/sections/TeamMembers'
 import aboutHeroImage from '../../assets/images/about.avif'
