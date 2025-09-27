@@ -35,7 +35,7 @@ export default function Footer() {
               <ul className="list-unstyled mb-0">
                 <li className="mb-2"><a href="/who-we-are" className="text-white">About Us</a></li>
                 <li className="mb-2"><a href="/services" className="text-white">Services</a></li>
-                <li className="mb-2"><a href="/yardi-consulation-services" className="text-white">Yardi Consulting</a></li>
+                <li className="mb-2"><a href="/yardi-consultation-services" className="text-white">Yardi Consulting</a></li>
                 <li className="mb-2"><a href="/contact" className="text-white">Contact</a></li>
                 <li className="mb-2"><a href="/our-experts" className="text-white">Our Experts</a></li>
                 <li className="mb-2"><a href="/privacy-policy" className="text-white">Privacy Policy</a></li>

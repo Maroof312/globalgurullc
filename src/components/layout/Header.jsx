@@ -193,8 +193,8 @@ export default function Header() {
             </div>
             
             <Nav.Link 
-              href="/yardi-consulation-services" 
-              className={isActive('/yardi-consulation-services') ? 'active' : ''}
+              href="/yardi-consultation-services" 
+              className={isActive('/yardi-consultation-services') ? 'active' : ''}
               onClick={handleNavLinkClick}
             >
               Yardi Consulting
