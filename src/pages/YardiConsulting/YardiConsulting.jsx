@@ -69,7 +69,7 @@ const YardiConsulting = memo(() => {
       <LinkedInInsightTag />
       <Helmet>
         <title>Yardi Consultation Services | Yardi Implementation & Optimization </title>
-        <link rel="canonical" href="https://globalgurullc.com/yardi-consulation-services" />
+        <link rel="canonical" href="https://globalgurullc.com/yardi-consultation-services" />
         <meta
           name="description"
           content="Get expert Yardi consulting, implementation & training to simplify property management. Global Guru ensures seamless Yardi integration & reporting solutions."
