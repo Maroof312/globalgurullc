@@ -13,29 +13,25 @@ const Blog = () => {
   const [visiblePosts, setVisiblePosts] = useState(6);
 
   const filteredPosts = useMemo(() => {
-    return blogData.filter(post => {
+    const searchLower = searchQuery.toLowerCase();
+    return blogData.filter((post) => {
       const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
-      
-      const searchLower = searchQuery.toLowerCase();
-      const matchesSearch = searchQuery === '' || 
-        post.title.toLowerCase().includes(searchLower) ||
-        post.content.some(item => 
-          item.text && typeof item.text === 'string' && item.text.toLowerCase().includes(searchLower)
-        );
-      
-      return matchesCategory && matchesSearch;
+      if (!searchLower) return matchesCategory;
+      const inTitle = post.title.toLowerCase().includes(searchLower);
+      const inContent = post.content?.some((item) =>
+        typeof item?.text === 'string' && item.text.toLowerCase().includes(searchLower)
+      );
+      return matchesCategory && (inTitle || inContent);
     });
-  }, [blogData, activeCategory, searchQuery]);
+  }, [activeCategory, searchQuery]);
 
-  const categories = useMemo(() => 
-    ['all', ...new Set(blogData.map(post => post.category))], 
-    [blogData]
-  );
+  const categories = useMemo(() => {
+    return ['all', ...new Set(blogData.map((post) => post.category))];
+  }, []);
 
-  const allTags = useMemo(() => 
-    [...new Set(blogData.flatMap(post => post.tags))], 
-    [blogData]
-  );
+  const allTags = useMemo(() => {
+    return [...new Set(blogData.flatMap((post) => post.tags))];
+  }, []);
 
   const loadMore = useCallback(() => {
     setVisiblePosts(prev => prev + 3);
@@ -138,7 +134,7 @@ const Blog = () => {
                 <AnimatePresence>
                   {filteredPosts.slice(0, visiblePosts).map((post, index) => (
                     <motion.div
-                      key={post.id}
+                      key={post.title}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}

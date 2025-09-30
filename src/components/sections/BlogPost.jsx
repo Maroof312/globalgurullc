@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { slugify, getPostImageFromData } from '../../utils/blog';
 import './BlogPost.scss';
 
 // Import images with responsive srcset
@@ -19,7 +20,8 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
 
   const getBlogImage = useMemo(() => {
     return (blog) => {
-      if (blog.featuredImage) return blog.featuredImage;
+      const fromData = getPostImageFromData(blog);
+      if (fromData?.srcset || fromData?.fallback) return fromData;
       if (blog.category === 'Property Management') return { srcset: CAM, fallback: CAMFallback };
       if (blog.category === 'Audit') return { srcset: Audit, fallback: AuditFallback };
       if (blog.category === 'Bookkeeping') return { srcset: Book, fallback: BookFallback };
@@ -29,7 +31,8 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
   }, []);
 
   const handleReadMore = () => {
-    navigate(`/blog/${blog.id}`, { state: { blog } });
+    const slug = slugify(blog.title);
+    navigate(`/blog/${slug}`, { state: { blog } });
   };
 
   const handleImageError = (e) => {
@@ -77,7 +80,7 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
 
   if (isFeatured && layout === 'horizontal') {
     return (
-      <motion.article 
+      <Motion.article 
         className={`blog-post featured-horizontal`}
         whileHover={{ y: -5 }}
         transition={{ duration: 0.3 }}
@@ -109,12 +112,12 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
             </button>
           </div>
         </div>
-      </motion.article>
+      </Motion.article>
     );
   }
 
   return (
-    <motion.article 
+    <Motion.article 
       className={`blog-post ${isFeatured ? 'featured' : ''}`}
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
@@ -146,7 +149,7 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
           </button>
         </div>
       </div>
-    </motion.article>
+    </Motion.article>
   );
 });
 

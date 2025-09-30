@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
@@ -7,39 +7,47 @@ import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
+import { blogData } from '../../data/BlogData';
+import { resolveBlogFromParam } from '../../utils/blog';
 
 const BlogDetail = React.memo(() => {
   const location = useLocation();
+  const params = useParams();
   const { blog } = location.state || {};
+  const blogFromParam = useMemo(() => {
+    if (blog) return blog;
+    if (!params?.title) return undefined;
+    return resolveBlogFromParam(params.title, blogData);
+  }, [blog, params]);
 
   const metaTags = useMemo(() => {
-    if (!blog) return { title: "Global Guru Insights Blog", description: "Expert knowledge and industry insights for property management professionals" };
+    if (!blogFromParam) return { title: "Global Guru Insights Blog", description: "Expert knowledge and industry insights for property management professionals" };
     
     let title = "Global Guru Insights Blog";
     let description = "Expert knowledge and industry insights for property management professionals";
     
-    if (blog.title.includes("CAM Audit")) {
+    if (blogFromParam.title.includes("CAM Audit")) {
       title = "How to Prepare for a CAM Audit & Avoid Errors | Global Guru";
       description = "Ensure CAM accuracy & transparency. Learn audit steps, common errors, and how Global Guru helps with CAM reconciliation & reporting.";
-    } else if (blog.title.includes("CAM Reconciliation")) {
+    } else if (blogFromParam.title.includes("CAM Reconciliation")) {
       title = "How to Do CAM Reconciliation Right: Best Practices";
       description = "Learn CAM reconciliation meaning, process, and strategies to minimize disputes. Get expert insights from Global Guru for accurate lease management.";
-    } else if (blog.title.includes("Outsourcing Bookkeeping") || blog.title.includes("Bookkeeping")) {
+    } else if (blogFromParam.title.includes("Outsourcing Bookkeeping") || blogFromParam.title.includes("Bookkeeping")) {
       title = "10 Benefits of Outsourcing Bookkeeping for Property Management Firms";
       description = "Discover why property management firms outsource bookkeeping. Learn 10 key benefits including cost savings, accuracy, compliance & scalability with experts.";
-    } else if (blog.title.includes("") || blog.title.includes("Bookkeeping")) {
+    } else if (blogFromParam.title.includes("CRE") || blogFromParam.title.includes("Commercial Real Estate")) {
       title = "Why CRE Accounting Outsourcing Is Surging in 2025";
       description = "With historic debt maturities and persistent talent shortages, 2025 demands smarter accounting solutions. Global Guru's specialized CRE accounting services provide the scalability, expertise, and cost efficiency you need to navigate these challenges successfully.";
     } else {
-      title = `${blog.title} | Global Guru`;
-      const firstParagraph = blog.content.find(item => item.type === 'p');
+      title = `${blogFromParam.title} | Global Guru`;
+      const firstParagraph = blogFromParam.content.find(item => item.type === 'p');
       if (firstParagraph && firstParagraph.text) {
         description = firstParagraph.text.substring(0, 160) + '...';
       }
     }
     
     return { title, description };
-  }, [blog]);
+  }, [blogFromParam]);
 
   const renderContent = useMemo(() => {
     return (item, index) => {
@@ -64,7 +72,7 @@ const BlogDetail = React.memo(() => {
     };
   }, []);
 
-  if (!blog) {
+  if (!blogFromParam) {
     return <div>Blog post not found</div>;
   }
 
@@ -87,24 +95,24 @@ const BlogDetail = React.memo(() => {
               {/* Blog Header */}
               <div className="blog-header">
                 <div className="blog-meta">
-                  <span className="blog-date">{blog.date}</span>
-                  <span className="blog-read-time">{blog.readTime}</span>
-                  <span className="blog-category">{blog.category}</span>
+                  <span className="blog-date">{blogFromParam.date}</span>
+                  <span className="blog-read-time">{blogFromParam.readTime}</span>
+                  <span className="blog-category">{blogFromParam.category}</span>
                 </div>
-                <h1 className="blog-title">{blog.title}</h1>
+                <h1 className="blog-title">{blogFromParam.title}</h1>
                 <div className="blog-tags">
-                  {blog.tags.map((tag, index) => (
+                  {blogFromParam.tags.map((tag, index) => (
                     <span key={index} className="blog-tag">#{tag}</span>
                   ))}
                 </div>
               </div>
 
               {/* Featured Image */}
-              {blog.featuredImage && (
+              {blogFromParam.featuredImage && (
                 <div className="blog-featured-image">
                   <img 
-                    src={blog.featuredImage} 
-                    alt={blog.title} 
+                    src={blogFromParam.featuredImage} 
+                    alt={blogFromParam.title} 
                     loading="lazy"
                     decoding="async"
                     width="800"
@@ -115,14 +123,14 @@ const BlogDetail = React.memo(() => {
 
               {/* Blog Content */}
               <div className="blog-content">
-                {blog.content.map((item, index) => renderContent(item, index))}
+                {blogFromParam.content.map((item, index) => renderContent(item, index))}
               </div>
 
               {/* FAQ Section */}
-              {blog.faqs && blog.faqs.length > 0 && (
+              {blogFromParam.faqs && blogFromParam.faqs.length > 0 && (
                 <div className="blog-faq-section">
                   <FAQ 
-                    faqs={blog.faqs} 
+                    faqs={blogFromParam.faqs} 
                     title="Frequently Asked Questions"
                     themeColor="#4361ee"
                   />
@@ -130,13 +138,13 @@ const BlogDetail = React.memo(() => {
               )}
               
               {/* CTA Section */}
-              {blog.cta && (
+              {blogFromParam.cta && (
                 <div className="blog-cta-section">
                   <CTA
-                    title={blog.cta.title}
-                    description={blog.cta.description}
-                    buttonText={blog.cta.buttonText}
-                    buttonLink={blog.cta.buttonLink}
+                    title={blogFromParam.cta.title}
+                    description={blogFromParam.cta.description}
+                    buttonText={blogFromParam.cta.buttonText}
+                    buttonLink={blogFromParam.cta.buttonLink}
                     backgroundColor="primary"
                     textColor="white"
                     buttonVariant="light"

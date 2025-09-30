@@ -48,7 +48,7 @@ function App() {
           <Route path="/yardi-consultation-services" element={<YardiConsulting />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/blog/:title" element={<BlogDetail />} />
           <Route path="/our-experts" element={<OurExperts />} />
           <Route path="/cam-reconciliation-services" element={<CAMReconciliation />} />
           <Route path="/lease-admin-accounting-services" element={<LeaseAccount />} />
