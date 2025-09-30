@@ -8,7 +8,17 @@ import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
 import { blogData } from '../../data/BlogData';
-import { resolveBlogFromParam } from '../../utils/blog';
+import { resolveBlogFromParam, getPostImageFromData } from '../../utils/blog';
+
+// Category-based image fallbacks (match BlogPost.jsx)
+import CAM from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=300;600;900&format=avif&as=srcset';
+import CAMFallback from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=600';
+import Audit from '../../assets/images/1st.avif?w=300;600;900&format=avif&as=srcset';
+import AuditFallback from '../../assets/images/1st.avif?w=600';
+import Book from '../../assets/images/books-1.webp?w=300;600;900&format=webp&as=srcset';
+import BookFallback from '../../assets/images/books-1.webp?w=600';
+import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
+import CREFallback from '../../assets/images/14.avif?w=600';
 
 const BlogDetail = React.memo(() => {
   const location = useLocation();
@@ -19,6 +29,17 @@ const BlogDetail = React.memo(() => {
     if (!params?.title) return undefined;
     return resolveBlogFromParam(params.title, blogData);
   }, [blog, params]);
+
+  const detailImage = useMemo(() => {
+    if (!blogFromParam) return undefined;
+    const fromData = getPostImageFromData(blogFromParam);
+    if (fromData?.srcset || fromData?.fallback) return fromData;
+    if (blogFromParam.category === 'Property Management') return { srcset: CAM, fallback: CAMFallback };
+    if (blogFromParam.category === 'Audit') return { srcset: Audit, fallback: AuditFallback };
+    if (blogFromParam.category === 'Bookkeeping') return { srcset: Book, fallback: BookFallback };
+    if (blogFromParam.category === 'Commercial Real Estate') return { srcset: CRE, fallback: CREFallback };
+    return { srcset: CAM, fallback: CAMFallback };
+  }, [blogFromParam]);
 
   const metaTags = useMemo(() => {
     if (!blogFromParam) return { title: "Global Guru Insights Blog", description: "Expert knowledge and industry insights for property management professionals" };
@@ -108,15 +129,22 @@ const BlogDetail = React.memo(() => {
               </div>
 
               {/* Featured Image */}
-              {blogFromParam.featuredImage && (
+              {detailImage && (
                 <div className="blog-featured-image">
-                  <img 
-                    src={blogFromParam.featuredImage} 
-                    alt={blogFromParam.title} 
+                  <img
+                    srcSet={detailImage.srcset || detailImage}
+                    src={detailImage.fallback || detailImage}
+                    alt={blogFromParam.title}
                     loading="lazy"
                     decoding="async"
-                    width="800"
-                    height="400"
+                    sizes="(min-width: 1200px) 960px, (min-width: 992px) 800px, 100vw"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '520px',
+                      objectFit: 'cover',
+                      borderRadius: '12px'
+                    }}
                   />
                 </div>
               )}

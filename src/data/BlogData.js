@@ -256,7 +256,7 @@ export const blogData = [
       { type: "h2", text: "What could it mean for your P&L?" },
       { type: "p", text: "APQC benchmarks show top performers spend approximately 0.66% of revenue on finance functions, compared to a median of 1.0% and laggards at 1.5%. Achieving a 5–7day close can streamline processes and reduce costs, helping organizations move toward the top performer band." },
       { type: "p", text: "If your finance run‑rate is high, ~15% BPO savings can now fund system upgrades or portfolio growth." },
-      { type: "h2", text: "How GlobalGuru helps" },
+      { type: "h2", text: "How Global Guru helps" },
       { type: "list", items: [
         "CRE‑specific workflows such as (CAM, lender packs, fixed‑asset, and TI tracking).",
         "Bench‑assessed close cadence, with dashboards for status, reconciliations, and late entries.",
