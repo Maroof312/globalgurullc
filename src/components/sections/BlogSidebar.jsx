@@ -9,6 +9,9 @@ import Audit from '../../assets/images/books-2.webp?w=100;200&format=webp&as=src
 import AuditFallback from '../../assets/images/books-2.webp?w=200';
 import Book from '../../assets/images/books-1.webp?w=100;200&format=webp&as=srcset';
 import BookFallback from '../../assets/images/books-1.webp?w=200';
+import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
+import CREFallback from '../../assets/images/14.avif?w=600';
+
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -29,6 +32,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "Outsourcing Bookkeeping Benefits",
       date: "Mar 5, 2024",
       image: { srcset: Book, fallback: BookFallback },
+    },
+    {
+      id: 4,
+      title: "Why CRE Accounting Outsourcing Is Surging in 2025",
+      date: "September 27, 2025",
+      image: { srcset: CRE, fallback: CREFallback },
     }
   ], []);
 

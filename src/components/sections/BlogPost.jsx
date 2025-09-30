@@ -10,6 +10,8 @@ import Audit from '../../assets/images/1st.avif?w=300;600;900&format=avif&as=src
 import AuditFallback from '../../assets/images/1st.avif?w=600';
 import Book from '../../assets/images/books-1.webp?w=300;600;900&format=webp&as=srcset';
 import BookFallback from '../../assets/images/books-1.webp?w=600';
+import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
+import CREFallback from '../../assets/images/14.avif?w=600';
 
 const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) => {
   const navigate = useNavigate();
@@ -21,6 +23,7 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
       if (blog.category === 'Property Management') return { srcset: CAM, fallback: CAMFallback };
       if (blog.category === 'Audit') return { srcset: Audit, fallback: AuditFallback };
       if (blog.category === 'Bookkeeping') return { srcset: Book, fallback: BookFallback };
+      if (blog.category === 'Commercial Real Estate') return { srcset: CRE, fallback: CREFallback };
       return { srcset: CAM, fallback: CAMFallback };
     };
   }, []);
@@ -51,7 +54,7 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
         style={{ 
           width: '100%', 
           height: '200px', 
-          objectFit: 'cover',
+          objectFit: 'contain',
           display: imageError ? 'none' : 'block'
         }}
       />

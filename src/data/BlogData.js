@@ -160,7 +160,7 @@ export const blogData = [
     title: "Why Property Management Firms Should Outsource Bookkeeping: 10 Key Benefits",
     date: "March 5, 2024",
     readTime: "12 min read",
-    category: "Property Management",
+    category: "Bookkeeping",
     tags: ["Bookkeeping", "Outsourcing", "Efficiency"],
     // featuredImage: "/images/bookkeeping.jpg",
     content: [
@@ -213,6 +213,79 @@ export const blogData = [
       title: "Final Thoughts",
       description: "The benefits of outsourcing bookkeeping services are clear: reduced costs, improved accuracy, and stronger compliance. For property management firms, it's not just about saving time it's about building a smarter, more resilient business model.",
       buttonText: "Partner with Global Guru",
+      buttonLink: "/contact"
+    }
+  },
+  {
+    id: 4,
+    title: "Why CRE Accounting Outsourcing Is Surging in 2025",
+    date: "September 27, 2025",
+    readTime: "12 min read",
+    category: "Commercial Real Estate",
+    tags: ["CRE Accounting", "Outsourcing", "2025 Trends", "Data"],
+    content: [
+      { type: "p", text: "Fresh benchmarks in 2025 show why CRE owners and operators are leaning on outsourced accounting to optimize ROI." },
+      { type: "p", text: "TL; DR: A historic 2025 maturity wall is hitting CRE while finance teams face persistent talent crunches and rising employee related costs. Credible sources show 50% of finance teams still need 6+ business days to close, whilst in the U.S. accountants' median pay is $81,680, and benefits average ~29.8% of total compensation." },
+      { type: "h2", text: "The 2025 backdrop: Shows more work, and fewer hands." },
+      { type: "list", items: [
+        "Debt maturities: About $957B (20%) of the $4.8T U.S. commercial mortgages are scheduled to mature in 2025—pushing heavy refinance, lender‑reporting, and covenant‑tracking workloads onto controllers and property accounting departments.",
+        "Talent pipeline: U.S. accounting bachelor's completions fell 7.8% in 2021–2022, extending a multi‑year decline, per AICPA's Trends.",
+        "Close cycle reality: Half of finance teams take 6+ business days to close; whilst only 18% of teams can manage this within 1–3 days."
+      ]},
+      { type: "h2", text: "The cost picture (and why it matters now)" },
+      { type: "list", items: [
+        "Cash pay: The BLS states that the May 2024 median annual wage for accountants and auditors is $81,680.",
+        "Loaded cost: In June 2025, BLS reported benefits = 29.8% of employer costs for private industry. Applying that ratio to the median wage shows an approximate loaded FTE of ~$116K even prior to additional software, training, and turnover costs.",
+        "Benefits inflation signal: Employer health coverage costs were expected to rise ~5.8% in 2025, adding pressure to the benefit loads of employment."
+      ]},
+      { type: "h2", text: "Why outsourcing is accelerating for CRE." },
+      { type: "list", items: [
+        "Absorb the maturity‑wall spike. Outsourced teams can manage refinanced-driven workload peaks without the need for permanent employees.",
+        "Operating leverage via standardization. Great providers bring CAM reconciliation playbooks, multi‑entity roll‑ups, lender packages, and variance workflows—reducing workload.",
+        "Provable savings. An ISG study found ~15% average run‑rate savings from BPO programs vs. in‑house operations—before counting soft benefits like fewer post‑close corrections.",
+        "Continuity. With fewer new graduates now entering accounting, outsourcing allows firms to access a broader talent pool with specialized expertise, reducing the risk that critical functions like audit, lender reporting, and tax support bank on one individual in-house."
+      ]},
+      { type: "h2", text: "What 'good' looks like in CRE accounting ops" },
+      { type: "list", items: [
+        "Close the onboarding process in 5–7 business days with a documented checklist and clear RACI for all involved departments.",
+        "Reconciliations first. Automate bank/PSP/GL matching; treat reconciliations as the gating item for close.",
+        "CAM playbook. Scope caps/gross‑ups upfront; ship tenant true‑ups with audit‑ready trails.",
+        "Entity discipline. Consistent CoA, intercompany rules, and a documented consolidation path.",
+        "Answer‑engine‑ready content. Publish reference‑grade policies (such as Content Approval Matrix (CAM), close calendar schedules, and reporting templates). Google says AI features require the same SEO fundamentals—no special 'AI schema.' Ensure your structured data (the code that helps search engines understand your page content) matches what users see on your site and keep the 'lastmod' date in your sitemaps (which tells search engines when a page was last updated) accurate."
+      ]},
+      { type: "h2", text: "What could it mean for your P&L?" },
+      { type: "p", text: "APQC benchmarks show top performers spend approximately 0.66% of revenue on finance functions, compared to a median of 1.0% and laggards at 1.5%. Achieving a 5–7day close can streamline processes and reduce costs, helping organizations move toward the top performer band." },
+      { type: "p", text: "If your finance run‑rate is high, ~15% BPO savings can now fund system upgrades or portfolio growth." },
+      { type: "h2", text: "How GlobalGuru helps" },
+      { type: "list", items: [
+        "CRE‑specific workflows such as (CAM, lender packs, fixed‑asset, and TI tracking).",
+        "Bench‑assessed close cadence, with dashboards for status, reconciliations, and late entries.",
+        "Audit‑friendly documentation and standardized schedules."
+      ]},
+      { type: "p", text: "Next step: Ask us for a Month‑End Close in CRE checklist and a CAM reconciliation template. We will deliver an example on a property cluster to show you the savings!" }
+    ],
+    faqs: [
+      {
+        question: "Why is CRE accounting outsourcing surging in 2025?",
+        answer: "The surge is driven by a combination of $957B in commercial mortgage maturities creating heavy workload, talent shortages in accounting, and proven cost savings of ~15% from outsourcing versus in-house operations."
+      },
+      {
+        question: "What are the main cost benefits of outsourcing CRE accounting?",
+        answer: "Beyond the ~15% direct savings, outsourcing eliminates costs associated with hiring, training, benefits (averaging 29.8% of compensation), software, and reduces errors that lead to financial corrections."
+      },
+      {
+        question: "How does outsourcing help with the 2025 maturity wall?",
+        answer: "Outsourced teams can scale quickly to handle the spike in refinance-related workload, lender reporting, and covenant tracking without the need to hire and train permanent staff."
+      },
+      {
+        question: "What should I look for in a CRE accounting outsourcing partner?",
+        answer: "Look for providers with CRE-specific expertise, proven CAM reconciliation processes, audit-ready documentation capabilities, and experience with multi-entity consolidations and lender reporting packages."
+      }
+    ],
+    cta: {
+      title: "Optimize Your CRE Accounting for 2025 Challenges",
+      description: "With historic debt maturities and persistent talent shortages, 2025 demands smarter accounting solutions. Global Guru's specialized CRE accounting services provide the scalability, expertise, and cost efficiency you need to navigate these challenges successfully.",
+      buttonText: "Get Your Free Consultation",
       buttonLink: "/contact"
     }
   }

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-// import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
@@ -27,6 +27,9 @@ const BlogDetail = React.memo(() => {
     } else if (blog.title.includes("Outsourcing Bookkeeping") || blog.title.includes("Bookkeeping")) {
       title = "10 Benefits of Outsourcing Bookkeeping for Property Management Firms";
       description = "Discover why property management firms outsource bookkeeping. Learn 10 key benefits including cost savings, accuracy, compliance & scalability with experts.";
+    } else if (blog.title.includes("") || blog.title.includes("Bookkeeping")) {
+      title = "Why CRE Accounting Outsourcing Is Surging in 2025";
+      description = "With historic debt maturities and persistent talent shortages, 2025 demands smarter accounting solutions. Global Guru's specialized CRE accounting services provide the scalability, expertise, and cost efficiency you need to navigate these challenges successfully.";
     } else {
       title = `${blog.title} | Global Guru`;
       const firstParagraph = blog.content.find(item => item.type === 'p');
