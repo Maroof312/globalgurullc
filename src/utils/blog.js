@@ -42,4 +42,44 @@ export function getPostImageFromData(post) {
   return undefined;
 }
 
+// Centralized category-based image fallbacks
+import CAM from '../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=300;600;900&format=avif&as=srcset';
+import CAMFallback from '../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=600';
+import Audit from '../assets/images/1st.avif?w=300;600;900&format=avif&as=srcset';
+import AuditFallback from '../assets/images/1st.avif?w=600';
+import Book from '../assets/images/books-1.webp?w=300;600;900&format=webp&as=srcset';
+import BookFallback from '../assets/images/books-1.webp?w=600';
+import CRE from '../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
+import CREFallback from '../assets/images/14.avif?w=600';
+import CAMError from '../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif?w=300;600;900&format=avif&as=srcset';
+import CAMErrorFallback from '../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif';
+
+const CATEGORY_IMAGE_FALLBACKS = {
+  'Property Management': { srcset: CAM, fallback: CAMFallback },
+  'Audit': { srcset: Audit, fallback: AuditFallback },
+  'Bookkeeping': { srcset: Book, fallback: BookFallback },
+  'Commercial Real Estate': { srcset: CRE, fallback: CREFallback },
+};
+
+// Per-post explicit overrides (keeps data pure)
+const PER_POST_OVERRIDES = {
+  5: { srcset: CAMError, fallback: CAMErrorFallback },
+};
+
+// Prefer explicit per-post image; else category fallback; else final default
+export function resolvePostImage(post) {
+  // Per-post resolver wins first
+  const override = PER_POST_OVERRIDES[post?.id];
+  if (override?.srcset || override?.fallback) return override;
+
+  const fromData = getPostImageFromData(post);
+  if (fromData?.srcset || fromData?.fallback) return fromData;
+
+  const byCategory = CATEGORY_IMAGE_FALLBACKS[post?.category];
+  if (byCategory) return byCategory;
+
+  // Final global default
+  return { srcset: CAMError, fallback: CAMErrorFallback };
+}
+
 

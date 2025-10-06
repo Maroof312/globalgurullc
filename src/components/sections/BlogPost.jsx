@@ -1,33 +1,17 @@
 import React, { useState, useMemo } from 'react';
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { slugify, getPostImageFromData } from '../../utils/blog';
+import { slugify, resolvePostImage } from '../../utils/blog';
 import './BlogPost.scss';
 
-// Import images with responsive srcset
-import CAM from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=300;600;900&format=avif&as=srcset';
-import CAMFallback from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=600';
-import Audit from '../../assets/images/1st.avif?w=300;600;900&format=avif&as=srcset';
-import AuditFallback from '../../assets/images/1st.avif?w=600';
-import Book from '../../assets/images/books-1.webp?w=300;600;900&format=webp&as=srcset';
-import BookFallback from '../../assets/images/books-1.webp?w=600';
-import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
-import CREFallback from '../../assets/images/14.avif?w=600';
+// Image selection is centralized in utils/blog via resolvePostImage
 
 const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) => {
   const navigate = useNavigate();
   const [imageError, setImageError] = useState(false);
 
   const getBlogImage = useMemo(() => {
-    return (blog) => {
-      const fromData = getPostImageFromData(blog);
-      if (fromData?.srcset || fromData?.fallback) return fromData;
-      if (blog.category === 'Property Management') return { srcset: CAM, fallback: CAMFallback };
-      if (blog.category === 'Audit') return { srcset: Audit, fallback: AuditFallback };
-      if (blog.category === 'Bookkeeping') return { srcset: Book, fallback: BookFallback };
-      if (blog.category === 'Commercial Real Estate') return { srcset: CRE, fallback: CREFallback };
-      return { srcset: CAM, fallback: CAMFallback };
-    };
+    return (blog) => resolvePostImage(blog);
   }, []);
 
   const handleReadMore = () => {

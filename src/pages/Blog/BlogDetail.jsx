@@ -1,24 +1,16 @@
 import React, { useMemo } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
 import { blogData } from '../../data/BlogData';
-import { resolveBlogFromParam, getPostImageFromData } from '../../utils/blog';
+import { resolveBlogFromParam, resolvePostImage } from '../../utils/blog';
 
-// Category-based image fallbacks (match BlogPost.jsx)
-import CAM from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=300;600;900&format=avif&as=srcset';
-import CAMFallback from '../../assets/images/11.1th - Accounts Receivable Services Built for Better Cash Flow.avif?w=600';
-import Audit from '../../assets/images/1st.avif?w=300;600;900&format=avif&as=srcset';
-import AuditFallback from '../../assets/images/1st.avif?w=600';
-import Book from '../../assets/images/books-1.webp?w=300;600;900&format=webp&as=srcset';
-import BookFallback from '../../assets/images/books-1.webp?w=600';
-import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
-import CREFallback from '../../assets/images/14.avif?w=600';
+// Image selection is centralized in utils/blog via resolvePostImage
 
 const BlogDetail = React.memo(() => {
   const location = useLocation();
@@ -32,13 +24,7 @@ const BlogDetail = React.memo(() => {
 
   const detailImage = useMemo(() => {
     if (!blogFromParam) return undefined;
-    const fromData = getPostImageFromData(blogFromParam);
-    if (fromData?.srcset || fromData?.fallback) return fromData;
-    if (blogFromParam.category === 'Property Management') return { srcset: CAM, fallback: CAMFallback };
-    if (blogFromParam.category === 'Audit') return { srcset: Audit, fallback: AuditFallback };
-    if (blogFromParam.category === 'Bookkeeping') return { srcset: Book, fallback: BookFallback };
-    if (blogFromParam.category === 'Commercial Real Estate') return { srcset: CRE, fallback: CREFallback };
-    return { srcset: CAM, fallback: CAMFallback };
+    return resolvePostImage(blogFromParam);
   }, [blogFromParam]);
 
   const metaTags = useMemo(() => {
@@ -59,6 +45,9 @@ const BlogDetail = React.memo(() => {
     } else if (blogFromParam.title.includes("CRE") || blogFromParam.title.includes("Commercial Real Estate")) {
       title = "Why CRE Accounting Outsourcing Is Surging in 2025";
       description = "With historic debt maturities and persistent talent shortages, 2025 demands smarter accounting solutions. Global Guru's specialized CRE accounting services provide the scalability, expertise, and cost efficiency you need to navigate these challenges successfully.";
+    } else if (blogFromParam.title.includes("CAMError") || blogFromParam.title.includes("Commercial Real Estate")) {
+      title = "CAM Errors: The Hidden Leakage";
+      description = "CAM Errors: The Hidden Leakage - why it matters for cash flow and disputes."; 
     } else {
       title = `${blogFromParam.title} | Global Guru`;
       const firstParagraph = blogFromParam.content.find(item => item.type === 'p');
@@ -108,7 +97,7 @@ const BlogDetail = React.memo(() => {
       <Container>
         <Row className="justify-content-center">
           <Col lg={8}>
-            <motion.article
+            <Motion.article
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -179,7 +168,7 @@ const BlogDetail = React.memo(() => {
                   />
                 </div>
               )}
-            </motion.article>
+            </Motion.article>
           </Col>
         </Row>
       </Container>

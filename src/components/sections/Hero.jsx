@@ -46,7 +46,7 @@ export default function HeroSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Streamline Your Property Finances with Accurate,  Transparent and Scalable Solutions.
+            Streamline Your Property Finances with Accurate,  Transparent and Scalable Solutions. Outsource with Confidence.
           </motion.p>
 
           <motion.div

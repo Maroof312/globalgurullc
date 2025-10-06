@@ -318,23 +318,24 @@ const LeaseAccounting = memo(() => {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="section-title display-6 fw-bold mb-4 text-start">
-                  Why Choose Global Guru for Lease Admin/Accounting
+                  Lease Administration and Accounting Made Easy with Global Guru
                 </h2>
                 <p className="section-text text-muted text-start">
-                  At Global Guru, our priority is to make lease management easier, faster, and more reliable. We bring structure to your lease operations and help you gain real-time control over your financials and obligations.
+                  Managing leases does not have to be complicated. At Global Guru, we simplify lease administration and lease accounting so you can focus on running your business with confidence. From Move in Move out support to compliance and reporting, we handle the details while you stay in control.
                 </p>
                 <p className="section-text text-muted text-start">
-                  Here is why clients trust us for lease admin/accounting:
+                  Why Businesses Choose Global Guru:
                 </p>
                 <ul className="benefits-list text-start">
-                  <li>Dedicated experts in lease abstraction, accounting, and compliance</li>
-                  <li>End-to-end support for every lease lifecycle stage</li>
-                  <li>Seamless integration with your ERP or lease management platform</li>
-                  <li>Accurate, audit-ready financial data</li>
-                  <li>Timely alerts and reporting to avoid missed deadlines or penalties</li>
+                  <li><b>Lease Administration Expertise:</b> Skilled professionals in lease abstraction, accounting, compliance, and Move in Move out management.</li>
+                  <li><b>Complete Lifecycle Support:</b> Guidance through every stage of the lease lifecycle, from onboarding to closeout.</li>
+                  <li><b>ERP and Platform Integration:</b> Seamless connections with your ERP or lease management software to keep processes efficient.</li>
+                  <li><b>Audit Ready Financials:</b> Accurate and compliant data prepared for audits at any time.</li>
+                  <li><b>Timely Alerts and Reporting:</b> Stay ahead of renewals, deadlines, and compliance requirements with proactive updates.</li>
+                  <li><b>Error-Free Operations:</b> Reduce manual work, eliminate costly mistakes, and align with the latest accounting standards.</li>
                 </ul>
                 <p className="section-text text-muted text-start">
-                  We help reduce manual workload, eliminate costly errors, and ensure your leases align with current accounting standards.
+                  With Global Guru, you get clarity, compliance, and confidence in every lease.
                 </p>
               </motion.div>
             </Col>

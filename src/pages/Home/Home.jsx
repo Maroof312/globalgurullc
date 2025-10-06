@@ -22,6 +22,7 @@ export default function Home() {
     <>
       {/* SEO & Analytics Tags */}
       <Helmet>
+        
         {/* Primary Meta Tags */}
         <title>Global Guru LLC | Commercial Real Estate Data Solutions</title>
         <meta 

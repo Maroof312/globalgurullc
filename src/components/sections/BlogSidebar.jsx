@@ -11,6 +11,8 @@ import Book from '../../assets/images/books-1.webp?w=100;200&format=webp&as=srcs
 import BookFallback from '../../assets/images/books-1.webp?w=200';
 import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
 import CREFallback from '../../assets/images/14.avif?w=600';
+import CAMError from '../../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif?w=300;600;900&format=avif&as=srcset';
+import CAMErrorFallback from '../../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif';
 
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
@@ -38,6 +40,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "Why CRE Accounting Outsourcing Is Surging in 2025",
       date: "September 27, 2025",
       image: { srcset: CRE, fallback: CREFallback },
+    },
+    {
+      id: 5,
+      title: "CAM Errors: The Hidden Leakage",
+      date: "October 6, 2025",
+      image: { srcset: CAMError, fallback: CAMErrorFallback },
     }
   ], []);
 
