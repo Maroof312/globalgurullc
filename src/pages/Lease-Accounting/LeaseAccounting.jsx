@@ -12,6 +12,7 @@ import DataExpertise from '../../components/sections/DataExpertise';
 import CTA from '../../components/sections/CTA';
 import FAQ from '../../components/sections/FAQ';
 import PortfolioList from '../../components/sections/Portfolio';
+import AccountingProcess from '../../components/sections/AccountingProcess';
 
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
@@ -48,32 +49,32 @@ const whatWeOffer = [
   {
     icon: 'bi-file-earmark-text',
     title: 'Lease Abstraction',
-    description: 'Extract key lease terms—like dates, rent schedules, and renewal clauses—into clear, actionable summaries that save time, support strategic decisions, and enhance efficiency.'
+    description: 'Extract key lease terms like dates, rent schedules, and renewal clauses into clear, actionable summaries that save time, support strategic decisions, and enhance efficiency.'
   },
   {
     icon: 'bi-search',
     title: 'Due Diligence',
-    description: 'Ensure every lease document is complete and accurate—minimizing legal risks, preventing surprises, and fostering trustworthy lease portfolios through meticulous verification.'
+    description: 'Ensure every lease document is complete and accurate minimizing legal risks, preventing surprises, and fostering trustworthy lease portfolios through meticulous verification.'
   },
   {
     icon: 'bi-cloud-arrow-up',
     title: 'Lease Data Migration',
-    description: 'Seamlessly migrate lease information between systems—preserving data integrity and reducing transition downtime, so your team can stay focused on operations.'
+    description: 'Seamlessly migrate lease information between systems preserving data integrity and reducing transition downtime, so your team can stay focused on operations.'
   },
   {
     icon: 'bi-calculator',
     title: 'CAM Reconciliation',
-    description: 'Review and reconcile Common Area Maintenance charges—detecting discrepancies and ensuring accuracy to prevent overpayments and improve cash flow control.'
+    description: 'Review and reconcile Common Area Maintenance charges detecting discrepancies and ensuring accuracy to prevent overpayments and improve cash flow control.'
   },
   {
     icon: 'bi-eyeglasses',
     title: 'Lease Audit Services',
-    description: 'Identify financial or operational inconsistencies across your lease portfolio—helping uncover savings, enforce compliance, and optimize asset value.'
+    description: 'Identify financial or operational inconsistencies across your lease portfolio helping uncover savings, enforce compliance, and optimize asset value.'
   },
   {
     icon: 'bi-globe',
     title: 'Multilingual Leases',
-    description: 'Handle leases in multiple languages with precision—bridging linguistic barriers accurately so global lease operations remain consistent and secure.'
+    description: 'Handle leases in multiple languages with precision bridging linguistic barriers accurately so global lease operations remain consistent and secure.'
   }
 ];
 
@@ -117,6 +118,241 @@ const accountingServices = [
   {
     title: 'ASC 842 and IFRS 16 Compliance',
     description: 'We help organizations meet the requirements of the latest accounting standards by preparing compliant calculations, disclosures, and footnotes. Our team ensures your auditors have the documentation and clarity they need.'
+  }
+];
+
+// Lease Accounting Process Steps
+const leaseAccountingSteps = [
+  {
+    id: 'how-we-serve',
+    title: 'How We Serve',
+    subtitle: 'Comprehensive Lease Administration',
+    icon: 'bi-gear-fill',
+    content: {
+      description: 'We provide end-to-end lease administration services that transform complex lease documents into actionable, organized data.',
+      activities: [
+        'Lease abstraction (economics, clauses, options, caps/exclusions)',
+        'Critical dates & notifications (renewals, options, co‑tenancy, kick‑outs)',
+        'Percentage rent setup & sales capture (retail)',
+        'Lease → billing/recoveries rules mapping (all asset types)',
+        'Audit‑ready index linking back to source documents'
+      ],
+      deliverables: [
+        'Complete lease abstracts and data sheets',
+        'Critical dates calendar and alerts',
+        'Billing and recovery rules documentation',
+        'Audit-ready document index',
+        'Compliance tracking reports'
+      ]
+    }
+  },
+  {
+    id: 'systems',
+    title: 'Systems Integration',
+    subtitle: 'Yardi • MRI • RealPage',
+    icon: 'bi-laptop',
+    content: {
+      description: 'Seamless integration with your existing systems and workflows for maximum efficiency.',
+      activities: [
+        'Yardi, MRI, and RealPage implementation and support',
+        'Doc management + e‑sign integrations',
+        'Tenant portals & sales reporting tools',
+        'Custom API integrations and data sync',
+        'System migration and data validation'
+      ],
+      deliverables: [
+        'Integrated system setup',
+        'Data migration plans',
+        'User training and documentation',
+        'Ongoing technical support',
+        'Custom integration solutions'
+      ],
+      stat: {
+        value: '99.9%',
+        description: 'System uptime and data accuracy guarantee'
+      }
+    }
+  },
+  {
+    id: 'retail',
+    title: 'Retail Lease Management',
+    subtitle: 'Percentage Rent, Co‑Tenancy, and CAM Linkage',
+    icon: 'bi-percent',
+    content: {
+      description: 'Specialized retail lease administration with focus on percentage rent, co-tenancy, and CAM reconciliation.',
+      activities: [
+        'Sales reporting intake & validation',
+        'Natural/fixed breakpoints; tiered percentage rent',
+        'Co‑tenancy triggers and remedies',
+        'CAM caps/exclusions and promo funds tie‑out',
+        'Radius restrictions and continuous operation tracking'
+      ],
+      deliverables: [
+        'Percentage rent calculations',
+        'Co-tenancy compliance reports',
+        'CAM reconciliation statements',
+        'Sales audit trails',
+        'Tenant compliance dashboards'
+      ],
+      calculation: 'Natural breakpoint = Annual Base Rent ÷ % Rate; 6% is a common percentage rent rate in retail sectors. Example: $300,000 base ÷ 6% → $5,000,000 breakpoint.'
+    }
+  },
+  {
+    id: 'office',
+    title: 'Office Lease Management',
+    subtitle: 'Options, Escalations & Complex Clauses',
+    icon: 'bi-building',
+    content: {
+      description: 'Comprehensive office lease administration handling complex clauses and financial structures.',
+      activities: [
+        'Renewal/termination/expansion options with notice windows',
+        'Operating expense clauses (caps, base years, gross‑ups)',
+        'Sublease/assignment provisions and approvals',
+        'Parking, storage, amenities, and pass‑throughs',
+        'TI allowances, free rent, and rent steps mapping'
+      ],
+      deliverables: [
+        'Option exercise tracking',
+        'Operating expense reconciliations',
+        'Sublease administration',
+        'Rent escalation schedules',
+        'Financial obligation summaries'
+      ],
+      stat: {
+        value: '8%',
+        description: 'Average growth in office lease complexity in 2024'
+      }
+    }
+  },
+  {
+    id: 'residential',
+    title: 'Residential Lease Management',
+    subtitle: 'Renewals, Compliance & Make‑It‑Easy Workflows',
+    icon: 'bi-house-door',
+    content: {
+      description: 'Streamlined residential lease administration with focus on renewals, compliance, and resident experience.',
+      activities: [
+        'Renewal calendars and offers by policy & market data',
+        'Compliance tracking (addenda, notices, fair housing docs)',
+        'Rent concessions & step‑ups applied correctly',
+        'Unit‑level exceptions and communications log',
+        'Bulk actions with audit trails (offers, notices, addenda)'
+      ],
+      deliverables: [
+        'Renewal management dashboard',
+        'Compliance documentation',
+        'Resident communication logs',
+        'Rent roll accuracy reports',
+        'Move-in/move-out coordination'
+      ],
+      stat: {
+        value: '60%',
+        description: 'Average resident retention rate with proper lease administration'
+      }
+    }
+  },
+  {
+    id: 'family-offices',
+    title: 'Family Office Services',
+    subtitle: 'Trusted by Family Offices   Service Built Around Principals',
+    icon: 'bi-shield-check',
+    content: {
+      description: 'Customized lease administration services for family offices with focus on privacy, consolidation, and principal reporting.',
+      activities: [
+        'Discretion & privacy‑first workflows (least‑privilege access)',
+        'Consolidated, multi‑entity reporting (HoldCo/MidCo/OpCo, SPVs, JVs)',
+        'Capital calls & distributions calendars; preferred return tracking',
+        'Bespoke reporting cadence for principals (1‑page summary + deep pack)'
+      ],
+      deliverables: [
+        'Consolidated portfolio reporting',
+        'Principal-level summaries',
+        'Capital account tracking',
+        'Privacy-compliant workflows',
+        'Custom reporting templates'
+      ],
+      benefits: [
+        'NOI and cash yield by asset and roll‑up',
+        'Liquidity runway & covenant headroom',
+        'Capital account roll‑forwards & waterfalls',
+        'Principal-focused decision support'
+      ]
+    }
+  },
+  {
+    id: 'move-in-out',
+    title: 'Move‑Ins & Move‑Outs',
+    subtitle: 'Frictionless Start, Clean Exit',
+    icon: 'bi-arrow-left-right',
+    content: {
+      description: 'We orchestrate move‑ins and move‑outs so billing, keys, compliance, and deposits align. No surprises for tenants, no loose ends for accounting.',
+      activities: [
+        'Welcome letters, lease abstract handoff, compliance docs, and key logs',
+        'Proration math for rent, concessions, utilities, parking, storage',
+        'Deposits: collection, accounting, interest (where applicable), and refunds',
+        'Move‑out inspections, damage billing and evidence, final statements',
+        'Automated status board across units/suites with exceptions'
+      ],
+      deliverables: [
+        'Move-in/move-out checklists',
+        'Deposit accounting reports',
+        'Proration calculations',
+        'Final account statements',
+        'Exception tracking boards'
+      ]
+    }
+  },
+  {
+    id: 'integrations',
+    title: 'Systems & Integrations',
+    subtitle: 'Yardi + Salesforce, Rent Manager, RentCafe',
+    icon: 'bi-puzzle',
+    content: {
+      description: 'We operate inside your stack and connect the dots so data flows and nothing gets re‑typed.',
+      activities: [
+        'Yardi + Salesforce: Prospect → lease → billing workflow',
+        'Custom objects for approvals, notices, and commission steps',
+        'Rent Manager & RentCafe: Resident portal setup and management',
+        'Sales & docs intake for retail tenants in RentCafe/portals',
+        'Messaging templates for renewals, percentage rent, and co‑tenancy notices'
+      ],
+      deliverables: [
+        'Integrated workflow documentation',
+        'Custom object configurations',
+        'Portal setup and management',
+        'Communication template libraries',
+        'Data sync validation reports'
+      ]
+    }
+  },
+  {
+    id: 'monthly-reporting',
+    title: 'Monthly Reporting & Tenant Care',
+    subtitle: 'Comprehensive Reporting and Support',
+    icon: 'bi-graph-up',
+    content: {
+      description: 'Regular reporting and tenant support to ensure ongoing compliance and excellent tenant relationships.',
+      activities: [
+        'Critical date dashboard (renewals/options/terminations)',
+        'Exceptions report (missing docs/clauses; mis‑mapped rules)',
+        'Sales compliance & breakpoint status (retail)',
+        'Move‑in/move‑out roster and deposit status',
+        'Leasing commission tracker and payables queue'
+      ],
+      deliverables: [
+        'Monthly critical dates report',
+        'Exception resolution tracking',
+        'Sales compliance dashboards',
+        'Move-in/move-out status reports',
+        'Commission payable schedules'
+      ],
+      benefits: [
+        'First‑of‑month billing discipline with pre‑close checks',
+        'Dedicated inbox + triage playbook for tenant rent queries',
+        'Response SLAs and escalation path for fast resolution',
+        'Proactive issue identification and resolution'
+      ]
+    }
   }
 ];
 
@@ -276,7 +512,7 @@ const LeaseAccounting = memo(() => {
                 <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Lease Administration Services</h4>
                 <h1 className="title display-5 fw-bold mb-4">Turn Your Leases Into Assets, Not Headaches</h1>
                 <p className='section-text text-start'>
-                  Behind every property portfolio lies a stack of leases. Some are simple, others read like novels — full of deadlines, escalations, and hidden clauses. Managing them is not just about filing paperwork. It is about protecting your investment, keeping tenants happy, and making sure no dollar is left on the table.
+                  Behind every property portfolio lies a stack of leases. Some are simple, others read like novels   full of deadlines, escalations, and hidden clauses. Managing them is not just about filing paperwork. It is about protecting your investment, keeping tenants happy, and making sure no dollar is left on the table.
                   At Global Guru Solution, our lease administration services are built to do just that. We help property owners and managers transform their leases from static documents into living assets that create value every single day.
                 </p>
                 <ul className="benefits-list ps-0">
@@ -516,6 +752,13 @@ const LeaseAccounting = memo(() => {
           <PortfolioList items={accountingServices} />
         </Container>
       </section>
+
+      {/* Accounting Process Component */}
+      <AccountingProcess 
+        title="Our Comprehensive Lease Administration Framework"
+        subtitle="A systematic approach to lease management that delivers accuracy, compliance, and strategic insights across all property types"
+        steps={leaseAccountingSteps}
+      />
 
       {/* FAQ Section */}
       <section className="faq-section py-5">

@@ -9,6 +9,7 @@ import ContactForm from '../../components/forms/ContactForm';
 import { config } from '../../config'
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
+import AccountingProcess from '../../components/sections/AccountingProcess';
 
 // Lazy load heavy components
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
@@ -46,6 +47,101 @@ const services = [
     icon: 'bi-binoculars',
     title: 'A Reputation of Stability',
     description: 'Long-term employees help ensure a stable work environment.'
+  }
+];
+
+// CAM Process Steps
+const camProcessSteps = [
+  {
+    id: 'retail-cam',
+    title: 'Retail CAM Solutions',
+    subtitle: 'Clear, Consistent, Defensible Reconciliation',
+    icon: 'bi-shop',
+    content: {
+      description: 'We provide comprehensive retail CAM reconciliation services that ensure clarity, consistency, and defensibility across all your retail properties. Our meticulous approach eliminates disputes and builds tenant trust.',
+      activities: [
+        'Marketing and Promo Funds: Separate ledger management with clean tie out procedures',
+        'Seasonality Adjustments: Month by month gross ups for kiosks and pop up spaces',
+        'Recoverability Analysis: Patrol costs, event expenses, and exclusions applied per lease terms',
+        'Caps Enforcement: Annual percentage and line item caps strictly enforced per tenant agreements'
+      ],
+      deliverables: [
+        'Retail Rule Sheet detailing caps, bases, and thresholds',
+        'Marketing Fund Tie Out documentation',
+        'Seasonal Occupancy Log and analysis',
+        'Tenant Statements with Q&A support notes',
+        'Comprehensive reconciliation reports'
+      ],
+      benefits: [
+        'Reduced tenant disputes and improved relationships',
+        'Accurate recovery of all eligible expenses',
+        'Clear documentation for audit defense',
+        'Streamlined seasonal adjustments'
+      ]
+    }
+  },
+  {
+    id: 'office-cam',
+    title: 'Office CAM Excellence',
+    subtitle: 'Eliminating Gray Areas in Commercial Reconciliation',
+    icon: 'bi-building',
+    content: {
+      description: 'Our office CAM reconciliation services remove ambiguity and ensure precise expense allocation. We provide clear, defensible reconciliations that stand up to tenant scrutiny and audit requirements.',
+      activities: [
+        'Single and Multi Threshold Gross Ups: Documented and consistent application',
+        'Caps Management: Admin fee caps and pass through caps applied by specific clause',
+        'Capital vs Operating Expense Classification: Policy memos with line level treatments',
+        'Shared Services and Cross Charges: Clear allocation memos and documentation'
+      ],
+      deliverables: [
+        'Office Rule Sheet covering caps, bases, thresholds, and audit windows',
+        'GL to CAM mapping documentation',
+        'Allocation and Assumptions Memorandum',
+        'Tenant Statements with comprehensive evidence index',
+        'Expense classification guidelines'
+      ],
+      stat: {
+        value: '98%',
+        description: 'Reduction in tenant disputes with proper documentation'
+      },
+      benefits: [
+        'Complete elimination of gray areas in expense allocation',
+        'Audit ready documentation package',
+        'Clear policy application across all leases',
+        'Reduced administrative overhead'
+      ]
+    }
+  },
+  {
+    id: 'family-offices',
+    title: 'Family Office Services',
+    subtitle: 'Trusted by Family Offices Service Built Around Principals',
+    icon: 'bi-shield-check',
+    content: {
+      description: 'We work quietly and precisely for single family and multi family offices. We adapt to your entity chart, reporting cadence, communication style, and privacy standards so the work fits your world perfectly.',
+      activities: [
+        'Discretion and privacy first workflows with least privilege access protocols',
+        'Consolidated multi entity reporting for HoldCo, MidCo, OpCo, SPVs, and JVs',
+        'Capital calls and distributions calendars with preferred return tracking',
+        'Bespoke reporting cadence for principals including 1 page summaries and deep packs',
+        'Tax ready schedules including K 1 support packages and 1099 vendor hygiene',
+        'Single point of contact with fast escalation paths'
+      ],
+      deliverables: [
+        'Consolidated multi entity financial reports',
+        'Principal focused summary dashboards',
+        'Capital account management documentation',
+        'Tax preparation support packages',
+        'Privacy compliant workflow documentation'
+      ],
+      benefits: [
+        'NOI and cash yield analysis by asset and roll up',
+        'IRR and MOIC snapshots for select investments',
+        'Liquidity runway and covenant headroom monitoring',
+        'Capital account roll forwards and waterfall calculations',
+        'Principal aligned communication and reporting'
+      ]
+    }
   }
 ];
 
@@ -286,6 +382,13 @@ const CAMReconciliation = memo(() => {
           </Row>
         </Container>
       </section>
+
+      {/* CAM Process Section */}
+      <AccountingProcess 
+        title="Our Comprehensive CAM Reconciliation Framework"
+        subtitle="A systematic approach to common area maintenance reconciliation that delivers accuracy, transparency, and peace of mind across all property types"
+        steps={camProcessSteps}
+      />
 
       {/* New Section 2: Comprehensive CAM Audit Services */}
       <section className="cam-audit-section py-5">

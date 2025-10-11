@@ -13,7 +13,8 @@ import CRE from '../../assets/images/14.avif?w=300;600;900&format=avif&as=srcset
 import CREFallback from '../../assets/images/14.avif?w=600';
 import CAMError from '../../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif?w=300;600;900&format=avif&as=srcset';
 import CAMErrorFallback from '../../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif';
-
+import CAMWorkFlow from '../../assets/images/11-10.avif?w=300;600;900&format=avif&as=srcset';
+import CAMWorkFlowFallback from '../../assets/images/11-10.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -46,6 +47,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "CAM Errors: The Hidden Leakage",
       date: "October 6, 2025",
       image: { srcset: CAMError, fallback: CAMErrorFallback },
+    },
+    {
+      id: 6,
+      title: "The CAM Workflow We Use to Cut Disputes by 60%",
+      date: "October 11, 2025",
+      image: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
     }
   ], []);
 

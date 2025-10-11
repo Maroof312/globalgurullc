@@ -53,17 +53,20 @@ import CRE from '../assets/images/14.avif?w=300;600;900&format=avif&as=srcset';
 import CREFallback from '../assets/images/14.avif?w=600';
 import CAMError from '../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif?w=300;600;900&format=avif&as=srcset';
 import CAMErrorFallback from '../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif';
+import CAMWorkFlow from '../assets/images/11-10.avif?w=300;600;900&format=avif&as=srcset';
+import CAMWorkFlowFallback from '../assets/images/11-10.avif?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
   'Audit': { srcset: Audit, fallback: AuditFallback },
   'Bookkeeping': { srcset: Book, fallback: BookFallback },
-  'Commercial Real Estate': { srcset: CRE, fallback: CREFallback },
+  'Commercial Real Estate': { srcset: CRE, fallback: CREFallback }, 
 };
 
 // Per-post explicit overrides (keeps data pure)
 const PER_POST_OVERRIDES = {
   5: { srcset: CAMError, fallback: CAMErrorFallback },
+  6: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
 };
 
 // Prefer explicit per-post image; else category fallback; else final default
@@ -79,7 +82,7 @@ export function resolvePostImage(post) {
   if (byCategory) return byCategory;
 
   // Final global default
-  return { srcset: CAMError, fallback: CAMErrorFallback };
+  return { srcset: CAMError,CAMWorkFlow, fallback: CAMErrorFallback,CAMWorkFlowFallback };
 }
 
 

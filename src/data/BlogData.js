@@ -426,7 +426,7 @@ export const blogData = [
       {
         type: "list",
         items: [
-          "Debt maturities: About $957B (20%) of the $4.8T U.S. commercial mortgages are scheduled to mature in 2025—pushing heavy refinance, lender‑reporting, and covenant‑tracking workloads onto controllers and property accounting departments.",
+          "Debt maturities: About $957B (20%) of the $4.8T U.S. commercial mortgages are scheduled to mature in 2025 pushing heavy refinance, lender‑reporting, and covenant‑tracking workloads onto controllers and property accounting departments.",
           "Talent pipeline: U.S. accounting bachelor's completions fell 7.8% in 2021–2022, extending a multi‑year decline, per AICPA's Trends.",
           "Close cycle reality: Half of finance teams take 6+ business days to close; whilst only 18% of teams can manage this within 1–3 days.",
         ],
@@ -445,8 +445,8 @@ export const blogData = [
         type: "list",
         items: [
           "Absorb the maturity‑wall spike. Outsourced teams can manage refinanced-driven workload peaks without the need for permanent employees.",
-          "Operating leverage via standardization. Great providers bring CAM reconciliation playbooks, multi‑entity roll‑ups, lender packages, and variance workflows—reducing workload.",
-          "Provable savings. An ISG study found ~15% average run‑rate savings from BPO programs vs. in‑house operations—before counting soft benefits like fewer post‑close corrections.",
+          "Operating leverage via standardization. Great providers bring CAM reconciliation playbooks, multi‑entity roll‑ups, lender packages, and variance workflows reducing workload.",
+          "Provable savings. An ISG study found ~15% average run‑rate savings from BPO programs vs. in‑house operations before counting soft benefits like fewer post‑close corrections.",
           "Continuity. With fewer new graduates now entering accounting, outsourcing allows firms to access a broader talent pool with specialized expertise, reducing the risk that critical functions like audit, lender reporting, and tax support bank on one individual in-house.",
         ],
       },
@@ -458,7 +458,7 @@ export const blogData = [
           "Reconciliations first. Automate bank/PSP/GL matching; treat reconciliations as the gating item for close.",
           "CAM playbook. Scope caps/gross‑ups upfront; ship tenant true‑ups with audit‑ready trails.",
           "Entity discipline. Consistent CoA, intercompany rules, and a documented consolidation path.",
-          "Answer‑engine‑ready content. Publish reference‑grade policies (such as Content Approval Matrix (CAM), close calendar schedules, and reporting templates). Google says AI features require the same SEO fundamentals—no special 'AI schema.' Ensure your structured data (the code that helps search engines understand your page content) matches what users see on your site and keep the 'lastmod' date in your sitemaps (which tells search engines when a page was last updated) accurate.",
+          "Answer‑engine‑ready content. Publish reference‑grade policies (such as Content Approval Matrix (CAM), close calendar schedules, and reporting templates). Google says AI features require the same SEO fundamentals no special 'AI schema.' Ensure your structured data (the code that helps search engines understand your page content) matches what users see on your site and keep the 'lastmod' date in your sitemaps (which tells search engines when a page was last updated) accurate.",
         ],
       },
       { type: "h2", text: "What could it mean for your P&L?" },
@@ -671,5 +671,225 @@ export const blogData = [
       buttonLink: "/contact",
     },
   },
+  {
+    id: 6,
+    title: "The CAM Workflow We Use to Cut Disputes by 60%",
+    date: "October 12, 2025",
+    readTime: "9 min read",
+    category: "Property Management",
+    tags: ["CAM Workflow", "Dispute Reduction", "Property Accounting"],
+    content: [
+      {
+        type: "p",
+        text: "Every property team knows the frustration of year-end CAM reconciliation debates. Numbers never seem to match, tenants raise questions, and the reconciliation cycle stretches weeks longer than planned. The good news is that these disputes are not inevitable. They are the result of process gaps, and processes can be fixed.",
+      },
+      {
+        type: "p",
+        text: "At [Your Company Name], we rebuilt our CAM workflow from the ground up with one goal: reduce CAM disputes by 60 percent while improving trust and cash flow consistency. The result is a framework that blends data accuracy, lease clarity, and human review a structure that turns CAM reconciliation from a stress point into a smooth accounting close task.",
+      },
+      { type: "h2", text: "Why CAM Disputes Keep Happening" },
+      {
+        type: "p",
+        text: "CAM, or Common Area Maintenance, is supposed to be a transparent recovery of shared building costs. Yet even the most experienced property managers face recurring issues.",
+      },
+      {
+        type: "list",
+        items: [
+          "Operating costs coded inconsistently across accounts",
+          "Base years and expense stops not updated after renewals",
+          "Misunderstood gross-up policies",
+          "Delayed reconciliations leading to tenant frustration",
+          "Missing documentation when tenants ask for clarification",
+        ],
+      },
+      {
+        type: "p",
+        text: "When multiple stakeholders handle accounting, lease data, and billing separately, errors multiply. Our CAM workflow was designed to remove those blind spots through integrated accounting and quality review.",
+      },
+      { type: "h2", text: "Step 1: Data Standardization at the Source" },
+      {
+        type: "p",
+        text: "Everything starts with clean data. Before our accountants touch a single formula, we perform a ledger hygiene check. Every expense account is verified against a pre-approved CAM coding matrix that defines what is recoverable and what is not.",
+      },
+      {
+        type: "list",
+        items: [
+          "Chart of accounts mapping for property-level expenses",
+          "GL codes linked to recoverable categories",
+          "Vendor consistency for recurring costs",
+          "Proper allocation of management fees and insurance",
+        ],
+      },
+      {
+        type: "p",
+        text: "This step removes guesswork. When the data feeding your CAM model is structured and verified, your reconciliation will already be 90 percent accurate.",
+      },
+      { type: "h2", text: "Step 2: Automated Lease Abstract Validation" },
+      {
+        type: "p",
+        text: "Lease clauses are the DNA of CAM. They decide how much is recoverable, which expenses are excluded, and whether caps or stops apply. Our Lease Administration Team performs a double-blind abstract validation before every reconciliation cycle.",
+      },
+      {
+        type: "list",
+        items: [
+          "Expense stops and base years align with the current lease version",
+          "Renewal amendments are captured accurately",
+          "Expansion or contraction clauses are updated promptly",
+          "Gross-up policies match the lease definition",
+        ],
+      },
+      {
+        type: "p",
+        text: "A validated lease dataset means the accounting team works from facts, not assumptions. It’s one of the main reasons our clients see fewer tenant disputes.",
+      },
+      { type: "h2", text: "Step 3: The Controlled CAM Model" },
+      {
+        type: "p",
+        text: "We maintain a centralized CAM model built in a secure accounting platform. It includes locked templates, consistent formulas, and validation rules that prevent manual errors.",
+      },
+      {
+        type: "list",
+        items: [
+          "Expense allocation accuracy checks",
+          "Variance tolerance by cost category",
+          "Correct application of exclusions and caps",
+          "Calculation consistency across multiple tenants",
+        ],
+      },
+      {
+        type: "p",
+        text: "Once the data is processed, a second preparer performs a quality control pass. This independent review is one of our biggest dispute reducers because it catches subtle differences automation might miss.",
+      },
+      { type: "h2", text: "Step 4: Variance Review and Narrative Building" },
+      {
+        type: "p",
+        text: "CAM reconciliation is not only about math it’s about the story behind the numbers. Before tenant statements are sent, our analysts build a variance narrative that explains every major change from the previous year.",
+      },
+      {
+        type: "list",
+        items: [
+          "Utility cost variance due to occupancy increase",
+          "Repair and maintenance spike from planned projects",
+          "Janitorial cost reduction from vendor optimization",
+        ],
+      },
+      {
+        type: "p",
+        text: "We translate complex accounting changes into plain English, making tenant communication smoother and faster. Tenants rarely dispute numbers they understand.",
+      },
+      { type: "h2", text: "Step 5: Transparent Tenant Packs" },
+      {
+        type: "p",
+        text: "Transparency is the final step in dispute reduction. Every reconciliation we deliver includes a tenant pack that provides clarity and confidence.",
+      },
+      {
+        type: "list",
+        items: [
+          "Cover note explaining the reconciliation summary",
+          "Year-over-year variance table",
+          "Base year and gross-up policy explanation",
+          "Clear exclusions and supporting calculations",
+        ],
+      },
+      {
+        type: "p",
+        text: "This small addition removes the need for long email threads and gives tenants confidence that their charges are fair, consistent, and traceable.",
+      },
+      { type: "h2", text: "Step 6: Centralized Communication Log" },
+      {
+        type: "p",
+        text: "Every question, clarification, and resolution is documented in a CAM communication log. This becomes the audit trail for the next cycle, ensuring no issue is revisited twice.",
+      },
+      {
+        type: "p",
+        text: "The log also tracks how quickly tenant questions are resolved a metric we use to measure dispute reduction success.",
+      },
+      { type: "h2", text: "Step 7: Continuous Learning Loop" },
+      {
+        type: "p",
+        text: "Each reconciliation cycle feeds insights back into our process. We analyze patterns, identify confusion points, and refine our workflow for even stronger accuracy.",
+      },
+      {
+        type: "p",
+        text: "By turning data into action, we fine-tune policies and train teams to spot risk before it turns into a dispute. This continuous improvement cycle keeps our 60 percent reduction rate consistent across portfolios.",
+      },
+      { type: "h2", text: "Results Our Clients See" },
+      {
+        type: "list",
+        items: [
+          "60% fewer tenant billing disputes",
+          "30% faster reconciliation turnaround times",
+          "Improved tenant satisfaction and trust",
+          "Better cash flow predictability",
+          "Easier audit readiness and compliance",
+        ],
+      },
+      { type: "h2", text: "Why Our CAM Process Works Better" },
+      {
+        type: "p",
+        text: "While many accounting teams rely only on automation, we balance technology with human oversight. Our CAM reconciliation workflow is backed by trained real estate accountants who understand lease logic, not just formulas.",
+      },
+      {
+        type: "list",
+        items: [
+          "Dedicated CAM reconciliation specialists with domain experience",
+          "Lease-to-ledger integration that keeps data synced",
+          "Multi-tier quality review and version control",
+          "Custom tenant reporting templates for clarity",
+          "Secure cloud-based accounting systems ensuring data integrity",
+        ],
+      },
+      { type: "h2", text: "Why Choose Us" },
+      {
+        type: "p",
+        text: "Choosing the right real estate accounting outsourcing partner can make or break your CAM accuracy. Here is why property owners and managers trust us.",
+      },
+      {
+        type: "list",
+        items: [
+          "We combine deep lease administration expertise with advanced property accounting automation",
+          "Our workflow aligns with industry standards and audit requirements",
+          "We deliver faster reconciliations, fewer tenant disputes, and smoother renewals",
+          "You get scalable accounting support without the cost of a full in-house team",
+          "Our focus is not just on numbers it’s on clarity, consistency, and credibility",
+        ],
+      },
+      { type: "h2", text: "Final Thought" },
+      {
+        type: "p",
+        text: "Disputes over CAM charges are not about money they are about confidence. When tenants trust the process, payments move faster and relationships stay stronger.",
+      },
+      {
+        type: "p",
+        text: "Our CAM workflow has been tested across portfolios and property types, consistently delivering measurable results. The structure, transparency, and communication we bring into the process make the difference between confusion and confidence.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How does your CAM workflow reduce disputes by 60 percent?",
+        answer:
+          "Our workflow combines clean data validation, lease abstract verification, controlled CAM models, and clear tenant communication. These steps eliminate calculation errors and increase transparency, reducing tenant disputes by up to 60 percent.",
+      },
+      {
+        question: "Why is lease validation so important in CAM reconciliation?",
+        answer:
+          "Lease validation ensures that expense stops, gross-up clauses, and exclusions are applied correctly. Without it, even accurate numbers can be misallocated, leading to disputes and mistrust.",
+      },
+      {
+        question:
+          "Can this CAM workflow integrate with my existing accounting software?",
+        answer:
+          "Yes. Our process can integrate with major property management systems and ERP tools. The focus is to make your data flow smoothly from lease to ledger without manual intervention.",
+      },
+    ],
+    cta: {
+      title: "Ready to Simplify Your CAM Reconciliation?",
+      description:
+        "If you are ready to eliminate repetitive disputes and streamline your reconciliation process, our experts can help. Book a Free 30-Minute CAM Diagnostic today and see how our workflow can transform your accounting operations.",
+      buttonText: "Book a Free 30-Minute Diagnostic",
+      buttonLink: "/contact",
+    },
+  },
+
   // Add more blogs here as needed
 ];

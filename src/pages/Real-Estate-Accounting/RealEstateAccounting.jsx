@@ -13,7 +13,9 @@ const FinancialServices = lazy(() => import('../../components/sections/Financial
 const DataExpertise = lazy(() => import('../../components/sections/DataExpertise'));
 const CTA = lazy(() => import('../../components/sections/CTA'));
 const PortfolioList = lazy(() => import('../../components/sections/Portfolio'));
+const AccountingProcess = lazy(() => import('../../components/sections/AccountingProcess'));
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const WhyGlobalGuru = lazy(() => import('../../components/sections/WhyGlobalGuru'));
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import realEstateImg from '../../assets/images/1st.avif';
@@ -26,24 +28,44 @@ const Loader = () => <div className="d-flex justify-content-center py-4"><div cl
 // Static data - memoized outside component
 const services = [
   {
-    icon: 'bi-building',
-    title: 'Property Accounting',
-    description: 'Comprehensive accounting for all property types and portfolios'
+    icon: 'bi-cash-coin',
+    title: 'Income Tracking',
+    description: 'We record and reconcile rental income along with any additional revenue to give you a complete financial picture'
   },
   {
-    icon: 'bi-pie-chart',
-    title: 'Financial Reporting',
-    description: 'Customized reports for investors and stakeholders'
+    icon: 'bi-graph-down',
+    title: 'Expense Management',
+    description: 'All operating costs, utilities, maintenance, and vendor payments are carefully captured and organized'
   },
   {
-    icon: 'bi-cash-stack',
-    title: 'Accounts Payable',
-    description: 'Vendor payment processing and expense management'
+    icon: 'bi-bank',
+    title: 'Bank Reconciliation',
+    description: 'We review and match bank statements with your accounting records so you always know your numbers are correct'
+  },
+  {
+    icon: 'bi-journal-text',
+    title: 'Tenant Ledger Updates',
+    description: 'Tenant balances, security deposits, and adjustments are kept up to date for complete transparency'
   },
   {
     icon: 'bi-receipt',
-    title: 'Accounts Receivable',
-    description: 'Tenant billing and collections management'
+    title: 'Accounts Payable & Receivable',
+    description: 'Bills, vendor payments, and tenant collections are managed smoothly so nothing is missed'
+  },
+  {
+    icon: 'bi-graph-up-arrow',
+    title: 'Budgeting & Forecasting',
+    description: 'We prepare financial plans and projections that help you stay ahead and maximize returns'
+  },
+  {
+    icon: 'bi-file-earmark-text',
+    title: 'Financial Reporting',
+    description: 'Each month you receive clear statements, cash flow reports, and performance insights that are audit ready'
+  },
+  {
+    icon: 'bi-shield-check',
+    title: 'Compliance Checks',
+    description: 'Your financials are reviewed to ensure they align with accounting standards and lease obligations'
   }
 ];
 
@@ -102,7 +124,7 @@ const RealEstateAccounting = memo(() => {
   // Memoize service items
   const serviceItems = useMemo(() => 
     services.map((service, index) => (
-      <Col lg={3} key={index}>
+      <Col lg={3} md={6} key={index}>
         <motion.div
           className="service-item bg-white h-100 p-4 rounded-3 shadow-sm text-center"
           initial={{ y: 50, opacity: 0 }}
@@ -200,7 +222,10 @@ const RealEstateAccounting = memo(() => {
                 transition={{ delay: 0.2, duration: 0.8 }}
               >
                 <h4 className="subtitle fs-5 fw-semibold mb-4 text-uppercase">Professional Real Estate Accounting</h4>
-                <h1 className="hero-title display-5 fw-bold mb-4">Specialized financial solutions for property owners and investors</h1>
+                <h1 className="hero-title display-5 fw-bold mb-4">Smarter Real Estate Accounting. Stronger Returns.</h1>
+                <p className="hero-description fs-6 mb-4">
+                  At Global Guru, we take the stress out of property finances. Our team looks after all the details so you can focus on growing your investments with confidence. Every month, we make sure your accounts are accurate, your reports are clear, and your decisions are backed by reliable data.
+                </p>
                 <ul className="benefits-list ps-0">
                   <li>50% reduction in accounting costs</li>
                   <li>99.9% accuracy guarantee</li>
@@ -240,12 +265,10 @@ const RealEstateAccounting = memo(() => {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="section-title display-6 fw-bold mb-4">
-                  Optimize Your Property Finances
+                  Monthly Property Accounting with Global Guru
                 </h2>
                 <p className="section-text text-muted">
-                  Real estate accounting requires specialized expertise to properly track income, 
-                  expenses, and property performance. Our team provides accurate, timely financials 
-                  so you can make informed investment decisions and maximize your returns.
+                  With Global Guru, your real estate portfolio is supported by accurate numbers, timely reports, and smart insights. You get more than accounting. You get peace of mind and the confidence to make better financial decisions every day.
                 </p>
               </motion.div>
             </Col>
@@ -314,6 +337,19 @@ const RealEstateAccounting = memo(() => {
           </div>
         </Container>
       </section>
+
+      {/* Why Global Guru Section */}
+      <Suspense fallback={<Loader />}>
+        <WhyGlobalGuru
+          points={[
+            'Years of in the trenches CRE experience across retail, office, residential, industrial, and storage',
+            'Specialized in serving family offices — discretion first, multi entity rollups, principal friendly reporting',
+            'Data confidentiality by design — least privilege access, locked evidence, clean audit trails',
+            'We do not miss deadlines — first of month billing, on calendar closes, and SLA backed responses'
+          ]}
+          ctaSecondary={{ text: "Book a Property Accounting Pulse Check", link: "/contact" }}
+        />
+      </Suspense>
 
       {/* Difference Section */}
       <section className="difference-section py-5">
@@ -391,7 +427,9 @@ const RealEstateAccounting = memo(() => {
           </Row>
         </Container>
       </section>
-
+      <Suspense fallback={<Loader />}>
+  <AccountingProcess />
+</Suspense>
       {/* Portfolio Services Section */}
       <section className="portfolio-services-section py-5">
         <Container>

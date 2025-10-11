@@ -48,6 +48,9 @@ const BlogDetail = React.memo(() => {
     } else if (blogFromParam.title.includes("CAMError") || blogFromParam.title.includes("Commercial Real Estate")) {
       title = "CAM Errors: The Hidden Leakage";
       description = "CAM Errors: The Hidden Leakage - why it matters for cash flow and disputes."; 
+    } else if (blogFromParam.title.includes("CAMWorkFlow") || blogFromParam.title.includes("Property Management")) {
+      title = "The CAM Workflow We Use to Cut Disputes by 60%";
+      description = "The CAM Workflow We Use to Cut Disputes by 60%"; 
     } else {
       title = `${blogFromParam.title} | Global Guru`;
       const firstParagraph = blogFromParam.content.find(item => item.type === 'p');
