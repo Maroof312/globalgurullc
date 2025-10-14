@@ -633,6 +633,13 @@ const LeaseAccounting = memo(() => {
         </Container>
       </section>
 
+      {/* Process moved up after What We Bring section */}
+      <AccountingProcess 
+        title="Our Comprehensive Lease Administration Framework"
+        subtitle="A systematic approach to lease management that delivers accuracy, compliance, and strategic insights across all property types"
+        steps={leaseAccountingSteps}
+      />
+
       {/* Difference Section */}
       <section className="difference-section py-5">
         <Container>
@@ -757,25 +764,6 @@ const LeaseAccounting = memo(() => {
 
       {/* Why Global Guru Section */}
       <TrustedBySection pageType="leaseAccounting" />
-      
-      {/* Accounting Process Component */}
-      <AccountingProcess 
-        title="Our Comprehensive Lease Administration Framework"
-        subtitle="A systematic approach to lease management that delivers accuracy, compliance, and strategic insights across all property types"
-        steps={leaseAccountingSteps}
-      />
-
-      {/* FAQ Section */}
-      <section className="faq-section py-5">
-        <Container>
-          <FAQ 
-            faqs={faqs}
-            title="FAQs About Lease Admin/Accounting"
-            subtitle="Get answers to common questions about our lease services"
-            themeColor="#0056b3"
-          />
-        </Container>
-      </section>
 
       <DataExpertise />
       
@@ -786,6 +774,18 @@ const LeaseAccounting = memo(() => {
         buttonText="Get Started Now"
         buttonLink="/contact"
       />
+
+      {/* FAQ moved after CTA */}
+      <section className="faq-section py-5">
+        <Container>
+          <FAQ 
+            faqs={faqs}
+            title="FAQs About Lease Admin/Accounting"
+            subtitle="Get answers to common questions about our lease services"
+            themeColor="#0056b3"
+          />
+        </Container>
+      </section>
     </div>
   );
 });

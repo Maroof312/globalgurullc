@@ -2,6 +2,36 @@
 @import 'variables';
 @import 'globals';
 
+/* Global page width: consistent left/right margins across all pages */
+/* Keeps sections with full-bleed backgrounds intact when they don't use .container */
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 90vw; /* ~90% viewport width */
+  }
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 80vw; /* tighten a bit on very large screens */
+  }
+}
+
+/* Respect reduced motion once, globally (prevents per-file resets) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .fixed-call-button {
   position: fixed;
   bottom: 20px;

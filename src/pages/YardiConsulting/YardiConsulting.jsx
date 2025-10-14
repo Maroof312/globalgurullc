@@ -372,18 +372,6 @@ const YardiConsulting = memo(() => {
       {/* Testimonials Section */}
       <Testimonials />
 
-      {/* FAQ Section */}
-      <section className="faq-section py-5">
-        <Container>
-          <FAQ 
-            faqs={faqs} 
-            title="FAQs About Our Yardi Consultation Services"
-            subtitle="Find answers to common questions about our Yardi consulting services"
-            themeColor="#0066cc"
-          />
-        </Container>
-      </section>
-
       {/* CTA Section */}
       <CTA 
         title="Let's Optimize Yardi for Your Business Today"
@@ -396,6 +384,18 @@ const YardiConsulting = memo(() => {
         buttonText="Schedule a Consultation"
         buttonLink="/contact"
       />
+
+      {/* FAQ moved after CTA */}
+      <section className="faq-section py-5">
+        <Container>
+          <FAQ 
+            faqs={faqs} 
+            title="FAQs About Our Yardi Consultation Services"
+            subtitle="Find answers to common questions about our Yardi consulting services"
+            themeColor="#0066cc"
+          />
+        </Container>
+      </section>
     </div>
   );
 });

@@ -477,7 +477,7 @@ const CAMReconciliation = memo(() => {
                 At Global Guru, we provide specialized commercial real estate accounting solutions 
                 designed to streamline your financial operations and maximize ROI. From property-level 
                 bookkeeping to portfolio-wide financial reporting, our expert team ensures accuracy, 
-                transparency, and compliance—so you can focus on growth.
+                transparency, and compliance so you can focus on growth.
               </p>
               <p className="section-text text-muted">
                 Let us handle the numbers, so you can focus on the growth.
@@ -590,20 +590,7 @@ const CAMReconciliation = memo(() => {
         </Container>
       </section>
 
-      {/* FAQ Section */}
-      <section className="faq-section py-5 bg-light">
-        <Container>
-          <Suspense fallback={<Loader />}>
-            <FAQ 
-              faqs={camFAQs}
-              title="FAQs About CAM Reconciliation and Audit Services"
-              themeColor="#0056b3"
-            />
-          </Suspense>
-        </Container>
-      </section>
-
-      {/* Services Section */}
+      {/* Why Us Cards under Why Choose Us */}
       <section className="services-section py-5">
         <Container>
           <h2 className="section-title text-center display-6 fw-bold mb-5">Why Us</h2>
@@ -638,17 +625,16 @@ const CAMReconciliation = memo(() => {
         </Container>
       </section>
 
-      {/* Why Global Guru Section */}
+      {/* Social Proof before final CTA */}
       <Suspense fallback={<Loader />}>
         <TrustedBySection pageType="camReconciliation" />
       </Suspense>
 
-      {/* Difference Section */}
       <Suspense fallback={<Loader />}>
         <DifferenceSection/>
       </Suspense>
 
-      {/* CTA Section */}
+      {/* Final CTA */}
       <Suspense fallback={<Loader />}>
         <CTA
           title="Start Your CAM Reconciliation Today with Confidence"
@@ -657,6 +643,19 @@ const CAMReconciliation = memo(() => {
           buttonLink="/contact"
         />
       </Suspense>
+
+      {/* FAQ after CTA (optional section) */}
+      <section className="faq-section py-5 bg-light">
+        <Container>
+          <Suspense fallback={<Loader />}>
+            <FAQ 
+              faqs={camFAQs}
+              title="FAQs About CAM Reconciliation and Audit Services"
+              themeColor="#0056b3"
+            />
+          </Suspense>
+        </Container>
+      </section>
     </div>
   );
 });

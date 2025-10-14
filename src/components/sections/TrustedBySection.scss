@@ -20,7 +20,7 @@
   }
 
   .family-offices-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: linear-gradient(135deg, $white 0%, #f8fafc 100%);
     border: 1px solid #e2e8f0;
   }
 
@@ -31,37 +31,37 @@
 
   .why-stand-out-card {
     border: 1px solid #e2e8f0;
-    background: #ffffff;
+    background: $white;
   }
 
   // Service Items
-  .service-item {
+.service-item {
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+
+  &:hover {
+    background: $white;
+    border-color: $brand-primary;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.1);
+  }
+
+  .icon-wrapper {
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    &:hover {
-      background: #ffffff !important;
-      border-color: #0056b3;
-      box-shadow: 0 5px 15px rgba(0, 86, 179, 0.1);
-    }
-
-    .icon-wrapper {
-      transition: all 0.3s ease;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    &:hover .icon-wrapper {
-      background: #0056b3 !important;
-      
-      i {
-        color: #ffffff !important;
-      }
+  &:hover .icon-wrapper {
+    background: $brand-primary;
+    
+    i {
+      color: #ffffff;
     }
   }
+}
 
   // List Items - FIXED ALIGNMENT
   .also-serving-card,

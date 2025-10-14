@@ -287,10 +287,10 @@
       }
 
       &:hover .icon-wrapper {
-        background-color: #0056b3 !important;
+    background-color: $brand-primary !important;
         
         i {
-          color: white !important;
+      color: $white !important;
         }
       }
 
@@ -306,7 +306,7 @@
   /* Compliance Section */
   .compliance-section {
     padding: 80px 0;
-    background-color: white !important;
+  background-color: $white !important;
 
     .section-title {
       font-size: 2rem;
@@ -412,7 +412,7 @@
   /* FAQ Section */
   .faq-section {
     // padding: 80px 0;
-    background-color: white !important;
+  background-color: $white !important;
   }
 
   /* Responsive Adjustments */

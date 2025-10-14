@@ -22,7 +22,7 @@ const familyOfficeFAQs = [
   },
   {
     question: "Can you manage capital calls and distributions?",
-    answer: "Yes—standard templates, notices, payment tracking, waterfall math, and audit trails. Principals see status at a glance."
+    answer: "Yes standard templates, notices, payment tracking, waterfall math, and audit trails. Principals see status at a glance."
   },
   {
     question: "How do we communicate day-to-day?",

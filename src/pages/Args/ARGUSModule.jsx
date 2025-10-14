@@ -601,7 +601,15 @@ const ARGUSModule = React.memo(() => {
           </Container>
         </section>
 
-        {/* FAQ Section */}
+        <FinancialServices />
+        <CTA
+          title="Ready to Transform Your ARGUS Workflow?"
+          description="Stop struggling with complex models and questionable assumptions. Partner with Global Guru for ARGUS Enterprise solutions that deliver transparency, accuracy, and defensible valuations. Schedule your free Pulse Check today and discover how our expertise can optimize your underwriting and portfolio management."
+          buttonText="Start with Free Pulse Check"
+          buttonLink="/contact"
+        />
+
+        {/* FAQ moved after CTA */}
         <section className="faq-section">
           <Container>
             <FAQ
@@ -612,14 +620,6 @@ const ARGUSModule = React.memo(() => {
             />
           </Container>
         </section>
-        
-        <FinancialServices />
-        <CTA
-          title="Ready to Transform Your ARGUS Workflow?"
-          description="Stop struggling with complex models and questionable assumptions. Partner with Global Guru for ARGUS Enterprise solutions that deliver transparency, accuracy, and defensible valuations. Schedule your free Pulse Check today and discover how our expertise can optimize your underwriting and portfolio management."
-          buttonText="Start with Free Pulse Check"
-          buttonLink="/contact"
-        />
       </motion.div>
     </>
   );

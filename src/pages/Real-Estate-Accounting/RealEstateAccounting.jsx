@@ -338,6 +338,11 @@ const RealEstateAccounting = memo(() => {
         </Container>
       </section>
 
+      {/* Process Section moved up after Services */}
+      <Suspense fallback={<Loader />}>
+  <AccountingProcess />
+</Suspense>
+
       {/* Why Global Guru Section */}
       <Suspense fallback={<Loader />}>
         <TrustedBySection pageType="realEstate" />
@@ -417,9 +422,6 @@ const RealEstateAccounting = memo(() => {
           </Row>
         </Container>
       </section>
-      <Suspense fallback={<Loader />}>
-  <AccountingProcess />
-</Suspense>
       {/* Portfolio Services Section */}
       <section className="portfolio-services-section py-5">
         <Container>
@@ -446,20 +448,6 @@ const RealEstateAccounting = memo(() => {
         </Container>
       </section>
 
-      {/* FAQ Section */}
-      <section className="faq-section py-5 bg-light">
-        <Container>
-          <Suspense fallback={<Loader />}>
-            <FAQ 
-              faqs={faqs}
-              title="FAQs About Real Estate Accounting"
-              subtitle="Get answers to common questions about our property accounting services"
-              themeColor="#0056b3"
-            />
-          </Suspense>
-        </Container>
-      </section>
-
       <Suspense fallback={<Loader />}>
         <FinancialServices />
       </Suspense>
@@ -481,6 +469,20 @@ const RealEstateAccounting = memo(() => {
           buttonLink="/contact"
         />
       </Suspense>
+
+      {/* FAQ Section moved after CTA */}
+      <section className="faq-section py-5 bg-light">
+        <Container>
+          <Suspense fallback={<Loader />}>
+            <FAQ 
+              faqs={faqs}
+              title="FAQs About Real Estate Accounting"
+              subtitle="Get answers to common questions about our property accounting services"
+              themeColor="#0056b3"
+            />
+          </Suspense>
+        </Container>
+      </section>
     </div>
   );
 });

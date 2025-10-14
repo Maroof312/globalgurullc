@@ -379,43 +379,43 @@ const ARAP = React.memo(() => {
                 >
                   <div className="reason-icon">💲</div>
                   <h3 className="reason-title">Transparent pricing</h3>
-                  <p className="reason-description">No hidden fees or surprise charges—just straightforward pricing.</p>
+                  <p className="reason-description">No hidden fees or surprise charges just straightforward pricing.</p>
                 </motion.div>
               </Col>
             </Row>
           </Container>
         </section>
 
-        {/* Section 6: Industries We Serve */}
-        <section className="industries-section">
-          <Container>
-            <Row className="justify-content-center">
-              <Col lg={10}>
-                <motion.div variants={itemVariants}>
-                  <h2 className="section-title text-center">Industries We Serve</h2>
-                  <p className="section-description text-center">
-                    Whether you're a startup or a growing enterprise, our scalable AR/AP services can be tailored to your sector's unique needs:
-                  </p>
+      {/* Section 6: Industries We Serve */}
+      <section className="industries-section">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg={10}>
+              <motion.div variants={itemVariants}>
+                <h2 className="section-title text-center">Industries We Serve</h2>
+                <p className="section-description text-center">
+                  Whether you're a startup or a growing enterprise, our scalable AR/AP services can be tailored to your sector's unique needs:
+                </p>
+              </motion.div>
+            </Col>
+          </Row>
+          <Row className="mt-4">
+            {industries.map((industry, index) => (
+              <Col sm={6} md={4} key={index}>
+                <motion.div
+                  className="industry-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="industry-name">{industry}</div>
                 </motion.div>
               </Col>
-            </Row>
-            <Row className="mt-4">
-              {industries.map((industry, index) => (
-                <Col sm={6} md={4} key={index}>
-                  <motion.div
-                    className="industry-card"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="industry-name">{industry}</div>
-                  </motion.div>
-                </Col>
-              ))}
-            </Row>
-          </Container>
-        </section>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
         {/* Section 7: FAQ */}
         <section className="faq-section">

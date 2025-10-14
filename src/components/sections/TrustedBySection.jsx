@@ -93,7 +93,7 @@ const defaultContent = {
 
 // Fixed Family Offices content
 const familyOfficesContent = {
-  title: 'Trusted by Family Offices — Built Around Principals',
+  title: 'Trusted by Family Offices Built Around Principals',
   description: 'We work quietly and precisely for single and multi-family offices, delivering discretion-first workflows and principal-focused financial intelligence.',
   services: [
     {

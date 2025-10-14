@@ -225,10 +225,10 @@
       }
 
       &:hover .icon-wrapper {
-        background-color: #0056b3 !important;
+        background-color: $brand-primary !important;
         
         i {
-          color: white !important;
+          color: $white !important;
         }
       }
 
@@ -329,10 +329,10 @@
         border-color: #b3d1ff;
 
         .icon-wrapper {
-          background-color: #0056b3 !important;
+          background-color: $brand-primary !important;
           
           i {
-            color: white !important;
+            color: $white !important;
           }
         }
       }
