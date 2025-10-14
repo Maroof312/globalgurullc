@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { memo, useMemo, useCallback } from 'react';
+import { memo, useMemo, useCallback, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -13,6 +13,8 @@ import CTA from '../../components/sections/CTA';
 import FAQ from '../../components/sections/FAQ';
 import PortfolioList from '../../components/sections/Portfolio';
 import AccountingProcess from '../../components/sections/AccountingProcess';
+import TrustedBySection from '../../components/sections/TrustedBySection';
+
 
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
@@ -753,6 +755,9 @@ const LeaseAccounting = memo(() => {
         </Container>
       </section>
 
+      {/* Why Global Guru Section */}
+      <TrustedBySection pageType="leaseAccounting" />
+      
       {/* Accounting Process Component */}
       <AccountingProcess 
         title="Our Comprehensive Lease Administration Framework"

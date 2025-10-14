@@ -75,7 +75,8 @@ export default function Header() {
     { title: "CAM Reconciliation", path: "/cam-reconciliation-services" },
     { title: "Lease Administration", path: "/lease-admin-accounting-services" },
     { title: "Accounting and Bookkeeping", path: "/accounting-and-bookkeeping" },
-    { title: "AR & AP Services", path: "/ar-ap-services" }
+    { title: "AR & AP Services", path: "/ar-ap-services" },
+    { title: "Argus", path: "/argus" }
   ];
 
   return (

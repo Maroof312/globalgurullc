@@ -63,6 +63,7 @@ const ContactForm = memo(({
       return;
     }
 
+    // Frontend reCAPTCHA validation only
     if (recaptchaSiteKey && !recaptchaValue) {
       setStatus({ loading: false, success: false, error: 'Please complete the CAPTCHA verification' });
       setRecaptchaError(true);
@@ -77,12 +78,20 @@ const ContactForm = memo(({
       const templateId = config.emailjsTemplateId;
       const publicKey = config.emailjsPublicKey;
       
-      const formDataWithCaptcha = {
-        ...formData,
-        'g-recaptcha-response': recaptchaValue
+      // Remove reCAPTCHA token from EmailJS data
+      // EmailJS doesn't need it and can't verify it
+      const emailData = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+        subject: formData.subject,
+        company: formData.company,
+        page_url: formData.page,
+        // Don't include reCAPTCHA token here
       };
       
-      await emailjs.send(serviceId, templateId, formDataWithCaptcha, publicKey);
+      await emailjs.send(serviceId, templateId, emailData, publicKey);
       
       setStatus({ loading: false, success: true, error: '' });
       resetForm();
@@ -91,13 +100,6 @@ const ContactForm = memo(({
       console.error('EmailJS error:', error);
       
       let errorMessage = 'Failed to send message. Please try again.';
-      if (error.text && error.text.includes('reCAPTCHA')) {
-        errorMessage = 'CAPTCHA verification failed. Please complete the CAPTCHA again.';
-        if (recaptchaRef.current) {
-          recaptchaRef.current.reset();
-        }
-        setRecaptchaValue(null);
-      }
       
       setStatus({ 
         loading: false, 
@@ -205,20 +207,18 @@ const ContactForm = memo(({
           </Form.Control.Feedback>
         </Form.Group>
 
-        {recaptchaSiteKey ? (
+        {/* reCAPTCHA for frontend validation only */}
+        {recaptchaSiteKey && (
           <div className="mb-3 recaptcha-container">
             <ReCAPTCHA
               ref={recaptchaRef}
               sitekey={recaptchaSiteKey}
               onChange={handleRecaptchaChange}
+              onErrored={() => console.log('reCAPTCHA error')}
             />
             {recaptchaError && (
               <div className="text-danger small mt-1">Please complete the CAPTCHA verification</div>
             )}
-          </div>
-        ) : (
-          <div className="mb-3 text-muted small">
-            CAPTCHA verification is currently disabled
           </div>
         )}
 

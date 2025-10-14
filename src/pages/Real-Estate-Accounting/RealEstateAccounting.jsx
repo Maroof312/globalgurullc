@@ -15,7 +15,7 @@ const CTA = lazy(() => import('../../components/sections/CTA'));
 const PortfolioList = lazy(() => import('../../components/sections/Portfolio'));
 const AccountingProcess = lazy(() => import('../../components/sections/AccountingProcess'));
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
-const WhyGlobalGuru = lazy(() => import('../../components/sections/WhyGlobalGuru'));
+const TrustedBySection = lazy(() => import('../../components/sections/TrustedBySection'));
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
 import realEstateImg from '../../assets/images/1st.avif';
@@ -70,7 +70,7 @@ const services = [
 ];
 
 const differenceItems = [
-  { icon: 'bi-graph-up-arrow', text: '30% Cost Reduction' },
+  { icon: 'bi-graph-up-arrow', text: '50% Cost Reduction' },
   { icon: 'bi-check-all', text: '99.9% Accuracy' },
   { icon: 'bi-people', text: 'Dedicated Team' },
   { icon: 'bi-arrow-up', text: 'Scalable Solutions' },
@@ -340,18 +340,10 @@ const RealEstateAccounting = memo(() => {
 
       {/* Why Global Guru Section */}
       <Suspense fallback={<Loader />}>
-        <WhyGlobalGuru
-          points={[
-            'Years of in the trenches CRE experience across retail, office, residential, industrial, and storage',
-            'Specialized in serving family offices — discretion first, multi entity rollups, principal friendly reporting',
-            'Data confidentiality by design — least privilege access, locked evidence, clean audit trails',
-            'We do not miss deadlines — first of month billing, on calendar closes, and SLA backed responses'
-          ]}
-          ctaSecondary={{ text: "Book a Property Accounting Pulse Check", link: "/contact" }}
-        />
+        <TrustedBySection pageType="realEstate" />
       </Suspense>
 
-      {/* Difference Section */}
+      {/* Difference Section - Smooth Scrolling */}
       <section className="difference-section py-5">
         <Container>
           <motion.div
@@ -366,23 +358,21 @@ const RealEstateAccounting = memo(() => {
             </p>
           </motion.div>
           
-          {/* Desktop Layout */}
-          <div className="d-none d-lg-flex justify-content-center">
-            <div className="difference-container">
-              {desktopDifferenceItems}
+          {/* Smooth Scrolling Container */}
+          <div className="difference-scroll-container">
+            <div className="difference-scroll-track">
+              {/* Duplicate array for seamless scrolling */}
+              {[...differenceItems, ...differenceItems].map((item, index) => (
+                <div key={index} className="difference-item bg-white rounded-3 shadow-sm text-center">
+                  <div className="difference-icon mb-3">
+                    <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
+                      <i className={`bi ${item.icon} fs-3 text-primary`}></i>
+                    </div>
+                  </div>
+                  <p className="mb-0 fw-medium">{item.text}</p>
+                </div>
+              ))}
             </div>
-          </div>
-
-          {/* Mobile Carousel - Fixed with equal height */}
-          <div className="d-lg-none">
-            <Swiper
-              modules={[Autoplay]}
-              slidesPerView={2}
-              spaceBetween={15}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
-            >
-              {mobileDifferenceItems}
-            </Swiper>
           </div>
         </Container>
       </section>

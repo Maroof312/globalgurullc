@@ -1,0 +1,866 @@
+.argus-module-page {
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+
+  /* --- HERO SECTION --- */
+  .hero-section {
+    position: relative;
+    padding: 100px 0 80px;
+    min-height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+
+    .hero-image-container {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(0.4) contrast(1.1);
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.8) 100%);
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #fff;
+        line-height: 1.1;
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      }
+
+      .lead {
+        text-align: left;
+        font-size: 1.4rem;
+        opacity: 0.9;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 40px;
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      .hero-cta {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .cta-button {
+          padding: 15px 30px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+
+          &.primary {
+            background: #0066cc;
+            color: white;
+            border: 2px solid #0066cc;
+
+            &:hover {
+              background: #0052a3;
+              border-color: #0052a3;
+              transform: translateY(-2px);
+            }
+          }
+
+          &.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+              border-color: rgba(255, 255, 255, 0.5);
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Section Common Styles
+  .section-title {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    
+    &.text-center {
+      text-align: center;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .section-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+  }
+
+  // What We Do Section
+  .what-we-do-section {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+
+    .features-grid {
+      margin-top: 60px;
+
+      .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid #eef2f7;
+        transition: all 0.3s ease;
+        height: 100%;
+
+        &:hover {
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+          font-size: 3rem;
+          margin-bottom: 25px;
+        }
+
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 15px;
+        }
+
+        p {
+            text-align: left;
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  // Data & Assumptions Section
+  .data-assumptions-section {
+    padding: 100px 0;
+    background: white;
+
+    .category-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 30px;
+      border-left: 4px solid #0066cc;
+      height: 100%;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .category-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .category-icon {
+          font-size: 2rem;
+          margin-right: 15px;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin: 0;
+        }
+      }
+
+      .category-items {
+        .category-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 12px;
+
+          .item-bullet {
+            width: 6px;
+            height: 6px;
+            background: #0066cc;
+            border-radius: 50%;
+            margin: 8px 12px 0 0;
+            flex-shrink: 0;
+          }
+
+          span {
+            color: #555;
+            line-height: 1.5;
+            font-size: 0.95rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Debt & Exit Section
+  .debt-exit-section {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+
+    .features-list {
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+
+        .feature-icon {
+          font-size: 2rem;
+          margin-right: 20px;
+          flex-shrink: 0;
+        }
+
+        .feature-content {
+          h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+          }
+
+          p {
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    .image-container {
+      position: relative;
+
+      img {
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        height: auto;
+      }
+
+      .image-overlay-card {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        max-width: 200px;
+
+        h4 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 5px;
+        }
+
+        p {
+          font-size: 0.85rem;
+          color: #666;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  // Deliverables Section
+  .deliverables-section {
+    padding: 100px 0;
+    background: white;
+
+    .deliverable-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid #eef2f7;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(to bottom, #0066cc, #0099ff);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+
+        &::before {
+          width: 6px;
+        }
+
+        .deliverable-arrow {
+          transform: translateX(5px);
+          color: #0066cc;
+        }
+      }
+
+      .deliverable-icon {
+        font-size: 2.5rem;
+        margin-right: 20px;
+        flex-shrink: 0;
+      }
+
+      .deliverable-content {
+        flex: 1;
+
+        h3 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 8px;
+        }
+
+        p {
+          color: #666;
+          margin: 0;
+          line-height: 1.5;
+          font-size: 0.95rem;
+        }
+      }
+
+      .deliverable-arrow {
+        font-size: 1.5rem;
+        color: #ccc;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  // Valuation Section
+  .valuation-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+
+    .valuation-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      .stat-highlight {
+        margin-bottom: 30px;
+
+        .stat-badge {
+          display: inline-block;
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 6px 15px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+
+        h2 {
+          color: white;
+          font-size: 2rem;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+
+      .sensitivity-example {
+        .example-header {
+          margin-bottom: 25px;
+
+          h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+          }
+
+          p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+          }
+        }
+
+        .value-comparison {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+          .value-item {
+            text-align: center;
+            flex: 1;
+
+            .value-amount {
+              font-size: 2rem;
+              font-weight: 700;
+              color: white;
+              margin-bottom: 5px;
+            }
+
+            .value-label {
+              font-size: 0.9rem;
+              color: rgba(255, 255, 255, 0.8);
+            }
+
+            &.decrease {
+              .value-amount {
+                color: #ff6b6b;
+              }
+            }
+          }
+
+          .value-arrow {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 20px;
+          }
+        }
+
+        .sensitivity-note {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .chart-container {
+      img {
+        border-radius: 12px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  // Asset Management Section
+  .asset-management-section {
+    padding: 100px 0;
+    background: white;
+
+    .management-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid #eef2f7;
+      transition: all 0.3s ease;
+      height: 100%;
+
+      &:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .management-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: #666;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin: 0;
+      }
+    }
+
+    .demo-cta-button {
+      display: inline-block;
+      background: #0066cc;
+      color: white;
+      padding: 18px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+
+      &:hover {
+        background: #0052a3;
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(0, 102, 204, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Pulse Check Section
+  .pulse-check-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+
+    .pulse-check-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 60px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+
+      .pulse-content {
+        .pulse-badge {
+          display: inline-block;
+          background: #0066cc;
+          color: white;
+          padding: 8px 20px;
+          border-radius: 25px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: #2c3e50;
+          margin-bottom: 20px;
+        }
+
+        .pulse-description {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: #555;
+          margin-bottom: 25px;
+        }
+
+        .pulse-features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 25px;
+
+            &::before {
+              content: '✓';
+              position: absolute;
+              left: 0;
+              color: #0066cc;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .pulse-cta-button {
+        display: inline-block;
+        background: #0066cc;
+        color: white;
+        padding: 20px 40px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 15px 35px rgba(0, 102, 204, 0.4);
+
+        &:hover {
+          background: #0052a3;
+          transform: translateY(-3px);
+          box-shadow: 0 20px 40px rgba(0, 102, 204, 0.5);
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // HOA Note Section
+  .hoa-note-section {
+    padding: 80px 0;
+    background: #f8fafc;
+
+    .note-card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: flex-start;
+      border-left: 6px solid #0066cc;
+
+      .note-icon {
+        font-size: 3rem;
+        margin-right: 25px;
+        flex-shrink: 0;
+      }
+
+      .note-content {
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: #666;
+          line-height: 1.7;
+          font-size: 1.05rem;
+          text-align: left;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  // FAQ Section
+  .faq-section {
+    padding: 100px 0;
+    background: white;
+  }
+
+  // Responsive Design
+  @media (max-width: 1199.98px) {
+    .hero-section {
+      padding: 80px 0 60px;
+      
+      .hero-overlay h1 {
+        font-size: 3rem;
+      }
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .hero-section {
+      padding: 60px 0 40px;
+      min-height: 60vh;
+      
+      .hero-overlay {
+        h1 {
+          font-size: 2.5rem;
+        }
+        
+        .lead {
+          font-size: 1.2rem;
+        }
+        
+        .hero-cta {
+          flex-direction: column;
+          align-items: center;
+          
+          .cta-button {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .pulse-check-section .pulse-check-card {
+      padding: 40px 30px;
+      
+      .pulse-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    .hoa-note-section .note-card {
+      flex-direction: column;
+      text-align: center;
+      
+      .note-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .hero-section {
+      padding: 50px 0 30px;
+      
+      .hero-overlay {
+        h1 {
+          font-size: 2rem;
+        }
+        
+        .lead {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .what-we-do-section,
+    .data-assumptions-section,
+    .debt-exit-section,
+    .deliverables-section,
+    .valuation-section,
+    .asset-management-section,
+    .pulse-check-section,
+    .hoa-note-section,
+    .faq-section {
+      padding: 60px 0;
+    }
+
+    .valuation-section .value-comparison {
+      flex-direction: column;
+      gap: 20px;
+      
+      .value-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+      }
+    }
+
+    .debt-exit-section .image-container .image-overlay-card {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .hero-section {
+      .hero-overlay h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+    }
+
+    .what-we-do-section,
+    .data-assumptions-section,
+    .debt-exit-section,
+    .deliverables-section,
+    .valuation-section,
+    .asset-management-section,
+    .pulse-check-section,
+    .hoa-note-section,
+    .faq-section {
+      padding: 50px 0;
+    }
+
+    .feature-card,
+    .category-card,
+    .deliverable-card,
+    .management-card {
+      padding: 25px 20px;
+    }
+
+    .pulse-check-section .pulse-check-card {
+      padding: 30px 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero-section {
+      .hero-overlay {
+        h1 {
+          font-size: 1.5rem;
+        }
+        
+        .lead {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .argus-module-page {
+    .motion-div,
+    .feature-card,
+    .category-card,
+    .deliverable-card,
+    .management-card {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+}

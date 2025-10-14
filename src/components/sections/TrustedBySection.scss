@@ -1,0 +1,406 @@
+.trusted-by-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  // Main Cards
+  .family-offices-card,
+  .also-serving-card,
+  .why-stand-out-card {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .family-offices-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+  }
+
+  .also-serving-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+  }
+
+  .why-stand-out-card {
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+
+  // Service Items
+  .service-item {
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+
+    &:hover {
+      background: #ffffff !important;
+      border-color: #0056b3;
+      box-shadow: 0 5px 15px rgba(0, 86, 179, 0.1);
+    }
+
+    .icon-wrapper {
+      transition: all 0.3s ease;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover .icon-wrapper {
+      background: #0056b3 !important;
+      
+      i {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  // List Items - FIXED ALIGNMENT
+  .also-serving-card,
+  .why-stand-out-card {
+    li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      
+      i {
+        font-size: 1.1rem;
+        margin-top: 0.125rem;
+        flex-shrink: 0;
+        width: 20px;
+      }
+      
+      span {
+        font-size: 1rem;
+        line-height: 1.5;
+        flex: 1;
+        margin-left: 0.75rem;
+      }
+    }
+  }
+
+  // Buttons
+  .btn-primary {
+    background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+    border: none;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 86, 179, 0.3);
+    }
+  }
+
+  // Badges
+  .badge {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  // Responsive Design - Mobile First Approach
+  @media (max-width: 1199.98px) {
+    .container {
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @media (max-width: 1023.98px) {
+    padding: 3rem 0;
+
+    .display-6 {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+    }
+
+    .family-offices-card,
+    .also-serving-card,
+    .why-stand-out-card {
+      padding: 2rem !important;
+    }
+
+    .service-item {
+      padding: 1.5rem !important;
+    }
+
+    .h2, .h3 {
+      font-size: 1.5rem;
+    }
+
+    .fs-5 {
+      font-size: 1rem !important;
+    }
+
+    // Fixed alignment for tablets
+    .also-serving-card,
+    .why-stand-out-card {
+      li {
+        i {
+          margin-top: 0.1rem;
+        }
+        
+        span {
+          margin-left: 0.75rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    padding: 2.5rem 0;
+
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .display-6 {
+      font-size: 1.75rem;
+      text-align: left;
+    }
+
+    .lead {
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .family-offices-card,
+    .also-serving-card,
+    .why-stand-out-card {
+      padding: 1.5rem !important;
+      margin-bottom: 1.5rem;
+    }
+
+    .family-offices-card {
+      .row {
+        flex-direction: column;
+      }
+      
+      .section-content {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .service-item {
+      padding: 1.25rem !important;
+      margin-bottom: 1rem;
+      
+      .d-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .icon-wrapper {
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+        align-self: center;
+      }
+    }
+
+    .also-serving-card,
+    .why-stand-out-card {
+      .d-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .icon-wrapper {
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+        align-self: center;
+      }
+
+      // Fixed alignment for mobile
+      li {
+        align-items: flex-start;
+        text-align: left;
+        
+        i {
+          margin-top: 0.125rem;
+          width: 18px;
+        }
+        
+        span {
+          margin-left: 0.75rem;
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .btn-primary {
+      width: 100%;
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    padding: 2rem 0;
+
+    .container {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .display-6 {
+      font-size: 1.5rem;
+    }
+
+    .family-offices-card,
+    .also-serving-card,
+    .why-stand-out-card {
+      padding: 1.25rem !important;
+      border-radius: 1rem !important;
+    }
+
+    .service-item {
+      padding: 1rem !important;
+      
+      h4 {
+        font-size: 1.1rem;
+      }
+      
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .h2, .h3 {
+      font-size: 1.3rem;
+    }
+
+    .btn-primary {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    // Fixed alignment for small mobile
+    .also-serving-card,
+    .why-stand-out-card {
+      li {
+        i {
+          font-size: 1rem;
+          margin-top: 0.1rem;
+          width: 16px;
+        }
+        
+        span {
+          margin-left: 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 374.98px) {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .family-offices-card,
+    .also-serving-card,
+    .why-stand-out-card {
+      padding: 1rem !important;
+    }
+
+    .service-item {
+      padding: 0.875rem !important;
+    }
+
+    .display-6 {
+      font-size: 1.4rem;
+    }
+
+    // Fixed alignment for extra small mobile
+    .also-serving-card,
+    .why-stand-out-card {
+      li {
+        i {
+          font-size: 0.9rem;
+          margin-top: 0.075rem;
+        }
+        
+        span {
+          margin-left: 0.5rem;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+// Text alignment - Always left on mobile
+@media (max-width: 767.98px) {
+  .trusted-by-section {
+    .text-center {
+      text-align: left !important;
+    }
+    
+    .family-offices-card,
+    .also-serving-card,
+    .why-stand-out-card,
+    .service-item {
+      text-align: left;
+    }
+    
+    .service-item .d-flex {
+      text-align: left;
+      flex-direction: row !important;
+    }
+    
+    .service-item .icon-wrapper {
+      margin-right: 1rem !important;
+      margin-bottom: 0 !important;
+      align-self: flex-start;
+    }
+
+    // Ensure list items are properly aligned left
+    .also-serving-card,
+    .why-stand-out-card {
+      li {
+        text-align: left;
+      }
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .trusted-by-section {
+    .family-offices-card,
+    .also-serving-card,
+    .why-stand-out-card,
+    .service-item,
+    .btn-primary {
+      transition: none !important;
+    }
+    
+    .family-offices-card:hover,
+    .also-serving-card:hover,
+    .why-stand-out-card:hover,
+    .service-item:hover,
+    .btn-primary:hover {
+      transform: none !important;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { lazy } from 'react';
 import HeroSection from '../../components/sections/Hero';
 import MissionSection from '../../components/sections/Mission';
 import DataExpertise from '../../components/sections/DataExpertise';
@@ -10,7 +11,9 @@ import CTA from '../../components/sections/CTA';
 import StatsCount from '../../components/sections/StatsCounter';
 import TMDifference from '../../components/sections/DifferenceSection'
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
-import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import TrustedBySection from '../../components/sections/TrustedBySection';
+
 
 
 export default function Home() {
@@ -53,6 +56,7 @@ export default function Home() {
       <DataExpertise />
       <DataFlowVisualization />
       <TMDifference/>
+      <TrustedBySection pageType="home" />
       <StatsCount/>
       <Testimonials />
       <CTA />

@@ -14,6 +14,7 @@ import AccountingProcess from '../../components/sections/AccountingProcess';
 // Lazy load heavy components
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
 const CTA = lazy(() => import('../../components/sections/CTA'));
+const TrustedBySection = lazy(() => import('../../components/sections/TrustedBySection'));
 const DifferenceSection = lazy(() => import('../../components/sections/DifferenceSection'));
 
 // Images
@@ -636,6 +637,11 @@ const CAMReconciliation = memo(() => {
           </div>
         </Container>
       </section>
+
+      {/* Why Global Guru Section */}
+      <Suspense fallback={<Loader />}>
+        <TrustedBySection pageType="camReconciliation" />
+      </Suspense>
 
       {/* Difference Section */}
       <Suspense fallback={<Loader />}>
