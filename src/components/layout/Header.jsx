@@ -212,7 +212,7 @@ export default function Header() {
               className={isActive('/blog') ? 'active' : ''}
               onClick={handleNavLinkClick}
             >
-              Blog
+              Blogs
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
