@@ -15,6 +15,8 @@ import CAMError from '../../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avi
 import CAMErrorFallback from '../../assets/images/CAM_Reconciliation_Blog1_KPI_FINAL.avif';
 import CAMWorkFlow from '../../assets/images/11-10.avif?w=300;600;900&format=avif&as=srcset';
 import CAMWorkFlowFallback from '../../assets/images/11-10.avif?w=600';
+import ARCRE from '../../assets/images/13-10.avif?w=300;600;900&format=avif&as=srcset';
+import ARCREFallback from '../../assets/images/13-10.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -53,6 +55,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "The CAM Workflow We Use to Cut Disputes by 60%",
       date: "October 11, 2025",
       image: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
+    },
+    {
+      id: 7,
+      title: "AR for CRE: How to Shrink Days Sales Outstanding by 18-30%",
+      date: "October 13, 2025",
+      image: { srcset: ARCRE, fallback: ARCREFallback },
     }
   ], []);
 
