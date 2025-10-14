@@ -4,6 +4,9 @@
 body {
   font-family: $font-family-sans-serif;
   padding-top: 90px;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
