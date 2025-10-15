@@ -26,10 +26,24 @@ const ContactForm = memo(({
   const [recaptchaError, setRecaptchaError] = useState(false);
   const [validated, setValidated] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
   const recaptchaRef = useRef();
 
   useEffect(() => {
     setMounted(true);
+    
+    // Check if reCAPTCHA is properly loaded
+    const checkRecaptcha = () => {
+      if (window.grecaptcha && window.grecaptcha.render) {
+        setRecaptchaReady(true);
+      } else {
+        // If not loaded, try again after a delay
+        setTimeout(checkRecaptcha, 500);
+      }
+    };
+    
+    checkRecaptcha();
+    
     return () => setMounted(false);
   }, []);
 
@@ -41,6 +55,15 @@ const ContactForm = memo(({
   const handleRecaptchaChange = useCallback((value) => {
     setRecaptchaValue(value);
     setRecaptchaError(false);
+  }, []);
+
+  const handleRecaptchaError = useCallback(() => {
+    console.error('reCAPTCHA failed to load');
+    setRecaptchaError(true);
+  }, []);
+
+  const handleRecaptchaExpire = useCallback(() => {
+    setRecaptchaValue(null);
   }, []);
 
   const resetForm = useCallback(() => {
@@ -63,10 +86,15 @@ const ContactForm = memo(({
       return;
     }
 
-    // Frontend reCAPTCHA validation only
+    // Enhanced reCAPTCHA validation
     if (recaptchaSiteKey && !recaptchaValue) {
       setStatus({ loading: false, success: false, error: 'Please complete the CAPTCHA verification' });
       setRecaptchaError(true);
+      
+      // Reset reCAPTCHA to force user to complete it again
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
       return;
     }
 
@@ -78,8 +106,6 @@ const ContactForm = memo(({
       const templateId = config.emailjsTemplateId;
       const publicKey = config.emailjsPublicKey;
       
-      // Remove reCAPTCHA token from EmailJS data
-      // EmailJS doesn't need it and can't verify it
       const emailData = {
         from_name: formData.name,
         from_email: formData.email,
@@ -88,7 +114,7 @@ const ContactForm = memo(({
         subject: formData.subject,
         company: formData.company,
         page_url: formData.page,
-        // Don't include reCAPTCHA token here
+        // Don't include reCAPTCHA token in EmailJS data
       };
       
       await emailjs.send(serviceId, templateId, emailData, publicKey);
@@ -101,15 +127,24 @@ const ContactForm = memo(({
       
       let errorMessage = 'Failed to send message. Please try again.';
       
+      if (error.text && error.text.includes('quota')) {
+        errorMessage = 'Message quota exceeded. Please try again later or contact us directly.';
+      }
+      
       setStatus({ 
         loading: false, 
         success: false, 
         error: errorMessage 
       });
+      
+      // Reset reCAPTCHA on error
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+        setRecaptchaValue(null);
+      }
     }
   }, [formData, recaptchaValue, recaptchaSiteKey, resetForm]);
 
-  // Memoize form validation state to prevent unnecessary re-renders
   const formValidation = useMemo(() => ({
     nameInvalid: validated && !formData.name,
     emailInvalid: validated && !formData.email,
@@ -207,17 +242,24 @@ const ContactForm = memo(({
           </Form.Control.Feedback>
         </Form.Group>
 
-        {/* reCAPTCHA for frontend validation only */}
+        {/* Enhanced reCAPTCHA with better error handling */}
         {recaptchaSiteKey && (
           <div className="mb-3 recaptcha-container">
+            {!recaptchaReady && (
+              <div className="text-muted small mb-2">Loading CAPTCHA...</div>
+            )}
             <ReCAPTCHA
               ref={recaptchaRef}
               sitekey={recaptchaSiteKey}
               onChange={handleRecaptchaChange}
-              onErrored={() => console.log('reCAPTCHA error')}
+              onErrored={handleRecaptchaError}
+              onExpired={handleRecaptchaExpire}
+              asyncScriptOnLoad={() => setRecaptchaReady(true)}
             />
             {recaptchaError && (
-              <div className="text-danger small mt-1">Please complete the CAPTCHA verification</div>
+              <div className="text-danger small mt-1">
+                CAPTCHA verification failed. Please refresh the page and try again.
+              </div>
             )}
           </div>
         )}
@@ -245,7 +287,7 @@ const ContactForm = memo(({
         <Button
           variant="primary"
           type="submit"
-          disabled={status.loading}
+          disabled={status.loading || (recaptchaSiteKey && !recaptchaValue)}
           className="submit-btn w-50"
           size="lg"
         >

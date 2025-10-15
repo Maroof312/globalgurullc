@@ -15,6 +15,7 @@ const CTA = lazy(() => import('../../components/sections/CTA'));
 const PortfolioList = lazy(() => import('../../components/sections/Portfolio'));
 const AccountingProcess = lazy(() => import('../../components/sections/AccountingProcess'));
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
+const FamilyOfficeFAQ = lazy(() => import('../../components/sections/FamilyOfficeFAQ'));
 const TrustedBySection = lazy(() => import('../../components/sections/TrustedBySection'));
 // Images
 import landingBanner from '../../assets/images/landing-banner.webp';
@@ -482,6 +483,11 @@ const RealEstateAccounting = memo(() => {
             />
           </Suspense>
         </Container>
+      </section>
+      <section>
+        <Suspense fallback={<Loader />}>
+          <FamilyOfficeFAQ/>
+        </Suspense>
       </section>
     </div>
   );
