@@ -14,6 +14,7 @@ import FAQ from '../../components/sections/FAQ';
 import PortfolioList from '../../components/sections/Portfolio';
 import AccountingProcess from '../../components/sections/AccountingProcess';
 import TrustedBySection from '../../components/sections/TrustedBySection';
+import useAnalytics from '../../components/hooks/useAnalytics';
 
 
 // Images
@@ -374,6 +375,9 @@ const faqs = [
 ];
 
 const LeaseAccounting = memo(() => {
+
+  useAnalytics();
+
   // Memoize service items
   const serviceItems = useMemo(() => 
     services.map((service, index) => (

@@ -13,6 +13,7 @@ import StatsCount from '../../components/sections/StatsCounter';
 import TMDifference from '../../components/sections/DifferenceSection'
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics'
 import TrustedBySection from '../../components/sections/TrustedBySection';
 
 // Add Loader component
@@ -23,6 +24,8 @@ export default function Home() {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  useAnalytics();
 
   // High-level services overview for Home page grid (links to service pages)
   const homeServicesOverview = [

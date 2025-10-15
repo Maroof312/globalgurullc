@@ -10,6 +10,8 @@ import { config } from '../../config'
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
 import { Helmet } from 'react-helmet-async';
 import AccountingProcess from '../../components/sections/AccountingProcess';
+import useAnalytics from '../../components/hooks/useAnalytics';
+
 
 // Lazy load heavy components
 const FAQ = lazy(() => import('../../components/sections/FAQ'));
@@ -162,6 +164,9 @@ const camFAQs = [
 ];
 
 const CAMReconciliation = memo(() => {
+
+  useAnalytics();
+
   // Memoize service items
   const serviceItems = useMemo(() => 
     services.map((service, index) => (

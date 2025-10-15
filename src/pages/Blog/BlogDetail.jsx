@@ -5,6 +5,7 @@ import { motion as Motion } from 'framer-motion';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics';
 import { Helmet } from 'react-helmet-async';
 import './BlogDetail.scss';
 import { blogData } from '../../data/BlogData';
@@ -13,6 +14,9 @@ import { resolveBlogFromParam, resolvePostImage } from '../../utils/blog';
 // Image selection is centralized in utils/blog via resolvePostImage
 
 const BlogDetail = React.memo(() => {
+
+  useAnalytics();
+
   const location = useLocation();
   const params = useParams();
   const { blog } = location.state || {};

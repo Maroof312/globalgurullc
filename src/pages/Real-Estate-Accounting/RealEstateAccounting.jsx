@@ -7,6 +7,7 @@ import 'swiper/css';
 import ContactForm from '../../components/forms/ContactForm';
 import { config } from '../../config'
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics';
 import { Helmet } from 'react-helmet-async';
 // Lazy load heavy components
 const FinancialServices = lazy(() => import('../../components/sections/FinancialServices'));
@@ -122,6 +123,9 @@ const faqs = [
 ];
 
 const RealEstateAccounting = memo(() => {
+
+  useAnalytics();
+
   // Memoize service items
   const serviceItems = useMemo(() => 
     services.map((service, index) => (

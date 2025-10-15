@@ -4,10 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import BlogSidebar from '../../components/sections/BlogSidebar';
 import BlogPost from '../../components/sections/BlogPost';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics';
 import { blogData } from '../../data/BlogData';
 import './Blog.scss';
 
 const Blog = () => {
+
+  useAnalytics();
+
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [visiblePosts, setVisiblePosts] = useState(6);

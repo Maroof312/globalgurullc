@@ -14,7 +14,8 @@ import { GiCash, GiPayMoney, GiReceiveMoney } from "react-icons/gi";
 import CTA from "../../components/sections/CTA";
 import heroImage from "../../assets/images/accounting-new.webp";
 import accountingImage from "../../assets/images/10.avif";
-import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
+import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics';
 import "./Acc&Book.scss";
 
 // Static data defined outside component (no hooks needed)
@@ -81,6 +82,8 @@ const processSteps = [
 ];
 
 const AccBook = memo(() => {
+
+  useAnalytics();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {

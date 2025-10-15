@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import servicesHeroImage from '../../assets/images/services-hero.avif';
 import IntroImage from '../../assets/images/USA_CITY.webp';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics';
 import './Services.scss';
 
 // Lazy load heavy components
@@ -52,6 +53,9 @@ const staggerChildren = {
 
 // Optimized Animated component
 const AnimatedSection = memo(({ children, className = "" }) => {
+
+  useAnalytics();
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,

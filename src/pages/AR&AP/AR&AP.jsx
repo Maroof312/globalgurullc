@@ -13,10 +13,15 @@ import FinancialServices from '../../components/sections/FinancialServices';
 import FAQ from '../../components/sections/FAQ';
 import CTA from '../../components/sections/CTA';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
+import useAnalytics from '../../components/hooks/useAnalytics';
+
 import { Helmet } from 'react-helmet-async';
 import './AR&AP.scss';
 
 const ARAP = React.memo(() => {
+
+  useAnalytics();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
