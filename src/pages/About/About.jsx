@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag'
 import TeamMembers from '../../components/sections/TeamMembers'
+import useAnalytics from '../../components/hooks/useAnalytics';
 import aboutHeroImage from '../../assets/images/about.avif'
 import './About.scss'
 
 export default function About() {
+  useAnalytics();
   return (
     <div className="about-page">
       <Helmet>
