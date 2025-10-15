@@ -22,6 +22,17 @@ const useAnalytics = () => {
         a.appendChild(r);
       })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     }
+    
+    // HubSpot - ADD THIS SECTION
+    if (!document.getElementById('hs-script-loader')) {
+      const script = document.createElement('script');
+      script.id = 'hs-script-loader';
+      script.type = 'text/javascript';
+      script.async = true;
+      script.defer = true;
+      script.src = '//js-na2.hs-scripts.com/244025887.js';
+      document.head.appendChild(script);
+    }
   }, []);
 };
 
