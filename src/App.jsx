@@ -21,6 +21,8 @@ const AccBook = lazy(() => import('./pages/Accounting&Bookkeeping/Acc&Book'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy/PrivacyPolicy'));
 const ThankYou = lazy(() => import('./pages/Thankyou/ThankYou'));
 const Argus = lazy(() => import('./pages/Args/ARGUSModule'));
+const Sitemap = lazy(() => import('./pages/Sitemap/Sitemap'));
+
 
 // Create a simple loading component
 const PageLoading = () => (
@@ -59,6 +61,7 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/argus" element={<Argus />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </Suspense>
       <Footer />

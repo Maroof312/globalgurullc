@@ -39,6 +39,7 @@ export default function Footer() {
                 <li className="mb-2"><a href="/contact" className="text-white">Contact</a></li>
                 <li className="mb-2"><a href="/our-experts" className="text-white">Our Experts</a></li>
                 <li className="mb-2"><a href="/privacy-policy" className="text-white">Privacy Policy</a></li>
+                <li className="mb-2"><a href="/sitemap" className="text-white">Sitemap</a></li>
               </ul>
             </motion.div>
           </Col>
