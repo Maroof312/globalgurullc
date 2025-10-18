@@ -34,7 +34,7 @@ const Sitemap = () => {
         description: "Overview of our comprehensive services",
       },
       {
-        path: "/property-accounting",
+        path: "/real-estate-accounting-services",
         name: "Property Accounting",
         description: "Professional property accounting services",
       },
