@@ -13,7 +13,7 @@ import StatsCount from '../../components/sections/StatsCounter';
 import TMDifference from '../../components/sections/DifferenceSection'
 import DataFlowVisualization from '../../components/sections/DataFlowVisualization';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
-import useAnalytics from '../../components/hooks/useAnalytics'
+import useAnalytics from '../../components/hooks/useAnalytics';
 import TrustedBySection from '../../components/sections/TrustedBySection';
 
 // Add Loader component

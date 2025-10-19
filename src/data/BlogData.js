@@ -891,159 +891,306 @@ export const blogData = [
     },
   },
   {
-  "id": 7,
-  "title": "AR for CRE: How to Shrink Days Sales Outstanding by 18 to 30 Percent",
-  "date": "October 13, 2025",
-  "readTime": "9 min read",
-  "category": "Accounting and Collections",
-  "tags": ["Accounts Receivable", "Cash Flow", "CRE Accounting"],
-  "content": [
-    {
-      "type": "p",
-      "text": "Cash flow is the heartbeat of every real estate portfolio. Yet even profitable buildings can face liquidity stress when rent collections slow down. In commercial real estate, late payments and inconsistent tenant follow-ups can quietly stretch your Days Sales Outstanding (DSO) by weeks, locking up capital that could be used for operations or reinvestment."
+    id: 7,
+    title:
+      "AR for CRE: How to Shrink Days Sales Outstanding by 18 to 30 Percent",
+    date: "October 13, 2025",
+    readTime: "9 min read",
+    category: "Accounting and Collections",
+    tags: ["Accounts Receivable", "Cash Flow", "CRE Accounting"],
+    content: [
+      {
+        type: "p",
+        text: "Cash flow is the heartbeat of every real estate portfolio. Yet even profitable buildings can face liquidity stress when rent collections slow down. In commercial real estate, late payments and inconsistent tenant follow-ups can quietly stretch your Days Sales Outstanding (DSO) by weeks, locking up capital that could be used for operations or reinvestment.",
+      },
+      {
+        type: "p",
+        text: "At Global Guru, we have helped property owners and asset managers reduce their DSO by 18 to 30 percent through a structured Accounts Receivable workflow built specifically for the nuances of CRE.",
+      },
+      {
+        type: "h2",
+        text: "Why DSO Is the Hidden Indicator of Portfolio Health",
+      },
+      {
+        type: "list",
+        items: [
+          "Delayed rent posting or billing errors",
+          "Missed escalation or late fee application",
+          "Weak communication between accounting and property management",
+          "Lack of structured follow-up procedures",
+          "Manual processes with inconsistent documentation",
+        ],
+      },
+      {
+        type: "p",
+        text: "Reducing DSO is not just about collecting faster; it is about building predictability and discipline into the revenue cycle.",
+      },
+      { type: "h2", text: "The AR Challenge in Commercial Real Estate" },
+      {
+        type: "p",
+        text: "Unlike other industries, real estate receivables are tied to complex lease terms and variable charges such as CAM, utilities, and insurance recoveries. Each introduces timing gaps and manual steps that slow down cash flow.",
+      },
+      {
+        type: "list",
+        items: [
+          "Late invoice delivery due to dependency on reconciliations",
+          "Multiple approval layers before billing",
+          "Disputes caused by unclear documentation",
+          "Lack of a unified AR dashboard across properties",
+        ],
+      },
+      { type: "h2", text: "Step 1: Data Alignment Between Lease and Ledger" },
+      {
+        type: "p",
+        text: "We connect lease administration with accounting so every recurring charge aligns with the lease terms. This ensures billing accuracy and faster reconciliation.",
+      },
+      {
+        type: "list",
+        items: [
+          "Lease abstract checks for billing logic",
+          "Validation of rent escalation schedules",
+          "Comparison of billed versus contracted rates",
+          "Integration of lease data with accounting systems",
+        ],
+      },
+      { type: "h2", text: "Step 2: Structured Invoicing Calendar" },
+      {
+        type: "p",
+        text: "We create a standardized invoicing calendar for each property portfolio, ensuring predictable billing cycles and timely tenant notifications.",
+      },
+      {
+        type: "list",
+        items: [
+          "Pre-invoice data review",
+          "Automated billing approvals",
+          "Multi-property batch generation",
+          "Scheduled invoice dispatch",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 3: Tenant Communication and Follow-Up Framework",
+      },
+      {
+        type: "p",
+        text: "Our three-tier tenant follow-up process keeps communication consistent and professional, improving response time and payment rates.",
+      },
+      {
+        type: "list",
+        items: [
+          "Friendly reminder before due date",
+          "Soft follow-up a few days after due date",
+          "Escalation notice from AR manager referencing lease terms",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 4: Real-Time AR Dashboard and Aging Analytics",
+      },
+      {
+        type: "p",
+        text: "We provide real-time dashboards that display outstanding balances, aging buckets, and tenant payment behavior, allowing for proactive action.",
+      },
+      {
+        type: "h2",
+        text: "Step 5: Dispute Management and Resolution Tracking",
+      },
+      {
+        type: "p",
+        text: "A centralized dispute tracker records every tenant query, assigns ownership, and captures resolutions to prevent repeat issues.",
+      },
+      { type: "h2", text: "Step 6: Automation for Accuracy and Efficiency" },
+      {
+        type: "p",
+        text: "Automation modules manage recurring billing, receipt application, and escalation workflows—freeing time for analytical and relationship tasks.",
+      },
+      { type: "h2", text: "Step 7: Monthly AR Health Review" },
+      {
+        type: "p",
+        text: "Each month, our AR team reviews portfolio metrics like DSO, collection efficiency, and dispute resolution times to drive continuous improvement.",
+      },
+      { type: "h2", text: "The Results Our Clients Achieve" },
+      {
+        type: "list",
+        items: [
+          "18 to 30 percent faster collections",
+          "Reduced DSO and improved cash flow predictability",
+          "Fewer tenant disputes",
+          "Higher on-time payment rate",
+          "Improved financial reporting accuracy",
+        ],
+      },
+      { type: "h2", text: "Why Choose Us" },
+      {
+        type: "list",
+        items: [
+          "Dedicated AR specialists experienced in CRE accounting",
+          "Lease-to-ledger accuracy to prevent billing errors",
+          "Automated workflows for consistent communication",
+          "Portfolio dashboards for real-time insights",
+          "Human-centered collections that maintain tenant trust",
+        ],
+      },
+      { type: "h2", text: "Final Thought" },
+      {
+        type: "p",
+        text: "Reducing DSO is about clarity and consistency. Our AR workflow blends automation, analytics, and people-first practices to accelerate collections and strengthen portfolio liquidity.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What is Days Sales Outstanding (DSO)?",
+        answer:
+          "DSO measures the average number of days it takes to collect rent or receivables after billing. Lower DSO means faster cash flow and better financial control.",
+      },
+      {
+        question: "How can automation improve AR in commercial real estate?",
+        answer:
+          "Automation accelerates billing, reminders, and reconciliation. It reduces manual errors and ensures consistency across properties.",
+      },
+      {
+        question:
+          "Can you integrate this AR workflow with my existing accounting software?",
+        answer:
+          "Yes, our process integrates with leading property management and ERP systems. It enhances visibility and standardizes your collection workflow.",
+      },
+    ],
+    cta: {
+      title: "Ready to Accelerate Your Collections?",
+      description:
+        "Faster collections mean stronger cash flow, better decision-making, and more freedom to grow. Book a Free 30-Minute AR Diagnostic today and see how your team can reduce DSO by up to 30 percent.",
+      buttonText: "Book a Free 30-Minute Diagnostic",
+      buttonLink: "/contact",
     },
-    {
-      "type": "p",
-      "text": "At Global Guru, we have helped property owners and asset managers reduce their DSO by 18 to 30 percent through a structured Accounts Receivable workflow built specifically for the nuances of CRE."
-    },
-    { "type": "h2", "text": "Why DSO Is the Hidden Indicator of Portfolio Health" },
-    {
-      "type": "list",
-      "items": [
-        "Delayed rent posting or billing errors",
-        "Missed escalation or late fee application",
-        "Weak communication between accounting and property management",
-        "Lack of structured follow-up procedures",
-        "Manual processes with inconsistent documentation"
-      ]
-    },
-    {
-      "type": "p",
-      "text": "Reducing DSO is not just about collecting faster; it is about building predictability and discipline into the revenue cycle."
-    },
-    { "type": "h2", "text": "The AR Challenge in Commercial Real Estate" },
-    {
-      "type": "p",
-      "text": "Unlike other industries, real estate receivables are tied to complex lease terms and variable charges such as CAM, utilities, and insurance recoveries. Each introduces timing gaps and manual steps that slow down cash flow."
-    },
-    {
-      "type": "list",
-      "items": [
-        "Late invoice delivery due to dependency on reconciliations",
-        "Multiple approval layers before billing",
-        "Disputes caused by unclear documentation",
-        "Lack of a unified AR dashboard across properties"
-      ]
-    },
-    { "type": "h2", "text": "Step 1: Data Alignment Between Lease and Ledger" },
-    {
-      "type": "p",
-      "text": "We connect lease administration with accounting so every recurring charge aligns with the lease terms. This ensures billing accuracy and faster reconciliation."
-    },
-    {
-      "type": "list",
-      "items": [
-        "Lease abstract checks for billing logic",
-        "Validation of rent escalation schedules",
-        "Comparison of billed versus contracted rates",
-        "Integration of lease data with accounting systems"
-      ]
-    },
-    { "type": "h2", "text": "Step 2: Structured Invoicing Calendar" },
-    {
-      "type": "p",
-      "text": "We create a standardized invoicing calendar for each property portfolio, ensuring predictable billing cycles and timely tenant notifications."
-    },
-    {
-      "type": "list",
-      "items": [
-        "Pre-invoice data review",
-        "Automated billing approvals",
-        "Multi-property batch generation",
-        "Scheduled invoice dispatch"
-      ]
-    },
-    { "type": "h2", "text": "Step 3: Tenant Communication and Follow-Up Framework" },
-    {
-      "type": "p",
-      "text": "Our three-tier tenant follow-up process keeps communication consistent and professional, improving response time and payment rates."
-    },
-    {
-      "type": "list",
-      "items": [
-        "Friendly reminder before due date",
-        "Soft follow-up a few days after due date",
-        "Escalation notice from AR manager referencing lease terms"
-      ]
-    },
-    { "type": "h2", "text": "Step 4: Real-Time AR Dashboard and Aging Analytics" },
-    {
-      "type": "p",
-      "text": "We provide real-time dashboards that display outstanding balances, aging buckets, and tenant payment behavior, allowing for proactive action."
-    },
-    { "type": "h2", "text": "Step 5: Dispute Management and Resolution Tracking" },
-    {
-      "type": "p",
-      "text": "A centralized dispute tracker records every tenant query, assigns ownership, and captures resolutions to prevent repeat issues."
-    },
-    { "type": "h2", "text": "Step 6: Automation for Accuracy and Efficiency" },
-    {
-      "type": "p",
-      "text": "Automation modules manage recurring billing, receipt application, and escalation workflows—freeing time for analytical and relationship tasks."
-    },
-    { "type": "h2", "text": "Step 7: Monthly AR Health Review" },
-    {
-      "type": "p",
-      "text": "Each month, our AR team reviews portfolio metrics like DSO, collection efficiency, and dispute resolution times to drive continuous improvement."
-    },
-    { "type": "h2", "text": "The Results Our Clients Achieve" },
-    {
-      "type": "list",
-      "items": [
-        "18 to 30 percent faster collections",
-        "Reduced DSO and improved cash flow predictability",
-        "Fewer tenant disputes",
-        "Higher on-time payment rate",
-        "Improved financial reporting accuracy"
-      ]
-    },
-    { "type": "h2", "text": "Why Choose Us" },
-    {
-      "type": "list",
-      "items": [
-        "Dedicated AR specialists experienced in CRE accounting",
-        "Lease-to-ledger accuracy to prevent billing errors",
-        "Automated workflows for consistent communication",
-        "Portfolio dashboards for real-time insights",
-        "Human-centered collections that maintain tenant trust"
-      ]
-    },
-    { "type": "h2", "text": "Final Thought" },
-    {
-      "type": "p",
-      "text": "Reducing DSO is about clarity and consistency. Our AR workflow blends automation, analytics, and people-first practices to accelerate collections and strengthen portfolio liquidity."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "What is Days Sales Outstanding (DSO)?",
-      "answer": "DSO measures the average number of days it takes to collect rent or receivables after billing. Lower DSO means faster cash flow and better financial control."
-    },
-    {
-      "question": "How can automation improve AR in commercial real estate?",
-      "answer": "Automation accelerates billing, reminders, and reconciliation. It reduces manual errors and ensures consistency across properties."
-    },
-    {
-      "question": "Can you integrate this AR workflow with my existing accounting software?",
-      "answer": "Yes, our process integrates with leading property management and ERP systems. It enhances visibility and standardizes your collection workflow."
-    }
-  ],
-  "cta": {
-    "title": "Ready to Accelerate Your Collections?",
-    "description": "Faster collections mean stronger cash flow, better decision-making, and more freedom to grow. Book a Free 30-Minute AR Diagnostic today and see how your team can reduce DSO by up to 30 percent.",
-    "buttonText": "Book a Free 30-Minute Diagnostic",
-    "buttonLink": "/contact"
   },
-}
-
+  {
+    id: 8,
+    title:
+      "Collections Playbook for Property Managers: From Reminder Cadence to Legal Handoff",
+    date: "October 18, 2025",
+    readTime: "9 min read",
+    category: "Property Accounting",
+    tags: ["Collections", "Accounts Receivable", "Property Management"],
+    content: [
+      {
+        type: "p",
+        text: "Late rent is more than a nuisance—it signals that your process needs structure. In property management, delayed payments disrupt cash flow and tenant trust. Sustainable rent recovery requires a defined playbook that balances empathy, consistency, and escalation discipline.",
+      },
+      { type: "h2", text: "Why Collections Need Structure, Not Emotion" },
+      {
+        type: "list",
+        items: [
+          "Predictability—consistent schedule for follow-ups",
+          "Transparency—clear, fair process visible to tenants",
+          "Control—less time chasing payments, more focus on portfolio health",
+        ],
+      },
+      { type: "h2", text: "Step 1: Set Clear Payment Expectations" },
+      {
+        type: "list",
+        items: [
+          "Welcome letters with portal links and payment instructions",
+          "Reminder of due dates before month-end",
+          "Encourage auto-pay setup for corporate tenants",
+        ],
+      },
+      { type: "h2", text: "Step 2: Reminder Cadence that Drives Action" },
+      {
+        type: "list",
+        items: [
+          "Day 1 – Friendly reminder email with invoice copy",
+          "Day 5 – Second notice referencing lease clause",
+          "Day 10 – Late fee applied, upcoming escalation notice",
+          "Day 15 – Personal call or email to understand reason for delay",
+          "Day 20 – Final demand notice with legal warning",
+        ],
+      },
+      { type: "h2", text: "Step 3: Communication That Protects Relationships" },
+      {
+        type: "p",
+        text: "Firm empathy is key—direct yet respectful communication increases payment rates and preserves goodwill.",
+      },
+      { type: "h2", text: "Step 4: Centralize Tracking and Documentation" },
+      {
+        type: "p",
+        text: "Log all communication, payment promises, and follow-up notes in a single platform. This documentation supports legal compliance and improves accountability.",
+      },
+      { type: "h2", text: "Step 5: Payment Plan Options for At-Risk Tenants" },
+      {
+        type: "p",
+        text: "Offer written, time-bound payment plans with clear terms to recover rent without jeopardizing relationships.",
+      },
+      { type: "h2", text: "Step 6: Know When to Escalate" },
+      {
+        type: "p",
+        text: "If no payment or plan is confirmed by Day 30, escalate promptly through AR recovery or legal channels following state laws and lease terms.",
+      },
+      { type: "h2", text: "Step 7: Reporting and Analytics" },
+      {
+        type: "list",
+        items: [
+          "Average days to payment",
+          "Tenants past due by category",
+          "Late fee revenue impact",
+          "Promise-to-pay success ratio",
+          "Legal handoffs per quarter",
+        ],
+      },
+      { type: "h2", text: "Step 8: Legal Handoff and Recovery Follow-Through" },
+      {
+        type: "p",
+        text: "Prepare complete files including communication logs, lease copies, and summaries before legal transfer to ensure efficient recovery and compliance.",
+      },
+      { type: "h2", text: "Results Our Clients Achieve" },
+      {
+        type: "list",
+        items: [
+          "25–40% faster rent recovery",
+          "50% fewer disputes",
+          "Improved tenant satisfaction through clear communication",
+          "Complete audit-ready documentation",
+        ],
+      },
+      { type: "h2", text: "Why Choose Us" },
+      {
+        type: "list",
+        items: [
+          "Trained AR specialists focused on property management",
+          "Automated cadence reminders and dashboards",
+          "Compliance-driven escalation workflow",
+          "Transparent reporting for ownership and audit teams",
+        ],
+      },
+      { type: "h2", text: "Final Thought" },
+      {
+        type: "p",
+        text: "Collections done right are not about pressure—they are about process. With clear cadence, communication, and escalation, property managers can protect cash flow without damaging trust.",
+      },
+    ],
+    faqs: [
+      {
+        question:
+          "How can property managers improve their collections process?",
+        answer:
+          "Define a clear reminder cadence, centralize documentation, and automate follow-ups to maintain consistency and accountability.",
+      },
+      {
+        question: "When should overdue rent be escalated to legal action?",
+        answer:
+          "If there is no payment or arrangement within 30 days, escalation ensures compliance and prevents further cash flow impact.",
+      },
+      {
+        question: "What tools support structured collections?",
+        answer:
+          "AR dashboards, automated reminders, and integrated lease management systems enable transparent and efficient rent recovery.",
+      },
+    ],
+    cta: {
+      title: "Ready to Build Your Collections Playbook?",
+      description:
+        "Bring order, speed, and clarity to your rent recovery process with our structured collections workflow.",
+      buttonText: "Book a Free 30-Minute Consultation",
+      buttonLink: "/contact",
+    },
+  },
 ];

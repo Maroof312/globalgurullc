@@ -17,6 +17,8 @@ import CAMWorkFlow from '../../assets/images/11-10.avif?w=300;600;900&format=avi
 import CAMWorkFlowFallback from '../../assets/images/11-10.avif?w=600';
 import ARCRE from '../../assets/images/13-10.avif?w=300;600;900&format=avif&as=srcset';
 import ARCREFallback from '../../assets/images/13-10.avif?w=600';
+import ARPM from '../../assets/images/18-10.avif?w=300;600;900&format=avif&as=srcset';
+import ARPMFallback from '../../assets/images/18-10.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -61,6 +63,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "AR for CRE: How to Shrink Days Sales Outstanding by 18-30%",
       date: "October 13, 2025",
       image: { srcset: ARCRE, fallback: ARCREFallback },
+    },
+    {
+      id: 8,
+      title: "Collections Playbook for Property Managers: From Reminder Cadence to Legal Handoff",
+      date: "October 19, 2025",
+      image: { srcset: ARPM, fallback: ARPMFallback },
     }
   ], []);
 

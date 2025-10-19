@@ -57,13 +57,16 @@ import CAMWorkFlow from '../assets/images/11-10.avif?w=300;600;900&format=avif&a
 import CAMWorkFlowFallback from '../assets/images/11-10.avif?w=600';
 import ARCRE from '../assets/images/13-10.avif?w=300;600;900&format=avif&as=srcset';
 import ARCREFallback from '../assets/images/13-10.avif?w=600';
+import ARPM from '../assets/images/18-10.avif?w=300;600;900&format=avif&as=srcset';
+import ARPMFallback from '../assets/images/18-10.avif?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
   'Audit': { srcset: Audit, fallback: AuditFallback },
   'Bookkeeping': { srcset: Book, fallback: BookFallback },
   'Commercial Real Estate': { srcset: CRE, fallback: CREFallback }, 
-  'Accounting and Collections' : {srcset: ARCRE, fallback: ARCREFallback}
+  'Accounting and Collections' : {srcset: ARCRE, fallback: ARCREFallback},
+  'Property Accounting' : {srcset: ARPM, fallback: ARPMFallback}
 };
 
 // Per-post explicit overrides (keeps data pure)
