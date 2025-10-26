@@ -59,6 +59,8 @@ import ARCRE from '../assets/images/13-10.avif?w=300;600;900&format=avif&as=srcs
 import ARCREFallback from '../assets/images/13-10.avif?w=600';
 import ARPM from '../assets/images/18-10.avif?w=300;600;900&format=avif&as=srcset';
 import ARPMFallback from '../assets/images/18-10.avif?w=600';
+import APCRE from '../assets/images/25-10.avif?w=300;600;900&format=avif&as=srcset';
+import APCREFallback from '../assets/images/25-10.avif?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
@@ -66,7 +68,8 @@ const CATEGORY_IMAGE_FALLBACKS = {
   'Bookkeeping': { srcset: Book, fallback: BookFallback },
   'Commercial Real Estate': { srcset: CRE, fallback: CREFallback }, 
   'Accounting and Collections' : {srcset: ARCRE, fallback: ARCREFallback},
-  'Property Accounting' : {srcset: ARPM, fallback: ARPMFallback}
+  'Property Accounting' : {srcset: ARPM, fallback: ARPMFallback},
+  'Accounting Controls' : {srcset: APCRE, fallback: APCREFallback},
 };
 
 // Per-post explicit overrides (keeps data pure)

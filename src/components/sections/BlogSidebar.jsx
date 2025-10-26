@@ -19,6 +19,8 @@ import ARCRE from '../../assets/images/13-10.avif?w=300;600;900&format=avif&as=s
 import ARCREFallback from '../../assets/images/13-10.avif?w=600';
 import ARPM from '../../assets/images/18-10.avif?w=300;600;900&format=avif&as=srcset';
 import ARPMFallback from '../../assets/images/18-10.avif?w=600';
+import APCRE from '../../assets/images/25-10.avif?w=300;600;900&format=avif&as=srcset';
+import APCREFallback from '../../assets/images/25-10.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -69,7 +71,13 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "Collections Playbook for Property Managers: From Reminder Cadence to Legal Handoff",
       date: "October 19, 2025",
       image: { srcset: ARPM, fallback: ARPMFallback },
-    }
+    },
+    {
+      id: 10,
+      title: "How We Prevent Duplicate Payments and Fraud in CRE AP",
+      date: "October 25, 2025",
+      image: { srcset: APCRE, fallback: APCREFallback },
+    },
   ], []);
 
   return (

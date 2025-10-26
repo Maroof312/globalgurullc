@@ -1193,4 +1193,122 @@ export const blogData = [
       buttonLink: "/contact",
     },
   },
+  {
+  "id": 10,
+  "title": "How We Prevent Duplicate Payments and Fraud in CRE AP",
+  "date": "October 25, 2025",
+  "readTime": "9 min read",
+  "category": "Accounting Controls",
+  "tags": ["Accounts Payable", "Fraud Prevention", "Real Estate Accounting"],
+  "content": [
+    {
+      "type": "p",
+      "text": "In commercial real estate, duplicate payments and AP fraud can silently drain profits. Our AP control framework combines automation, validation, and oversight to stop losses before they occur."
+    },
+    { "type": "h2", "text": "The Hidden Cost of Duplicate Payments" },
+    {
+      "type": "p",
+      "text": "Even well-run teams lose money to duplicates caused by manual entry, missing references, or multi-entity confusion. Industry data shows over 0.5% of total AP spend leaks annually to duplicates and unrecovered payments."
+    },
+    { "type": "h2", "text": "Step 1: Smart Invoice Capture and Validation" },
+    {
+      "type": "list",
+      "items": [
+        "Automated OCR invoice reading",
+        "Matching vendor name, invoice number, and amount",
+        "Instant duplicate detection before approval",
+        "Error flagging and review notifications"
+      ]
+    },
+    { "type": "h2", "text": "Step 2: Vendor Master Controls" },
+    {
+      "type": "list",
+      "items": [
+        "Centralized vendor master file with restricted access",
+        "Tax ID and W-9 verification",
+        "Bank account validation and micro-deposit testing",
+        "Dual authorization for vendor edits"
+      ]
+    },
+    { "type": "h2", "text": "Step 3: Purchase Order and Contract Matching" },
+    {
+      "type": "p",
+      "text": "Our 3-way match ensures every payment is backed by a valid PO, verified invoice, and confirmed service receipt before release."
+    },
+    { "type": "h2", "text": "Step 4: Segregation of Duties and Role Permissions" },
+    {
+      "type": "p",
+      "text": "We separate duties across roles to prevent internal fraud. Invoice entry, approval, and payment are handled by different personnel with role-based permissions."
+    },
+    { "type": "h2", "text": "Step 5: AI-Powered Fraud Detection" },
+    {
+      "type": "p",
+      "text": "Machine learning identifies anomalies such as duplicate vendors, sudden payment spikes, and banking detail changes for real-time fraud alerts."
+    },
+    { "type": "h2", "text": "Step 6: Payment Approval with Dual Authorization" },
+    {
+      "type": "list",
+      "items": [
+        "Threshold-based payment authorization",
+        "Digital approval tracking",
+        "Secure verification codes and audit trail"
+      ]
+    },
+    { "type": "h2", "text": "Step 7: Post-Payment Audits and Vendor Reconciliation" },
+    {
+      "type": "list",
+      "items": [
+        "Monthly vendor statement reconciliation",
+        "Credit and adjustment validation",
+        "Exception tracking and resolution logging"
+      ]
+    },
+    { "type": "h2", "text": "Results Our Clients See" },
+    {
+      "type": "list",
+      "items": [
+        "100% visibility across vendor transactions",
+        "Near-zero duplicate payments",
+        "Elimination of ghost vendor risk",
+        "Faster month-end closing and cleaner audits"
+      ]
+    },
+    { "type": "h2", "text": "Why Choose Us" },
+    {
+      "type": "list",
+      "items": [
+        "Expertise in CRE accounting and AP automation",
+        "Centralized vendor master management",
+        "AI-driven fraud detection and prevention",
+        "Full audit trails and compliance documentation"
+      ]
+    },
+    { "type": "h2", "text": "Final Thought" },
+    {
+      "type": "p",
+      "text": "Duplicate payments and AP fraud don’t stem from negligence—they result from gaps in process and technology. Our structured controls close those gaps to ensure every dollar is verified before release."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How does automation prevent duplicate payments?",
+      "answer": "Automated invoice validation cross-checks vendor, amount, and reference numbers to detect and block duplicates before approval."
+    },
+    {
+      "question": "What controls prevent AP fraud?",
+      "answer": "Segregation of duties, vendor verification, dual payment authorization, and AI-driven anomaly detection reduce internal and external fraud risks."
+    },
+    {
+      "question": "Can these AP controls integrate with my current accounting system?",
+      "answer": "Yes, our AP automation framework integrates seamlessly with major property and accounting platforms to maintain accuracy across all entities."
+    }
+  ],
+  "cta": {
+    "title": "Ready to Strengthen Your AP Controls?",
+    "description": "Protect your portfolio from hidden losses with real-time automation and oversight. Book a Free AP Risk Assessment to see how we prevent duplicate payments and fraud in real estate accounting.",
+    "buttonText": "Book a Free Assessment",
+    "buttonLink": "/contact"
+  },
+}
+
 ];
