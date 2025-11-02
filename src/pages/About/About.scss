@@ -58,10 +58,207 @@
 
 // Our Story Section
 .story-content {
-  p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+  .story-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    text-align: left;
+    color: #4a5568;
+    font-weight: 400;
+  }
+}
+
+// Section Titles
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d3748;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+    border-radius: 2px;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+}
+
+// How We're Different Cards
+.difference-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #4361ee;
+  }
+  
+  .difference-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .difference-content {
+    flex: 1;
+    
+    .difference-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin-bottom: 0.5rem;
+    }
+    
+    .difference-description {
+      text-align: left;
+      color: #718096;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+}
+
+// Services Section
+.services-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  overflow: hidden;
+  
+  .card-body {
+    padding: 2.5rem;
+  }
+  
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4a5568;
+    
+    .service-bullet {
+      color: #4361ee;
+      font-weight: bold;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+    }
+    
+    &:hover {
+      color: #2d3748;
+      transform: translateX(5px);
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+// Industries Section
+.industries-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  
+  .industry-tag {
+    background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.2);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(67, 97, 238, 0.3);
+    }
+  }
+}
+
+.serve-description {
+  color: #718096;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+// Promise Section
+.promise-section {
+  background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(67, 97, 238, 0.3);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+  }
+  
+  .promise-content {
+    position: relative;
+    z-index: 2;
+    
+    .promise-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .promise-text {
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin: 0;
+      opacity: 0.95;
+      
+      strong {
+        color: #fff;
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -103,14 +300,6 @@
   }
 }
 
-// Section Titles
-.section-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #2d3748;
-  position: relative;
-}
-
 // Responsive Design
 @media (max-width: 1200px) {
   .about-hero {
@@ -139,8 +328,16 @@
     font-size: 2rem;
   }
   
-  .story-content p {
-    font-size: 1.05rem;
+  .section-subtitle {
+    font-size: 1.6rem;
+  }
+  
+  .story-content .story-intro {
+    font-size: 1.1rem;
+  }
+  
+  .services-card .card-body {
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -170,6 +367,52 @@
     font-size: 1.8rem;
   }
   
+  .section-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .difference-card {
+    padding: 1.25rem;
+    
+    .difference-icon {
+      font-size: 1.5rem;
+      margin-right: 0.75rem;
+    }
+    
+    .difference-title {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .services-card .card-body {
+    padding: 1.5rem;
+    
+    .service-item {
+      font-size: 0.95rem;
+    }
+  }
+  
+  .industries-container {
+    gap: 0.75rem;
+    
+    .industry-tag {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.85rem;
+    }
+  }
+  
+  .promise-section {
+    padding: 2rem 1.5rem;
+    
+    .promise-title {
+      font-size: 1.6rem;
+    }
+    
+    .promise-text {
+      font-size: 1.1rem;
+    }
+  }
+  
   .value-card {
     padding: 1.5rem 1rem;
     
@@ -182,13 +425,10 @@
     h3 {
       font-size: 1.3rem;
     }
+    
     p {
-      font-size: 0.8rem !important;
+      font-size: 0.9rem;
     }
-  }
-  
-  .story-content p {
-    font-size: 1rem;
   }
 }
 
@@ -214,8 +454,60 @@
     font-size: 1.6rem;
     text-align: left;
   }
+  
   .lead {
     text-align: left;
+  }
+  
+  .story-content .story-intro {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .difference-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    
+    .difference-icon {
+      margin-right: 0;
+      margin-bottom: 0.75rem;
+    }
+  }
+  
+  .services-card .card-body {
+    padding: 1.25rem 1rem;
+    
+    .service-item {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+  
+  .industries-container {
+    gap: 0.5rem;
+    
+    .industry-tag {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+  }
+  
+  .serve-description {
+    font-size: 1rem;
+  }
+  
+  .promise-section {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    
+    .promise-title {
+      font-size: 1.4rem;
+    }
+    
+    .promise-text {
+      font-size: 1rem;
+    }
   }
   
   .value-card {
@@ -235,48 +527,6 @@
     
     p {
       font-size: 0.9rem;
-    }
-  }
-  
-  .story-content p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-}
-
-@media (max-width: 400px) {
-  .about-hero {
-    height: 45vh;
-    min-height: 280px;
-    
-    .hero-overlay .hero-content {
-      .hero-title {
-        font-size: 1.5rem;
-      }
-      
-      .hero-text {
-        font-size: 0.9rem;
-      }
-    }
-  }
-  
-  .section-title {
-    font-size: 1.4rem;
-  }
-  
-  .value-card {
-    .value-icon {
-      width: 45px;
-      height: 45px;
-      font-size: 1.1rem;
-    }
-    
-    h3 {
-      font-size: 1.1rem;
-    }
-    
-    p {
-      font-size: 0.85rem;
     }
   }
 }
