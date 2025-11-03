@@ -61,6 +61,8 @@ import ARPM from '../assets/images/18-10.avif?w=300;600;900&format=avif&as=srcse
 import ARPMFallback from '../assets/images/18-10.avif?w=600';
 import APCRE from '../assets/images/25-10.avif?w=300;600;900&format=avif&as=srcset';
 import APCREFallback from '../assets/images/25-10.avif?w=600';
+import LeaseAdmin from '../assets/images/3-11.avif?w=300;600;900&format=avif&as=srcset';
+import LeaseAdminFallback from '../assets/images/3-11.avif?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
@@ -70,6 +72,7 @@ const CATEGORY_IMAGE_FALLBACKS = {
   'Accounting and Collections' : {srcset: ARCRE, fallback: ARCREFallback},
   'Property Accounting' : {srcset: ARPM, fallback: ARPMFallback},
   'Accounting Controls' : {srcset: APCRE, fallback: APCREFallback},
+  'Lease Administration' : {srcset: LeaseAdmin, fallback: LeaseAdminFallback},
 };
 
 // Per-post explicit overrides (keeps data pure)

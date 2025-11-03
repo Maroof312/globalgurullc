@@ -1194,121 +1194,354 @@ export const blogData = [
     },
   },
   {
-  "id": 10,
-  "title": "How We Prevent Duplicate Payments and Fraud in CRE AP",
-  "date": "October 25, 2025",
-  "readTime": "9 min read",
-  "category": "Accounting Controls",
-  "tags": ["Accounts Payable", "Fraud Prevention", "Real Estate Accounting"],
-  "content": [
-    {
-      "type": "p",
-      "text": "In commercial real estate, duplicate payments and AP fraud can silently drain profits. Our AP control framework combines automation, validation, and oversight to stop losses before they occur."
+    id: 10,
+    title: "How We Prevent Duplicate Payments and Fraud in CRE AP",
+    date: "October 25, 2025",
+    readTime: "9 min read",
+    category: "Accounting Controls",
+    tags: ["Accounts Payable", "Fraud Prevention", "Real Estate Accounting"],
+    content: [
+      {
+        type: "p",
+        text: "In commercial real estate, duplicate payments and AP fraud can silently drain profits. Our AP control framework combines automation, validation, and oversight to stop losses before they occur.",
+      },
+      { type: "h2", text: "The Hidden Cost of Duplicate Payments" },
+      {
+        type: "p",
+        text: "Even well-run teams lose money to duplicates caused by manual entry, missing references, or multi-entity confusion. Industry data shows over 0.5% of total AP spend leaks annually to duplicates and unrecovered payments.",
+      },
+      { type: "h2", text: "Step 1: Smart Invoice Capture and Validation" },
+      {
+        type: "list",
+        items: [
+          "Automated OCR invoice reading",
+          "Matching vendor name, invoice number, and amount",
+          "Instant duplicate detection before approval",
+          "Error flagging and review notifications",
+        ],
+      },
+      { type: "h2", text: "Step 2: Vendor Master Controls" },
+      {
+        type: "list",
+        items: [
+          "Centralized vendor master file with restricted access",
+          "Tax ID and W-9 verification",
+          "Bank account validation and micro-deposit testing",
+          "Dual authorization for vendor edits",
+        ],
+      },
+      { type: "h2", text: "Step 3: Purchase Order and Contract Matching" },
+      {
+        type: "p",
+        text: "Our 3-way match ensures every payment is backed by a valid PO, verified invoice, and confirmed service receipt before release.",
+      },
+      {
+        type: "h2",
+        text: "Step 4: Segregation of Duties and Role Permissions",
+      },
+      {
+        type: "p",
+        text: "We separate duties across roles to prevent internal fraud. Invoice entry, approval, and payment are handled by different personnel with role-based permissions.",
+      },
+      { type: "h2", text: "Step 5: AI-Powered Fraud Detection" },
+      {
+        type: "p",
+        text: "Machine learning identifies anomalies such as duplicate vendors, sudden payment spikes, and banking detail changes for real-time fraud alerts.",
+      },
+      { type: "h2", text: "Step 6: Payment Approval with Dual Authorization" },
+      {
+        type: "list",
+        items: [
+          "Threshold-based payment authorization",
+          "Digital approval tracking",
+          "Secure verification codes and audit trail",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 7: Post-Payment Audits and Vendor Reconciliation",
+      },
+      {
+        type: "list",
+        items: [
+          "Monthly vendor statement reconciliation",
+          "Credit and adjustment validation",
+          "Exception tracking and resolution logging",
+        ],
+      },
+      { type: "h2", text: "Results Our Clients See" },
+      {
+        type: "list",
+        items: [
+          "100% visibility across vendor transactions",
+          "Near-zero duplicate payments",
+          "Elimination of ghost vendor risk",
+          "Faster month-end closing and cleaner audits",
+        ],
+      },
+      { type: "h2", text: "Why Choose Us" },
+      {
+        type: "list",
+        items: [
+          "Expertise in CRE accounting and AP automation",
+          "Centralized vendor master management",
+          "AI-driven fraud detection and prevention",
+          "Full audit trails and compliance documentation",
+        ],
+      },
+      { type: "h2", text: "Final Thought" },
+      {
+        type: "p",
+        text: "Duplicate payments and AP fraud don’t stem from negligence—they result from gaps in process and technology. Our structured controls close those gaps to ensure every dollar is verified before release.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How does automation prevent duplicate payments?",
+        answer:
+          "Automated invoice validation cross-checks vendor, amount, and reference numbers to detect and block duplicates before approval.",
+      },
+      {
+        question: "What controls prevent AP fraud?",
+        answer:
+          "Segregation of duties, vendor verification, dual payment authorization, and AI-driven anomaly detection reduce internal and external fraud risks.",
+      },
+      {
+        question:
+          "Can these AP controls integrate with my current accounting system?",
+        answer:
+          "Yes, our AP automation framework integrates seamlessly with major property and accounting platforms to maintain accuracy across all entities.",
+      },
+    ],
+    cta: {
+      title: "Ready to Strengthen Your AP Controls?",
+      description:
+        "Protect your portfolio from hidden losses with real-time automation and oversight. Book a Free AP Risk Assessment to see how we prevent duplicate payments and fraud in real estate accounting.",
+      buttonText: "Book a Free Assessment",
+      buttonLink: "/contact",
     },
-    { "type": "h2", "text": "The Hidden Cost of Duplicate Payments" },
-    {
-      "type": "p",
-      "text": "Even well-run teams lose money to duplicates caused by manual entry, missing references, or multi-entity confusion. Industry data shows over 0.5% of total AP spend leaks annually to duplicates and unrecovered payments."
-    },
-    { "type": "h2", "text": "Step 1: Smart Invoice Capture and Validation" },
-    {
-      "type": "list",
-      "items": [
-        "Automated OCR invoice reading",
-        "Matching vendor name, invoice number, and amount",
-        "Instant duplicate detection before approval",
-        "Error flagging and review notifications"
-      ]
-    },
-    { "type": "h2", "text": "Step 2: Vendor Master Controls" },
-    {
-      "type": "list",
-      "items": [
-        "Centralized vendor master file with restricted access",
-        "Tax ID and W-9 verification",
-        "Bank account validation and micro-deposit testing",
-        "Dual authorization for vendor edits"
-      ]
-    },
-    { "type": "h2", "text": "Step 3: Purchase Order and Contract Matching" },
-    {
-      "type": "p",
-      "text": "Our 3-way match ensures every payment is backed by a valid PO, verified invoice, and confirmed service receipt before release."
-    },
-    { "type": "h2", "text": "Step 4: Segregation of Duties and Role Permissions" },
-    {
-      "type": "p",
-      "text": "We separate duties across roles to prevent internal fraud. Invoice entry, approval, and payment are handled by different personnel with role-based permissions."
-    },
-    { "type": "h2", "text": "Step 5: AI-Powered Fraud Detection" },
-    {
-      "type": "p",
-      "text": "Machine learning identifies anomalies such as duplicate vendors, sudden payment spikes, and banking detail changes for real-time fraud alerts."
-    },
-    { "type": "h2", "text": "Step 6: Payment Approval with Dual Authorization" },
-    {
-      "type": "list",
-      "items": [
-        "Threshold-based payment authorization",
-        "Digital approval tracking",
-        "Secure verification codes and audit trail"
-      ]
-    },
-    { "type": "h2", "text": "Step 7: Post-Payment Audits and Vendor Reconciliation" },
-    {
-      "type": "list",
-      "items": [
-        "Monthly vendor statement reconciliation",
-        "Credit and adjustment validation",
-        "Exception tracking and resolution logging"
-      ]
-    },
-    { "type": "h2", "text": "Results Our Clients See" },
-    {
-      "type": "list",
-      "items": [
-        "100% visibility across vendor transactions",
-        "Near-zero duplicate payments",
-        "Elimination of ghost vendor risk",
-        "Faster month-end closing and cleaner audits"
-      ]
-    },
-    { "type": "h2", "text": "Why Choose Us" },
-    {
-      "type": "list",
-      "items": [
-        "Expertise in CRE accounting and AP automation",
-        "Centralized vendor master management",
-        "AI-driven fraud detection and prevention",
-        "Full audit trails and compliance documentation"
-      ]
-    },
-    { "type": "h2", "text": "Final Thought" },
-    {
-      "type": "p",
-      "text": "Duplicate payments and AP fraud don’t stem from negligence—they result from gaps in process and technology. Our structured controls close those gaps to ensure every dollar is verified before release."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "How does automation prevent duplicate payments?",
-      "answer": "Automated invoice validation cross-checks vendor, amount, and reference numbers to detect and block duplicates before approval."
-    },
-    {
-      "question": "What controls prevent AP fraud?",
-      "answer": "Segregation of duties, vendor verification, dual payment authorization, and AI-driven anomaly detection reduce internal and external fraud risks."
-    },
-    {
-      "question": "Can these AP controls integrate with my current accounting system?",
-      "answer": "Yes, our AP automation framework integrates seamlessly with major property and accounting platforms to maintain accuracy across all entities."
-    }
-  ],
-  "cta": {
-    "title": "Ready to Strengthen Your AP Controls?",
-    "description": "Protect your portfolio from hidden losses with real-time automation and oversight. Book a Free AP Risk Assessment to see how we prevent duplicate payments and fraud in real estate accounting.",
-    "buttonText": "Book a Free Assessment",
-    "buttonLink": "/contact"
   },
-}
-
+  {
+    id: 11,
+    title: "Lease Abstracting at Scale: Accuracy Techniques We Use",
+    date: "November 3, 2025",
+    readTime: "9 min read",
+    category: "Lease Administration",
+    tags: ["Lease Abstracting", "Data Quality", "Real Estate Accounting"],
+    content: [
+      {
+        type: "p",
+        text: "Scaling lease abstracting across a large commercial real estate portfolio requires more than careful reading. It requires a repeatable operating system that converts legal language into clean, decision ready data. In this article we share the accuracy techniques we use to deliver consistent abstracts for property accounting, CAM reconciliation, asset management, and transaction teams.",
+      },
+      {
+        type: "h2",
+        text: "What Lease Abstracting Looks Like at Scale",
+      },
+      {
+        type: "p",
+        text: "A single lease can run hundreds of pages with exhibits, amendments, and notices. Multiply that by dozens or hundreds of tenants across office, retail, and industrial assets and the risk of missed clauses grows quickly. Our approach treats abstracting as a controlled data production process with standards, checkpoints, and measurable outcomes.",
+      },
+      {
+        type: "h2",
+        text: "The Accuracy Principles We Follow",
+      },
+      {
+        type: "list",
+        items: [
+          "Source of truth first. Every data point is traceable to a specific page and clause reference.",
+          "Two person confirmation. One preparer extracts and a second reviewer verifies with a documented checklist.",
+          "Structured fields not free text. We normalize clause language into standard fields to support accounting and reporting.",
+          "Change awareness. Amendments are treated as first class records, not footnotes.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 1: Standardized Clause Taxonomy",
+      },
+      {
+        type: "p",
+        text: "We start with a clause taxonomy tailored to commercial real estate. It defines required fields for rent, term, options, recoveries, caps, exclusions, gross up policy, base year or expense stop, operating expense definitions, audit rights, assignment and subletting, co tenancy, exclusive use, percentage rent, signage, parking, and insurance.",
+      },
+      {
+        type: "list",
+        items: [
+          "Required versus optional fields by asset type",
+          "Data types and allowed values for each field",
+          "Business rules for conditional visibility such as percentage rent only for retail leases",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 2: Dual Blind Abstracting",
+      },
+      {
+        type: "p",
+        text: "For critical fields we use dual blind abstracting. Two analysts abstract the same document without seeing each other’s work. A resolver compares differences and assigns the final value with citations. This approach is reserved for high impact items such as term, rent schedule, base year or expense stop, gross up method, caps, exclusions, and renewal options.",
+      },
+      {
+        type: "h2",
+        text: "Step 3: Normalization and Controlled Vocabulary",
+      },
+      {
+        type: "p",
+        text: "Leases describe the same concept in many ways. We normalize language into a controlled vocabulary so that reports and models behave consistently. Examples include converting free form rent increases into percentage or fixed step fields and mapping operating expense language to our recoveries schema.",
+      },
+      {
+        type: "list",
+        items: [
+          "Rent increases stored as percent, fixed amount, or index linked",
+          "Recoverable expense categories mapped to a standard chart",
+          "Exclusions coded with yes or no flags plus notes",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 4: Source Citations and Page Anchors",
+      },
+      {
+        type: "p",
+        text: "Every abstracted value carries a citation to the lease page and section. Analysts can click back to the exact paragraph to validate assumptions. This speeds audits, accelerates dispute resolution, and builds trust with accounting and legal teams.",
+      },
+      {
+        type: "h2",
+        text: "Step 5: Amendment Tracking and Version Control",
+      },
+      {
+        type: "p",
+        text: "Amendments change the math. We maintain a lineage for each field that shows the original value, the amendment that modified it, and the current value in force. The system prevents silent overrides and ensures downstream users always see the latest truth.",
+      },
+      {
+        type: "h2",
+        text: "Step 6: Structured Rent and Recovery Schedules",
+      },
+      {
+        type: "p",
+        text: "Rent tables and recovery logic are stored as structured schedules rather than text blocks. This makes the data immediately useful for invoicing, escalation, and CAM reconciliation. Schedules include start date, end date, rate, method, and calculation notes.",
+      },
+      {
+        type: "h2",
+        text: "Step 7: Checks for Accounting Impact",
+      },
+      {
+        type: "p",
+        text: "Certain clauses directly affect property accounting and tenant billing. We flag them during abstracting so they do not get missed during setup or renewal.",
+      },
+      {
+        type: "list",
+        items: [
+          "Base year or expense stop alignment",
+          "Gross up policy and stabilization level",
+          "Operating expense exclusions and capital treatment",
+          "Caps on controllable expenses",
+          "Audit rights and look back windows",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 8: Quality Assurance Sampling",
+      },
+      {
+        type: "p",
+        text: "Beyond the two person review, we run statistical sampling on completed batches. A quality lead re abstracts a subset and scores each file across accuracy, completeness, and citation quality. Findings feed coaching and playbook updates.",
+      },
+      {
+        type: "h2",
+        text: "Step 9: Automation Where It Helps and Human Review Where It Matters",
+      },
+      {
+        type: "p",
+        text: "We use document parsing and optical character recognition to accelerate intake. Automation proposes values for dates, party names, addresses, term, and schedules. Human reviewers validate all fields that affect money, risk, or tenant relations. The balance of speed and judgment keeps costs low while quality stays high.",
+      },
+      {
+        type: "h2",
+        text: "Step 10: Acceptance Criteria and Service Levels",
+      },
+      {
+        type: "p",
+        text: "A batch is not complete until it meets our acceptance criteria. Required fields must be filled, citations must be present, and reviewer sign off must be recorded. We also track service levels for turnaround time, revision time, and rework rate to ensure predictability.",
+      },
+      {
+        type: "h2",
+        text: "What This Delivers for Owners and Managers",
+      },
+      {
+        type: "list",
+        items: [
+          "Faster onboarding of leases into accounting systems",
+          "Cleaner CAM reconciliation with fewer tenant disputes",
+          "Accurate rent escalations and options management",
+          "Portfolio visibility for renewals, co tenancy, and exclusives",
+          "Audit ready documentation with clause level citations",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Common Errors We Avoid",
+      },
+      {
+        type: "list",
+        items: [
+          "Treating the base year or expense stop as fixed despite amendments",
+          "Missing caps on controllable expenses",
+          "Mixing gross up policies across buildings without documentation",
+          "Losing track of option windows and notice dates",
+          "Storing critical terms as free text that cannot drive billing",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Why Our Method Works",
+      },
+      {
+        type: "p",
+        text: "Accuracy at scale comes from design. Standards define what to capture. Two person confirmation ensures it is correct. Citations provide proof. Version control prevents drift. Sampling and metrics drive continuous improvement. Together these practices convert complex documents into dependable data for daily use.",
+      },
+      {
+        type: "h2",
+        text: "How We Start New Portfolios",
+      },
+      {
+        type: "list",
+        items: [
+          "Discovery session to confirm reporting needs and data fields",
+          "Pilot on a small set of leases to finalize taxonomy and outputs",
+          "Scale up with trained analysts and a review pod",
+          "Weekly scorecards with accuracy and turnaround metrics",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Final Thought",
+      },
+      {
+        type: "p",
+        text: "Lease abstracting is not a reading task. It is a data production process that supports accounting, operations, and strategy. With the right structure, technology, and review discipline, portfolios get clean data that teams trust and use.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which fields receive dual blind abstracting?",
+        answer:
+          "We apply dual blind abstracting to high impact items such as term dates, rent schedule, base year or expense stop, gross up method, caps, exclusions, percentage rent, and renewal or termination options.",
+      },
+      {
+        question: "How do you keep abstracts aligned with amendments?",
+        answer:
+          "Each field maintains lineage. We store the original value, the amendment that changed it, the effective date, and the current value. Version control prevents silent overrides.",
+      },
+      {
+        question:
+          "Can your abstracts feed our property accounting or CRM system?",
+        answer:
+          "Yes. We export structured data in agreed formats so you can sync rent tables, recoveries rules, and key dates into your systems without manual re entry.",
+      },
+    ],
+    cta: {
+      title: "Ready to Scale Lease Abstracting With Confidence",
+      description:
+        "Get consistent, citation backed abstracts that accounting and asset teams can trust. Ask for a sample abstract and a scorecard from a recent portfolio.",
+      buttonText: "Request a Sample",
+      buttonLink: "/contact",
+    },
+  },
 ];

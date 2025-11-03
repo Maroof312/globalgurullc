@@ -21,6 +21,8 @@ import ARPM from '../../assets/images/18-10.avif?w=300;600;900&format=avif&as=sr
 import ARPMFallback from '../../assets/images/18-10.avif?w=600';
 import APCRE from '../../assets/images/25-10.avif?w=300;600;900&format=avif&as=srcset';
 import APCREFallback from '../../assets/images/25-10.avif?w=600';
+import LeaseAdmin from '../../assets/images/3-11.avif?w=300;600;900&format=avif&as=srcset';
+import LeaseAdminFallback from '../../assets/images/3-11.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -77,6 +79,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "How We Prevent Duplicate Payments and Fraud in CRE AP",
       date: "October 25, 2025",
       image: { srcset: APCRE, fallback: APCREFallback },
+    },
+    {
+      id: 11,
+      title: "Lease Abstracting at Scale: Accuracy Techniques We Use",
+      date: "November 3, 2025",
+      image: { srcset: LeaseAdmin, fallback: LeaseAdminFallback },
     },
   ], []);
 
