@@ -23,6 +23,8 @@ import APCRE from '../../assets/images/25-10.avif?w=300;600;900&format=avif&as=s
 import APCREFallback from '../../assets/images/25-10.avif?w=600';
 import LeaseAdmin from '../../assets/images/3-11.avif?w=300;600;900&format=avif&as=srcset';
 import LeaseAdminFallback from '../../assets/images/3-11.avif?w=600';
+import PropertyAcc from '../../assets/images/11-11.avif?w=300;600;900&format=avif&as=srcset';
+import PropertAccFallback from '../../assets/images/11-11.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -85,6 +87,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "Lease Abstracting at Scale: Accuracy Techniques We Use",
       date: "November 3, 2025",
       image: { srcset: LeaseAdmin, fallback: LeaseAdminFallback },
+    },
+    {
+      id: 12,
+      title: "Property-Level Financials Owners and Lenders Trust",
+      date: "November 11, 2025",
+      image: { srcset: PropertyAcc, fallback: PropertAccFallback },
     },
   ], []);
 

@@ -1544,4 +1544,222 @@ export const blogData = [
       buttonLink: "/contact",
     },
   },
+  {
+    id: 12,
+    title: "Property-Level Financials Owners and Lenders Trust",
+    date: "November 11, 2025",
+    readTime: "9 min read",
+    category: "Property Accounting",
+    tags: ["Owner Reporting", "Lender Reporting", "Financial Controls"],
+    content: [
+      {
+        type: "p",
+        text: "Reliable property level financials are the foundation of smart decisions and healthy lender relationships. Owners want confidence in net operating income, real cash position, and working capital. Lenders want consistency, covenant visibility, and timely draw readiness. This article explains the operating system we use to deliver financial statements that both owners and lenders trust.",
+      },
+      {
+        type: "h2",
+        text: "What Owners and Lenders Expect",
+      },
+      {
+        type: "list",
+        items: [
+          "Timely month close with a predictable calendar",
+          "Accurate income statement, balance sheet, and statement of cash flows",
+          "Clear bridges from budget to actual and from prior period to current period",
+          "Covenant and ratio tracking such as DSCR and debt yield",
+          "Complete support packs including bank reconciliations, AR and AP aging, rent roll, CAM status, and reserve activity",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Principles Behind Trusted Financials",
+      },
+      {
+        type: "list",
+        items: [
+          "Standards before speed. A clear chart of accounts and posting rules prevent rework.",
+          "Evidence for every balance. Reconciliations anchor the numbers.",
+          "Separation of duties. The person who prepares is not the person who approves.",
+          "Narrative with the numbers. Variance notes explain the story in plain language.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 1: Design a Property Chart of Accounts That Mirrors Reality",
+      },
+      {
+        type: "p",
+        text: "We create a chart that aligns with industry reporting and lender templates. Revenue lines separate base rent, percentage rent, recoveries, and other income. Expenses split controllable items from non controllable items and isolate utilities, repairs and maintenance, janitorial, security, insurance, and property taxes. Capital items flow to fixed assets with clear tracking by project.",
+      },
+      {
+        type: "h2",
+        text: "Step 2: Build a Close Calendar Owners Can Rely On",
+      },
+      {
+        type: "p",
+        text: "The calendar sets daily tasks and sign offs from day zero to day ten. Milestones include cash posting, revenue recognition, accruals, intercompany entries, bank reconciliations, review, and release. The calendar is visible to asset managers so timing is never a surprise.",
+      },
+      {
+        type: "h2",
+        text: "Step 3: Bank Reconciliations and Cash Proof",
+      },
+      {
+        type: "p",
+        text: "Every property bank account is reconciled to the penny with cleared items listed and stale items investigated. Restricted accounts for taxes, insurance, and lender reserves show separate schedules so owners and lenders can see available cash and committed cash at a glance.",
+      },
+      {
+        type: "h2",
+        text: "Step 4: Revenue Accuracy and Lease to Ledger Alignment",
+      },
+      {
+        type: "p",
+        text: "Rent schedules originate from validated lease abstracts. We verify base rent, escalation timing, free rent periods, percentage rent, and recovery logic. Straight line rent is calculated where required and deferred balances are reconciled each close. Any manual bill is flagged with a note that references the lease clause.",
+      },
+      {
+        type: "h2",
+        text: "Step 5: Expense Coding, Accruals, and Cutoff",
+      },
+      {
+        type: "p",
+        text: "Invoices are coded to the right property and account with approval trails. We accrue for utilities, property tax, insurance, and service contracts using meter reads, schedules, and known rates. The cutoff rule is simple. If the service happened in this period, we record it in this period.",
+      },
+      {
+        type: "h2",
+        text: "Step 6: CAM and Recoveries That Tenants Accept",
+      },
+      {
+        type: "p",
+        text: "Recoveries depend on clean underlying data. We maintain exclusions, caps, gross up policy, and expense stop or base year inside a controlled model. Monthly true ups post to the ledger, and reconciliation status is summarized in the owner pack so everyone can see progress toward collection.",
+      },
+      {
+        type: "h2",
+        text: "Step 7: Capital Projects and Draw Readiness",
+      },
+      {
+        type: "p",
+        text: "Capital projects track budget, commitments, approved change orders, and spend to date with vendor invoices scanned to each line. Draw packages include lien waivers, pay apps, and proof of work. Lenders receive a clean binder that moves fast through review.",
+      },
+      {
+        type: "h2",
+        text: "Step 8: Owner Pack Structure",
+      },
+      {
+        type: "list",
+        items: [
+          "Executive summary with highlights, risks, and actions",
+          "Income statement with budget and prior period columns plus a variance bridge",
+          "Balance sheet with key reconciliations noted",
+          "Statement of cash flows with operating, investing, and financing sections",
+          "AR aging with top ten past due accounts and actions",
+          "AP aging with large or old items flagged",
+          "Rent roll by suite with lease events for the next six months",
+          "Bank reconciliation summaries and reserve schedules",
+          "CAM and recovery status and expected cash timing",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step 9: Lender Reporting and Covenants",
+      },
+      {
+        type: "p",
+        text: "We deliver lender ready statements that map to the credit agreement. The pack includes DSCR and debt yield, rent roll, trailing twelve month results, capital spend, and reserve activity. If a covenant is at risk we flag it early and include a forecast with mitigation steps.",
+      },
+      {
+        type: "h2",
+        text: "Step 10: Quality Review and Sign Off",
+      },
+      {
+        type: "p",
+        text: "A second preparer challenge is built into the close. Reviewers test reconciliations, scan journals for unusual entries, confirm roll forwards for fixed assets and deposits, and read the variance notes. Nothing releases without reviewer sign off and a final checklist stored with the workpapers.",
+      },
+      {
+        type: "h2",
+        text: "Analytics That Turn Numbers Into Insight",
+      },
+      {
+        type: "list",
+        items: [
+          "NOI bridge that quantifies rate and volume effects",
+          "Collection metrics such as rent collection rate and DSO",
+          "Delinquency trend by tenant and by center",
+          "Expense run rate and controllable variance",
+          "Leasing pipeline impact on revenue and cash",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Controls That Protect Confidence",
+      },
+      {
+        type: "list",
+        items: [
+          "User roles that separate posting, approval, and payment",
+          "Automated duplicate detection on invoices and vendors",
+          "Close checklist time stamps for accountability",
+          "Document retention for audits and lender exams",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Results Owners and Lenders See",
+      },
+      {
+        type: "list",
+        items: [
+          "On time close with fewer post close adjustments",
+          "Clear cash view including restricted balances and reserves",
+          "Faster lender approvals for draws and consents",
+          "Reduced disputes on CAM and recoveries",
+          "Decision ready reporting for asset strategy",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Getting Started",
+      },
+      {
+        type: "list",
+        items: [
+          "Discovery session to map lender and owner requirements",
+          "Chart of accounts alignment and reporting templates",
+          "Thirty day pilot for one property to validate process",
+          "Rollout with weekly scorecards and continuous improvement",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Final Thought",
+      },
+      {
+        type: "p",
+        text: "Trust is earned through design, discipline, and clarity. When your chart, close, reconciliations, and narratives work together, owners see the business clearly and lenders approve with confidence. That is what property level financials should deliver every month.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which statements are included in your standard owner pack",
+        answer:
+          "Income statement, balance sheet, statement of cash flows, along with AR and AP aging, rent roll, bank reconciliation summaries, reserve schedules, and a variance narrative.",
+      },
+      {
+        question: "How do you support lender reporting and covenants",
+        answer:
+          "We map reports to the credit agreement, calculate DSCR and debt yield, include trailing twelve month results, track reserves, and alert owners early if a covenant approaches a threshold.",
+      },
+      {
+        question:
+          "Can you integrate with our existing property management system",
+        answer:
+          "Yes. We connect to leading property and accounting platforms to pull transactions, push journals, and standardize reports without manual re entry.",
+      },
+    ],
+    cta: {
+      title: "Ready To Deliver Financials Owners and Lenders Trust",
+      description:
+        "Get a sample owner pack and a lender template mapped to your credit agreement. See how a predictable close and clear reconciliations build confidence.",
+      buttonText: "Request a Sample Pack",
+      buttonLink: "/contact",
+    },
+  },
 ];
