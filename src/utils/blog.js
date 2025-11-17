@@ -65,6 +65,8 @@ import LeaseAdmin from '../assets/images/3-11.avif?w=300;600;900&format=avif&as=
 import LeaseAdminFallback from '../assets/images/3-11.avif?w=600';
 import PropertyAcc from '../assets/images/11-11.avif?w=300;600;900&format=avif&as=srcset';
 import PropertAccFallback from '../assets/images/11-11.avif?w=600';
+import AccBook from '../assets/images/17-11.avif?w=300;600;900&format=avif&as=srcset';
+import AccBookFallback from '../assets/images/17-11.avif?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
@@ -82,6 +84,8 @@ const PER_POST_OVERRIDES = {
   5: { srcset: CAMError, fallback: CAMErrorFallback },
   6: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
   12: { srcset: PropertyAcc, fallback: PropertAccFallback },
+  13: { srcset: AccBook, fallback: AccBookFallback },
+
 };
 
 // Prefer explicit per-post image; else category fallback; else final default

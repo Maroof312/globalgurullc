@@ -25,6 +25,8 @@ import LeaseAdmin from '../../assets/images/3-11.avif?w=300;600;900&format=avif&
 import LeaseAdminFallback from '../../assets/images/3-11.avif?w=600';
 import PropertyAcc from '../../assets/images/11-11.avif?w=300;600;900&format=avif&as=srcset';
 import PropertAccFallback from '../../assets/images/11-11.avif?w=600';
+import AccBook from '../../assets/images/17-11.avif?w=300;600;900&format=avif&as=srcset';
+import AccBookFallback from '../../assets/images/17-11.avif?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -93,6 +95,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "Property-Level Financials Owners and Lenders Trust",
       date: "November 11, 2025",
       image: { srcset: PropertyAcc, fallback: PropertAccFallback },
+    },
+    {
+      id: 13,
+      title: "Outsourced Real Estate Bookkeeping: Controls, Oversight, and Transparency",
+      date: "November 17, 2025",
+      image: { srcset: AccBook, fallback: AccBookFallback },
     },
   ], []);
 

@@ -1762,4 +1762,213 @@ export const blogData = [
       buttonLink: "/contact",
     },
   },
+  {
+    id: 13,
+    title:
+      "Outsourced Real Estate Bookkeeping: Controls, Oversight, and Transparency",
+    date: "November 17, 2025",
+    readTime: "9 min read",
+    category: "Property Accounting",
+    tags: ["Bookkeeping", "Outsourcing", "Real Estate Accounting"],
+    content: [
+      {
+        type: "p",
+        text: "Outsourced real estate bookkeeping should not feel like a black box. Owners and asset managers still carry the responsibility for accurate books, lender reporting, and tax readiness, even when day to day posting lives with a partner. The question is simple. Can you see and trust the numbers that represent your portfolio. In this article we explain the controls, oversight, and transparency practices we use so clients always know what is happening inside their books.",
+      },
+      {
+        type: "h2",
+        text: "Why Owners Choose Outsourced Bookkeeping",
+      },
+      {
+        type: "p",
+        text: "Real estate teams turn to outsourced bookkeeping for scale, consistency, and access to trained property accountants without building a full internal department. Done right, it improves close speed, reduces turnover risk, and standardizes processes across properties. Done poorly, it creates new risks such as lack of visibility, inconsistent posting, and surprises at audit or refinance time. The difference comes down to controls and communication.",
+      },
+      {
+        type: "h2",
+        text: "The Three Pillars of Trusted Outsourced Books",
+      },
+      {
+        type: "list",
+        items: [
+          "Controls that govern how transactions are posted and reviewed",
+          "Oversight that keeps roles and responsibilities clear between client and provider",
+          "Transparency that lets owners and asset managers see status without chasing updates",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Control One: Standard Chart of Accounts for Real Estate",
+      },
+      {
+        type: "p",
+        text: "We begin every engagement with a standard chart of accounts aligned to real estate reporting. Base rent, percentage rent, recoveries, and other income have separate lines. Controllable and non controllable expenses are clearly separated. Utilities, repairs and maintenance, janitorial, landscaping, security, insurance, and property tax have dedicated accounts. Capital expenditures flow to fixed assets with project level tags. This structure avoids guesswork and keeps properties comparable.",
+      },
+      {
+        type: "h2",
+        text: "Control Two: Documented Close Process",
+      },
+      {
+        type: "p",
+        text: "A written close calendar defines what happens each period, who does it, and when it is due. Tasks include cash posting, bank reconciliations, revenue recognition, accruals, intercompany entries, depreciation, and review. Each task has an owner, a due date, and a checklist. Clients can see progress and know when financials will be ready without sending follow up messages.",
+      },
+      {
+        type: "h2",
+        text: "Control Three: Bank Reconciliations and Cash Proof",
+      },
+      {
+        type: "p",
+        text: "Every operating and reserve account is reconciled to the penny each period. We match cleared transactions, list outstanding checks and deposits in transit, and investigate stale items. Restricted cash for taxes, insurance, and lender reserves is shown separately so owners always know what is truly available. Reconciliation workpapers are part of the permanent record, not an optional extra.",
+      },
+      {
+        type: "h2",
+        text: "Control Four: Lease to Ledger Alignment",
+      },
+      {
+        type: "p",
+        text: "Bookkeeping for real estate is only as good as the lease data behind it. We connect bookkeeping to validated lease abstracts so base rent, escalations, abatements, percentage rent, and recoveries all follow the contract. Any manual rent adjustment is documented with a note that ties back to the lease clause or owner instruction. This prevents silent changes that can confuse tenants and lenders later.",
+      },
+      {
+        type: "h2",
+        text: "Control Five: AR and AP Discipline",
+      },
+      {
+        type: "p",
+        text: "Accounts receivable and accounts payable are two of the most sensitive areas for owners. We maintain tenant ledgers with clear aging, record deposits and write offs under defined rules, and provide owner ready AR reports. On the AP side, invoices are coded to the correct property and account, routed for approval, and scheduled for payment according to owner cash priorities. Duplicate detection, vendor verification, and approval thresholds protect both cash and vendor relationships.",
+      },
+      {
+        type: "h2",
+        text: "Control Six: Segregation of Duties",
+      },
+      {
+        type: "p",
+        text: "No single person should control posting, approval, and payment. In our model the person who records a transaction is different from the person who approves it, and different again from the person who initiates payment. User roles in the accounting system enforce these separations. This reduces the risk of error and fraud and gives owners a clear map of who can do what.",
+      },
+      {
+        type: "h2",
+        text: "Oversight One: Clear Role Definitions Between Client and Provider",
+      },
+      {
+        type: "p",
+        text: "Successful outsourced bookkeeping depends on knowing where your responsibility ends and ours begins. We define a responsibility matrix that covers bank access, vendor setup, lease approvals, write off rules, capital versus expense decisions, and reporting formats. Owners know exactly which approvals we need from them and which tasks we complete autonomously under policy.",
+      },
+      {
+        type: "h2",
+        text: "Oversight Two: Monthly Review Meetings and Variance Walkthroughs",
+      },
+      {
+        type: "p",
+        text: "Numbers are easier to trust when someone walks you through the story behind them. After close, we hold review sessions with owners or asset managers. We walk through income statement, balance sheet, cash position, and key variances compared to budget and prior period. Questions and decisions from that meeting are documented and feed into the next period so learning compounds over time.",
+      },
+      {
+        type: "h2",
+        text: "Oversight Three: Policy Libraries and Change Logs",
+      },
+      {
+        type: "p",
+        text: "We maintain a policy library for each client that covers coding rules, capitalization thresholds, bad debt policy, management fee treatment, and CAM treatment. When a policy changes we record the reason, the date, and the person who approved it. That change log protects both the owner and the bookkeeping team when questions arise in future periods or during audit.",
+      },
+      {
+        type: "h2",
+        text: "Transparency One: Always On Reporting Access",
+      },
+      {
+        type: "p",
+        text: "Clients should not have to request basic reports. We provide portals or scheduled report packs where owners and managers can see trial balance, income statement, balance sheet, AR aging, AP aging, and bank reconciliation summaries any time. Reports use the same layout each period so users do not need to relearn the structure.",
+      },
+      {
+        type: "h2",
+        text: "Transparency Two: Workpaper and Backup Availability",
+      },
+      {
+        type: "p",
+        text: "Behind every number we keep the evidence. Invoices, bank statements, reconciliations, lease abstracts, and calculation files are stored in an organized structure by property and period. When lenders, auditors, or partners ask for support, owners can respond quickly because the backup already exists and is easy to retrieve.",
+      },
+      {
+        type: "h2",
+        text: "Transparency Three: Service Level and Quality Metrics",
+      },
+      {
+        type: "p",
+        text: "We measure our own performance and share it. Metrics include on time close rate, number of post close adjustments, reconciliation completion, response time to owner questions, and exception items still open. These metrics give owners an objective view of how well the outsourced bookkeeping model is working and where it is improving.",
+      },
+      {
+        type: "h2",
+        text: "How We Start a New Bookkeeping Engagement",
+      },
+      {
+        type: "list",
+        items: [
+          "Discovery session to understand properties, systems, lenders, and reporting needs",
+          "Chart of accounts and reporting template alignment",
+          "Cutover plan that covers prior period balances, open AR and AP, and bank reconciliations",
+          "Pilot period where we run books in parallel and refine rules before full transition",
+          "Move to steady state with a defined close calendar and review cadence",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Results Owners Typically See",
+      },
+      {
+        type: "list",
+        items: [
+          "More consistent property level financials across the portfolio",
+          "Shorter close cycles and fewer surprises at year end",
+          "Better readiness for refinancing, sale, or capital raises",
+          "Clearer view of cash, AR, AP, and CAM status",
+          "Time freed up for strategy and leasing rather than manual bookkeeping checks",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Final Thought",
+      },
+      {
+        type: "p",
+        text: "Outsourced real estate bookkeeping should feel like an extension of your internal team, not a mystery. With the right controls, oversight, and transparency, owners gain both efficiency and confidence. The books stay accurate, the process stays predictable, and leadership can focus on growing asset value instead of chasing transaction details.",
+      },
+    ],
+    faqs: [
+      {
+        question:
+          "What parts of bookkeeping do you usually handle for real estate clients",
+        answer:
+          "We typically manage day to day posting, bank reconciliations, AR and AP processing, period close, and preparation of property level financials. Owners retain control over approvals, major policy choices, and strategic decisions.",
+      },
+      {
+        question: "How do we keep visibility if bookkeeping is outsourced",
+        answer:
+          "You receive consistent reporting packs, portal access to key reports, scheduled review meetings, and access to workpapers. You can see status at property and portfolio level without logging into multiple systems.",
+      },
+      {
+        question:
+          "Can you work inside our existing accounting or property management system",
+        answer:
+          "Yes. Our team can operate inside your current platform or help you migrate to a system that better fits your reporting needs. The goal is to keep data in one place and reduce duplicate entry.",
+      },
+    ],
+    cta: {
+      title: "Ready To Bring Structure and Transparency to Your Bookkeeping",
+      description:
+        "If you want outsourced real estate bookkeeping with clear controls and full visibility, our team can help. Request a sample close pack and a walk through of our control framework.",
+      buttonText: "Request a Sample Close Pack",
+      buttonLink: "/contact",
+    },
+    meta: {
+      description:
+        "Learn how outsourced real estate bookkeeping can stay controlled, transparent, and audit ready. See the controls, oversight, and reporting practices that keep owners confident in their property level financials.",
+      keywords: [
+        "outsourced real estate bookkeeping",
+        "property accounting outsourcing",
+        "real estate bookkeeping controls",
+        "owner reporting",
+        "lender ready financials",
+        "bank reconciliations",
+        "lease to ledger alignment",
+        "real estate AR and AP",
+        "outsourced accounting",
+        "real estate financial transparency",
+      ],
+    },
+  },
 ];
