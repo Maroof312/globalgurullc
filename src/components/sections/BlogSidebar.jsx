@@ -27,6 +27,8 @@ import PropertyAcc from '../../assets/images/11-11.avif?w=300;600;900&format=avi
 import PropertAccFallback from '../../assets/images/11-11.avif?w=600';
 import AccBook from '../../assets/images/17-11.avif?w=300;600;900&format=avif&as=srcset';
 import AccBookFallback from '../../assets/images/17-11.avif?w=600';
+import CAMTrueUp from '../../assets/images/24-11.webp?w=300;600;900&format=webp&as=srcset';
+import CAMTrueUpFallback from '../../assets/images/24-11.webp?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
@@ -101,6 +103,12 @@ const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }
       title: "Outsourced Real Estate Bookkeeping: Controls, Oversight, and Transparency",
       date: "November 17, 2025",
       image: { srcset: AccBook, fallback: AccBookFallback },
+    },
+    {
+      id: 14,
+      title: "Year End CAM True Up: December Without Drama",
+      date: "November 24, 2025",
+      image: { srcset: CAMTrueUp, fallback: CAMTrueUpFallback },
     },
   ], []);
 

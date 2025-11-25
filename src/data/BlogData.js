@@ -1971,4 +1971,235 @@ export const blogData = [
       ],
     },
   },
+  {
+    id: 14,
+    title: "Year End CAM True Up: December Without Drama",
+    date: "November 24, 2025",
+    readTime: "9 min read",
+    category: "Property Management",
+    tags: ["CAM Reconciliation", "Year End Close", "Property Accounting"],
+    content: [
+      {
+        type: "p",
+        text: "For many property teams December means late nights, confused tenants, and last minute Common Area Maintenance reconciliations. The year end CAM true up can either be a calm finish to the year or the most stressful part of the calendar. The difference is not luck. It is a repeatable workflow that turns complex math and lease language into clear, trusted statements.",
+      },
+      {
+        type: "p",
+        text: "In this article we share the structure we use to deliver CAM true ups that owners, tenants, and lenders accept without drama. The goal is simple. No surprises, no rushed spreadsheets, and no long email fights over what counts as recoverable.",
+      },
+      {
+        type: "h2",
+        text: "Why Year End CAM Turns Messy",
+      },
+      {
+        type: "list",
+        items: [
+          "Lease data is incomplete or stored in many places",
+          "Base year or expense stop is not aligned to the last amendment",
+          "Gross up policy is unclear or different from one building to the next",
+          "Exclusions and caps are not tagged in the ledger early",
+          "Reconciliation starts late so there is no time to review or explain",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most disputes do not start with the numbers. They start with missing context and inconsistent policies. Fix those and the math becomes much easier.",
+      },
+      {
+        type: "h2",
+        text: "Step One: Clean CAM Data Before December",
+      },
+      {
+        type: "p",
+        text: "A calm December begins in the first quarter. We treat CAM data hygiene as an ongoing task, not a year end scramble. Each property has a clear mapping of general ledger accounts to recoverable categories. Capital items and ownership level costs are tagged so they never drift into tenant recovery math by accident.",
+      },
+      {
+        type: "list",
+        items: [
+          "Create a CAM coding matrix for every property",
+          "Mark excluded accounts and capital projects inside the ledger",
+          "Align vendor names across entities to avoid confusion",
+          "Review large or unusual entries every quarter instead of waiting for year end",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step Two: Lease to Ledger Alignment",
+      },
+      {
+        type: "p",
+        text: "The lease controls the math. That means a clean abstract is the first control for a smooth CAM true up. We confirm base year or expense stop, gross up method, caps on controllable expenses, audit rights, and any special clauses for anchor tenants. Every item has a citation back to the lease so questions can be answered quickly.",
+      },
+      {
+        type: "list",
+        items: [
+          "Validate base year or expense stop for each tenant and update if amendments changed the stop",
+          "Confirm gross up policy for variable expenses and document the occupancy level you will use",
+          "List all exclusions for each asset and map them to ledger accounts",
+          "Identify caps and special treatment for major tenants",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step Three: Stabilized Policy Across the Portfolio",
+      },
+      {
+        type: "p",
+        text: "Where leases allow choice, policy should be consistent by portfolio. We work with owners to set a standard gross up level, a standard rule for capital versus operating treatment, and a standard approach to management fees. When tenants in different buildings see very different methods without a clear reason, they question the fairness. When the story is consistent, they relax.",
+      },
+      {
+        type: "h2",
+        text: "Step Four: Build the CAM Model Before the Rush",
+      },
+      {
+        type: "p",
+        text: "We do not wait for December to design workbooks or templates. Each property has a tested CAM model that links to the ledger, applies gross up, respects caps, and allocates costs to tenants based on the lease rules. The model uses locked formulas and a simple input sheet for the year specific values such as occupancy and actual expenses.",
+      },
+      {
+        type: "list",
+        items: [
+          "Use a standard template for all assets with tabs for building summary, tenant schedules, and methods",
+          "Lock formulas and protect reference cells so structure cannot drift during a busy season",
+          "Add clear labels for gross up impact, exclusions, cap impact, and base year corrections",
+          "Create checks that confirm total recoveries equal allocated amounts and match the ledger tie out",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step Five: Run a Draft CAM True Up Early",
+      },
+      {
+        type: "p",
+        text: "We run preliminary CAM scenarios before the year closes, usually using eleven months of actuals plus a forecast for the last month. This early run highlights strange variances, missing invoices, or coding mistakes while there is still time to fix them. It also gives asset managers an early view of how tenants will react to the final reconciliation.",
+      },
+      {
+        type: "h2",
+        text: "Step Six: Variance Review That Tells a Story",
+      },
+      {
+        type: "p",
+        text: "Once actuals are final, we compare the current year to the prior year and to budget by major category. Our team does not just look for large changes. We classify variances by type such as occupancy effect, one time project, vendor change, exclusion correction, or cap impact. This lets us explain the movement in simple language to both owners and tenants.",
+      },
+      {
+        type: "list",
+        items: [
+          "Prepare a simple variance bridge by category",
+          "Document a one or two line explanation for each large change",
+          "Note which changes are structural policy items that will stay and which are one time events",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step Seven: Tenant Packs That Reduce Questions",
+      },
+      {
+        type: "p",
+        text: "The format of the tenant pack is a major factor in whether December feels calm or chaotic. Tenants are more likely to accept math they can follow on their own. We include a plain language cover note, a small variance table, and a methods sheet that defines base year, gross up, exclusions, caps, and the main reasons for change.",
+      },
+      {
+        type: "list",
+        items: [
+          "One page cover note that says what changed, which policy you used, and why it is fair for the building",
+          "Compact variance table that compares prior year to current year and shows the difference in dollars and per square foot",
+          "Methods page that defines key terms in everyday language and includes a small worked example for one tenant",
+          "Contact line and expected response time so tenants know how to ask questions",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step Eight: Internal Communication and Approvals",
+      },
+      {
+        type: "p",
+        text: "Before any tenant sees a reconciliation pack, internal teams review it. Property managers, asset managers, and accounting review the same model so there is one shared view. Questions are resolved at this stage, not in front of the tenant. We keep a log of decisions so next year does not start from zero.",
+      },
+      {
+        type: "h2",
+        text: "Step Nine: Timeline That Keeps December Calm",
+      },
+      {
+        type: "p",
+        text: "We work back from the date owners want invoices sent and build a realistic schedule for data finalization, model preparation, review, and tenant communication. Because the model and policies are ready before December, the calendar is easy to keep. The team knows exactly what happens each week.",
+      },
+      {
+        type: "list",
+        items: [
+          "Set the target mailing date for tenant packs",
+          "Block time for preliminary run, final run, and review",
+          "Confirm who signs off at each stage",
+          "Hold brief check in calls instead of long last minute meetings",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Step Ten: Lessons Learned for Next Year",
+      },
+      {
+        type: "p",
+        text: "After the cycle, we document what worked and what created friction. Maybe a certain clause caused repeated questions. Maybe a category needs a clearer policy. We update the CAM playbook, the coding matrix, and the tenant pack template so each December becomes easier than the last.",
+      },
+      {
+        type: "h2",
+        text: "Results Owners and Tenants See",
+      },
+      {
+        type: "list",
+        items: [
+          "Fewer tenant disputes and faster recovery of CAM under billings",
+          "Shorter time between final actuals and reconciliation mailings",
+          "Consistent policies across properties that are easier to defend",
+          "Better relationships with tenants who feel informed rather than surprised",
+          "Asset managers who start the new year focused on strategy instead of clean up",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Final Thought",
+      },
+      {
+        type: "p",
+        text: "Year end CAM does not have to mean year end drama. With clean data, clear policies, tested models, and tenant friendly communication, the true up becomes a simple extension of your regular accounting process. December can be the month where you confirm value rather than fight about it.",
+      },
+    ],
+    faqs: [
+      {
+        question: "When should we start preparing for year end CAM true up",
+        answer:
+          "We recommend treating CAM preparation as a year long process. Clean coding, lease alignment, and policy choices should be in place by the third quarter so December is about execution, not design.",
+      },
+      {
+        question: "How often should we update base year or expense stop data",
+        answer:
+          "You should confirm base year or expense stop whenever there is an expansion, contraction, or amendment that changes the economics of the lease. A review once a year during budgeting is also a good safeguard.",
+      },
+      {
+        question: "What is the best way to explain gross up to tenants",
+        answer:
+          "Use simple language and a small example. Explain that gross up normalizes variable expenses to a stable occupancy so different years and tenants are treated fairly. Show the effect on one category such as utilities so they can check the math.",
+      },
+    ],
+    cta: {
+      title: "Want December CAM Without Drama",
+      description:
+        "If you want calm year end CAM reconciliations and tenant packs that reduce questions, our team can help. Ask for a walk through of our CAM workflow and a sample tenant pack.",
+      buttonText: "Request a CAM Workflow Walk Through",
+      buttonLink: "/contact",
+    },
+    meta: {
+      description:
+        "Learn how to run year end CAM true ups without December drama. See the workflow, policies, and tenant communication structure that make CAM reconciliations faster, clearer, and easier to accept.",
+      keywords: [
+        "year end CAM true up",
+        "CAM reconciliation",
+        "property management accounting",
+        "base year and expense stop",
+        "gross up policy",
+        "CAM exclusions and caps",
+        "tenant reconciliation packs",
+        "commercial real estate CAM",
+        "year end close",
+        "property accounting workflow",
+      ],
+    },
+  },
 ];

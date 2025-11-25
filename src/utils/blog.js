@@ -67,6 +67,8 @@ import PropertyAcc from '../assets/images/11-11.avif?w=300;600;900&format=avif&a
 import PropertAccFallback from '../assets/images/11-11.avif?w=600';
 import AccBook from '../assets/images/17-11.avif?w=300;600;900&format=avif&as=srcset';
 import AccBookFallback from '../assets/images/17-11.avif?w=600';
+import CAMTrueUp from '../assets/images/24-11.webp?w=300;600;900&format=webp&as=srcset';
+import CAMTrueUpFallback from '../assets/images/24-11.webp?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
@@ -85,6 +87,7 @@ const PER_POST_OVERRIDES = {
   6: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
   12: { srcset: PropertyAcc, fallback: PropertAccFallback },
   13: { srcset: AccBook, fallback: AccBookFallback },
+  14: { srcset: CAMTrueUp, fallback: CAMTrueUpFallback },
 
 };
 
