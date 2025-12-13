@@ -89,7 +89,7 @@ const YardiConsulting = memo(() => {
               "@type": "ListItem",
               "position": 2,
               "name": "Yardi Consulation Services",
-              "item": "https://globalgurullc.com/yardi-consulation-services"
+              "item": "https://globalgurullc.com/yardi-consultation-services"
             }]
           }`}
         </script>

@@ -61,6 +61,27 @@ export default function Home() {
         />
         {/* Canonical Tag */}
         <link rel="canonical" href="https://globalgurullc.com/" />
+
+        {/* ORGANIZATION SCHEMA (JSON-LD) */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Global Guru",
+              "url": "https://globalgurullc.com/",
+              "logo": "https://globalgurullc.com/assets/Black-logo-CEPdcb01.webp",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1 845-497-6474",
+                "contactType": "customer service",
+                "areaServed": "US",
+                "availableLanguage": "en"
+              },
+              "sameAs": "https://linkedin.com/company/global-guru-llc"
+            }
+          `}
+        </script>
       </Helmet>
 
       {/* LinkedIn Insight Tag */}
