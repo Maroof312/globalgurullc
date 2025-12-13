@@ -75,6 +75,14 @@ const Blog = () => {
 
   return (
     <div className="modern-blog">
+      <Helmet>
+        <title>Global Guru LLC | Blog</title>
+        <link rel="canonical" href="https://globalgurullc.com/blog" />
+        <meta
+          name="description"
+          content=""
+        />
+      </Helmet>
       <LinkedInInsightTag />
       
       {/* Hero Header - NO CHANGES */}
