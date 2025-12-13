@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import BlogSidebar from '../../components/sections/BlogSidebar';
 import BlogPost from '../../components/sections/BlogPost';
 import LinkedInInsightTag from '../../components/layout/LinkedInInsightTag';
