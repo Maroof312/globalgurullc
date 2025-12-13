@@ -10,6 +10,25 @@ export default function Contact() {
     <div className="contact-page">
       <Helmet>
         <link rel="canonical" href="https://globalgurullc.com/contact" />
+        
+        {/* BREADCRUMB SCHEMA FOR /contact PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact",
+              "item": "https://globalgurullc.com/contact"
+            }]
+          }`}
+        </script>
       </Helmet>
       {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />

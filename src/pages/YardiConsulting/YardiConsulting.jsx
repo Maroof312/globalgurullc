@@ -74,6 +74,55 @@ const YardiConsulting = memo(() => {
           name="description"
           content="Get expert Yardi consulting, implementation & training to simplify property management. Global Guru ensures seamless Yardi integration & reporting solutions."
         />
+
+        {/* BREADCRUMB SCHEMA FOR /yardi-consultation-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Yardi Consulation Services",
+              "item": "https://globalgurullc.com/yardi-consulation-services"
+            }]
+          }`}
+        </script>
+
+        {/* FAQ SCHEMA FOR /yardi-consultation-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "Do you provide Yardi implementation services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our team has extensive hands on experience implementing Yardi for real estate companies. We configure modules, set up workflows, and design reporting dashboards that optimize daily operations."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can you train my staff on Yardi property accounting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We provide customized Yardi training for property managers, accountants, and finance staff. Our goal is to help your team use Yardi to its full potential."
+              }
+            },{
+              "@type": "Question",
+              "name": "What makes your Yardi expertise stand out?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our Yardi experts go beyond system setup. We help clients unlock advanced features, build customized reports, and optimize usage to improve productivity, compliance, and financial decision making."
+              }
+            }]
+          }`}
+        </script>
       </Helmet>
       
       {/* Hero Section */}

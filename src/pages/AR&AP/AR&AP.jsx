@@ -78,6 +78,62 @@ const ARAP = React.memo(() => {
           name="description"
           content="Take AR/AP services from Global Guru to streamline receivables & payables. Ensure accuracy, compliance, and improved cash flow for your business."
         />
+
+        {/* BREADCRUMB SCHEMA FOR /ar-ap-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Ar Ap Services",
+              "item": "https://globalgurullc.com/ar-ap-services"
+            }]
+          }`}
+        </script>
+
+        {/* FAQ SCHEMA FOR /ar-ap-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What are AR/AP services, and why are they important?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AR/AP services refer to the processes that manage incoming revenue (accounts receivable) and outgoing payments (accounts payable). Effective AR/AP management ensures cash flow stability, reduces financial risk, and improves operational efficiency."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do your accounts receivable services improve collections?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We implement automated invoice tracking, proactive communication, and payment reminders to ensure faster collections and reduced delinquency rates."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can your accounts payable services integrate with our current software?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We work with most ERP, accounting, and payment platforms to seamlessly integrate and automate your AP services without disrupting your existing workflows."
+              }
+            },{
+              "@type": "Question",
+              "name": "Why should we outsource our AR/AP to Global Guru?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Outsourcing to Global Guru brings you specialized knowledge, cost efficiency, reduced errors, and scalability, all without the overhead of hiring and training an in-house team."
+              }
+            }]
+          }`}
+        </script>
       </Helmet>
       <motion.div
         className="arap-page"

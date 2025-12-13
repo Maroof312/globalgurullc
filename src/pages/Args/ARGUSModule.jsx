@@ -157,7 +157,7 @@ const ARGUSModule = React.memo(() => {
       <LinkedInInsightTag />
       <Helmet>
         <title>ARGUS Enterprise Module | Asset Management & Valuations | Global Guru</title>
-        <link rel="canonical" href="https://globalgurullc.com/argus-module" />
+        <link rel="canonical" href="https://globalgurullc.com/argus" />
         <meta
           name="description"
           content="Professional ARGUS Enterprise services for asset management, underwriting & valuations. Build, audit, and version models with transparent assumptions."

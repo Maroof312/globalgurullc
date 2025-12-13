@@ -9,7 +9,8 @@ export default function Footer() {
     <footer className="bg-dark text-white py-5">
       <Container>
         <Row>
-          <Col md={4} className="mb-4 mb-md-0">
+          {/* Company Info Column */}
+          <Col lg={3} md={6} className="mb-4 mb-md-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +25,8 @@ export default function Footer() {
             </motion.div>
           </Col>
 
-          <Col md={4} className="mb-4 mb-md-0">
+          {/* Quick Links Column */}
+          <Col lg={3} md={6} className="mb-4 mb-md-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +46,28 @@ export default function Footer() {
             </motion.div>
           </Col>
 
-          <Col md={4}>
+          {/* Our Services Column - NEW */}
+          <Col lg={3} md={6} className="mb-4 mb-md-0">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true, margin: "0px" }}
+            >
+              <h5 className="mb-3">Our Services</h5>
+              <ul className="list-unstyled mb-0">
+                <li className="mb-2"><a href="/real-estate-accounting-services" className="text-white">Property Accounting</a></li>
+                <li className="mb-2"><a href="/cam-reconciliation-services" className="text-white">CAM Reconciliation</a></li>
+                <li className="mb-2"><a href="/lease-admin-accounting-services" className="text-white">Lease Administration</a></li>
+                <li className="mb-2"><a href="/accounting-and-bookkeeping" className="text-white">Accounting and Bookkeeping</a></li>
+                <li className="mb-2"><a href="/ar-ap-services" className="text-white">AR & AP Services</a></li>
+                <li className="mb-2"><a href="/argus" className="text-white">Argus</a></li>
+              </ul>
+            </motion.div>
+          </Col>
+
+          {/* Contact Info Column */}
+          <Col lg={3} md={6}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

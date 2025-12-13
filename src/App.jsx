@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { lazy, Suspense } from 'react'; // <-- IMPORT LAZY AND SUSPENSE
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom' // <-- ADD useLocation HERE
+import { lazy, Suspense, useEffect } from 'react';
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Breadcrumb from './components/Breadcrumb/Breadcrumb'
 import GoogleAnalytics from './components/analytics/GoogleAnalytics'
 import Home from './pages/Home/Home'
+import YardiConsulting from './pages/YardiConsulting/YardiConsulting';
 // LAZY LOAD ALL OTHER PAGES
 const About = lazy(() => import('./pages/About/About'));
 const Services = lazy(() => import('./pages/Services/Services'));
-const YardiConsulting = lazy(() => import('./pages/YardiConsulting/YardiConsulting'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 const Blog = lazy(() => import('./pages/Blog/Blog'));
 const BlogDetail = lazy(() => import('./pages/Blog/BlogDetail'));
@@ -23,6 +23,16 @@ const ThankYou = lazy(() => import('./pages/Thankyou/ThankYou'));
 const Argus = lazy(() => import('./pages/Args/ARGUSModule'));
 const Sitemap = lazy(() => import('./pages/Sitemap/Sitemap'));
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Scroll to top when route changes
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 // Create a simple loading component
 const PageLoading = () => (
@@ -39,6 +49,7 @@ const PageLoading = () => (
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <GoogleAnalytics />
       <Header />
       <Breadcrumb />

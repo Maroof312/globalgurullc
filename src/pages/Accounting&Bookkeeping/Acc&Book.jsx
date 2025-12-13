@@ -160,6 +160,59 @@ const AccBook = memo(() => {
           rel="canonical"
           href="https://globalgurullc.com/accounting-and-bookkeeping"
         />
+        <link
+          rel="canonical"
+          href="https://globalgurullc.com/accounting-and-bookkeeping"
+        />
+
+        {/* BREADCRUMB SCHEMA FOR /accounting-and-bookkeeping PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Accounting & Bookkeeping",
+              "item": "https://globalgurullc.com/accounting-and-bookkeeping"
+            }]
+          }`}
+        </script>
+
+        {/* FAQ SCHEMA FOR /accounting-and-bookkeeping PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What do your outsourced property accounting services include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our outsourced property accounting services cover the full cycle of real estate financial management. This includes accounts receivable, accounts payable, complex bank reconciliations, monthly financial reporting, budgeting, and compliance tracking. By outsourcing property accounting, clients gain accurate reports, cost savings, and streamlined financial operations."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do you ensure accuracy in property accounting reports?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use standardized workflows, multi-level review processes, and advanced property management platforms such as Yardi and MRI. This ensures complete accuracy, transparency, and consistency in every financial report we deliver."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can you integrate outsourced property accounting with my existing software?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our team has expertise in Yardi, MRI, RealPage, and QuickBooks. We integrate seamlessly into your preferred accounting system to maintain efficiency while reducing errors and manual work."
+              }
+            }]
+          }`}
+        </script>
       </Helmet>
       <LinkedInInsightTag />
 

@@ -55,6 +55,25 @@ export default function About() {
     <div className="about-page">
       <Helmet>
         <link rel="canonical" href="https://globalgurullc.com/who-we-are" />
+        
+        {/* BREADCRUMB SCHEMA FOR /who-we-are PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About Us",
+              "item": "https://globalgurullc.com/who-we-are"
+            }]
+          }`}
+        </script>
       </Helmet>
       {/* LinkedIn Insight Tag */}
       <LinkedInInsightTag />

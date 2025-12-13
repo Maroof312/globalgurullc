@@ -486,6 +486,55 @@ const LeaseAccounting = memo(() => {
         <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* BREADCRUMB SCHEMA FOR /lease-admin-accounting-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Lease Admin Accounting Services",
+              "item": "https://globalgurullc.com/lease-admin-accounting-services"
+            }]
+          }`}
+        </script>
+
+        {/* FAQ SCHEMA FOR /lease-admin-accounting-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What does your lease administration service cover?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our lease administration services include lease abstraction, tracking, and monitoring of critical lease terms, renewals, rent escalations, and compliance deadlines. We help reduce risk, avoid missed deadlines, and ensure landlords and tenants are always aligned."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do you handle multilingual lease administration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our team provides multilingual lease abstraction and review, making sure important lease obligations are clear and accurate in every language. This ensures global investors and tenants can operate with full transparency."
+              }
+            },{
+              "@type": "Question",
+              "name": "Do you support lease due diligence during acquisitions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We provide complete lease audits and due diligence services during acquisitions or mergers. Our lease administration experts validate lease data, identify risks, and ensure a smooth transition of assets."
+              }
+            }]
+          }`}
+        </script>
       </Helmet>
 
       {/* Hero Banner Section */}

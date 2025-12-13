@@ -228,6 +228,55 @@ const CAMReconciliation = memo(() => {
         <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* BREADCRUMB SCHEMA FOR /cam-reconciliation-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "CAM Reconciliation",
+              "item": "https://globalgurullc.com/cam-reconciliation-services"
+            }]
+          }`}
+        </script>
+
+        {/* FAQ SCHEMA FOR /cam-reconciliation-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "How many CAM reconciliations has your team completed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our team has completed more than 10,000 CAM reconciliations across the United States, establishing our reputation as trusted CAM reconciliation experts."
+              }
+            },{
+              "@type": "Question",
+              "name": "What are the benefits of outsourcing CAM reconciliations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Outsourcing CAM reconciliations ensures accurate expense allocation, reduces tenant disputes, improves financial transparency, and saves time for internal teams. Our clients benefit from error-free reconciliations that strengthen tenant relationships."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do you handle tenant disputes related to CAM reconciliations?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We prepare tenant-ready reconciliations with clear supporting documentation. This reduces disputes, prevents misunderstandings, and ensures compliance with lease terms."
+              }
+            }]
+          }`}
+        </script>
       </Helmet>
 
       {/* Hero Banner Section */}

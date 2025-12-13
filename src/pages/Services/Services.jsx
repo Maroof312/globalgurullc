@@ -101,6 +101,25 @@ function Services() {
     <div className="services-page">
       <Helmet>
         <link rel="canonical" href="https://globalgurullc.com/services" />
+        
+        {/* BREADCRUMB SCHEMA FOR /services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://globalgurullc.com/services"
+            }]
+          }`}
+        </script>
       </Helmet>
       
       <LinkedInInsightTag />

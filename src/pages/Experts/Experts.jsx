@@ -61,6 +61,25 @@ function Experts() {
         <title>{META_PROPS.title}</title>
         <link rel="canonical" href="https://globalgurullc.com/our-experts" />
         <meta name="description" content={META_PROPS.description} />
+        
+        {/* BREADCRUMB SCHEMA FOR /our-experts PAGE (FIXED) */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Our Experts",
+              "item": "https://globalgurullc.com/our-experts"
+            }]
+          }`}
+        </script>
       </Helmet>
       
       <section className="creative-hero">

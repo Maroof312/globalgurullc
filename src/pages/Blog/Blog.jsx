@@ -9,12 +9,12 @@ import { blogData } from '../../data/BlogData';
 import './Blog.scss';
 
 const Blog = () => {
-
   useAnalytics();
 
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [visiblePosts, setVisiblePosts] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 4; // You can change this to 4 if you prefer
 
   const filteredPosts = useMemo(() => {
     const searchLower = searchQuery.toLowerCase();
@@ -29,6 +29,15 @@ const Blog = () => {
     });
   }, [activeCategory, searchQuery]);
 
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  
+  // Get current posts for the page
+  const currentPosts = useMemo(() => {
+    const startIndex = (currentPage - 1) * postsPerPage;
+    return filteredPosts.slice(startIndex, startIndex + postsPerPage);
+  }, [filteredPosts, currentPage, postsPerPage]);
+
   const categories = useMemo(() => {
     return ['all', ...new Set(blogData.map((post) => post.category))];
   }, []);
@@ -37,23 +46,38 @@ const Blog = () => {
     return [...new Set(blogData.flatMap((post) => post.tags))];
   }, []);
 
-  const loadMore = useCallback(() => {
-    setVisiblePosts(prev => prev + 3);
+  // Pagination handlers
+  const handlePageChange = useCallback((page) => {
+    setCurrentPage(page);
   }, []);
+
+  const handlePrevPage = useCallback(() => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }, [currentPage]);
+
+  const handleNextPage = useCallback(() => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  }, [currentPage, totalPages]);
 
   const handleCategorySelect = useCallback((category) => {
     setActiveCategory(category);
+    setCurrentPage(1);
   }, []);
 
   const handleSearch = useCallback((query) => {
     setSearchQuery(query);
+    setCurrentPage(1);
   }, []);
 
   return (
     <div className="modern-blog">
       <LinkedInInsightTag />
       
-      {/* Hero Header */}
+      {/* Hero Header - NO CHANGES */}
       <section className="blog-hero">
         <div className="hero-background">
           <div className="hero-overlay"></div>
@@ -96,7 +120,7 @@ const Blog = () => {
           <Row>
             {/* Blog Posts */}
             <Col lg={8} className="blog-content">
-              {/* Category Filters */}
+              {/* Category Filters - NO CHANGES */}
               <motion.div 
                 className="category-filters"
                 initial={{ opacity: 0, y: 20 }}
@@ -108,7 +132,7 @@ const Blog = () => {
                     <button
                       key={category}
                       className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
-                      onClick={() => setActiveCategory(category)}
+                      onClick={() => handleCategorySelect(category)}
                     >
                       {category.charAt(0).toUpperCase() + category.slice(1)}
                     </button>
@@ -116,8 +140,8 @@ const Blog = () => {
                 </div>
               </motion.div>
 
-              {/* Featured Post */}
-              {activeCategory === 'all' && searchQuery === '' && (
+              {/* Featured Post - Only on first page */}
+              {activeCategory === 'all' && searchQuery === '' && currentPage === 1 && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -133,12 +157,12 @@ const Blog = () => {
                 </motion.div>
               )}
 
-              {/* Posts Grid */}
+              {/* Posts Grid - Showing current page posts */}
               <div className="posts-grid">
                 <AnimatePresence>
-                  {filteredPosts.slice(0, visiblePosts).map((post, index) => (
+                  {currentPosts.map((post, index) => (
                     <motion.div
-                      key={post.title}
+                      key={`${post.title}-${index}`}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
@@ -151,28 +175,53 @@ const Blog = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Load More */}
-              {visiblePosts < filteredPosts.length && (
+              {/* Pagination - REPLACING Load More */}
+              {filteredPosts.length > postsPerPage && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="load-more-container"
+                  className="pagination-container"
                 >
-                  <Button 
-                    variant="outline-primary" 
-                    onClick={loadMore}
-                    className="load-more-btn"
-                  >
-                    Load More Articles
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 6V18M12 18L7 13M12 18L17 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </Button>
+                  <div className="pagination">
+                    <Button
+                      variant="outline-primary"
+                      className="pagination-btn prev-btn"
+                      onClick={handlePrevPage}
+                      disabled={currentPage === 1}
+                    >
+                      Previous
+                    </Button>
+                    
+                    <div className="page-numbers">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                        <button
+                          key={page}
+                          className={`page-number ${currentPage === page ? 'active' : ''}`}
+                          onClick={() => handlePageChange(page)}
+                        >
+                          {page}
+                        </button>
+                      ))}
+                    </div>
+                    
+                    <Button
+                      variant="outline-primary"
+                      className="pagination-btn next-btn"
+                      onClick={handleNextPage}
+                      disabled={currentPage === totalPages}
+                    >
+                      Next
+                    </Button>
+                  </div>
+                  
+                  <div className="page-info">
+                    Page {currentPage} of {totalPages}
+                  </div>
                 </motion.div>
               )}
 
-              {/* No Results */}
+              {/* No Results - NO CHANGES */}
               {filteredPosts.length === 0 && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -185,7 +234,7 @@ const Blog = () => {
               )}
             </Col>
 
-            {/* Sidebar */}
+            {/* Sidebar - NO CHANGES */}
             <Col lg={4} className="blog-sidebar">
               <BlogSidebar 
                 categories={categories.filter(cat => cat !== 'all')} 
@@ -198,7 +247,7 @@ const Blog = () => {
         </Container>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Newsletter Section - NO CHANGES */}
       <section className="blog-newsletter">
         <Container>
           <Row className="justify-content-center">

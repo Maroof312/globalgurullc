@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { memo, useMemo, lazy, Suspense, useEffect } from 'react';
+import { memo, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -126,63 +126,6 @@ const RealEstateAccounting = memo(() => {
 
   useAnalytics();
 
-  // Memoize service items
-  const serviceItems = useMemo(() => 
-    services.map((service, index) => (
-      <Col lg={3} md={6} key={index}>
-        <motion.div
-          className="service-item bg-white h-100 p-4 rounded-3 shadow-sm text-center"
-          initial={{ y: 50, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1, duration: 0.5 }}
-        >
-          <div className="service-icon mb-4">
-            <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
-              <i className={`bi ${service.icon} fs-2 text-primary`}></i>
-            </div>
-          </div>
-          <h3 className="h5 fw-bold mb-3">{service.title}</h3>
-          <p className="mb-0 text-muted">{service.description}</p>
-        </motion.div>
-      </Col>
-    )), []);
-
-  // Memoize difference items for desktop
-  const desktopDifferenceItems = useMemo(() => 
-    differenceItems.map((item, index) => (
-      <motion.div
-        key={index}
-        className="difference-item bg-white rounded-3 shadow-sm text-center p-4"
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: index * 0.1, duration: 0.5 }}
-      >
-        <div className="difference-icon mb-3">
-          <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
-            <i className={`bi ${item.icon} fs-3 text-primary`}></i>
-          </div>
-        </div>
-        <p className="mb-0 fw-medium">{item.text}</p>
-      </motion.div>
-    )), []);
-
-  // Memoize difference items for mobile
-  const mobileDifferenceItems = useMemo(() => 
-    differenceItems.map((item, index) => (
-      <SwiperSlide key={index} style={{ height: 'auto' }}>
-        <div className="difference-item h-100 p-3 bg-white rounded-3 shadow-sm text-center d-flex flex-column justify-content-center" style={{ minHeight: '180px' }}>
-          <div className="difference-icon mb-2 mx-auto">
-            <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-2 d-inline-flex">
-              <i className={`bi ${item.icon} fs-4 text-primary`}></i>
-            </div>
-          </div>
-          <p className="mb-0 fw-medium fs-6">{item.text}</p>
-        </div>
-      </SwiperSlide>
-    )), []);
-
   return (
     <div className="real-estate-accounting-page">
       <LinkedInInsightTag />
@@ -193,10 +136,58 @@ const RealEstateAccounting = memo(() => {
           name="description" 
           content="Get Expert real estate accounting, fund accounting, lease & CAM reconciliation, tax compliance and investor reporting service. Book a free consultation with Global Guru" 
         />
-        {/* Preload critical fonts to prevent layout shift */}
-        <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://globalgurullc.com/real-estate-accounting-services" />
+
+        {/* BREADCRUMB SCHEMA FOR /real-estate-accounting-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://globalgurullc.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Real Estate Accounting",
+              "item": "https://globalgurullc.com/real-estate-accounting-services"
+            }]
+          }`}
+        </script>
+
+        {/* FAQ SCHEMA FOR /real-estate-accounting-services PAGE */}
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+              "@type": "Question",
+              "name": "What do your outsourced property accounting services include?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our outsourced property accounting services cover the full cycle of real estate financial management. This includes accounts receivable, accounts payable, complex bank reconciliations, monthly financial reporting, budgeting, and compliance tracking. By outsourcing property accounting, clients gain accurate reports, cost savings, and streamlined financial operations."
+              }
+            },{
+              "@type": "Question",
+              "name": "How do you ensure accuracy in property accounting reports?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use standardized workflows, multi-level review processes, and advanced property management platforms such as Yardi and MRI. This ensures complete accuracy, transparency, and consistency in every financial report we deliver."
+              }
+            },{
+              "@type": "Question",
+              "name": "Can you integrate outsourced property accounting with my existing software?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our team has expertise in Yardi, MRI, RealPage, and QuickBooks. We integrate seamlessly into your preferred accounting system to maintain efficiency while reducing errors and manual work."
+              }
+            }]
+          }`}
+        </script>
       </Helmet>
 
       {/* Hero Banner Section */}
@@ -210,10 +201,12 @@ const RealEstateAccounting = memo(() => {
           <img 
             src={landingBanner}
             alt="Background" 
-            loading="eager"
+            loading="lazy"
+            decoding="async"
             className="background-image w-100 h-100 object-fit-cover"
             width={1920}
             height={1080}
+            style={{ contentVisibility: 'auto' }}
           />
           <div className="overlay position-absolute top-0 start-0 w-100 h-100"></div>
         </div>
@@ -311,7 +304,25 @@ const RealEstateAccounting = memo(() => {
           </motion.div>
           
           <Row className="d-none d-md-flex g-4">
-            {serviceItems}
+            {services.map((service, index) => (
+              <Col lg={3} md={6} key={index}>
+                <motion.div
+                  className="service-item bg-white h-100 p-4 rounded-3 shadow-sm text-center"
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                >
+                  <div className="service-icon mb-4">
+                    <div className="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3 d-inline-flex">
+                      <i className={`bi ${service.icon} fs-2 text-primary`}></i>
+                    </div>
+                  </div>
+                  <h3 className="h5 fw-bold mb-3">{service.title}</h3>
+                  <p className="mb-0 text-muted">{service.description}</p>
+                </motion.div>
+              </Col>
+            ))}
           </Row>
 
           {/* Mobile Carousel */}
