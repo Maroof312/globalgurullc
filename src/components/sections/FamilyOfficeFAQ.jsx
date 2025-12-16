@@ -98,7 +98,7 @@ const FamilyOfficeFAQ = ({
                 aria-controls={`family-faq-answer-${index}`}
                 aria-label={`${faq.question} ${activeIndex === index ? 'Collapse' : 'Expand'}`}
               >
-                <span className="faq-question-text">{faq.question}</span>
+                <h3 className="faq-question-text">{faq.question}</h3>
                 <motion.span 
                   className="faq-icon"
                   animate={{ rotate: activeIndex === index ? 45 : 0 }}

@@ -19,6 +19,8 @@ import lucernex from '../../assets/images/lucernex_logo.webp?w=120;200&format=we
 import lucernexFallback from '../../assets/images/lucernex_logo.webp?w=200'
 import ProLease from '../../assets/images/ProLease_logo.webp?w=120;200&format=webp&as=srcset'
 import ProLeaseFallback from '../../assets/images/ProLease_logo.webp?w=200'
+import Buildium from '../../assets/images/buildium-logo.webp?w=120;200&format=webp&as=srcset'
+import BuildiumFallback from '../../assets/images/buildium-logo.webp?w=200'
 import Monarch from '../../assets/images/Monarch_logo.webp?w=120;200&format=webp&as=srcset'
 import MonarchFallback from '../../assets/images/Monarch_logo.webp?w=200'
 import CoStar from '../../assets/images/CoStar_logo.webp?w=120;200&format=webp&as=srcset'
@@ -50,6 +52,7 @@ const expertiseData = [
   { src: sequentra, fallback: sequentraFallback, alt: 'Sequentra Software' },
   { src: lucernex, fallback: lucernexFallback, alt: 'Lucernex Software' },
   { src: ProLease, fallback: ProLeaseFallback, alt: 'ProLease Software' },
+  { src: Buildium, fallback: BuildiumFallback, alt: 'Buildium Property' },
   { src: Monarch, fallback: MonarchFallback, alt: 'Monarch Software' },
   { src: CoStar, fallback: CoStarFallback, alt: 'CoStar Software' },
   { src: mri, fallback: mriFallback, alt: 'MRI Software' },

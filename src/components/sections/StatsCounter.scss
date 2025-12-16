@@ -1,166 +1,198 @@
-.real-estate-stats {
-  padding: 5rem 0;
-  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+.stats-rings {
+  padding: 5.2rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    max-width: 780px;
+    margin: 0 auto;
+    color: #475569;
+    line-height: 1.65;
+    font-size: 1.05rem;
+
+    strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+  }
+}
+
+/* GRID */
+.rings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+/* CARD */
+.ring-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
   position: relative;
   overflow: hidden;
 
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 1rem;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(circle at 30% 20%, rgba(37,99,235,0.16), transparent 55%),
+                radial-gradient(circle at 80% 70%, rgba(16,185,129,0.14), transparent 55%);
+    pointer-events: none;
   }
 
-  .subtitle {
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.ring-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .ring-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    font-size: 1.25rem;
+  }
+
+  .ring-label {
+    font-weight: 800;
+    color: #0f172a;
+    font-size: 1rem;
+  }
+}
+
+/* RING */
+.ring-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0.2rem 0 0.6rem;
+}
+
+.ring {
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: transparent;
+  stroke: rgba(15, 23, 42, 0.10);
+}
+
+.ring-progress {
+  fill: transparent;
+  stroke: url(#grad); // fallback overridden below
+  stroke: #2563eb;
+  filter: drop-shadow(0 8px 18px rgba(37, 99, 235, 0.25));
+}
+
+/* Center text */
+.ring-center {
+  position: absolute;
+  text-align: center;
+  display: grid;
+  gap: 4px;
+
+  .ring-number {
+    font-weight: 900;
+    font-size: 2.1rem;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .ring-suffix {
     font-size: 1.1rem;
+    margin-left: 2px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .ring-sub {
+    font-size: 0.9rem;
     color: #64748b;
-    max-width: 700px;
-    margin: 0 auto;
+    font-weight: 600;
+  }
+}
+
+/* Footer */
+.ring-foot {
+  display: flex;
+  justify-content: center;
+
+  .pill {
+    padding: 0.4rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.10);
+    border: 1px solid rgba(16, 185, 129, 0.18);
+    color: #0f766e;
+    font-weight: 800;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+}
+
+/* Make each ring color slightly different */
+.ring-card:nth-child(1) .ring-progress { stroke: #2563eb; }
+.ring-card:nth-child(2) .ring-progress { stroke: #10b981; }
+.ring-card:nth-child(3) .ring-progress { stroke: #f59e0b; filter: drop-shadow(0 8px 18px rgba(245, 158, 11, 0.25)); }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .stats-header {
+    text-align: left;
+
+    p { margin: 0; }
+    h2 { font-size: 2.05rem; }
   }
 
-  .stats-features {
-    text-align: center;
-    margin-bottom: 2rem;
-
-    .feature-item {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.8rem 1.2rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      margin-bottom: 1rem;
-      font-weight: 500;
-      color: #334155;
-
-      .feature-check {
-        background: #10b981;
-        color: #fff;
-        border-radius: 50%;
-        font-size: 0.9rem;
-        margin-right: 10px;
-        width: 22px;
-        height: 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
+  .rings-grid {
+    grid-template-columns: 1fr;
   }
 
-  /* Bar chart styles */
-  .bar-chart-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
+  .ring-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-rings {
+    padding: 4.2rem 0;
   }
 
-  .bar-chart-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    .bar-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      .bar-icon {
-        font-size: 1.5rem;
-      }
-      .bar-label {
-        font-weight: 600;
-        color: #1e293b;
-      }
-    }
-
-    .bar-track {
-      background: #e2e8f0;
-      border-radius: 8px;
-      height: 32px;
-      overflow: hidden;
-      position: relative;
-
-      .bar-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #2563eb, #10b981);
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding-right: 10px;
-        border-radius: 8px;
-        font-weight: 700;
-        color: #fff;
-        font-size: 0.9rem;
-        position: relative;
-      }
-
-      .bar-value {
-        position: absolute;
-        right: 10px;
-      }
-    }
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    .stats-header,
-    .stats-features {
-      text-align: left !important;
-    }
-
-    .stats-header .subtitle {
-      margin: 0;
-      text-align: left;
-    }
-
-    .stats-features {
-      .feature-item {
-        justify-content: flex-start;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 4rem 0;
-    
-    h2 { 
-      font-size: 2rem; 
-      text-align: center;
-    }
-    
-    .bar-chart-row .bar-label { 
-      font-size: 0.95rem; 
-    }
-
-    .stats-header .subtitle {
-      text-align: left;
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 3rem 0;
-    
-    h2 { 
-      font-size: 1.6rem; 
-      text-align: left;
-    }
-    
-    .bar-chart-row .bar-label { 
-      font-size: 0.85rem; 
-    }
-
-    .stats-features {
-      .col-md-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-      }
-      
-      .feature-item {
-        width: 100%;
-        justify-content: left;
-      }
-    }
+  .stats-header h2 {
+    font-size: 1.7rem;
   }
 }

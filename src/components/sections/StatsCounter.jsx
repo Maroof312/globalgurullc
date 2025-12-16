@@ -1,107 +1,108 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import CountUp from 'react-countup';
-import { Container, Row, Col } from 'react-bootstrap';
-import './StatsCounter.scss';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
+import "./StatsCounter.scss";
 
 const stats = [
-  { 
-    value: 100, 
-    suffix: "%", 
-    label: "Increased Productivity", 
-    icon: "📈",
-    percentage: 100
-  },
-  { 
-    value: 100, 
-    suffix: "%", 
-    label: "On-Time Delivery", 
-    icon: "⏱️",
-    percentage: 100
-  },
-  { 
-    value: 50, 
-    suffix: "%", 
-    label: "Reduced Payroll Costs", 
-    icon: "💰",
-    percentage: 50
-  }
+  { value: 100, suffix: "%", label: "Increased Productivity", icon: "📈", percentage: 100 },
+  { value: 100, suffix: "%", label: "On-Time Delivery", icon: "⏱️", percentage: 100 },
+  { value: 50, suffix: "%", label: "Reduced Payroll Costs", icon: "💰", percentage: 50 },
 ];
 
-const BarChartRow = ({ stat, index, isInView }) => {
+// Ring component (SVG progress ring)
+function StatRing({ stat, index, inView }) {
+  const size = 152;
+  const stroke = 12;
+  const r = (size - stroke) / 2;
+  const circumference = 2 * Math.PI * r;
+
+  const progress = Math.max(0, Math.min(100, stat.percentage));
+  const offset = circumference - (progress / 100) * circumference;
+
   return (
-    <div className="bar-chart-row">
-      <div className="bar-info">
-        <span className="bar-icon">{stat.icon}</span>
-        <span className="bar-label">{stat.label}</span>
+    <motion.div
+      className="ring-card"
+      initial={{ opacity: 0, y: 18 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+    >
+      <div className="ring-top">
+        <span className="ring-icon" aria-hidden="true">{stat.icon}</span>
+        <span className="ring-label">{stat.label}</span>
       </div>
-      <div className="bar-track">
-        <motion.div
-          className="bar-fill"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${stat.percentage}%` } : { width: 0 }}
-          transition={{ duration: 1.5, delay: index * 0.3, ease: "easeOut" }}
-        >
-          <span className="bar-value">
-            {isInView && <CountUp end={stat.value} suffix={stat.suffix} duration={2} />}
-          </span>
-        </motion.div>
+
+      <div className="ring-wrap">
+        <svg className="ring" width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          {/* background track */}
+          <circle
+            className="ring-track"
+            cx={size / 2}
+            cy={size / 2}
+            r={r}
+            strokeWidth={stroke}
+          />
+
+          {/* animated progress */}
+          <motion.circle
+            className="ring-progress"
+            cx={size / 2}
+            cy={size / 2}
+            r={r}
+            strokeWidth={stroke}
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            initial={{ strokeDashoffset: circumference }}
+            animate={inView ? { strokeDashoffset: offset } : { strokeDashoffset: circumference }}
+            transition={{ duration: 1.6, delay: index * 0.18, ease: "easeOut" }}
+          />
+        </svg>
+
+        <div className="ring-center">
+          <div className="ring-number">
+            {inView ? <CountUp end={stat.value} duration={1.8} /> : 0}
+            <span className="ring-suffix">{stat.suffix}</span>
+          </div>
+          <div className="ring-sub">Outcome</div>
+        </div>
       </div>
-    </div>
+
+      <div className="ring-foot">
+        <span className="pill">{progress}% benchmark</span>
+      </div>
+    </motion.div>
   );
-};
+}
 
 export default function StatsCounter() {
-  const [ref, inView] = useInView({ 
-    triggerOnce: true, 
-    threshold: 0.1,
-    rootMargin: '-50px 0px'
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.15,
+    rootMargin: "-50px 0px",
   });
 
   return (
-    <section className="real-estate-stats" ref={ref}>
-      <Container>
-        <Row className="justify-content-center">
-          <Col lg={10}>
-            <motion.div 
-              className="stats-header text-center mb-5"
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-            >
-              <h2>Excellence in Commercial Real Estate Accounting</h2>
-              <p className="subtitle">
-                Trusted by leading commercial real estate firms nationwide, we streamline financial operations and maximize ROI. 
-                With over 50K CAM reconciliations successfully completed
-              </p>
-            </motion.div>
-          </Col>
-        </Row>
+    <section className="stats-rings" ref={ref}>
+      <div className="stats-container">
+        <motion.div
+          className="stats-header"
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <h2>Excellence in Commercial Real Estate Accounting</h2>
+          <p>
+            Trusted by leading CRE firms nationwide streamlined workflows, fewer escalations,
+            and predictable delivery. <strong>50K+ CAM reconciliations completed.</strong>
+          </p>
+        </motion.div>
 
-        <Row className="stats-features mb-5">
-          <Col md={4}>
-            <div className="feature-item"><span className="feature-check">✔</span>100% Increased Productivity</div>
-          </Col>
-          <Col md={4}>
-            <div className="feature-item"><span className="feature-check">✔</span>Never Miss a Deadline</div>
-          </Col>
-          <Col md={4}>
-            <div className="feature-item"><span className="feature-check">✔</span>50% Reduced Payroll Costs</div>
-          </Col>
-        </Row>
-
-        <div className="bar-chart-wrapper">
+        <div className="rings-grid">
           {stats.map((stat, index) => (
-            <BarChartRow 
-              key={index} 
-              stat={stat} 
-              index={index} 
-              isInView={inView} 
-            />
+            <StatRing key={index} stat={stat} index={index} inView={inView} />
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
