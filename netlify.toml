@@ -7,20 +7,21 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   SECRETS_SCAN_ENABLED = "false"
 
-# Block fake .html pages (old legacy URLs)
+# Canonicalize index.html
 [[redirects]]
-  from = "/:page.html"
-  to = "/404.html"
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# Block ALL fake .html URLs
+[[redirects]]
+  from = "/*.html"
+  to = "/404"
   status = 404
   force = true
 
-[[redirects]]
-  from = "/:path/:page.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
-# Specific 301 redirect for typo
+# Your existing typo redirect
 [[redirects]]
   from = "/yardi-consulation-services"
   to = "/yardi-consultation-services"
@@ -33,15 +34,8 @@
   status = 301
   force = true
 
-# IMPORTANT: allow assets to be served normally
-[[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
-  status = 200
-
-# React SPA fallback (MUST be last)
+# React SPA fallback (must be LAST)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
