@@ -14,12 +14,17 @@
   force = true
 
 [[redirects]]
-  from = "/*.html"
-  to = "/404"
+  from = "/:page.html"
+  to = "/404.html"
   status = 404
   force = true
 
-# Specific 301 redirect for the misspelled URL
+[[redirects]]
+  from = "/:path/:page.html"
+  to = "/404.html"
+  status = 404
+  force = true
+
 [[redirects]]
   from = "/yardi-consulation-services"
   to = "/yardi-consultation-services"
@@ -32,7 +37,6 @@
   status = 301
   force = true
 
-# React SPA fallback (KEEP THIS LAST) - rewrite to "/" to avoid loop
 [[redirects]]
   from = "/*"
   to = "/"
