@@ -1,0 +1,8 @@
+# Redirect index.html to root
+/index.html  /  301
+
+# Block any other .html pages (return 404)
+/*.html  /404  404
+
+# React SPA fallback (keep this LAST)
+/*  /index.html  200
