@@ -3,19 +3,12 @@
   command = "npm install --legacy-peer-deps && npm run build"
 
 [build.environment]
-  NODE_VERSION = "20"  # Change to 20 for Vite compatibility
+  NODE_VERSION = "20"
   NODE_OPTIONS = "--max_old_space_size=4096"
   SECRETS_SCAN_ENABLED = "false"
 
 [[redirects]]
   from = "/index.html"
-  to = "/"
-  status = 301
-  force = true
-
-# Normalize double slashes like //property.html
-[[redirects]]
-  from = "//*"
   to = "/"
   status = 301
   force = true
@@ -39,8 +32,8 @@
   status = 301
   force = true
 
-# React SPA fallback (KEEP THIS LAST)
+# React SPA fallback (KEEP THIS LAST) - rewrite to "/" to avoid loop
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
   status = 200
