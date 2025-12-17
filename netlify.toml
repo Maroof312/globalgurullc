@@ -21,20 +21,7 @@
   status = 404
   force = true
 
-# Block fake .html pages (old legacy URLs)
-[[redirects]]
-  from = "/:page.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/:path/:page.html"
-  to = "/404.html"
-  status = 404
-  force = true
-
-# Specific 301 redirect for typo
+# Your existing typo redirect
 [[redirects]]
   from = "/yardi-consulation-services"
   to = "/yardi-consultation-services"
@@ -47,7 +34,7 @@
   status = 301
   force = true
 
-# React SPA fallback (MUST be last)
+# React SPA fallback (must be LAST)
 [[redirects]]
   from = "/*"
   to = "/index.html"
