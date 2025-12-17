@@ -13,10 +13,18 @@
   status = 301
   force = true
 
+# Normalize double slashes like //property.html
+[[redirects]]
+  from = "//*"
+  to = "/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*.html"
   to = "/404"
   status = 404
+  force = true
 
 # Specific 301 redirect for the misspelled URL
 [[redirects]]
