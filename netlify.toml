@@ -14,6 +14,13 @@
   status = 301
   force = true
 
+# Block ALL fake .html URLs
+[[redirects]]
+  from = "/*.html"
+  to = "/404"
+  status = 404
+  force = true
+
 # Block fake .html pages (old legacy URLs)
 [[redirects]]
   from = "/:page.html"
@@ -39,8 +46,6 @@
   to = "/yardi-consultation-services"
   status = 301
   force = true
-
-
 
 # React SPA fallback (MUST be last)
 [[redirects]]
