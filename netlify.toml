@@ -16,7 +16,7 @@
 # Normalize double slashes like //property.html
 [[redirects]]
   from = "//*"
-  to = "/:splat"
+  to = "/"
   status = 301
   force = true
 
