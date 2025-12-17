@@ -8,9 +8,15 @@
   SECRETS_SCAN_ENABLED = "false"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*.html"
+  to = "/404"
+  status = 404
 
 # Specific 301 redirect for the misspelled URL
 [[redirects]]
@@ -19,9 +25,14 @@
   status = 301
   force = true
 
-# Optional: Redirect with and without trailing slashes
 [[redirects]]
   from = "/yardi-consulation-services/"
   to = "/yardi-consultation-services"
   status = 301
   force = true
+
+# React SPA fallback (KEEP THIS LAST)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
