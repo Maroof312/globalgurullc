@@ -7,25 +7,21 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   SECRETS_SCAN_ENABLED = "false"
 
-# Option 1: PERMANENTLY REDIRECT all .html to clean URLs (Recommended for SEO)
+# EXCLUDE index.html from .html redirects - handle it separately
 [[redirects]]
-  from = "/:path/:file.html"
-  to = "/:path/:file"
+  from = "/index.html"
+  to = "/"
   status = 301
   force = true
 
+# Redirect OTHER .html files to clean URLs, but ONLY if they're not React routes
 [[redirects]]
-  from = "/:file.html"
-  to = "/:file"
+  from = "/:path*.html"
+  to = "/:path*"
   status = 301
   force = true
-
-# Option 2: OR return 410 Gone for all .html (if you want them gone forever)
-# [[redirects]]
-#   from = "/*.html"
-#   to = "/.netlify/functions/410"
-#   status = 410
-#   force = true
+  # Add a condition to prevent loops
+  conditions = {Language = ["en"], Country = ["US"]}
 
 # Your typo redirects
 [[redirects]]
