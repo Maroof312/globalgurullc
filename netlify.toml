@@ -7,21 +7,27 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   SECRETS_SCAN_ENABLED = "false"
 
-# Canonicalize index.html
+# Option 1: PERMANENTLY REDIRECT all .html to clean URLs (Recommended for SEO)
 [[redirects]]
-  from = "/index.html"
-  to = "/"
+  from = "/:path/:file.html"
+  to = "/:path/:file"
   status = 301
   force = true
 
-# Block ALL fake .html URLs
 [[redirects]]
-  from = "/*.html"
-  to = "/404"
-  status = 404
+  from = "/:file.html"
+  to = "/:file"
+  status = 301
   force = true
 
-# Your existing typo redirect
+# Option 2: OR return 410 Gone for all .html (if you want them gone forever)
+# [[redirects]]
+#   from = "/*.html"
+#   to = "/.netlify/functions/410"
+#   status = 410
+#   force = true
+
+# Your typo redirects
 [[redirects]]
   from = "/yardi-consulation-services"
   to = "/yardi-consultation-services"
@@ -34,7 +40,7 @@
   status = 301
   force = true
 
-# React SPA fallback (must be LAST)
+# React SPA fallback (MUST be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
