@@ -7,21 +7,11 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   SECRETS_SCAN_ENABLED = "false"
 
-# EXCLUDE index.html from .html redirects - handle it separately
+# Block ALL .html URLs (return 410 Gone)
 [[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
+  from = "/*.html"
+  status = 410
   force = true
-
-# Redirect OTHER .html files to clean URLs, but ONLY if they're not React routes
-[[redirects]]
-  from = "/:path*.html"
-  to = "/:path*"
-  status = 301
-  force = true
-  # Add a condition to prevent loops
-  conditions = {Language = ["en"], Country = ["US"]}
 
 # Your typo redirects
 [[redirects]]
@@ -36,7 +26,7 @@
   status = 301
   force = true
 
-# React SPA fallback (MUST be last)
+# React SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
