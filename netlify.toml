@@ -7,13 +7,27 @@
   NODE_OPTIONS = "--max_old_space_size=4096"
   SECRETS_SCAN_ENABLED = "false"
 
-# Block ALL .html URLs (return 410 Gone)
+# ✅ Allow OpenAI domain verification file
+[[redirects]]
+  from = "/openai-domain-verification.html"
+  to = "/openai-domain-verification.html"
+  status = 200
+  force = true
+
+# ❌ Block ALL other .html URLs (old legacy pages, fake URLs)
 [[redirects]]
   from = "/*.html"
+  to = "/404.html"
   status = 410
   force = true
 
-# Your typo redirects
+[[redirects]]
+  from = "/*/*.html"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# Typo redirects (keep as-is)
 [[redirects]]
   from = "/yardi-consulation-services"
   to = "/yardi-consultation-services"
@@ -26,7 +40,7 @@
   status = 301
   force = true
 
-# React SPA fallback
+# React SPA fallback (MUST be LAST)
 [[redirects]]
   from = "/*"
   to = "/index.html"
