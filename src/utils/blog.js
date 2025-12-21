@@ -5,7 +5,21 @@ export function slugify(title) {
     .trim()
     .replace(/&/g, " and ")
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .replace(/^-+|-+$/g, "")
+    // Limit to max 6 words for shorter URLs
+    .split('-')
+    .slice(0, 6)
+    .join('-');
+}
+
+export function getCategorySlug(category) {
+  if (!category) return "general";
+  
+  return String(category)
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]/g, '');
 }
 
 export function findBlogBySlug(slug, blogList) {
@@ -20,13 +34,31 @@ export function findBlogById(idParam, blogList) {
   return blogList.find((post) => Number(post.id) === idNumber);
 }
 
-export function resolveBlogFromParam(param, blogList) {
-  if (!param) return undefined;
-  // Try numeric id first (e.g., /blog/4)
-  const byId = findBlogById(param, blogList);
-  if (byId) return byId;
-  // Fallback to slug (e.g., /blog/why-cre-accounting...)
-  return findBlogBySlug(param, blogList);
+export function findBlogByCategoryAndSlug(category, slug, blogList) {
+  if (!category || !slug || !Array.isArray(blogList)) return undefined;
+  
+  return blogList.find((post) => {
+    const postCategorySlug = getCategorySlug(post.category);
+    const postSlug = slugify(post.title);
+    
+    return postCategorySlug === category && postSlug === slug;
+  });
+}
+
+export function resolveBlogFromParam(param1, param2, blogList) {
+  if (!blogList) return undefined;
+  
+  // If only one parameter (old structure)
+  if (!param2) {
+    // Try numeric id first (e.g., /blog/4)
+    const byId = findBlogById(param1, blogList);
+    if (byId) return byId;
+    // Fallback to slug (e.g., /blog/why-cre-accounting...)
+    return findBlogBySlug(param1, blogList);
+  }
+  
+  // If two parameters (new structure: /blog/category/slug)
+  return findBlogByCategoryAndSlug(param1, param2, blogList);
 }
 
 // Prefer explicit image fields on a post; fallback handled by caller
@@ -106,5 +138,3 @@ export function resolvePostImage(post) {
   // Final global default
   return { srcset: CAMError,CAMWorkFlow, fallback: CAMErrorFallback,CAMWorkFlowFallback };
 }
-
-

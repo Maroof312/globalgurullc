@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion as Motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { slugify, resolvePostImage } from '../../utils/blog';
+import { slugify, getCategorySlug, resolvePostImage } from '../../utils/blog';
 import './BlogPost.scss';
 
 // Image selection is centralized in utils/blog via resolvePostImage
@@ -16,7 +16,8 @@ const BlogPost = React.memo(({ blog, isFeatured = false, layout = 'vertical' }) 
 
   const handleReadMore = () => {
     const slug = slugify(blog.title);
-    navigate(`/blog/${slug}`, { state: { blog } });
+    const categorySlug = getCategorySlug(blog.category);
+    navigate(`/blog/${categorySlug}/${slug}`, { state: { blog } });
   };
 
   const handleImageError = (e) => {

@@ -22,8 +22,18 @@ const BlogDetail = React.memo(() => {
   const { blog } = location.state || {};
   const blogFromParam = useMemo(() => {
     if (blog) return blog;
-    if (!params?.title) return undefined;
-    return resolveBlogFromParam(params.title, blogData);
+    
+    // New URL structure: /blog/:category/:slug
+    if (params?.category && params?.slug) {
+      return resolveBlogFromParam(params.category, params.slug, blogData);
+    }
+    
+    // Support for old URLs during transition
+    if (params?.title) {
+      return resolveBlogFromParam(params.title, null, blogData);
+    }
+    
+    return undefined;
   }, [blog, params]);
 
   const detailImage = useMemo(() => {
@@ -183,4 +193,4 @@ const BlogDetail = React.memo(() => {
   );
 });
 
-export default BlogDetail;
+export default BlogDetail;  
