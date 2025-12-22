@@ -101,6 +101,8 @@ import AccBook from '../assets/images/17-11.avif?w=300;600;900&format=avif&as=sr
 import AccBookFallback from '../assets/images/17-11.avif?w=600';
 import CAMTrueUp from '../assets/images/24-11.webp?w=300;600;900&format=webp&as=srcset';
 import CAMTrueUpFallback from '../assets/images/24-11.webp?w=600';
+import OscMonth from '../assets/images/23-12.avif?w=300;600;900&format=webp&as=srcset';
+import OscMonthFallback from '../assets/images/23-12.avif?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
@@ -111,6 +113,7 @@ const CATEGORY_IMAGE_FALLBACKS = {
   'Property Accounting' : {srcset: ARPM, fallback: ARPMFallback},
   'Accounting Controls' : {srcset: APCRE, fallback: APCREFallback},
   'Lease Administration' : {srcset: LeaseAdmin, fallback: LeaseAdminFallback},
+  'Accounting Operations' : {srcset: OscMonth, fallback: OscMonthFallback}
 };
 
 // Per-post explicit overrides (keeps data pure)
