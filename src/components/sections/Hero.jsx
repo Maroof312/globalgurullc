@@ -37,8 +37,17 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <h1>
-            Outsourced Accounting Services for Commercial Real Estate Companies
+            Outsource With Confidence
           </h1>
+
+          <motion.p
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Tailored for Family Offices
+          </motion.p>
 
           <motion.p
             className="hero-subtext"
@@ -46,8 +55,21 @@ export default function HeroSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Streamline Your Property Finances with Accurate,  Transparent and Scalable Solutions. Outsource with Confidence.
+            Exclusive dedicated teams delivering accuracy, accountability, and trust for commercial real estate portfolios.
           </motion.p>
+
+          <motion.div
+            className="hero-features"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <span>End-to-End Accounting</span>
+            <span>•</span>
+            <span>CAM Reconciliations</span>
+            <span>•</span>
+            <span>Lease Administration</span>
+          </motion.div>
 
           <motion.div
             className="hero-buttons"
