@@ -141,6 +141,12 @@
             color: white;
           }
         }
+        
+        .linkedin-icon {
+          background: #005582;
+          transform: scale(1.1);
+          box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+        }
       }
 
       .card-inner {
@@ -195,6 +201,32 @@
           font-weight: 600;
           margin-bottom: 20px;
           font-size: 1rem;
+        }
+        
+        // LinkedIn Icon Styles
+        .linkedin-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          background: #0077B5;
+          color: white;
+          border-radius: 50%;
+          margin-bottom: 15px;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          
+          &:hover {
+            background: #005582;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+          }
+          
+          svg {
+            width: 16px;
+            height: 16px;
+          }
         }
         
         .view-details-btn {
@@ -375,6 +407,36 @@
               }
             }
             
+            // LinkedIn Profile Link in Detail View
+            .linkedin-profile {
+              margin-bottom: 20px;
+              
+              .linkedin-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: #0077B5;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                
+                &:hover {
+                  background: #005582;
+                  transform: translateY(-2px);
+                  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+                }
+                
+                svg {
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+            }
+            
             .specialties {
               margin-bottom: 25px;
               
@@ -459,7 +521,7 @@
   }
 }
 
-// Responsive adjustments for overlay
+// Responsive adjustments
 @media (max-width: 991px) {
   .team-section.team-team {
     .team-detail-overlay {
@@ -467,7 +529,7 @@
       
       .detail-container {
         max-height: 85vh;
-        margin-top: 60px; // Add space for mobile header
+        margin-top: 60px;
         
         .detail-content {
           padding: 30px 25px;
@@ -509,6 +571,21 @@
   }
   
   .team-section.team-team {
+    .team-card.team-page-card {
+      .team-info {
+        .linkedin-icon {
+          width: 32px;
+          height: 32px;
+          margin-bottom: 12px;
+          
+          svg {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+    
     .team-detail-overlay {
       padding: 10px;
       
@@ -517,6 +594,15 @@
           padding: 25px 20px;
           
           .detail-info {
+            .linkedin-profile {
+              text-align: center;
+              
+              .linkedin-link {
+                padding: 6px 14px;
+                font-size: 0.85rem;
+              }
+            }
+            
             h2 {
               font-size: 1.5rem;
             }
@@ -533,6 +619,21 @@
 
 @media (max-width: 576px) {
   .team-section.team-team {
+    .team-card.team-page-card {
+      .team-info {
+        .linkedin-icon {
+          width: 30px;
+          height: 30px;
+          margin-bottom: 10px;
+          
+          svg {
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+    }
+    
     .team-detail-overlay {
       padding: 8px;
       
@@ -577,6 +678,20 @@
 
 @media (max-width: 400px) {
   .team-section.team-team {
+    .team-card.team-page-card {
+      .team-info {
+        .linkedin-icon {
+          width: 28px;
+          height: 28px;
+          
+          svg {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+    
     .team-detail-overlay {
       padding: 5px;
       
@@ -675,6 +790,20 @@
 
 @media (max-width: 300px) {
   .team-section.team-team {
+    .team-card.team-page-card {
+      .team-info {
+        .linkedin-icon {
+          width: 26px;
+          height: 26px;
+          
+          svg {
+            width: 11px;
+            height: 11px;
+          }
+        }
+      }
+    }
+    
     .team-detail-overlay {
       .detail-container {
         margin-top: 35px;

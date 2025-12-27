@@ -21,7 +21,8 @@ const team = [
     fullBio: "Sheshu Pulipaka is the Founder of Global Guru LLC, with over 27 years of global experience in real estate, private equity, fund accounting, lease audits, FP&A, and regulatory compliance. He has held senior leadership roles at Apex Group and Invesco US, where he led large international teams across fund operations, NAV reviews, and investor reporting. Sheshu specializes in CAM reconciliation, valuations, and automation using platforms like Yardi, Angus Systems, and SAP. He is a Certified Management Accountant (CMA) and CISA, with an MBA in Investments and certifications in Lean Six Sigma and Design Thinking. Known for his strategic insight and execution focus, he helps clients streamline CRE operations and scale with confidence.",
     avatar: team1,
     avatarFallback: team1Fallback,
-    specialties: ["Real Estate", "Private Equity", "Fund Accounting", "CAM Reconciliation"]
+    specialties: ["Real Estate", "Private Equity", "Fund Accounting", "CAM Reconciliation"],
+    linkedin: "https://www.linkedin.com/in/sheshu-pulipaka-b120229/"
   },
   {
     name: "Yugandhar Majji",
@@ -30,7 +31,8 @@ const team = [
     fullBio: "Yugandhar Majji is a fund accounting and financial operations specialist with over 15 years of experience across private equity, real estate, and financial reporting. As Co-Founder of Global Guru, he leads Yardi implementations, reconciliations, and end-to-end accounting support for clients across the U.S. and India. He has previously held key roles at Deloitte and Invesco, managing NAV processes, investor reporting, and audit support. With strong expertise in Yardi Voyager, SAP, and QuickBooks, Yugandhar blends technical precision with process efficiency to deliver results for fund managers and property owners alike.",
     avatar: team3,
     avatarFallback: team3Fallback,
-    specialties: ["Fund Accounting", "Financial Operations", "NAV Processes", "Audit Support"]
+    specialties: ["Fund Accounting", "Financial Operations", "NAV Processes", "Audit Support"],
+    linkedin: "https://www.linkedin.com/in/yugandhar-majji-68518033/"
   },
   {
     name: "Lija Erkhova",
@@ -39,7 +41,8 @@ const team = [
     fullBio: "Lija Erkhova is a seasoned operations expert with 20+ years of global experience across real estate accounting, client service, HR operations, and training. As Director of Operations at Global Guru, she leads Yardi-based solutions, compliance reporting, and operational enhancements for real estate clients worldwide. Based in Australia, Lija has previously held roles with the WA Government and luxury retail brands, where she streamlined systems and led high-impact teams. With a strong background in business management and service leadership, she drives efficiency, compliance, and client success across every engagement.",
     avatar: team4,
     avatarFallback: team4Fallback,
-    specialties: ["Operations Management", "Compliance Reporting", "Yardi Solutions", "Client Service"]
+    specialties: ["Operations Management", "Compliance Reporting", "Yardi Solutions", "Client Service"],
+    linkedin: "https://www.linkedin.com/in/lija-erkhova-48948325/"
   },
   {
     name: "Avinash Amarnath Jha",
@@ -48,7 +51,8 @@ const team = [
     fullBio: "Avinash Amarnath Jha is a Senior Accounting Manager with over 12 years of global experience in financial management, accounts payable/receivable, reconciliations, and process optimization. He has led international finance transitions, including U.S.-based assignments, ensuring accuracy and compliance across complex operations. Avinash specializes in automation, reporting, and process improvements using platforms such as SAP, Yardi, IFS, QAD, Trintech, and Blackline. Known for his leadership and problem-solving skills, he helps organizations streamline financial operations, strengthen controls, and scale with efficiency and confidence..",
     avatar: team2,
     avatarFallback: team2Fallback,
-    specialties: ["Yardi Implementation", "Financial Reporting", "Process Automation", "Tech Solutions"]
+    specialties: ["Yardi Implementation", "Financial Reporting", "Process Automation", "Tech Solutions"],
+    linkedin: "https://www.linkedin.com/in/avinash-jha-6b018472/"
   }
 ]
 
@@ -164,6 +168,23 @@ const TeamPageCard = ({ member, index, onSelect }) => {
         <div className="team-info">
           <h3>{member.name}</h3>
           <p className="role">{member.role}</p>
+          
+          {/* LinkedIn Icon */}
+          {member.linkedin && (
+            <a 
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="linkedin-icon"
+              onClick={(e) => e.stopPropagation()}
+              aria-label={`Connect with ${member.name} on LinkedIn`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.432.556-.878 1.203-.878.852 0 1.192.61 1.192 1.503v4.338h2.401V9.24c0-2.367-1.26-3.467-2.94-3.467-1.375 0-1.979.757-2.31 1.286h.025V6.169H6.598c.034.75 0 7.225 0 7.225h2.401z"/>
+              </svg>
+            </a>
+          )}
+          
           <div className="view-details-btn">
             View Details
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -222,6 +243,24 @@ const TeamDetailOverlay = ({ member, onClose }) => {
           <div className="detail-info">
             <h2>{member.name}</h2>
             <p className="detail-role">{member.role}</p>
+            
+            {/* LinkedIn Link in Detail View */}
+            {member.linkedin && (
+              <div className="linkedin-profile">
+                <a 
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="linkedin-link"
+                  aria-label={`Connect with ${member.name} on LinkedIn`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.432.556-.878 1.203-.878.852 0 1.192.61 1.192 1.503v4.338h2.401V9.24c0-2.367-1.26-3.467-2.94-3.467-1.375 0-1.979.757-2.31 1.286h.025V6.169H6.598c.034.75 0 7.225 0 7.225h2.401z"/>
+                  </svg>
+                  Connect on LinkedIn
+                </a>
+              </div>
+            )}
             
             <div className="specialties">
               <h4>Areas of Expertise</h4>
