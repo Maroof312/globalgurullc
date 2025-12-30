@@ -15,14 +15,13 @@
   status = 200
   force = true
 
-# ✅ Never touch static assets
+# ✅ Allow favicon + other real static files
 [[redirects]]
-  from = "/assets/*"
-  to = "/assets/:splat"
+  from = "/favicon.ico"
+  to = "/favicon.ico"
   status = 200
   force = true
 
-# ✅ Allow other real static files
 [[redirects]]
   from = "/robots.txt"
   to = "/robots.txt"
@@ -32,6 +31,13 @@
 [[redirects]]
   from = "/sitemap.xml"
   to = "/sitemap.xml"
+  status = 200
+  force = true
+
+# ✅ Never touch built assets
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
   status = 200
   force = true
 
@@ -48,14 +54,19 @@
   status = 301
   force = true
 
-# ❌ Kill ANY other legacy .html (safe now)
 [[redirects]]
-  from = "/:splat.html"
-  to = "/404.html"
-  status = 410
+  from = "/services.html"
+  to = "/services"
+  status = 301
   force = true
 
-# ✅ SPA fallback (LAST)
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+# ✅ SPA fallback (MUST be LAST)
 [[redirects]]
   from = "/*"
   to = "/index.html"
