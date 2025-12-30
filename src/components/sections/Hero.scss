@@ -1,53 +1,54 @@
-.hero-section {
+.hero2 {
   position: relative;
   overflow: hidden;
-  color: #ffffff;
+  color: #fff;
   background: #070b18;
 
-  /* Compact height (no long hero on mobile) */
-  padding: clamp(90px, 14vh, 150px) 0 clamp(22px, 5vh, 50px);
-  min-height: clamp(500px, 68vh, 720px);
+  /* ✅ Prevent stretched hero on mobile */
+  padding: clamp(88px, 12vh, 140px) 0 clamp(22px, 5vh, 50px);
+  min-height: clamp(520px, 66vh, 760px);
 
-  /* ===== Signature Background ===== */
-  .hero-bg {
+  /* ======================
+     Unique premium background
+     ====================== */
+
+  .hero2-bg {
     position: absolute;
-    inset: -25%;
+    inset: -22%;
     z-index: 0;
 
-    /* “Aurora glass” blobs */
+    /* Aurora blobs */
     background:
-      radial-gradient(circle at 15% 30%, rgba(79, 70, 229, 0.55), transparent 52%),
-      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.46), transparent 50%),
-      radial-gradient(circle at 55% 88%, rgba(168, 85, 247, 0.38), transparent 56%),
-      radial-gradient(circle at 40% 55%, rgba(34, 197, 94, 0.16), transparent 58%),
-      radial-gradient(circle at 65% 60%, rgba(255, 255, 255, 0.06), transparent 62%);
+      radial-gradient(circle at 18% 28%, rgba(79, 70, 229, 0.58), transparent 52%),
+      radial-gradient(circle at 86% 22%, rgba(14, 165, 233, 0.46), transparent 50%),
+      radial-gradient(circle at 55% 88%, rgba(168, 85, 247, 0.36), transparent 56%),
+      radial-gradient(circle at 40% 55%, rgba(34, 197, 94, 0.14), transparent 60%);
 
     filter: blur(18px) saturate(1.25);
     transform: translate3d(0, 0, 0);
-    animation: auroraMorph 11s ease-in-out infinite;
+    animation: hero2Aurora 10.5s ease-in-out infinite;
     will-change: transform;
   }
 
-  /* FX layer = the unique stuff (beam, ring, grid, sparks) */
-  .hero-fx {
+  .hero2-fx {
     position: absolute;
     inset: 0;
     z-index: 1;
     pointer-events: none;
 
-    /* Depth + vignette */
+    /* Depth */
     background:
-      radial-gradient(circle at top, rgba(255, 255, 255, 0.10), transparent 55%),
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.10), transparent 56%),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.34));
   }
 
-  /* Rotating halo ring (premium focal motion) */
-  .hero-fx::before {
+  /* Rotating halo */
+  .hero2-fx::before {
     content: "";
     position: absolute;
     width: 860px;
     height: 860px;
-    left: 50%;
+    left: 58%;
     top: 40%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -55,23 +56,27 @@
     background: conic-gradient(
       from 0deg,
       rgba(14,165,233,0.00),
-      rgba(14,165,233,0.18),
+      rgba(14,165,233,0.16),
       rgba(79,70,229,0.26),
-      rgba(168,85,247,0.20),
+      rgba(168,85,247,0.18),
       rgba(14,165,233,0.00)
     );
 
     filter: blur(18px);
     opacity: 0.95;
-    animation: haloSpin 16s linear infinite;
+    animation: hero2Halo 16s linear infinite;
     will-change: transform;
   }
 
-  /* Moving spotlight beam sweep + subtle grid drift + spark dots */
-  .hero-fx::after {
+  /* Spotlight sweep + grid drift + spark dots */
+  .hero2-fx::after {
     content: "";
     position: absolute;
-    inset: -30% -40%;
+    inset: -28% -40%;
+    transform: translate3d(-18%, -10%, 0) rotate(10deg);
+    will-change: transform, opacity;
+    animation: hero2Sweep 10.5s ease-in-out infinite;
+    opacity: 0.58;
 
     background:
       /* spotlight beam */
@@ -88,140 +93,281 @@
         rgba(255, 255, 255, 0.03) 0px,
         rgba(255, 255, 255, 0.03) 1px,
         transparent 1px,
-        transparent 64px
+        transparent 66px
       ),
       repeating-linear-gradient(
         90deg,
         rgba(255, 255, 255, 0.025) 0px,
         rgba(255, 255, 255, 0.025) 1px,
         transparent 1px,
-        transparent 64px
+        transparent 66px
       ),
-      /* spark dots (cheap noise-like richness) */
-      radial-gradient(circle at 10% 20%, rgba(255,255,255,0.08) 0 1px, transparent 2px),
+      /* spark dots */
+      radial-gradient(circle at 10% 20%, rgba(255,255,255,0.09) 0 1px, transparent 2px),
       radial-gradient(circle at 30% 70%, rgba(255,255,255,0.06) 0 1px, transparent 2px),
       radial-gradient(circle at 80% 30%, rgba(255,255,255,0.06) 0 1px, transparent 2px),
       radial-gradient(circle at 70% 85%, rgba(255,255,255,0.05) 0 1px, transparent 2px);
-
-    opacity: 0.55;
-    transform: translate3d(-18%, -8%, 0) rotate(10deg);
-    animation: beamDrift 10.5s ease-in-out infinite;
-    will-change: transform, opacity;
   }
 
-  @keyframes auroraMorph {
+  @keyframes hero2Aurora {
     0%   { transform: translate3d(-2%, -1%, 0) scale(1.03); }
     50%  { transform: translate3d(2%, 2%, 0) scale(1.08); }
     100% { transform: translate3d(-2%, -1%, 0) scale(1.03); }
   }
 
-  @keyframes haloSpin {
-    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
-    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+  @keyframes hero2Halo {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
   }
 
-  @keyframes beamDrift {
-    0%   { transform: translate3d(-24%, -10%, 0) rotate(10deg); opacity: 0.45; }
+  @keyframes hero2Sweep {
+    0%   { transform: translate3d(-24%, -10%, 0) rotate(10deg); opacity: 0.48; }
     50%  { transform: translate3d(6%, 10%, 0) rotate(10deg); opacity: 0.70; }
-    100% { transform: translate3d(24%, 18%, 0) rotate(10deg); opacity: 0.45; }
+    100% { transform: translate3d(24%, 18%, 0) rotate(10deg); opacity: 0.48; }
   }
 
-  /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
-    .hero-bg { animation: none; }
-    .hero-fx::before { animation: none; }
-    .hero-fx::after { animation: none; }
+    .hero2-bg { animation: none; }
+    .hero2-fx::before { animation: none; }
+    .hero2-fx::after { animation: none; }
   }
 
-  /* ===== Content ===== */
-  .hero-container {
+  /* ======================
+     Layout
+     ====================== */
+
+  .hero2-container {
     position: relative;
     z-index: 2;
   }
 
-  .hero-content {
-    max-width: 820px;
+  .hero2-row {
+    row-gap: 28px;
+  }
 
-    h1 {
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      font-weight: 700;
-      line-height: 1.12;
-      margin-bottom: 1.6rem;
-      letter-spacing: -0.5px;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.38);
+  .hero2-left-inner {
+    max-width: 680px;
+  }
+
+  .hero2-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(10px);
+    margin-bottom: 16px;
+  }
+
+  .hero2-title {
+    font-size: clamp(2.1rem, 3.6vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.6px;
+    margin: 0 0 14px;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.38);
+  }
+
+  .hero2-subtitle {
+    font-size: 1.08rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.82);
+    margin: 0 0 16px;
+    max-width: 620px;
+  }
+
+  .hero2-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1rem;
+      line-height: 1.4;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.9;
+      }
     }
   }
 
-  .hero-buttons {
+  .hero2-buttons {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    margin-bottom: clamp(16px, 3.5vh, 28px);
 
     .btn-holographic {
       background: linear-gradient(45deg, #0d6efd, #6f42c1);
       border: none;
-      border-radius: 50px;
-      padding: 12px 28px;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 600;
       color: #fff;
-      font-weight: 500;
       box-shadow: 0 12px 34px rgba(79, 70, 229, 0.38);
     }
 
     .btn-glass {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 50px;
-      padding: 12px 28px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 600;
       color: #fff;
-      font-weight: 500;
+      backdrop-filter: blur(12px);
     }
   }
 
-  /* ===== Embedded Trust Bar ===== */
-  .hero-expertise {
-    background: rgba(255, 255, 255, 0.09);
+  /* ======================
+     Right feature cards
+     ====================== */
+
+  .hero2-cards {
+    display: grid;
+    gap: 14px;
+  }
+
+  .hero-feature-card {
+    display: grid;
+    grid-template-columns: 8px 1fr 30px;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 14px;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+
+    .hero-feature-left {
+      height: 100%;
+      border-radius: 999px;
+      opacity: 0.9;
+    }
+
+    .hero-feature-title {
+      font-weight: 700;
+      font-size: 1.02rem;
+      line-height: 1.25;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 2px;
+    }
+
+    .hero-feature-subtitle {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.35;
+    }
+
+    .hero-feature-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      justify-self: center;
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
+      opacity: 0.9;
+    }
+
+    &.accent-blue {
+      .hero-feature-left {
+        background: linear-gradient(180deg, rgba(14,165,233,0.95), rgba(79,70,229,0.95));
+      }
+      .hero-feature-dot {
+        background: rgba(14,165,233,0.95);
+      }
+    }
+
+    &.accent-gold {
+      .hero-feature-left {
+        background: linear-gradient(180deg, rgba(245,158,11,0.95), rgba(234,179,8,0.95));
+      }
+      .hero-feature-dot {
+        background: rgba(245,158,11,0.95);
+      }
+    }
+  }
+
+  /* ======================
+     Data Expertise inside hero
+     ====================== */
+  .hero2-expertise {
+    margin-top: 22px;
+    background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(14px);
     border-radius: 18px;
-    padding: 10px 10px; /* compact */
-    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
+    padding: 10px 10px;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.20);
   }
+
+  /* ======================
+     Mobile responsiveness (no stretched hero)
+     ====================== */
 
   @media (max-width: 900px) {
     min-height: auto;
-    padding: 100px 0 38px;
+    padding: 92px 0 34px;
 
-    .hero-fx::before {
-      width: 650px;
-      height: 650px;
-      top: 44%;
+    .hero2-left-inner {
+      max-width: 100%;
+    }
+
+    .hero2-fx::before {
+      width: 640px;
+      height: 640px;
+      left: 55%;
+      top: 38%;
     }
   }
 
-  /* ✅ Mobile button width fix (compact, not full-width) */
   @media (max-width: 480px) {
-    .hero-buttons {
+    .hero2-buttons {
       gap: 10px;
 
+      /* ✅ prevent huge buttons on mobile */
       .btn-holographic,
       .btn-glass {
         width: auto;
         padding: 10px 14px;
         font-size: 0.9rem;
-        min-width: 140px;
-        max-width: 160px;
+        min-width: 138px;
+        max-width: 165px;
         white-space: nowrap;
+      }
+    }
+
+    .hero-feature-card {
+      grid-template-columns: 8px 1fr 26px;
+      padding: 12px 12px;
+
+      .hero-feature-title {
+        font-size: 0.98rem;
+      }
+      .hero-feature-subtitle {
+        font-size: 0.88rem;
       }
     }
   }
 
-  @media (max-width: 360px) {
-    .hero-buttons {
+  @media (max-width: 330px) {
+    .hero2-buttons {
       .btn-holographic,
       .btn-glass {
-        min-width: 130px;
+        min-width: 126px;
         max-width: 150px;
         padding: 9px 12px;
         font-size: 0.86rem;

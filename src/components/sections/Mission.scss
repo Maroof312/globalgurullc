@@ -160,6 +160,7 @@
     }
   }
 
+
   @media (max-width: 767px) {
     .mission-content {
       padding: 40px 25px;
@@ -254,5 +255,12 @@
       min-height: 300px;
 
     }
+  }
+}
+@media (max-width: 900px) {
+  .mission-section .mission-image-wrapper,
+  .mission-section .mission-image-wrapper img,
+  .mission-section .order-lg-2 {
+    display: none !important;
   }
 }

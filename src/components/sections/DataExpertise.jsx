@@ -38,11 +38,13 @@ import triangle from "../../assets/images/triangle_logo.webp?w=120;200&format=we
 import triangleFallback from "../../assets/images/triangle_logo.webp?w=200";
 import Leverton from "../../assets/images/Leverton_logo.webp?w=120;200&format=webp&as=srcset";
 import LevertonFallback from "../../assets/images/Leverton_logo.webp?w=200";
-import oracle from "../../assets/images/oracle.webp?w=120;200&format=webp;webp&as=srcset";
+
+/* ✅ FIXED: removed invalid ';webp' */
+import oracle from "../../assets/images/oracle.webp?w=120;200&format=webp&as=srcset";
 import oracleFallback from "../../assets/images/oracle.webp?w=200";
-import quickbook from "../../assets/images/quickbooks.webp?w=120;200&format=webp;webp&as=srcset";
+import quickbook from "../../assets/images/quickbooks.webp?w=120;200&format=webp&as=srcset";
 import quickbookFallback from "../../assets/images/quickbooks.webp?w=200";
-import qad from "../../assets/images/qad-alliances.webp?w=120;200&format=webp;webp&as=srcset";
+import qad from "../../assets/images/qad-alliances.webp?w=120;200&format=webp&as=srcset";
 import qadFallback from "../../assets/images/qad-alliances.webp?w=200";
 
 const expertiseData = [
@@ -68,11 +70,7 @@ const expertiseData = [
 ];
 
 const DataExpertise = memo(() => {
-  const autoplayOptions = useMemo(
-    () => ({ delay: 2000, disableOnInteraction: false }),
-    []
-  );
-
+  const autoplayOptions = useMemo(() => ({ delay: 2000, disableOnInteraction: false }), []);
   const breakpoints = useMemo(
     () => ({
       320: { slidesPerView: 2, spaceBetween: 14 },
