@@ -15,13 +15,6 @@
   status = 200
   force = true
 
-# ✅ Canonical fix: redirect /index.html → /
-[[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
-  force = true
-
 # ❌ Kill ALL legacy .html pages (bulletproof)
 [[redirects]]
   from = "/:splat.html"
