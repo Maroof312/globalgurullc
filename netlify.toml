@@ -15,27 +15,27 @@
   status = 200
   force = true
 
-# ✅ Canonical fix: redirect /index.html to /
+# ✅ Canonical fix: redirect /index.html → /
 [[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
   force = true
 
-# ❌ Kill legacy HTML pages (MUST come BEFORE the SPA fallback)
+# ❌ Kill ALL legacy .html pages (bulletproof)
 [[redirects]]
-  from = "/*.html"
+  from = "/:splat.html"
   to = "/404.html"
   status = 410
   force = true
 
 [[redirects]]
-  from = "/*/*.html"
+  from = "/:splat/:splat.html"
   to = "/404.html"
   status = 410
   force = true
 
-# React SPA fallback (MUST be LAST)
+# ✅ React SPA fallback (MUST be LAST)
 [[redirects]]
   from = "/*"
   to = "/index.html"
