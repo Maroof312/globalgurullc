@@ -8,14 +8,12 @@
   SECRETS_SCAN_ENABLED = "true"
   SECRETS_SCAN_OMIT_KEYS = "VITE_RECAPTCHA_SITE_KEY,VITE_EMAILJS_PUBLIC_KEY,VITE_EMAILJS_SERVICE_ID,VITE_EMAILJS_TEMPLATE_ID"
 
-# ✅ Allow OpenAI verification
 [[redirects]]
   from = "/openai-domain-verification.html"
   to = "/openai-domain-verification.html"
   status = 200
   force = true
 
-# ✅ Allow favicon + other real static files
 [[redirects]]
   from = "/favicon.ico"
   to = "/favicon.ico"
@@ -34,14 +32,13 @@
   status = 200
   force = true
 
-# ✅ Never touch built assets
 [[redirects]]
   from = "/assets/*"
   to = "/assets/:splat"
   status = 200
   force = true
 
-# ✅ Legacy HTML → correct modern routes (SEO-friendly)
+# ✅ Known legacy HTML → correct routes
 [[redirects]]
   from = "/index.html"
   to = "/"
@@ -66,7 +63,14 @@
   status = 301
   force = true
 
-# ✅ SPA fallback (MUST be LAST)
+# ✅ ADD THIS (kills random xyz.html so Google stops indexing)
+[[redirects]]
+  from = "/:splat.html"
+  to = "/404.html"
+  status = 410
+  force = true
+
+# ✅ SPA fallback (LAST)
 [[redirects]]
   from = "/*"
   to = "/index.html"
