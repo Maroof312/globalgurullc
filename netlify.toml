@@ -63,13 +63,6 @@
   status = 301
   force = true
 
-# ✅ ADD THIS (kills random xyz.html so Google stops indexing)
-[[redirects]]
-  from = "/:splat.html"
-  to = "/404.html"
-  status = 410
-  force = true
-
 # ✅ SPA fallback (LAST)
 [[redirects]]
   from = "/*"
