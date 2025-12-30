@@ -15,14 +15,14 @@
   status = 200
   force = true
 
-# ✅ IMPORTANT: Never redirect static assets
+# ✅ Never touch static assets
 [[redirects]]
   from = "/assets/*"
   to = "/assets/:splat"
   status = 200
   force = true
 
-# ✅ Allow other real static files (robots, sitemap, favicon, etc.)
+# ✅ Allow other real static files
 [[redirects]]
   from = "/robots.txt"
   to = "/robots.txt"
@@ -35,7 +35,20 @@
   status = 200
   force = true
 
-# ❌ Block only TOP-LEVEL legacy html pages (safe)
+# ✅ Legacy HTML → correct modern routes (SEO-friendly)
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/who-we-are"
+  status = 301
+  force = true
+
+# ❌ Kill any other .html (safe catch-all)
 [[redirects]]
   from = "/*.html"
   to = "/404.html"
