@@ -1,32 +1,42 @@
-# Allow verification
-[[redirects]]
-from = "/openai-domain-verification.html"
-to = "/openai-domain-verification.html"
-status = 200
-force = true
+[build]
+  publish = "dist"
+  command = "npm install --legacy-peer-deps && npm run build"
 
-# ✅ Canonical fix
+[build.environment]
+  NODE_VERSION = "20"
+  NODE_OPTIONS = "--max_old_space_size=4096"
+  SECRETS_SCAN_ENABLED = "true"
+  SECRETS_SCAN_OMIT_KEYS = "VITE_RECAPTCHA_SITE_KEY,VITE_EMAILJS_PUBLIC_KEY,VITE_EMAILJS_SERVICE_ID,VITE_EMAILJS_TEMPLATE_ID"
+
+# ✅ Allow OpenAI domain verification file
 [[redirects]]
-from = "/index.html"
-to = "/"
-status = 301
-force = true
+  from = "/openai-domain-verification.html"
+  to = "/openai-domain-verification.html"
+  status = 200
+  force = true
+
+# ✅ Canonical fix: redirect /index.html to /
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
 
 # ❌ Kill legacy HTML pages (MUST come BEFORE the SPA fallback)
 [[redirects]]
-from = "/*.html"
-to = "/404.html"
-status = 410
-force = true
+  from = "/*.html"
+  to = "/404.html"
+  status = 410
+  force = true
 
 [[redirects]]
-from = "/*/*.html"
-to = "/404.html"
-status = 410
-force = true
+  from = "/*/*.html"
+  to = "/404.html"
+  status = 410
+  force = true
 
 # React SPA fallback (MUST be LAST)
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
