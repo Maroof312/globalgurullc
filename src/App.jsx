@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom' // <-- ADD useLocation HERE
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { lazy, Suspense, useEffect } from 'react';
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -6,6 +6,7 @@ import Breadcrumb from './components/Breadcrumb/Breadcrumb'
 import GoogleAnalytics from './components/analytics/GoogleAnalytics'
 import Home from './pages/Home/Home'
 import YardiConsulting from './pages/YardiConsulting/YardiConsulting';
+
 // LAZY LOAD ALL OTHER PAGES
 const About = lazy(() => import('./pages/About/About'));
 const Services = lazy(() => import('./pages/Services/Services'));
@@ -22,19 +23,19 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy/PrivacyPolicy'));
 const ThankYou = lazy(() => import('./pages/Thankyou/ThankYou'));
 const Argus = lazy(() => import('./pages/Args/ARGUSModule'));
 const Sitemap = lazy(() => import('./pages/Sitemap/Sitemap'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound')); // ✅ ADDED
 
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top when route changes
     window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
 }
 
-// Create a simple loading component
+// Loading fallback
 const PageLoading = () => (
   <div style={{ 
     display: 'flex', 
@@ -53,7 +54,7 @@ function App() {
       <GoogleAnalytics />
       <Header />
       <Breadcrumb />
-      {/* Wrap Routes in Suspense for lazy loading */}
+
       <Suspense fallback={<PageLoading />}>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -73,18 +74,20 @@ function App() {
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/argus" element={<Argus />} />
           <Route path="/sitemap" element={<Sitemap />} />
+
+          {/* ✅ MUST BE LAST */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+
       <Footer />
+
       {/* Fixed Book a Call Button */}
-      <a 
-        href="/contact" 
-        className="fixed-call-button"
-      >
+      <a href="/contact" className="fixed-call-button">
         Book a Call
       </a>
     </Router>
   )
 }
 
-export default App
+export default App;
