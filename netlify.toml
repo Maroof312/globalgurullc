@@ -5,14 +5,14 @@ to = "/openai-domain-verification.html"
 status = 200
 force = true
 
-# ✅ Canonical fix (VERY IMPORTANT)
+# ✅ Canonical fix
 [[redirects]]
 from = "/index.html"
 to = "/"
 status = 301
 force = true
 
-# ❌ Kill legacy HTML pages
+# ❌ Kill legacy HTML pages (MUST come BEFORE the SPA fallback)
 [[redirects]]
 from = "/*.html"
 to = "/404.html"
@@ -25,7 +25,7 @@ to = "/404.html"
 status = 410
 force = true
 
-# React SPA fallback (LAST)
+# React SPA fallback (MUST be LAST)
 [[redirects]]
 from = "/*"
 to = "/index.html"
