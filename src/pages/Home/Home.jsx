@@ -5,7 +5,7 @@ import { lazy, Suspense } from 'react'; // Added Suspense import
 import { Container, Row, Col } from 'react-bootstrap';
 import HeroSection from '../../components/sections/Hero';
 import MissionSection from '../../components/sections/Mission';
-import DataExpertise from '../../components/sections/DataExpertise';
+// import DataExpertise from '../../components/sections/DataExpertise';
 import ServicesOverview from '../../components/sections/ServicesOverview';
 import Testimonials from '../../components/sections/Testimonials';
 import CTA from '../../components/sections/CTA';
@@ -90,6 +90,12 @@ export default function Home() {
       {/* 1) Hero */}
       <HeroSection />
 
+      {/* 3b) Capabilities overview */}
+      {/* <DataExpertise /> */}
+
+      {/* 5) Why Choose Us / Differentiators */}
+      <TMDifference/>
+      
       {/* 2) Introduction / Quick Value Prop */}
       <MissionSection />
 
@@ -98,11 +104,6 @@ export default function Home() {
         <ServicesOverview />
       </Suspense>
 
-      {/* 3b) Capabilities overview */}
-      <DataExpertise />
-
-      {/* 5) Why Choose Us / Differentiators */}
-      <TMDifference/>
 
       {/* 6) Social Proof: logos + stats */}
       <TrustedBySection pageType="home" />

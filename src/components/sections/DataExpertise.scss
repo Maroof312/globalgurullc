@@ -1,34 +1,36 @@
 .data-expertise {
-  padding: 60px 0;
-  background-color: #fff;
+  /* compact trust bar */
+  padding: 6px 0 2px;
+  background: transparent;
   text-align: center;
 
   h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #212529;
-    margin-bottom: 40px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0 0 10px;
   }
 
   .expertise-carousel {
     width: 100%;
-    padding: 10px 0;
+    padding: 6px 0;
   }
 
+  /* bigger visibility */
   .logo-slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 90px;
   }
 
   .logo-container {
-    width: 150px;
-    height: 80px;
+    width: 210px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 150/80;
+    aspect-ratio: 210/70;
   }
 
   .carousel-logo {
@@ -37,19 +39,36 @@
     width: auto;
     height: auto;
     object-fit: contain;
+
+    /* makes transparent logos pop */
+    filter:
+      drop-shadow(0 12px 16px rgba(0, 0, 0, 0.45))
+      drop-shadow(0 2px 2px rgba(255, 255, 255, 0.08));
   }
 
   @media (max-width: 768px) {
     h2 {
-      font-size: 2rem;
+      font-size: 0.98rem;
+      margin-bottom: 8px;
     }
 
     .logo-slide {
-      height: 80px;
+      height: 82px;
     }
 
     .logo-container {
-      width: 120px;
+      width: 190px;
+      height: 64px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .logo-slide {
+      height: 78px;
+    }
+
+    .logo-container {
+      width: 180px;
       height: 60px;
     }
   }
