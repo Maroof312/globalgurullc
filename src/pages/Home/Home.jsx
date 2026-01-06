@@ -107,7 +107,7 @@ export default function Home() {
 
       {/* 6) Social Proof: logos + stats */}
       <TrustedBySection pageType="home" />
-      <StatsCount/>
+      {/* <StatsCount/> */}
 
       {/* 7) Testimonials (and optional visualization) */}
       <Testimonials />
