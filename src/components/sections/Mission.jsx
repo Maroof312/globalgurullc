@@ -61,7 +61,7 @@ export default function MissionSection() {
               <div className="section-label">Our Purpose</div>
               <h2>
                 <span className="text-gradient">Redefining</span> Commercial
-                Real 
+                Real{" "}
                 <br className="d-none d-md-block" />
                 Estate Accounting
               </h2>
