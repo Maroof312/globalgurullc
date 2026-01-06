@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Sitemap.scss";
 
 const Sitemap = () => {
-  // Define site structure in a clean, organized way
   const siteStructure = {
     main: [
       {
