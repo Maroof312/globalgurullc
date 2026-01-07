@@ -11,10 +11,10 @@ const HeroSection = memo(() => {
 
   const featureCards = useMemo(
     () => [
-      { title: "Propert Accounting", subtitle: "Reliable cadence", accent: "blue" },
+      { title: "Property Accounting", subtitle: "Reliable cadence", accent: "blue" },
       { title: "AP / AR", subtitle: "Clean vendor & tenant flows", accent: "gold" },
       { title: "Lease Admin", subtitle: "Consistent reporting", accent: "blue" },
-      { title: "Book keeping", subtitle: "Configuration + cleanup", accent: "gold" },
+      { title: "Bookkeeping", subtitle: "Configuration + cleanup", accent: "gold" },
     ],
     []
   );
