@@ -32,66 +32,66 @@ import CAMTrueUpFallback from '../../assets/images/24-11.webp?w=600';
 
 const BlogSidebar = React.memo(({ categories, tags, onCategorySelect, onSearch }) => {
   const popularPosts = useMemo(() => [
-    {
-      id: 1,
-      title: "CAM Reconciliation Best Practices",
-      date: "Mar 15, 2024",
-      image: { srcset: CAM, fallback: CAMFallback },
-    },
-    {
-      id: 2,
-      title: "Preparing for CAM Audit",
-      date: "Mar 10, 2024",
-      image: { srcset: Audit, fallback: AuditFallback },
-    },
-    {
-      id: 3,
-      title: "Outsourcing Bookkeeping Benefits",
-      date: "Mar 5, 2024",
-      image: { srcset: Book, fallback: BookFallback },
-    },
-    {
-      id: 4,
-      title: "Why CRE Accounting Outsourcing Is Surging in 2025",
-      date: "September 27, 2025",
-      image: { srcset: CRE, fallback: CREFallback },
-    },
-    {
-      id: 5,
-      title: "CAM Errors: The Hidden Leakage",
-      date: "October 6, 2025",
-      image: { srcset: CAMError, fallback: CAMErrorFallback },
-    },
-    {
-      id: 6,
-      title: "The CAM Workflow We Use to Cut Disputes by 60%",
-      date: "October 11, 2025",
-      image: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
-    },
-    {
-      id: 7,
-      title: "AR for CRE: How to Shrink Days Sales Outstanding by 18-30%",
-      date: "October 13, 2025",
-      image: { srcset: ARCRE, fallback: ARCREFallback },
-    },
-    {
-      id: 8,
-      title: "Collections Playbook for Property Managers: From Reminder Cadence to Legal Handoff",
-      date: "October 19, 2025",
-      image: { srcset: ARPM, fallback: ARPMFallback },
-    },
-    {
-      id: 10,
-      title: "How We Prevent Duplicate Payments and Fraud in CRE AP",
-      date: "October 25, 2025",
-      image: { srcset: APCRE, fallback: APCREFallback },
-    },
-    {
-      id: 11,
-      title: "Lease Abstracting at Scale: Accuracy Techniques We Use",
-      date: "November 3, 2025",
-      image: { srcset: LeaseAdmin, fallback: LeaseAdminFallback },
-    },
+    // {
+    //   id: 1,
+    //   title: "CAM Reconciliation Best Practices",
+    //   date: "Mar 15, 2024",
+    //   image: { srcset: CAM, fallback: CAMFallback },
+    // },
+    // {
+    //   id: 2,
+    //   title: "Preparing for CAM Audit",
+    //   date: "Mar 10, 2024",
+    //   image: { srcset: Audit, fallback: AuditFallback },
+    // },
+    // {
+    //   id: 3,
+    //   title: "Outsourcing Bookkeeping Benefits",
+    //   date: "Mar 5, 2024",
+    //   image: { srcset: Book, fallback: BookFallback },
+    // },
+    // {
+    //   id: 4,
+    //   title: "Why CRE Accounting Outsourcing Is Surging in 2025",
+    //   date: "September 27, 2025",
+    //   image: { srcset: CRE, fallback: CREFallback },
+    // },
+    // {
+    //   id: 5,
+    //   title: "CAM Errors: The Hidden Leakage",
+    //   date: "October 6, 2025",
+    //   image: { srcset: CAMError, fallback: CAMErrorFallback },
+    // },
+    // {
+    //   id: 6,
+    //   title: "The CAM Workflow We Use to Cut Disputes by 60%",
+    //   date: "October 11, 2025",
+    //   image: { srcset: CAMWorkFlow, fallback: CAMWorkFlowFallback },
+    // },
+    // {
+    //   id: 7,
+    //   title: "AR for CRE: How to Shrink Days Sales Outstanding by 18-30%",
+    //   date: "October 13, 2025",
+    //   image: { srcset: ARCRE, fallback: ARCREFallback },
+    // },
+    // {
+    //   id: 8,
+    //   title: "Collections Playbook for Property Managers: From Reminder Cadence to Legal Handoff",
+    //   date: "October 19, 2025",
+    //   image: { srcset: ARPM, fallback: ARPMFallback },
+    // },
+    // {
+    //   id: 10,
+    //   title: "How We Prevent Duplicate Payments and Fraud in CRE AP",
+    //   date: "October 25, 2025",
+    //   image: { srcset: APCRE, fallback: APCREFallback },
+    // },
+    // {
+    //   id: 11,
+    //   title: "Lease Abstracting at Scale: Accuracy Techniques We Use",
+    //   date: "November 3, 2025",
+    //   image: { srcset: LeaseAdmin, fallback: LeaseAdminFallback },
+    // },
     {
       id: 12,
       title: "Property-Level Financials Owners and Lenders Trust",
