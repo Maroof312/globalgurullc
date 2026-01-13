@@ -6,7 +6,7 @@ export const blogData = [
     readTime: "8 min read",
     category: "Property Management",
     tags: ["CAM Reconciliation", "Best Practices", "Real Estate"],
-    // featuredImage: "/images/blog/cam-reconcili",
+  
     content: [
       {
         type: "p",

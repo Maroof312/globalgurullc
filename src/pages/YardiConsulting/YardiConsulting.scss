@@ -3,33 +3,33 @@
   color: $secondary;
   background-color: $white;
   overflow-x: hidden;
-  // width: 100%; 
+  // width: 100%;
 
   /* Container fixes to prevent horizontal scroll */
   .container {
     // max-width: 100%;
     padding-left: 12px;
     padding-right: 12px;
-    
+
     @media (min-width: 576px) {
       padding-left: 15px;
       padding-right: 15px;
     }
   }
-  
+
   .row {
     margin-left: -12px;
     margin-right: -12px;
-    
+
     @media (min-width: 576px) {
       margin-left: -15px;
       margin-right: -15px;
     }
-    
+
     > * {
       padding-left: 12px;
       padding-right: 12px;
-      
+
       @media (min-width: 576px) {
         padding-left: 15px;
         padding-right: 15px;
@@ -50,11 +50,67 @@
       position: absolute;
       inset: 0;
 
-      .hero-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+      /* ✅ Creative hero background (replaces image) */
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+
+        /* base deep gradient */
+        background: linear-gradient(135deg, #061f36 0%, #031425 55%, #061f36 100%);
+
+        /* keep GPU friendly */
+        transform: translateZ(0);
+      }
+
+      /* Aurora ribbons */
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        inset: -35%;
+        background:
+          radial-gradient(closest-side at 25% 35%, rgba(0, 170, 255, 0.45), transparent 62%),
+          radial-gradient(closest-side at 70% 25%, rgba(0, 102, 204, 0.45), transparent 64%),
+          radial-gradient(closest-side at 65% 80%, rgba(0, 170, 255, 0.26), transparent 66%),
+          conic-gradient(
+            from 210deg at 55% 45%,
+            rgba(0, 170, 255, 0.14),
+            rgba(0, 102, 204, 0.18),
+            rgba(255, 255, 255, 0.06),
+            rgba(0, 170, 255, 0.14)
+          );
+        filter: blur(22px) saturate(1.15);
+        opacity: 0.95;
+        animation: yardiAurora 10s ease-in-out infinite;
+      }
+
+      /* Grid + particles layer (subtle) */
+      .hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        /* subtle tech grid */
+        background:
+          linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.10) 1px, transparent 2px),
+          radial-gradient(circle at 70% 55%, rgba(255, 255, 255, 0.08) 1px, transparent 2px),
+          radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.07) 1px, transparent 2px);
+
+        background-size:
+          70px 70px,
+          70px 70px,
+          260px 260px,
+          320px 320px,
+          380px 380px;
+
+        opacity: 0.22;
+        mix-blend-mode: overlay;
+
+        /* very light motion */
+        animation: yardiGridDrift 14s linear infinite;
       }
 
       .hero-overlay {
@@ -64,6 +120,7 @@
         display: flex;
         align-items: center;
         padding: 20px 0;
+        z-index: 1;
 
         .hero-content {
           color: #fff;
@@ -84,9 +141,12 @@
             font-weight: 800;
             margin-bottom: 1rem;
             line-height: 1.25;
-            word-break: break-word;
-            overflow-wrap: anywhere;
-            hyphens: auto;
+
+            /* ✅ FIX: prevent mid-word breaks like Consul- tation */
+            word-break: normal;
+            overflow-wrap: normal;
+            hyphens: none;
+
             letter-spacing: -0.2px;
           }
 
@@ -98,6 +158,29 @@
           }
         }
       }
+    }
+  }
+
+  /* Smooth aurora movement */
+  @keyframes yardiAurora {
+    0% {
+      transform: translate3d(-2%, -2%, 0) rotate(-6deg) scale(1.02);
+    }
+    50% {
+      transform: translate3d(2%, 1.5%, 0) rotate(6deg) scale(1.06);
+    }
+    100% {
+      transform: translate3d(-2%, -2%, 0) rotate(-6deg) scale(1.02);
+    }
+  }
+
+  /* Grid drift */
+  @keyframes yardiGridDrift {
+    0% {
+      background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      background-position: 140px 80px, 140px 80px, 60px 40px, -80px 60px, 90px -50px;
     }
   }
 
@@ -327,7 +410,7 @@
   @media (max-width: 420px) {
     .yardi-hero {
       min-height: 500px;
-      
+
       .yardi-hero .hero-image-wrapper .hero-overlay .hero-content {
         .hero-title {
           font-size: clamp(1.35rem, 7vw, 1.8rem);
@@ -410,18 +493,25 @@
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .yardi-page {
+    .yardi-hero {
+      .hero-bg::before,
+      .hero-bg::after {
+        animation: none !important;
+      }
+    }
+
     .benefit-card,
     .service-card,
     .module-card,
     .client-card,
     .benefit-item {
       transition: none !important;
-      
+
       &:hover {
         transform: none !important;
       }
     }
-    
+
     .motion-div {
       animation: none !important;
       transition: none !important;
