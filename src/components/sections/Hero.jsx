@@ -97,15 +97,17 @@ const HeroSection = memo(() => {
             <motion.div className="hero2-left-inner" {...contentAnim}>
               <div className="hero2-pill">Outsource with confidence</div>
 
-              <h1 className="hero2-title">Specialized Accounting Services for Commercial Real Estate & Property Managers</h1>
+              <h1 className="hero2-title">Specialized Accounting Services for Real Estate Owners, Investors & Property Managers</h1>
 
               <p className="hero2-subtitle">
-                Accurate books, faster closes, and investor-ready reporting handled by specialists who know CRE.
+                Accurate books, faster closes, and investor-ready reporting, for real estate portfolios of any size.
               </p>
 
               <motion.ul className="hero2-bullets" {...listAnim}>
-                <li>Monthly close &amp; reconciliations</li>
-                <li>AP/AR + owner statements</li>
+                <li>Dedicated accounting team + ongoing support</li>
+                <li>Month end close + bank/CAM reconciliations</li>
+                <li>AP/AR + owner statements + board reporting</li>
+                <li>Yardi, AppFolio, QuickBooks, ARGUS support</li>
                 <li>Secure, transparent workflows</li>
               </motion.ul>
 

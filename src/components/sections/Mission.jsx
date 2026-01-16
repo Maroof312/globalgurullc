@@ -60,33 +60,31 @@ export default function MissionSection() {
             >
               <div className="section-label">Our Purpose</div>
               <h2>
-                <span className="text-gradient">Redefining</span> Commercial
-                Real{" "}
-                <br className="d-none d-md-block" />
-                Estate Accounting
+                <span className="text-gradient">Redefining</span> Real Estate Accounting{" "}
+                {/* <br className="d-none d-md-block" />
+                Estate Accounting */}
               </h2>
 
               <div className="mission-divider"></div>
 
               <div className="mission-text">
                 <p className="lead">
-                  At Global Guru, we transform commercial real estate
-                  accounting through specialized outsourcing solutions that
-                  enhance accuracy and operational efficiency.
+                  At Global Guru, we help real estate businesses run cleaner, faster, 
+                  and more accurately through specialized outsourced accounting services.
                 </p>
                 <p>
-                  Our team delivers comprehensive accounting services tailored
-                  to the unique needs of property owners and investors.
+                  You get a dedicated team that ensures accurate books, faster month-end close, 
+                  and consistent reporting without the cost and burden of hiring internally.
                 </p>
                 <div className="highlight-box">
-                  We specialize in accounting outsourcing for commercial real
-                  estate companies, combining deep industry expertise with
-                  advanced technology to deliver accurate, real-time financial
-                  insights and ensure the highest standards of data security.
+                  We support commercial and residential property managers, HOAs/condos/co-ops, real estate owners, 
+                  developers, and investment/asset management teams with reliable financial 
+                  operations and investor-ready reporting. We take confidentiality and data security extremely seriously, with controlled access, 
+                  secure workflows, and strict internal review processes.
                 </div>
                 <p>
-                  Partner with us to streamline your back-office operations,
-                  reduce overhead costs, and gain a competitive edge.
+                  With experience across Yardi, AppFolio, QuickBooks, and ARGUS, 
+                  we deliver scalable accounting support built for long-term growth
                 </p>
               </div>
 

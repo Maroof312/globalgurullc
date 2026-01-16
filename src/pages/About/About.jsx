@@ -130,9 +130,13 @@ export default function About() {
                 className="story-content"
               >
                 <p className="story-intro">
-                  We help U.S. owners, operators, asset managers, and investors run finance operations that are fast, 
-                  accurate, and decision-ready. From month-end close to CAM reconciliations and investor reporting, 
-                  we standardize your data, automate the busywork, and deliver clean numbers, on time, every time.
+                  We help U.S. real estate owners, operators, property managers, asset managers, 
+                  and investors run finance operations that are fast, accurate, and decision-ready. 
+                  From month-end close to CAM reconciliations and investor reporting, we standardize your data, 
+                  streamline the busywork, and deliver clean numbers, on time, every time.
+                  <br />
+                  You’ll get a dedicated team aligned to your portfolio and systems, with strict 
+                  confidentiality and secure workflows built into every process.
                 </p>
               </motion.div>
             </Col>

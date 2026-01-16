@@ -9,7 +9,7 @@
 
   .section-subtitle {
     color: $gray-600;
-    text-align: left;
+    text-align: center;
   }
 
   .service-card {
@@ -161,6 +161,10 @@
 // Responsive adjustments - EXACT SAME as original
 @media (max-width: 768px) {
   .services-overview {
+
+    .section-subtitle {
+      text-align: left;
+    }
     .service-card {
       padding: 2rem 1.5rem;
       
@@ -182,7 +186,7 @@
 @media (max-width: 576px) {
   .services-overview {
     .section-title {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
     
     .service-card {
