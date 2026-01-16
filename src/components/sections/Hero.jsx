@@ -11,10 +11,10 @@ const HeroSection = memo(() => {
 
   const featureCards = useMemo(
     () => [
-      { title: "Property Accounting", subtitle: "Reliable cadence", accent: "blue" },
-      { title: "AP / AR", subtitle: "Clean vendor & tenant flows", accent: "gold" },
-      { title: "Lease Admin", subtitle: "Consistent reporting", accent: "blue" },
-      { title: "Bookkeeping", subtitle: "Configuration + cleanup", accent: "gold" },
+      { title: "Property Accounting", accent: "blue" },
+      { title: "AP / AR", accent: "gold" },
+      { title: "Lease Admin", accent: "blue" },
+      { title: "Bookkeeping", accent: "gold" },
     ],
     []
   );
@@ -97,7 +97,7 @@ const HeroSection = memo(() => {
             <motion.div className="hero2-left-inner" {...contentAnim}>
               <div className="hero2-pill">Outsource with confidence</div>
 
-              <h1 className="hero2-title">Outsourced Accounting for Commercial Real Estate</h1>
+              <h1 className="hero2-title">Specialized Accounting Services for Commercial Real Estate & Property Managers</h1>
 
               <p className="hero2-subtitle">
                 Accurate books, faster closes, and investor-ready reporting handled by specialists who know CRE.
