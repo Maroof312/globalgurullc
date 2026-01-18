@@ -356,8 +356,8 @@ const RealEstateAccounting = memo(() => {
 
       {/* Process Section moved up after Services */}
       <Suspense fallback={<Loader />}>
-  <AccountingProcess />
-</Suspense>
+        <AccountingProcess />
+      </Suspense>
 
       {/* Why Global Guru Section */}
       <Suspense fallback={<Loader />}>

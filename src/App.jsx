@@ -6,6 +6,7 @@ import Breadcrumb from './components/Breadcrumb/Breadcrumb'
 import GoogleAnalytics from './components/analytics/GoogleAnalytics'
 import Home from './pages/Home/Home'
 import YardiConsulting from './pages/YardiConsulting/YardiConsulting';
+import CPA from './pages/CPA/CPA';
 
 // LAZY LOAD ALL OTHER PAGES
 const About = lazy(() => import('./pages/About/About'));
@@ -61,6 +62,7 @@ function App() {
           <Route path="/who-we-are" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/yardi-consultation-services" element={<YardiConsulting />} />
+          <Route path="/real-estate-cpa-activities" element={<CPA />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:category/:slug" element={<BlogDetail />} />

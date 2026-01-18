@@ -101,7 +101,7 @@ export default function Home() {
 
       {/* 3) What We Do / Our Services (grid) */}
       <Suspense fallback={<Loader />}>
-        <ServicesOverview />
+        <ServicesOverview />      
       </Suspense>
 
 
