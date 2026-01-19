@@ -105,6 +105,8 @@ import OscMonth from '../assets/images/23-12.avif?w=300;600;900&format=webp&as=s
 import OscMonthFallback from '../assets/images/23-12.avif?w=600';
 import LeaseJan from '../assets/images/12-1.avif?w=300;600;900&format=webp&as=srcset';
 import LeaseJanFallback from '../assets/images/12-1.avif?w=600';
+import RealEstateAutomation from '../assets/images/19-1.webp?w=300;600;900&format=webp&as=srcset';
+import RealEstateAutomationFallback from '../assets/images/19-1.webp?w=600';
 
 const CATEGORY_IMAGE_FALLBACKS = {
   'Property Management': { srcset: CAM, fallback: CAMFallback },
@@ -126,6 +128,7 @@ const PER_POST_OVERRIDES = {
   13: { srcset: AccBook, fallback: AccBookFallback },
   14: { srcset: CAMTrueUp, fallback: CAMTrueUpFallback },
   16: { srcset: LeaseJan, fallback: LeaseJanFallback },
+  17: { srcset: RealEstateAutomation, fallback: RealEstateAutomationFallback },
 
 };
 

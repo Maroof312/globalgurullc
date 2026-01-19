@@ -7,7 +7,7 @@ import './ServicesOverview.scss';
 const SERVICE_CATEGORIES = [
   {
     key: 'owners',
-    label: 'Owners / Developers',
+    label: 'Ownership & Development Partners',
     icon: 'bi-buildings',
     intro: 'Operational accounting support that keeps projects and stabilized assets audit-ready without slowing your team down.',
     items: [
@@ -16,6 +16,12 @@ const SERVICE_CATEGORIES = [
         desc: 'Day-to-day accounting for multifamily portfolios rent posting, month-end close, reconciliations, and owner-ready reporting.',
         icon: 'bi-house-door',
         tags: ['Month-End Close', 'Reconciliations', 'Owner Reporting'],
+      },
+      {
+        title: 'Affordable Housing',
+        desc: 'LIHTC compliance accounting, HUD reporting, tenant income certifications, and subsidy management for affordable housing portfolios.',
+        icon: 'bi-house-heart',
+        tags: ['LIHTC Compliance', 'HUD Reporting', 'Subsidy Management', 'Income Certifications'],
       },
       {
         title: 'Commercial Property Accounting',
@@ -97,7 +103,7 @@ const SERVICE_CATEGORIES = [
   },
   {
     key: 'investors',
-    label: 'Investors',
+    label: 'Capital Partners',
     icon: 'bi-cash-coin',
     intro: 'Deal and reporting support that keeps your investment workflow moving from diligence to ongoing visibility.',
     items: [
