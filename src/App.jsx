@@ -11,6 +11,7 @@ import CPA from './pages/CPA/CPA';
 // LAZY LOAD ALL OTHER PAGES
 const About = lazy(() => import('./pages/About/About'));
 const Services = lazy(() => import('./pages/Services/Services'));
+const Industries = lazy(() => import('./pages/IndustriesPage/IndustriesPage'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 const Blog = lazy(() => import('./pages/Blog/Blog'));
 const BlogDetail = lazy(() => import('./pages/Blog/BlogDetail'));
@@ -61,6 +62,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/who-we-are" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/industries" element={<Industries />} />
           <Route path="/yardi-consultation-services" element={<YardiConsulting />} />
           <Route path="/real-estate-cpa-activities" element={<CPA />} />
           <Route path="/contact" element={<Contact />} />

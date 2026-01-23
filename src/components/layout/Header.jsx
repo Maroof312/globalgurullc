@@ -194,6 +194,13 @@ export default function Header() {
             </div>
             
             <Nav.Link 
+              href="/industries" 
+              className={isActive('/industries') ? 'active' : ''}
+              onClick={handleNavLinkClick}
+            >
+              Industries
+            </Nav.Link>
+            <Nav.Link 
               href="/real-estate-cpa-activities" 
               className={isActive('/real-estate-cpa-activities') ? 'active' : ''}
               onClick={handleNavLinkClick}

@@ -7,6 +7,7 @@ import HeroSection from '../../components/sections/Hero';
 import MissionSection from '../../components/sections/Mission';
 // import DataExpertise from '../../components/sections/DataExpertise';
 import ServicesOverview from '../../components/sections/ServicesOverview';
+import Industries from '../../components/sections/Industries';
 import Testimonials from '../../components/sections/Testimonials';
 import CTA from '../../components/sections/CTA';
 import StatsCount from '../../components/sections/StatsCounter';
@@ -108,7 +109,7 @@ export default function Home() {
       {/* 6) Social Proof: logos + stats */}
       <TrustedBySection pageType="home" />
       {/* <StatsCount/> */}
-
+      <Industries />      
       {/* 7) Testimonials (and optional visualization) */}
       <Testimonials />
       <DataFlowVisualization />
