@@ -37,6 +37,8 @@ export default function Footer() {
               <ul className="list-unstyled mb-0">
                 <li className="mb-2"><a href="/who-we-are" className="text-white">About Us</a></li>
                 <li className="mb-2"><a href="/services" className="text-white">Services</a></li>
+                <li className="mb-2"><a href="/industries" className="text-white">Industries</a></li>
+                <li className="mb-2"><a href="/real-estate-cpa-activities" className="text-white">CPA</a></li>
                 <li className="mb-2"><a href="/yardi-consultation-services" className="text-white">Yardi Consulting</a></li>
                 <li className="mb-2"><a href="/contact" className="text-white">Contact</a></li>
                 <li className="mb-2"><a href="/our-experts" className="text-white">Our Experts</a></li>
@@ -76,7 +78,7 @@ export default function Footer() {
             >
               <h5 className="mb-3">Contact Info</h5>
               <address className="mb-0">
-                <p className="mb-2"><i className="bi bi-geo-alt me-2"></i> 18530, Holden Drive, Spring Hill, FL 34610 </p>
+                <p className="mb-2"><i className="bi bi-geo-alt me-2"></i> 228 Park Ave S PMB 702068, New York, NY 10003, United States </p>
                 <p className="mb-2"><i className="bi bi-phone me-2"></i> +1 845-497-6474</p>
                 <p className="mb-0"><i className="bi bi-envelope me-2"></i> info@globalgurullc.com </p>
               </address>

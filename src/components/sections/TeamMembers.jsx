@@ -16,7 +16,7 @@ import './TeamMembers.scss'
 const team = [
   {
     name: "Sheshu Pulipaka",
-    role: "Founder & CEO",
+    role: "Co-Founder",
     shortBio: "20+ years of business consulting experience across multiple industries.",
     fullBio: "Sheshu Pulipaka is the Founder of Global Guru LLC, with over 27 years of global experience in real estate, private equity, fund accounting, lease audits, FP&A, and regulatory compliance. He has held senior leadership roles at Apex Group and Invesco US, where he led large international teams across fund operations, NAV reviews, and investor reporting. Sheshu specializes in CAM reconciliation, valuations, and automation using platforms like Yardi, Angus Systems, and SAP. He is a Certified Management Accountant (CMA) and CISA, with an MBA in Investments and certifications in Lean Six Sigma and Design Thinking. Known for his strategic insight and execution focus, he helps clients streamline CRE operations and scale with confidence.",
     avatar: team1,
