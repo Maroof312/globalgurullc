@@ -2795,6 +2795,254 @@ export const blogData = [
         "real time financial dashboards"
       ]
     }
+  },
+  {
+  "id": 18,
+  "title": "Year-End Close Checklist for Real Estate Accounting Teams",
+  "date": "January 26, 2026",
+  "readTime": "10 min read",
+  "category": "Year-End Close",
+  "tags": ["Year End Close", "Real Estate Accounting", "Audit Readiness"],
+  "content": [
+    {
+      "type": "p",
+      "text": "Year end close is one of the most critical moments for real estate accounting teams. It is the point where twelve months of activity are finalized, reviewed, and presented to owners, lenders, and auditors. When year end close is rushed or inconsistent, errors surface late and confidence erodes. When it is structured and disciplined, the close becomes predictable and defensible."
+    },
+    {
+      "type": "p",
+      "text": "This year end close checklist for real estate accounting teams outlines the key steps required to close the year cleanly, reduce audit friction, and enter the new year with confidence."
+    },
+    {
+      "type": "h2",
+      "text": "Why Year-End Close Is Different in Real Estate"
+    },
+    {
+      "type": "p",
+      "text": "Real estate accounting carries unique complexity. Multiple entities, property level reporting, lease driven revenue, CAM recoveries, and reserve accounts all converge at year end. A checklist ensures nothing is missed and every balance is supported."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Multiple properties and legal entities",
+        "Lease based revenue and escalations",
+        "CAM reconciliations and recoveries",
+        "Restricted cash and lender reserves",
+        "Audit and lender reporting requirements"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 1: Lock the Year-End Close Calendar"
+    },
+    {
+      "type": "p",
+      "text": "A clean year end close starts with a firm calendar. Accounting teams should confirm cut off dates, internal review deadlines, and expected delivery dates for owners and auditors. The calendar should be communicated clearly to property managers, asset managers, and leadership."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Final transaction cut off date",
+        "Accrual and adjustment deadlines",
+        "Internal review and sign off dates",
+        "Owner and lender reporting timelines"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 2: Complete All Bank and Cash Reconciliations"
+    },
+    {
+      "type": "p",
+      "text": "Every bank account must be reconciled through year end. This includes operating accounts, security deposit accounts, tax and insurance escrows, and lender reserves. Outstanding items should be reviewed and resolved where possible."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Operating bank accounts",
+        "Security deposit and tenant trust accounts",
+        "Tax and insurance escrow accounts",
+        "Capital and reserve accounts"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 3: Review Accounts Receivable and Tenant Balances"
+    },
+    {
+      "type": "p",
+      "text": "Tenant receivables should be reviewed carefully before year end. This includes confirming rent billing accuracy, unapplied cash, credit balances, and aged receivables. Any write offs or reserves should follow documented policy."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Confirm rent rolls align with billed revenue",
+        "Review unapplied cash and credits",
+        "Evaluate aged receivables for collectability",
+        "Record bad debt reserves where required"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 4: Finalize Accounts Payable and Accruals"
+    },
+    {
+      "type": "p",
+      "text": "Expenses must be recorded in the correct period. Accounting teams should ensure all invoices are entered and accrued where services were received but invoices are pending. This is especially important for utilities, property taxes, insurance, and service contracts."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Post all received invoices",
+        "Accrue utilities, taxes, and insurance",
+        "Review recurring service contracts",
+        "Confirm vendor balances and open items"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 5: Validate Lease to Ledger Alignment"
+    },
+    {
+      "type": "p",
+      "text": "Lease data drives revenue in real estate accounting. Before closing the year, teams should validate that lease abstracts align with the general ledger. Rent escalations, abatements, percentage rent, and recoveries must match lease terms."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Verify base rent and escalation schedules",
+        "Confirm free rent and abatements",
+        "Review percentage rent calculations",
+        "Validate recovery and CAM billing logic"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 6: Complete CAM Reconciliations and True Ups"
+    },
+    {
+      "type": "p",
+      "text": "CAM reconciliations are often the most time consuming year end task. Teams should ensure recoverable expenses are properly coded, exclusions are applied, and gross up and cap rules follow lease language."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Confirm recoverable expense pools",
+        "Apply exclusions and caps accurately",
+        "Validate base year or expense stop logic",
+        "Prepare tenant reconciliation schedules"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 7: Review Fixed Assets and Capital Projects"
+    },
+    {
+      "type": "p",
+      "text": "Fixed asset schedules should be updated through year end. This includes capital additions, disposals, depreciation, and construction in progress. Capital projects should tie to approved budgets and supporting invoices."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Record capital additions and disposals",
+        "Post depreciation through year end",
+        "Review construction in progress balances",
+        "Tie projects to supporting documentation"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 8: Reconcile Balance Sheet Accounts"
+    },
+    {
+      "type": "p",
+      "text": "All balance sheet accounts should be reconciled and supported. This includes prepaid expenses, deferred revenue, tenant deposits, intercompany balances, and loan accounts."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Prepaid expense schedules",
+        "Deferred rent and straight line balances",
+        "Tenant security deposits",
+        "Intercompany and loan reconciliations"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 9: Prepare Financial Statements and Variance Analysis"
+    },
+    {
+      "type": "p",
+      "text": "Once balances are finalized, financial statements should be prepared and reviewed. Variances to prior year and budget should be analyzed and documented in plain language for owners and auditors."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Income statement by property",
+        "Balance sheet with supporting schedules",
+        "Cash flow statement",
+        "Variance explanations for major changes"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Step 10: Assemble Audit and Owner Support Packages"
+    },
+    {
+      "type": "p",
+      "text": "Year end support should be organized before auditors request it. Well prepared support packages reduce audit time, follow up questions, and internal disruption."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Bank reconciliations and statements",
+        "AR and AP aging reports",
+        "Lease abstracts and rent rolls",
+        "CAM reconciliation schedules",
+        "Fixed asset and debt schedules"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Final Thoughts"
+    },
+    {
+      "type": "p",
+      "text": "Year end close does not have to be chaotic. With a clear checklist, disciplined execution, and proper documentation, real estate accounting teams can close the year confidently and set the foundation for a smoother audit and stronger financial reporting."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When should real estate accounting teams start year-end close preparation",
+      "answer": "Preparation should begin well before December. Many teams start reviewing key balances and CAM data in the third quarter to avoid year-end bottlenecks."
+    },
+    {
+      "question": "Why are CAM reconciliations critical at year end",
+      "answer": "CAM reconciliations ensure recoverable expenses are billed accurately and reduce tenant disputes and audit questions."
+    },
+    {
+      "question": "How does a checklist improve audit readiness",
+      "answer": "A checklist ensures reconciliations, support, and documentation are completed consistently, reducing auditor follow-ups and last-minute corrections."
+    }
+  ],
+  "cta": {
+    "title": "Need Help Closing the Year with Confidence",
+    "description": "If your year end close feels rushed or unpredictable, our real estate accounting specialists can help you build a structured close process that stands up to audit scrutiny.",
+    "buttonText": "Talk to a Year-End Close Expert",
+    "buttonLink": "/contact"
+  },
+  "meta": {
+    "description": "A practical year-end close checklist for real estate accounting teams. Learn the key steps to finalize books, complete CAM reconciliations, and prepare audit-ready financials.",
+    "keywords": [
+      "year end close checklist real estate",
+      "real estate accounting year end close",
+      "property accounting checklist",
+      "CAM reconciliation year end",
+      "audit readiness real estate",
+      "month end and year end close",
+      "real estate financial close"
+    ]
+  }
 }
+
 
 ];
