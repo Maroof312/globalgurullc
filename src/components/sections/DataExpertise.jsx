@@ -40,6 +40,8 @@ import Leverton from "../../assets/images/Leverton_logo.webp?w=120;200&format=we
 import LevertonFallback from "../../assets/images/Leverton_logo.webp?w=200";
 import Entrata from "../../assets/images/entrata.webp?w=120;200&format=webp&as=srcset";
 import EntrataFallback from "../../assets/images/entrata.webp?w=200";
+import NetSuite from "../../assets/images/NetSuite.webp?w=120;200&format=webp&as=srcset";
+import NetSuiteFallback from "../../assets/images/NetSuite.webp?w=200";
 
 /* ✅ FIXED: removed invalid ';webp' */
 import oracle from "../../assets/images/oracle.webp?w=120;200&format=webp&as=srcset";
@@ -61,6 +63,7 @@ const expertiseData = [
   { src: Monarch, fallback: MonarchFallback, alt: "Monarch Software" },
   { src: CoStar, fallback: CoStarFallback, alt: "CoStar Software" },
   { src: mri, fallback: mriFallback, alt: "MRI Software" },
+  { src: NetSuite, fallback: NetSuiteFallback, alt: "Net Suite" },
   { src: vl, fallback: vlFallback, alt: "VL Software" },
   { src: LeaseHarbor, fallback: LeaseHarborFallback, alt: "LeaseHarbor Software" },
   { src: Entrata, fallback: EntrataFallback, alt: "Entrata" },
