@@ -4,23 +4,32 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/webp" href="/src/assets/images/global-favicon.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5P52SVN7');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google Analytics 4 - Optimized -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDEPBPME6G"></script>
     <script>
       // Initialize dataLayer and gtag function
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      
+
       // Configure GA4 with optimized settings
       gtag('js', new Date());
       gtag('config', 'G-CDEPBPME6G', {
-        // Performance optimizations
         send_page_view: true,
         anonymize_ip: true,
         allow_google_signals: true,
         allow_ad_personalization_signals: false,
-        
-        // Enhanced measurement settings
+
         enhanced_measurements: {
           scrolls: true,
           outbound_clicks: true,
@@ -28,33 +37,27 @@
           video_engagement: true,
           file_downloads: true
         },
-        
-        // Custom parameters
+
         custom_map: {
           'custom_parameter_1': 'page_category',
           'custom_parameter_2': 'user_type'
         },
-        
-        // Debug mode (set to false in production)
+
         debug_mode: false,
-        
-        // Cookie settings for GDPR compliance
+
         cookie_flags: 'SameSite=None;Secure',
-        cookie_expires: 63072000, // 2 years
-        
-        // Transport settings for better performance
+        cookie_expires: 63072000,
+
         transport_type: 'beacon'
       });
-      
-      // Error handling for GA4
+
       window.addEventListener('error', function(e) {
         gtag('event', 'exception', {
           description: e.error ? e.error.toString() : 'Unknown error',
           fatal: false
         });
       });
-      
-      // Track page performance
+
       window.addEventListener('load', function() {
         if ('performance' in window) {
           gtag('event', 'timing_complete', {
@@ -64,9 +67,18 @@
         }
       });
     </script>
+
     <title>Global Guru LLC</title>
   </head>
+
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P52SVN7"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
