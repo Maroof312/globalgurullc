@@ -3,15 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/webp" href="/src/assets/images/global_guru.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <!-- Google Tag Manager -->
     <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-5P52SVN7');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5P52SVN7");
     </script>
     <!-- End Google Tag Manager -->
 
@@ -20,11 +31,13 @@
     <script>
       // Initialize dataLayer and gtag function
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
       // Configure GA4 with optimized settings
-      gtag('js', new Date());
-      gtag('config', 'G-CDEPBPME6G', {
+      gtag("js", new Date());
+      gtag("config", "G-CDEPBPME6G", {
         send_page_view: true,
         anonymize_ip: true,
         allow_google_signals: true,
@@ -35,34 +48,34 @@
           outbound_clicks: true,
           site_search: true,
           video_engagement: true,
-          file_downloads: true
+          file_downloads: true,
         },
 
         custom_map: {
-          'custom_parameter_1': 'page_category',
-          'custom_parameter_2': 'user_type'
+          custom_parameter_1: "page_category",
+          custom_parameter_2: "user_type",
         },
 
         debug_mode: false,
 
-        cookie_flags: 'SameSite=None;Secure',
+        cookie_flags: "SameSite=None;Secure",
         cookie_expires: 63072000,
 
-        transport_type: 'beacon'
+        transport_type: "beacon",
       });
 
-      window.addEventListener('error', function(e) {
-        gtag('event', 'exception', {
-          description: e.error ? e.error.toString() : 'Unknown error',
-          fatal: false
+      window.addEventListener("error", function (e) {
+        gtag("event", "exception", {
+          description: e.error ? e.error.toString() : "Unknown error",
+          fatal: false,
         });
       });
 
-      window.addEventListener('load', function() {
-        if ('performance' in window) {
-          gtag('event', 'timing_complete', {
-            name: 'load',
-            value: Math.round(performance.now())
+      window.addEventListener("load", function () {
+        if ("performance" in window) {
+          gtag("event", "timing_complete", {
+            name: "load",
+            value: Math.round(performance.now()),
           });
         }
       });
@@ -74,12 +87,30 @@
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P52SVN7"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5P52SVN7"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="root"></div>
+
+    <!-- Zoho SalesIQ Live Chat -->
+    <script>
+      window.$zoho = window.$zoho || {};
+      $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+    </script>
+
+    <script
+      id="zsiqscript"
+      src="https://salesiq.zohopublic.com/widget?wc=siq1a8fd9b553f155201e9e3e58b495ae502cdd47fa74c61f16ffdb345cd339c553"
+      defer
+    ></script>
+    <!-- End Zoho SalesIQ -->
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
