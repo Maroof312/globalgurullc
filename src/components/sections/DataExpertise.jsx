@@ -42,6 +42,10 @@ import Entrata from "../../assets/images/entrata.webp?w=120;200&format=webp&as=s
 import EntrataFallback from "../../assets/images/entrata.webp?w=200";
 import NetSuite from "../../assets/images/NetSuite.webp?w=120;200&format=webp&as=srcset";
 import NetSuiteFallback from "../../assets/images/NetSuite.webp?w=200";
+import Sage from "../../assets/images/sage-logo.webp?w=120;200&format=webp&as=srcset";
+import SageFallback from "../../assets/images/sage-logo.webp?w=200";
+import Propertyware from "../../assets/images/propertyware-logo.webp?w=120;200&format=webp&as=srcset";
+import PropertywareFallback from "../../assets/images/propertyware-logo.webp?w=200";
 
 /* ✅ FIXED: removed invalid ';webp' */
 import oracle from "../../assets/images/oracle.webp?w=120;200&format=webp&as=srcset";
@@ -68,6 +72,8 @@ const expertiseData = [
   { src: LeaseHarbor, fallback: LeaseHarborFallback, alt: "LeaseHarbor Software" },
   { src: Entrata, fallback: EntrataFallback, alt: "Entrata" },
   { src: Fis, fallback: FisFallback, alt: "Fis Software" },
+  { src: Sage, fallback: SageFallback, alt: "Sage Software" },
+  { src: Propertyware, fallback: PropertywareFallback, alt: "Propertyware Software" },
   { src: triangle, fallback: triangleFallback, alt: "Triangle Software" },
   { src: Leverton, fallback: LevertonFallback, alt: "Leverton Software" },
   { src: oracle, fallback: oracleFallback, alt: "Oracle Software" },
