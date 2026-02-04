@@ -71,7 +71,7 @@ export default function Home() {
               "@type": "Organization",
               "name": "Global Guru",
               "url": "https://globalgurullc.com/",
-              "logo": "https://globalgurullc.com/assets/Black-logo-CEPdcb01.webp",
+              "logo": "https://globalgurullc.com/assets/global-favicon-DPCrMVng.webp",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1 845-497-6474",
