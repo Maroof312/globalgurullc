@@ -46,6 +46,24 @@ import Sage from "../../assets/images/sage-logo.webp?w=120;200&format=webp&as=sr
 import SageFallback from "../../assets/images/sage-logo.webp?w=200";
 import Propertyware from "../../assets/images/propertyware-logo.webp?w=120;200&format=webp&as=srcset";
 import PropertywareFallback from "../../assets/images/propertyware-logo.webp?w=200";
+import Adaptive from "../../assets/images/adaptive.webp?w=120;200&format=webp&as=srcset";
+import AdaptiveFallback from "../../assets/images/adaptive.webp?w=200";
+import Anaplan from "../../assets/images/anaplan.webp?w=120;200&format=webp&as=srcset";
+import AnaplanFallback from "../../assets/images/anaplan.webp?w=200";
+import Cube from "../../assets/images/cube-logo.webp?w=120;200&format=webp&as=srcset";
+import CubeFallback from "../../assets/images/cube-logo.webp?w=200";
+import Planful from "../../assets/images/planful-logo.webp?w=120;200&format=webp&as=srcset";
+import PlanfulFallback from "../../assets/images/planful-logo.webp?w=200";
+import Datarails from "../../assets/images/datarails_Logo.webp?w=120;200&format=webp&as=srcset";
+import DatarailsFallback from "../../assets/images/datarails_Logo.webp?w=200";
+import Abacum from "../../assets/images/abacum-logo.webp?w=120;200&format=webp&as=srcset";
+import AbacumFallback from "../../assets/images/abacum-logo.webp?w=200";
+import Procore from "../../assets/images/procore-Logo.webp?w=120;200&format=webp&as=srcset";
+import ProcoreFallback from "../../assets/images/procore-Logo.webp?w=200";
+import Realpage from "../../assets/images/RealPage_logo.webp?w=120;200&format=webp&as=srcset";
+import RealpageFallback from "../../assets/images/RealPage_logo.webp?w=200";
+import Realdata from "../../assets/images/realdata.webp?w=120;200&format=webp&as=srcset";
+import RealdataFallback from "../../assets/images/realdata.webp?w=200";
 
 /* ✅ FIXED: removed invalid ';webp' */
 import oracle from "../../assets/images/oracle.webp?w=120;200&format=webp&as=srcset";
@@ -79,6 +97,15 @@ const expertiseData = [
   { src: oracle, fallback: oracleFallback, alt: "Oracle Software" },
   { src: quickbook, fallback: quickbookFallback, alt: "QuickBooks Software" },
   { src: qad, fallback: qadFallback, alt: "QAD Alliances Software" },
+  { src: Adaptive, fallback: AdaptiveFallback, alt: "Adaptive Software" },
+  { src: Anaplan, fallback: AnaplanFallback, alt: "Anaplan Software" },
+  { src: Cube, fallback: CubeFallback, alt: "Cube Software" },
+  { src: Planful, fallback: PlanfulFallback, alt: "Planful Software" },
+  { src: Datarails, fallback: DatarailsFallback, alt: "Datarails Software" },
+  { src: Abacum, fallback: AbacumFallback, alt: "Abacum Software" },
+  { src: Procore, fallback: ProcoreFallback, alt: "Procore Software" },
+  { src: Realpage, fallback: RealpageFallback, alt: "Realpage Software" },
+  { src: Realdata, fallback: RealdataFallback, alt: "Realdata Software" },
 ];
 
 const DataExpertise = memo(() => {
