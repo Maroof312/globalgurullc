@@ -62,4 +62,14 @@
     <changefreq>Daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://globalgurullc.com/industries</loc>
+    <changefreq>Daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://globalgurullc.com/real-estate-cpa-activities</loc>
+    <changefreq>Daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
