@@ -1,14 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { lazy, Suspense, useEffect } from 'react';
-import Header from './components/layout/Header'
-import Footer from './components/layout/Footer'
-import Breadcrumb from './components/Breadcrumb/Breadcrumb'
-import GoogleAnalytics from './components/analytics/GoogleAnalytics'
-import Home from './pages/Home/Home'
-import YardiConsulting from './pages/YardiConsulting/YardiConsulting';
-import CPA from './pages/CPA/CPA';
+// src/App.jsx
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { lazy, Suspense, useEffect } from 'react';
 
-// LAZY LOAD ALL OTHER PAGES
+// ✅ Lazy-load layout + pages to shrink initial bundle (Treemap + initial JS)
+const Header = lazy(() => import('./components/layout/Header'));
+const Footer = lazy(() => import('./components/layout/Footer'));
+const Breadcrumb = lazy(() => import('./components/Breadcrumb/Breadcrumb'));
+const GoogleAnalytics = lazy(() => import('./components/analytics/GoogleAnalytics'));
+
+// Keep Home eager for best initial UX (we’ll optimize Home sections next)
+import Home from './pages/Home/Home';
+
+// Lazy-load the rest (including previously eager pages)
+const YardiConsulting = lazy(() => import('./pages/YardiConsulting/YardiConsulting'));
+const CPA = lazy(() => import('./pages/CPA/CPA'));
+
 const About = lazy(() => import('./pages/About/About'));
 const Services = lazy(() => import('./pages/Services/Services'));
 const Industries = lazy(() => import('./pages/IndustriesPage/IndustriesPage'));
@@ -25,37 +31,51 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy/PrivacyPolicy'));
 const ThankYou = lazy(() => import('./pages/Thankyou/ThankYou'));
 const Argus = lazy(() => import('./pages/Args/ARGUSModule'));
 const Sitemap = lazy(() => import('./pages/Sitemap/Sitemap'));
-const NotFound = lazy(() => import('./pages/NotFound/NotFound')); // ✅ ADDED
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 }
 
-// Loading fallback
+// Loading fallback (kept stable to reduce CLS)
 const PageLoading = () => (
-  <div style={{ 
-    display: 'flex', 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    minHeight: '50vh' 
-  }}>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '50vh',
+    }}
+  >
     <div>Loading...</div>
   </div>
 );
+
+// ✅ Layout fallbacks with reserved space (reduces layout shift while chunks load)
+const HeaderFallback = () => <div style={{ height: 78 }} aria-hidden="true" />;
+const FooterFallback = () => <div style={{ height: 240 }} aria-hidden="true" />;
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <GoogleAnalytics />
-      <Header />
-      <Breadcrumb />
+
+      {/* ✅ Analytics lazy-loaded to reduce initial JS weight (we’ll defer execution next step) */}
+      <Suspense fallback={null}>
+        <GoogleAnalytics />
+      </Suspense>
+
+      <Suspense fallback={<HeaderFallback />}>
+        <Header />
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <Breadcrumb />
+      </Suspense>
 
       <Suspense fallback={<PageLoading />}>
         <Routes>
@@ -78,20 +98,20 @@ function App() {
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/argus" element={<Argus />} />
           <Route path="/sitemap" element={<Sitemap />} />
-
-          {/* ✅ MUST BE LAST */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
 
-      <Footer />
+      <Suspense fallback={<FooterFallback />}>
+        <Footer />
+      </Suspense>
 
-      {/* Fixed Book a Call Button */}
+      {/* Fixed Book a Call Button (global CLS fix will be done in Header/Footer phase) */}
       <a href="/contact" className="fixed-call-button">
         Book a Call
       </a>
     </Router>
-  )
+  );
 }
 
 export default App;

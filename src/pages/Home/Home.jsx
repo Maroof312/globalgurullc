@@ -69,20 +69,39 @@ export default function Home() {
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Global Guru",
+              "name": "Global Guru LLC",
               "url": "https://globalgurullc.com/",
-              "logo": "https://globalgurullc.com/global-guru-logo.png",
+              "logo": "https://globalgurullc.com/assets/Black-logo-CEPdcb01.webp",
+
+              "description": "Providing innovative business solutions to help your company grow and succeed in today's competitive market.",
+
+              "email": "info@globalgurullc.com",
+              "telephone": "+1-845-497-6474",
+
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "228 Park Ave S PMB 702068",
+                "addressLocality": "New York",
+                "addressRegion": "NY",
+                "postalCode": "10003",
+                "addressCountry": "US"
+              },
+
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+1 845-497-6474",
-                "contactType": "customer service",
+                "telephone": "+1-845-497-6474",
+                "contactType": "customer support",
                 "areaServed": "US",
-                "availableLanguage": "en"
+                "availableLanguage": ["English"]
               },
-              "sameAs": "https://linkedin.com/company/global-guru-llc"
+
+              "sameAs": [
+                "https://linkedin.com/company/global-guru-llc"
+              ]
             }
           `}
         </script>
+
       </Helmet>
 
       {/* LinkedIn Insight Tag */}
