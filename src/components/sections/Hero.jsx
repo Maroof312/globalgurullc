@@ -96,9 +96,17 @@ const HeroSection = memo(() => {
           <Col lg={7} className="hero2-left">
             <motion.div className="hero2-left-inner" {...contentAnim}>
               <div className="hero2-pill">Outsource with confidence</div>
-
-              <h1 className="hero2-title">Specialized Accounting Services for Real Estate Owners, Investors & Property Managers</h1>
-
+              <div className="hero2-heading">
+                <span className="hero2-pretext">
+                  Specialized Outsourced
+                </span>
+                <h1 className="hero2-title">
+                  Real Estate Accounting Services <br />
+                </h1>
+                <span className="hero2-posttext">
+                  for Owners, Investors & Property Managers
+                </span>
+              </div>
               <p className="hero2-subtitle">
                 Accurate books, faster closes, and investor-ready reporting, for real estate portfolios of any size.
               </p>

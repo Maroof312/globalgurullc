@@ -146,7 +146,7 @@ const DataExpertise = memo(() => {
   return (
     <section className="data-expertise" aria-label="Data Expertise">
       <Container>
-        <h2 className="text-center">Data Expertise</h2>
+        <h2 className="text-center">Real Estate Data & Software Expertise</h2>
         <Swiper
           modules={[Autoplay]}
           slidesPerView={6}

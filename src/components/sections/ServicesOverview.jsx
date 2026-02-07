@@ -275,7 +275,7 @@ const ServicesOverview = memo(() => {
                                 <i className={`bi ${service.icon}`}></i>
                               </div>
                               <div className="card-title-section">
-                                <h4 className="card-title">{service.title}</h4>
+                                <h3 className="card-title">{service.title}</h3>
                                 <div className="card-tags">
                                   {service.tags.slice(0, 2).map((tag, idx) => (
                                     <Badge key={idx} className="card-tag-badge">
@@ -368,7 +368,7 @@ const ServicesOverview = memo(() => {
                                       <i className={`bi ${service.icon}`}></i>
                                     </div>
                                     <div className="mobile-card-title-section">
-                                      <h4 className="mobile-card-title">{service.title}</h4>
+                                      <h3 className="mobile-card-title">{service.title}</h3>
                                       <div className="mobile-card-tags">
                                         {service.tags.slice(0, 2).map((tag, idx) => (
                                           <Badge key={idx} className="mobile-card-tag-badge">

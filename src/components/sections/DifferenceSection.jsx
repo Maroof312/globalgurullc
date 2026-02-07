@@ -60,7 +60,7 @@ const DifferenceSection = React.memo(() => {
     <section className="difference-section py-5 bg-light">
       <Container>
         <h2 className="section-title text-center display-6 fw-bold mb-5">
-          To Make A Difference
+          Why Businesses Choose Our Solutions
         </h2>
 
         {/* Desktop version - KEPT ORIGINAL SCROLLING */}

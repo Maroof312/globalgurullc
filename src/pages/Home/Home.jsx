@@ -71,7 +71,8 @@ export default function Home() {
               "@type": "Organization",
               "name": "Global Guru LLC",
               "url": "https://globalgurullc.com/",
-              "logo": "https://globalgurullc.com/assets/Black-logo-CEPdcb01.webp",
+              "logo": "https://globalgurullc.com/gg-logo.png",
+              "image": "https://globalgurullc.com/gg-logo.png",
 
               "description": "Providing innovative business solutions to help your company grow and succeed in today's competitive market.",
 
@@ -109,9 +110,6 @@ export default function Home() {
 
       {/* 1) Hero */}
       <HeroSection />
-
-      {/* 3b) Capabilities overview */}
-      {/* <DataExpertise /> */}
 
       {/* 5) Why Choose Us / Differentiators */}
       <TMDifference/>

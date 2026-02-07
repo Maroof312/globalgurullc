@@ -60,9 +60,7 @@ export default function MissionSection() {
             >
               <div className="section-label">Our Purpose</div>
               <h2>
-                <span className="text-gradient">Redefining</span> Real Estate Accounting{" "}
-                {/* <br className="d-none d-md-block" />
-                Estate Accounting */}
+                <span className="text-gradient">Expert Outsourced</span> Real Estate Accounting{" "}
               </h2>
 
               <div className="mission-divider"></div>
