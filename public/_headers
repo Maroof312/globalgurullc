@@ -4,7 +4,7 @@
 
 # Cache other common static files (like favicon)
 /*.ico
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate
 
 # Image formats
 /*.svg

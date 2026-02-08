@@ -71,7 +71,7 @@ export default function Home() {
               "@type": "Organization",
               "name": "Global Guru LLC",
               "url": "https://globalgurullc.com/",
-              "logo": "https://globalgurullc.com/gg-logo.png",
+              "logo": "https://globalgurullc.com/favicon-192.png",
               "image": "https://globalgurullc.com/gg-logo.png",
 
               "description": "Providing innovative business solutions to help your company grow and succeed in today's competitive market.",
