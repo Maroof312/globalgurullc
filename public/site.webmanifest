@@ -4,8 +4,13 @@
   "description": "Real Estate Accounting Services & Outsourcing Solutions",
   "icons": [
     {
-      "src": "/favicon-32.png?v=2",
+      "src": "/favicon-32.png",
       "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-96.png",
+      "sizes": "96x96",
       "type": "image/png"
     },
     {
