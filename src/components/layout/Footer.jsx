@@ -78,7 +78,8 @@ export default function Footer() {
             >
               <h5 className="mb-3">Contact Info</h5>
               <address className="mb-0">
-                <p className="mb-2"><i className="bi bi-geo-alt me-2"></i> 228 Park Ave S PMB 702068, New York, NY 10003, United States </p>
+                <p className="mb-2"><i className="bi bi-geo-alt me-2"></i> 228 Park Ave S PMB 702068, New York, </p>
+                <p className="mb-2 para-2"> NY 10003, United States </p>
                 <p className="mb-2"><i className="bi bi-phone me-2"></i> +1 845-497-6474</p>
                 <p className="mb-0"><i className="bi bi-envelope me-2"></i> info@globalgurullc.com </p>
               </address>
