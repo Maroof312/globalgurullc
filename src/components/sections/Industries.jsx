@@ -12,6 +12,7 @@ import {
   FaChartLine,
   FaShoppingBag,
   FaArrowRight,
+  FaTruck,
 } from 'react-icons/fa';
 
 const INDUSTRIES = [
@@ -37,6 +38,16 @@ const INDUSTRIES = [
   },
   {
     id: 3,
+    name: 'Food Distribution',
+    title: 'Accounting built for high-volume distribution.',
+    description:
+      'We support food distributors with inventory accounting, rebates, billbacks, margin analysis, and high-volume AP/AR workflows.',
+    icon: FaTruck,
+    color: '#22C55E',
+    stats: 'Nationwide distributors',
+  },
+  {
+    id: 4,
     name: 'Healthcare',
     title: 'Compliance-first financial operations.',
     description:
@@ -46,7 +57,7 @@ const INDUSTRIES = [
     stats: 'HIPAA compliant',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Financial Services',
     title: 'Precision, controls, and transparency.',
     description:
@@ -56,7 +67,7 @@ const INDUSTRIES = [
     stats: '99.9% accuracy',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Retail & E-Commerce',
     title: 'High-volume transactions handled cleanly.',
     description:

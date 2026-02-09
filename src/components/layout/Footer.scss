@@ -1,4 +1,3 @@
-// FIXED: Footer styles with proper mobile responsiveness
 footer {
   padding: 3rem 0 1.5rem;
   background-color: #212529;
@@ -45,6 +44,7 @@ footer {
     p {
       margin-bottom: 0.5rem;
       line-height: 1.5;
+      // padding-left: 10px;
     }
   }
 
