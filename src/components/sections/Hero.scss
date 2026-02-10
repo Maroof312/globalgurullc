@@ -1,23 +1,16 @@
+// HeroSections.scss - CORRECTED VERSION
 .hero2 {
   position: relative;
   overflow: hidden;
   color: #fff;
   background: #070b18;
-
-  /* ✅ Prevent stretched hero on mobile */
   padding: clamp(88px, 12vh, 140px) 0 clamp(22px, 5vh, 50px);
   min-height: clamp(520px, 66vh, 760px);
-
-  /* ======================
-     Unique premium background
-     ====================== */
 
   .hero2-bg {
     position: absolute;
     inset: -22%;
     z-index: 0;
-
-    /* Aurora blobs */
     background:
       radial-gradient(
         circle at 18% 28%,
@@ -33,17 +26,10 @@
         circle at 55% 88%,
         rgba(168, 85, 247, 0.36),
         transparent 56%
-      ),
-      radial-gradient(
-        circle at 40% 55%,
-        rgba(34, 197, 94, 0.14),
-        transparent 60%
       );
-
-    filter: blur(18px) saturate(1.25);
+    filter: blur(12px) saturate(1.15);
     transform: translate3d(0, 0, 0);
     animation: hero2Aurora 10.5s ease-in-out infinite;
-    will-change: transform;
   }
 
   .hero2-fx {
@@ -51,24 +37,21 @@
     inset: 0;
     z-index: 1;
     pointer-events: none;
-
-    /* Depth */
     background:
       radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 56%),
       linear-gradient(to bottom, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.34));
+    transform: translateZ(0);
   }
 
-  /* Rotating halo */
   .hero2-fx::before {
     content: "";
     position: absolute;
-    width: 860px;
-    height: 860px;
+    width: min(860px, 100vw);
+    height: min(860px, 100vw);
     left: 58%;
     top: 40%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-
     background: conic-gradient(
       from 0deg,
       rgba(14, 165, 233, 0),
@@ -77,79 +60,48 @@
       rgba(168, 85, 247, 0.18),
       rgba(14, 165, 233, 0)
     );
-
-    filter: blur(18px);
-    opacity: 0.95;
-    animation: hero2Halo 16s linear infinite;
-    will-change: transform;
+    filter: blur(12px);
+    opacity: 0.85;
+    animation: hero2Halo 24s linear infinite;
   }
 
-  /* Spotlight sweep + grid drift + spark dots */
   .hero2-fx::after {
     content: "";
     position: absolute;
     inset: -28% -40%;
     transform: translate3d(-18%, -10%, 0) rotate(10deg);
-    will-change: transform, opacity;
-    animation: hero2Sweep 10.5s ease-in-out infinite;
     opacity: 0.58;
-
     background:
-      /* spotlight beam */
       linear-gradient(
         120deg,
         transparent 35%,
-        rgba(255, 255, 255, 0.1) 45%,
-        rgba(255, 255, 255, 0.03) 55%,
+        rgba(255, 255, 255, 0.08) 45%,
+        rgba(255, 255, 255, 0.02) 55%,
         transparent 65%
       ),
-      /* grid */
       repeating-linear-gradient(
           0deg,
-          rgba(255, 255, 255, 0.03) 0px,
-          rgba(255, 255, 255, 0.03) 1px,
+          rgba(255, 255, 255, 0.02) 0px,
+          rgba(255, 255, 255, 0.02) 1px,
           transparent 1px,
-          transparent 66px
+          transparent 86px
         ),
       repeating-linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.025) 0px,
-        rgba(255, 255, 255, 0.025) 1px,
+        rgba(255, 255, 255, 0.018) 0px,
+        rgba(255, 255, 255, 0.018) 1px,
         transparent 1px,
-        transparent 66px
-      ),
-      /* spark dots */
-      radial-gradient(
-          circle at 10% 20%,
-          rgba(255, 255, 255, 0.09) 0 1px,
-          transparent 2px
-        ),
-      radial-gradient(
-        circle at 30% 70%,
-        rgba(255, 255, 255, 0.06) 0 1px,
-        transparent 2px
-      ),
-      radial-gradient(
-        circle at 80% 30%,
-        rgba(255, 255, 255, 0.06) 0 1px,
-        transparent 2px
-      ),
-      radial-gradient(
-        circle at 70% 85%,
-        rgba(255, 255, 255, 0.05) 0 1px,
-        transparent 2px
+        transparent 86px
       );
+    animation: hero2Sweep 16s ease-in-out infinite;
   }
 
   @keyframes hero2Aurora {
-    0% {
+    0%, 100% {
       transform: translate3d(-2%, -1%, 0) scale(1.03);
     }
     50% {
-      transform: translate3d(2%, 2%, 0) scale(1.08);
-    }
-    100% {
-      transform: translate3d(-2%, -1%, 0) scale(1.03);
+      transform: translate3d(2%, 2%, 0) scale(1.05);
     }
   }
 
@@ -163,35 +115,23 @@
   }
 
   @keyframes hero2Sweep {
-    0% {
-      transform: translate3d(-24%, -10%, 0) rotate(10deg);
+    0%, 100% {
+      transform: translate3d(-18%, -10%, 0) rotate(10deg);
       opacity: 0.48;
     }
     50% {
-      transform: translate3d(6%, 10%, 0) rotate(10deg);
-      opacity: 0.7;
-    }
-    100% {
-      transform: translate3d(24%, 18%, 0) rotate(10deg);
-      opacity: 0.48;
+      transform: translate3d(6%, 8%, 0) rotate(10deg);
+      opacity: 0.6;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero2-bg {
-      animation: none;
-    }
-    .hero2-fx::before {
-      animation: none;
-    }
+    .hero2-bg,
+    .hero2-fx::before,
     .hero2-fx::after {
-      animation: none;
+      animation: none !important;
     }
   }
-
-  /* ======================
-     Layout
-     ====================== */
 
   .hero2-container {
     position: relative;
@@ -209,139 +149,165 @@
   .hero2-pill {
     display: inline-flex;
     align-items: center;
-    padding: 6px 12px;
+    padding: 0.5rem 1rem;
     border-radius: 999px;
     font-size: 0.9rem;
     font-weight: 600;
-    letter-spacing: 0.2px;
-
+    letter-spacing: 0.02em;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(10px);
-    margin-bottom: 16px;
+    margin-bottom: 1.5rem;
   }
 
   .hero2-heading {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 8px;
+    margin-bottom: 1.5rem;
   }
 
-  .hero2-pretext,
-  .hero2-posttext {
-    font-size: clamp(1.8rem, 3.6vw, 3.2rem);
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.38);
-  }
-
-  .hero2-heading {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 5px;
-  }
-
-  .hero2-pretext,
-  .hero2-posttext {
-    font-size: clamp(1.8rem, 3.6vw, 3.2rem);
-    // font-weight: 400;
-    line-height: 1.08;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.38);
-  }
-
-  .hero2-title {
-    font-size: clamp(1.8rem, 3.6vw, 3.2rem);
-    // font-weight: 400; /* only H1 bold */
-    line-height: 1.08;
-    letter-spacing: 1px;
+  .hero2-main-heading {
+    font-size: clamp(2rem, 4.2vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin: 0;
-    display: inline;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.38);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .hero2-preheading {
+    display: block;
+    font-size: 0.72em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .hero2-main-text {
+    display: block;
+    font-size: 0.72em;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0.15rem 0;
+    
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      background: linear-gradient(90deg, #ffffff, #e0e7ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .hero2-subheading {
+    display: block;
+    font-size: 0.68em;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.2;
+    letter-spacing: 0.01em;
   }
 
   .hero2-subtitle {
-    font-size: 1.08rem;
-    line-height: 1.6;
+    font-size: 1.15rem;
+    line-height: 1.65;
     color: rgba(255, 255, 255, 0.82);
-    margin: 20px 0 16px;
+    margin: 1.5rem 0 1.25rem;
     max-width: 620px;
+    font-weight: 400;
   }
 
   .hero2-bullets {
     list-style: none;
     padding: 0;
-    margin: 0 0 22px;
+    margin: 0 0 2rem;
 
     li {
       position: relative;
-      padding-left: 18px;
-      margin-bottom: 10px;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
       color: rgba(255, 255, 255, 0.86);
-      font-size: 1rem;
-      line-height: 1.4;
+      font-size: 1.05rem;
+      line-height: 1.5;
 
       &::before {
-        content: "•";
+        content: "✓";
         position: absolute;
         left: 0;
-        top: 0;
-        opacity: 0.9;
+        top: 0.1rem;
+        color: #3b82f6;
+        font-weight: bold;
       }
     }
   }
 
   .hero2-buttons {
     display: flex;
-    gap: 12px;
+    gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
 
     .btn-holographic {
       background: linear-gradient(45deg, #0d6efd, #6f42c1);
       border: none;
       border-radius: 999px;
-      padding: 12px 24px;
+      padding: 1rem 2rem;
       font-weight: 600;
       color: #fff;
       box-shadow: 0 12px 34px rgba(79, 70, 229, 0.38);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-width: 160px;
+      text-align: center;
+      
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(79, 70, 229, 0.5);
+      }
     }
 
     .btn-glass {
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 999px;
-      padding: 12px 24px;
+      padding: 1rem 2rem;
       font-weight: 600;
       color: #fff;
       backdrop-filter: blur(12px);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      min-width: 160px;
+      text-align: center;
+      
+      &:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
     }
   }
 
-  /* ======================
-     Right feature cards
-     ====================== */
-
   .hero2-cards {
     display: grid;
-    gap: 14px;
+    gap: 1rem;
   }
 
   .hero-feature-card {
     display: grid;
     grid-template-columns: 8px 1fr 30px;
     align-items: center;
-    gap: 12px;
-
-    padding: 14px 14px;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
     border-radius: 16px;
-
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(14px);
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
 
     .hero-feature-left {
       height: 100%;
@@ -351,16 +317,16 @@
 
     .hero-feature-title {
       font-weight: 700;
-      font-size: 1.02rem;
-      line-height: 1.25;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 2px;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 0.25rem;
     }
 
     .hero-feature-subtitle {
-      font-size: 0.92rem;
-      color: rgba(255, 255, 255, 0.68);
-      line-height: 1.35;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.4;
     }
 
     .hero-feature-dot {
@@ -399,77 +365,128 @@
     }
   }
 
-  /* ======================
-     Data Expertise inside hero
-     ====================== */
   .hero2-expertise {
-    margin-top: 22px;
+    margin-top: 2.5rem;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(14px);
     border-radius: 18px;
-    padding: 10px 10px;
+    padding: 1.5rem;
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
   }
 
-  /* ======================
-     Mobile responsiveness (no stretched hero)
-     ====================== */
-
-  @media (max-width: 900px) {
+  @media (max-width: 992px) {
+    padding: 5rem 0 2rem;
     min-height: auto;
-    padding: 92px 0 34px;
 
     .hero2-left-inner {
       max-width: 100%;
     }
 
+    .hero2-main-heading {
+      font-size: clamp(1.8rem, 3.8vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .hero2-right {
+      margin-top: 2rem;
+    }
+
     .hero2-fx::before {
-      width: 640px;
-      height: 640px;
-      left: 55%;
-      top: 38%;
+      width: min(640px, 100vw);
+      height: min(640px, 100vw);
+      left: 50%;
+      top: 30%;
     }
   }
 
-  @media (max-width: 480px) {
-    .hero2-buttons {
-      gap: 10px;
+  @media (max-width: 768px) {
+    .hero2-main-heading {
+      font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+      gap: 0.25rem;
+    }
 
-      /* ✅ prevent huge buttons on mobile */
+    .hero2-subtitle {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin: 1.25rem 0 1rem;
+    }
+
+    .hero2-bullets li {
+      font-size: 1rem;
+      padding-left: 1.25rem;
+    }
+
+    .hero2-buttons {
+      justify-content: center;
+      
       .btn-holographic,
       .btn-glass {
-        width: auto;
-        padding: 10px 14px;
-        font-size: 0.9rem;
-        min-width: 138px;
-        max-width: 165px;
-        white-space: nowrap;
+        flex: 1;
+        min-width: 140px;
+        max-width: 180px;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
       }
     }
 
     .hero-feature-card {
-      grid-template-columns: 8px 1fr 26px;
-      padding: 12px 12px;
-
+      padding: 1rem 1.25rem;
+      grid-template-columns: 6px 1fr 24px;
+      gap: 0.875rem;
+      
       .hero-feature-title {
-        font-size: 0.98rem;
+        font-size: 1rem;
       }
+      
       .hero-feature-subtitle {
-        font-size: 0.88rem;
+        font-size: 0.9rem;
       }
     }
   }
 
-  @media (max-width: 330px) {
+  @media (max-width: 480px) {
+    padding: 4rem 0 1.5rem;
+
+    .hero2-main-heading {
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .hero2-pill {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.875rem;
+    }
+
+    .hero2-subtitle {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     .hero2-buttons {
+      flex-direction: column;
+      width: 100%;
+      
       .btn-holographic,
       .btn-glass {
-        min-width: 126px;
-        max-width: 150px;
-        padding: 9px 12px;
-        font-size: 0.86rem;
+        width: 100%;
+        max-width: 280px;
+        min-width: auto;
       }
+    }
+
+    .hero-feature-card {
+      padding: 0.875rem 1rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .hero2-main-heading {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    }
+
+    .hero2-bullets li {
+      font-size: 0.95rem;
     }
   }
 }

@@ -1,3 +1,4 @@
+// HeroSection.jsx - CORRECTED VERSION
 import { memo, useCallback, useMemo, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion, useInView, useReducedMotion } from "framer-motion";
@@ -11,34 +12,42 @@ const HeroSection = memo(() => {
 
   const featureCards = useMemo(
     () => [
-      { title: "Property Accounting", accent: "blue" },
-      { title: "AP / AR", accent: "gold" },
-      { title: "Lease Admin", accent: "blue" },
-      { title: "Bookkeeping", accent: "gold" },
+      { 
+        title: "Property Accounting", 
+        // subtitle: "Comprehensive property financial management",
+        accent: "blue" 
+      },
+      { 
+        title: "AP / AR", 
+        // subtitle: "Accounts payable and receivable processing",
+        accent: "gold" 
+      },
+      { 
+        title: "Lease Admin", 
+        // subtitle: "Lease accounting and administration",
+        accent: "blue" 
+      },
+      { 
+        title: "Bookkeeping", 
+        // subtitle: "Accurate daily bookkeeping services",
+        accent: "gold" 
+      },
     ],
     []
   );
 
-  const contentAnim = useMemo(
-    () => ({
+  const animations = useMemo(() => ({
+    content: {
       initial: { opacity: 0, y: reduceMotion ? 0 : 18 },
       animate: isInView ? { opacity: 1, y: 0 } : {},
       transition: { duration: 0.7, ease: "easeOut" },
-    }),
-    [isInView, reduceMotion]
-  );
-
-  const listAnim = useMemo(
-    () => ({
+    },
+    list: {
       initial: { opacity: 0, y: reduceMotion ? 0 : 12 },
       animate: isInView ? { opacity: 1, y: 0 } : {},
       transition: { duration: 0.6, delay: 0.12, ease: "easeOut" },
-    }),
-    [isInView, reduceMotion]
-  );
-
-  const cardsContainerVariants = useMemo(
-    () => ({
+    },
+    cardsContainer: {
       hidden: {},
       visible: {
         transition: reduceMotion
@@ -48,70 +57,75 @@ const HeroSection = memo(() => {
               delayChildren: 0.1,
             },
       },
-    }),
-    [reduceMotion]
-  );
-
-  const cardVariants = useMemo(
-    () => ({
+    },
+    card: {
       hidden: { opacity: 0, y: reduceMotion ? 0 : 12 },
       visible: {
         opacity: 1,
         y: 0,
         transition: { duration: 0.45, ease: "easeOut" },
       },
-    }),
-    [reduceMotion]
-  );
+    },
+  }), [isInView, reduceMotion]);
 
   const renderCard = useCallback(
     (item, idx) => (
       <motion.div
         key={`${item.title}-${idx}`}
         className={`hero-feature-card accent-${item.accent}`}
-        variants={cardVariants}
+        variants={animations.card}
+        role="listitem"
       >
         <div className="hero-feature-left" aria-hidden="true" />
         <div className="hero-feature-text">
           <div className="hero-feature-title">{item.title}</div>
-          <div className="hero-feature-subtitle">{item.subtitle}</div>
+          {item.subtitle && (
+            <div className="hero-feature-subtitle">{item.subtitle}</div>
+          )}
         </div>
         <div className="hero-feature-dot" aria-hidden="true" />
       </motion.div>
     ),
-    [cardVariants]
+    [animations.card]
   );
 
-  const cards = useMemo(() => featureCards.map(renderCard), [featureCards, renderCard]);
+  const cards = useMemo(
+    () => featureCards.map(renderCard), 
+    [featureCards, renderCard]
+  );
 
   return (
     <section className="hero2" ref={sectionRef} aria-label="Hero">
-      {/* Background (CSS-only, Lighthouse-safe) */}
       <div className="hero2-bg" aria-hidden="true" />
       <div className="hero2-fx" aria-hidden="true" />
 
       <Container className="hero2-container">
         <Row className="align-items-center hero2-row">
-          {/* LEFT */}
           <Col lg={7} className="hero2-left">
-            <motion.div className="hero2-left-inner" {...contentAnim}>
-              <div className="hero2-pill">Outsource with confidence</div>
-              <div className="hero2-heading">
-                <span className="hero2-pretext">
-                  Specialized Outsourced
-                </span>
-                <h1 className="hero2-title">
-                  Real Estate Accounting Services <br />
-                </h1>
-                <span className="hero2-posttext">
-                  for Owners, Investors & Property Managers
-                </span>
+            <motion.div className="hero2-left-inner" {...animations.content}>
+              <div className="hero2-pill" role="status">
+                Outsource with confidence
               </div>
+              
+              <div className="hero2-heading">
+                <h1 className="hero2-main-heading">
+                  <span className="hero2-preheading">
+                    Specialized Outsourced
+                  </span>
+                  <span className="hero2-main-text">
+                    Real Estate Accounting Services
+                  </span>
+                  <span className="hero2-subheading">
+                    for Owners, Investors & Property Managers
+                  </span>
+                </h1>
+              </div>
+
               <p className="hero2-subtitle">
                 Accurate books, faster closes, and investor-ready reporting, for real estate portfolios of any size.
               </p>
 
-              <motion.ul className="hero2-bullets" {...listAnim}>
+              <motion.ul className="hero2-bullets" role="list" {...animations.list}>
                 <li>Dedicated accounting team + ongoing support</li>
                 <li>Month end close + bank/CAM reconciliations</li>
                 <li>AP/AR + owner statements + board reporting</li>
@@ -126,6 +140,7 @@ const HeroSection = memo(() => {
                   as={motion.a}
                   whileHover={!reduceMotion ? { scale: 1.04 } : undefined}
                   whileTap={!reduceMotion ? { scale: 0.97 } : undefined}
+                  aria-label="View our services"
                 >
                   Our Services
                 </Button>
@@ -136,6 +151,7 @@ const HeroSection = memo(() => {
                   as={motion.a}
                   whileHover={!reduceMotion ? { scale: 1.04 } : undefined}
                   whileTap={!reduceMotion ? { scale: 0.97 } : undefined}
+                  aria-label="Contact us"
                 >
                   Contact Us
                 </Button>
@@ -143,20 +159,20 @@ const HeroSection = memo(() => {
             </motion.div>
           </Col>
 
-          {/* RIGHT */}
           <Col lg={5} className="hero2-right">
             <motion.div
               className="hero2-cards"
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
-              variants={cardsContainerVariants}
+              variants={animations.cardsContainer}
+              role="list"
+              aria-label="Our services"
             >
               {cards}
             </motion.div>
           </Col>
         </Row>
 
-        {/* Data Expertise embedded under hero grid (still part of hero) */}
         <div className="hero2-expertise">
           <DataExpertise />
         </div>
