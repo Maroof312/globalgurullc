@@ -93,7 +93,7 @@ const defaultContent = {
 
 // Fixed Family Offices content
 const familyOfficesContent = {
-  title: 'Trusted by Family Offices Built Around Principals',
+  title: 'Trusted Outsourced Accounting & Reporting Services For Family Offices',
   description: 'We work quietly and precisely for single and multi-family offices, delivering discretion-first workflows and principal-focused financial intelligence.',
   services: [
     {
@@ -142,10 +142,10 @@ const TrustedBySection = memo(({
           transition={{ duration: 0.6 }}
         >
           <h2 className="display-6 fw-bold text-dark mb-3">
-            Trusted by Elite Clients Nationwide
+            Trusted Real Estate Accounting <br />& Financial Outsourcing Experts
           </h2>
           <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
-            From family offices to growing businesses, we deliver precision, discretion, and results that matter
+            We help real estate businesses manage finances, leases, and reporting with precision, compliance, and scalable accounting support.
           </p>
         </motion.div>
 
@@ -196,7 +196,7 @@ const TrustedBySection = memo(({
                           <i className={`bi ${service.icon} fs-5 text-primary`}></i>
                         </div>
                         <div>
-                          <h4 className="h5 fw-bold text-dark mb-2">{service.title}</h4>
+                          <h3 className="h5 fw-bold text-dark mb-2">{service.title}</h3>
                           <p className="mb-0 text-muted small lh-base">{service.description}</p>
                         </div>
                       </div>

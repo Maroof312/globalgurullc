@@ -1,4 +1,4 @@
-// Footer.scss - ENTERPRISE PROFESSIONAL VERSION
+// Footer.scss - With LinkedIn Styles Added
 
 // ============================================================================
 // 1. DESIGN TOKENS (CSS Custom Properties)
@@ -86,6 +86,51 @@
 .footer-description {
   max-width: 32ch; // Optimal line length
   opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+// LinkedIn Social Styles
+.footer-social {
+  margin-top: 1.5rem;
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--footer-radius);
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--footer-transition);
+    
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--footer-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid var(--footer-accent);
+      outline-offset: 2px;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #0A66C2; // LinkedIn brand color
+      flex-shrink: 0;
+    }
+    
+    span {
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+  }
 }
 
 // Navigation
@@ -263,6 +308,10 @@
   .footer-heading {
     margin-bottom: 1rem;
   }
+  
+  .footer-social .social-link {
+    padding: 0.75rem 1.5rem;
+  }
 }
 
 // ============================================================================
@@ -288,7 +337,8 @@
   }
   
   .footer-link,
-  .contact-link {
+  .contact-link,
+  .social-link {
     text-decoration: underline;
     
     &:hover {
@@ -317,6 +367,7 @@
 @media (hover: none) and (pointer: coarse) {
   .footer-link,
   .contact-link,
+  .social-link,
   .back-to-top {
     min-height: 44px;
     min-width: 44px;
@@ -324,6 +375,10 @@
   
   .footer-link {
     padding: 0.5rem 0;
+  }
+  
+  .social-link {
+    padding: 1rem 1.5rem;
   }
 }
 
@@ -336,7 +391,8 @@
     border-top: 2px solid #000;
     
     .back-to-top,
-    .skip-to-content {
+    .skip-to-content,
+    .footer-social {
       display: none !important;
     }
     
@@ -376,6 +432,11 @@
     
     .back-to-top {
       margin-top: 1rem;
+    }
+    
+    .social-link {
+      display: block;
+      width: fit-content;
     }
   }
 }

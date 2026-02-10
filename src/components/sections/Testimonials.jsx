@@ -75,7 +75,7 @@ export default function Testimonials() {
                       </blockquote>
                       <div className="testimonial-author">
                         <div>
-                          <h5 className="mb-0">{testimonial.name}</h5>
+                          <p className="mb-0">{testimonial.name}</p>
                           <small className="text-muted">
                             {testimonial.role}
                           </small>

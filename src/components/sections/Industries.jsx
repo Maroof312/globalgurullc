@@ -259,9 +259,9 @@ const Industries = memo(function Industries() {
             </div>
 
             <h2 id="industries-title">
-              <span className="gradient-text">Industry-Specific</span>
+              <span className="gradient-text">Accounting Solutions</span>
               <br />
-              Financial Solutions
+              Built For Your Industry
             </h2>
 
             <p className="lead">

@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import './CTA.scss'
 
 export default function CTA({
-  title = "Ready to transform your business?",
-  description = "Contact us today to discuss how we can help you achieve your goals.",
+  title = "Let’s Scale Your Business",
+  description = "Work with our experts to simplify your accounting and grow your business.",
   buttonText = "Get Started",
   buttonLink = "/contact",
   backgroundColor = "primary",

@@ -190,7 +190,7 @@ const ServiceCard = ({ service, isActive, onClick, onHover }) => {
               />
               <div className="image-overlay" style={{ background: service.gradient }} />
             </div>
-            <h4>{service.title}</h4>
+            <h3>{service.title}</h3>
           </motion.div>
         </div>
 
@@ -318,10 +318,11 @@ export default function ModernServicesSection() {
           transition={{ duration: 0.8 }}
         >
           <h2>
-            <span className="highlight">Strategic Financial Solutions</span> for Modern Real Estate
+            <span className="highlight">Strategic Real Estate Accounting</span> & Financial Management Solutions
           </h2>
           <p className="subtitle">
-            Elevate your property portfolio with our specialized accounting services
+            We provide specialized real estate accounting and financial solutions designed to improve portfolio 
+            performance, reporting accuracy, and long-term growth.
           </p>
         </motion.div>
 
@@ -380,3 +381,4 @@ export default function ModernServicesSection() {
     </section>
   );
 }
+
