@@ -14,22 +14,18 @@ const HeroSection = memo(() => {
     () => [
       { 
         title: "Property Accounting", 
-        // subtitle: "Comprehensive property financial management",
         accent: "blue" 
       },
       { 
         title: "AP / AR", 
-        // subtitle: "Accounts payable and receivable processing",
         accent: "gold" 
       },
       { 
         title: "Lease Admin", 
-        // subtitle: "Lease accounting and administration",
         accent: "blue" 
       },
       { 
         title: "Bookkeeping", 
-        // subtitle: "Accurate daily bookkeeping services",
         accent: "gold" 
       },
     ],
@@ -79,9 +75,6 @@ const HeroSection = memo(() => {
         <div className="hero-feature-left" aria-hidden="true" />
         <div className="hero-feature-text">
           <div className="hero-feature-title">{item.title}</div>
-          {item.subtitle && (
-            <div className="hero-feature-subtitle">{item.subtitle}</div>
-          )}
         </div>
         <div className="hero-feature-dot" aria-hidden="true" />
       </motion.div>
@@ -126,11 +119,12 @@ const HeroSection = memo(() => {
               </p>
 
               <motion.ul className="hero2-bullets" role="list" {...animations.list}>
-                <li>Dedicated accounting team + ongoing support</li>
-                <li>Month end close + bank/CAM reconciliations</li>
-                <li>AP/AR + owner statements + board reporting</li>
-                <li>Yardi, AppFolio, QuickBooks, ARGUS support</li>
-                <li>Secure, transparent workflows</li>
+                <li>Dedicated Accounting Team + Ongoing Support</li>
+                <li>Month-End Close + Bank/CAM Reconciliations</li>
+                <li>AP/AR + Owner Statements + Board Reporting</li>
+                <li>Yardi, AppFolio, QuickBooks &amp; ARGUS Support</li>
+                <li>Secure, Transparent Workflows</li>
+
               </motion.ul>
 
               <div className="hero2-buttons">
